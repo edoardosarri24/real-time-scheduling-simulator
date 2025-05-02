@@ -5,12 +5,16 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Taskset {
+public class TaskSet {
 
     private Set<Task> tasks;
 
-    public Taskset(Set<Task> tasks) {
+    public TaskSet(Set<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public Set<Task> getTasks() {
+        return this.tasks;
     }
 
     public List<Task> orderByPeriod() {

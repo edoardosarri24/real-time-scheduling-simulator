@@ -25,6 +25,10 @@ public class Task {
         return this.period;
     }
 
+    public Duration getDeadline() {
+        return this.deadline;
+    }
+
     public Duration getChunkExecutionTime() {
         return this.chunk.getExecutionTime();
     }

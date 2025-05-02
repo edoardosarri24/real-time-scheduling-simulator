@@ -10,22 +10,23 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import swees.taskset.Task;
-import swees.taskset.Taskset;
+import swees.taskset.TaskSet;
 import swees.utils.LoggingConfig;
 import swees.utils.Multiple;
 
 public class RMScheduler {
 
-    private Taskset tasksSet;
+    private TaskSet taskSet;
     private static final Logger logger = LoggingConfig.getLogger();
 
-    public RMScheduler(Taskset taskSet) {
-        this.tasksSet = taskSet;
+    public RMScheduler(TaskSet taskSet) {
+        this.taskSet = taskSet;
+        checkPeriocity();
     }
 
     public void schedule() {
         // strutture necessarie
-        List<Task> orderedTasks = this.tasksSet.orderByPeriod();
+        List<Task> orderedTasks = this.taskSet.orderByPeriod();
         List<Duration> periods = orderedTasks.stream()
             .map(task -> task.getPeriod())
             .collect(Collectors.toList());
@@ -81,7 +82,7 @@ public class RMScheduler {
                 if (nextEvent.toMillis() % entry.getKey().getPeriod().toMillis() == 0) {
                     if (entry.getValue().isPositive()) {
                         logger.warning("Il task " + entry.getKey().getId() + " ha superato la deadline");
-                        return;
+                        System.exit(1);
                     }
                     entry.setValue(entry.getKey().getChunkExecutionTime());
                 }
@@ -92,6 +93,18 @@ public class RMScheduler {
                 logger.info("- Il task : " + entry.getKey().getId() + " ha tempo rimanente " + entry.getValue());
         }
     
+    }
+
+    private void checkPeriocity() {
+        this.taskSet.getTasks().stream()
+            .forEach(task -> {
+                if (task.getPeriod().compareTo(task.getDeadline()) != 0) {
+                    logger.warning("Il task " + task.getId() + " non è puramente periocico");
+                    logger.warning("Il task " + task.getId() + " ha periodo " + task.getPeriod() + " e deadline " + task.getDeadline());
+                    logger.warning("RM richiede task puramente periocici");
+                    System.exit(1);
+                }
+            });
     }
 
 }

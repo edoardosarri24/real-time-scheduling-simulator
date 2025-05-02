@@ -6,7 +6,7 @@ import java.util.Set;
 import swees.scheduler.RMScheduler;
 import swees.taskset.Chunk;
 import swees.taskset.Task;
-import swees.taskset.Taskset;
+import swees.taskset.TaskSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class Main {
             Duration.ofSeconds(100),
             Duration.ofSeconds(100),
             new Chunk(Duration.ofSeconds(5)));
-        Taskset taskset = new Taskset(Set.of(task0, task1));
+        TaskSet taskset = new TaskSet(Set.of(task0, task1));
         RMScheduler scheduler = new RMScheduler(taskset);
         scheduler.schedule();
     }

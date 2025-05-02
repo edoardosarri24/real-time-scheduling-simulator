@@ -1,9 +1,6 @@
 package swees.taskset;
 
 import java.time.Duration;
-import java.util.logging.Logger;
-
-import swees.utils.LoggingConfig;
 
 public class Task {
 
@@ -12,7 +9,6 @@ public class Task {
     private Duration period;
     private Duration deadline;
     private Chunk chunk;
-    private static final Logger log = LoggingConfig.getLogger();
 
     public Task(Duration period, Duration deadline, Chunk chunk) {
         this.id = idCounter++;
@@ -38,7 +34,7 @@ public class Task {
     }
 
     public void execute(Duration currentExecTime) {
-        log.info("Il task : " + this.id + " ha eseguito per " + currentExecTime + " secondi");
+        this.chunk.execute(currentExecTime, this);
     }
 
 }

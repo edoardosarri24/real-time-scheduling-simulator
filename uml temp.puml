@@ -1,0 +1,28 @@
+@startuml Analisi
+skinparam classAttributeIconSize 0
+
+' classi
+class Chunk {
+    - executionTime: double
+}
+
+class Task {
+    - period: double
+    - chunks: List<Chunk>
+    - deadline: double
+}
+
+class Taskset {
+    - tasks: Set<Task>
+}
+
+class RMScheduler {
+    - taskset: Taskset
+}
+
+' relazioni
+Task "1...*" *-- "1...*" Chunk
+Taskset "1...*" *-- "1...*" Task
+RMScheduler "*" *-- "1" Taskset
+
+@enduml

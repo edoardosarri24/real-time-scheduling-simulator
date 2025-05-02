@@ -1,0 +1,4 @@
+\chapter{Implementazione}
+
+\section{Log}
+Per il logging è stato implementato un semplice logging su un file.

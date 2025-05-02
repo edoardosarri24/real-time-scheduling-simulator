@@ -1,0 +1,58 @@
+@startuml Analisi
+skinparam classAttributeIconSize 0
+
+' classi
+class Task {
+    - releasePattern: Sampler
+    - chunks: List<Chunk>
+    - deadline: double
+    - nominalPriority: int
+    - dinamicPrioriy: int
+}
+
+class Chunk {
+    - executionTime: Sampler
+    - resource: Resource
+}
+
+class Taskset {
+    - tasks: Set<Task>
+}
+
+class Resource {
+    - sempahore: Semaphore
+}
+
+abstract class Scheduler {
+    - taskset: Taskset
+    - resAccProtocol: ResAccProtocol
+}
+
+class RMScheduler <<final>> {
+}
+
+class EDFScheduler <<final>> {
+}
+
+abstract class ResAccProtocol {
+}
+
+class PriorityCeilingProtocol <<final>> {
+}
+
+class Semaphore{
+    - ceiling: int
+}
+
+' relazioni
+Task "1...*" *-- "1...*" Chunk
+Taskset "1...*" *-- "1...*" Task
+Chunk "*" *-- "*" Resource
+Scheduler <|-- RMScheduler
+Scheduler <|-- EDFScheduler
+Scheduler "*" *-- "1" Taskset
+ResAccProtocol <|-- PriorityCeilingProtocol
+Scheduler "*" *-- "1" ResAccProtocol
+Resource "1...*" *-- "1" Semaphore
+
+@enduml

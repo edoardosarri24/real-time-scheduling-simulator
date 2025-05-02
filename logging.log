@@ -1,0 +1,50 @@
+[RMScheduler] INFO: dopo aver preso il prossimo evento PT25S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT5S
+[RMScheduler] INFO: il valore di next event è: PT25S
+[Task] INFO: Il task : 0 ha eseguito per PT15S secondi
+[RMScheduler] INFO: il valore di next event è: PT10S
+[Task] INFO: Il task : 1 ha eseguito per PT5S secondi
+[RMScheduler] INFO: il valore di next event è: PT5S
+[RMScheduler] INFO: prima di aver rimosso il prossimo evento PT25S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT0S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: dopo aver rimosso il prossimo evento PT25S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: dopo aver preso il prossimo evento PT50S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: il valore di next event è: PT25S
+[Task] INFO: Il task : 0 ha eseguito per PT15S secondi
+[RMScheduler] INFO: il valore di next event è: PT10S
+[RMScheduler] INFO: prima di aver rimosso il prossimo evento PT50S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT0S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: dopo aver rimosso il prossimo evento PT50S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: dopo aver preso il prossimo evento PT1M15S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: il valore di next event è: PT25S
+[Task] INFO: Il task : 0 ha eseguito per PT15S secondi
+[RMScheduler] INFO: il valore di next event è: PT10S
+[RMScheduler] INFO: prima di aver rimosso il prossimo evento PT1M15S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT0S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: dopo aver rimosso il prossimo evento PT1M15S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: dopo aver preso il prossimo evento PT1M40S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: il valore di next event è: PT25S
+[Task] INFO: Il task : 0 ha eseguito per PT15S secondi
+[RMScheduler] INFO: il valore di next event è: PT10S
+[RMScheduler] INFO: prima di aver rimosso il prossimo evento PT1M40S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT0S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
+[RMScheduler] INFO: dopo aver rimosso il prossimo evento PT1M40S i tempi rimanenti sono : 
+[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
+[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT5S

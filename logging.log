@@ -1,50 +1,58 @@
-[RMScheduler] INFO: dopo aver preso il prossimo evento PT25S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT5S
-[RMScheduler] INFO: il valore di next event è: PT25S
-[Chunk] INFO: Il chunk del task 0 ha eseguito per PT15S secondi
-[RMScheduler] INFO: il valore di next event è: PT10S
-[Chunk] INFO: Il chunk del task 1 ha eseguito per PT5S secondi
-[RMScheduler] INFO: il valore di next event è: PT5S
-[RMScheduler] INFO: prima di aver rimosso il prossimo evento PT25S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT0S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: dopo aver rimosso il prossimo evento PT25S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: dopo aver preso il prossimo evento PT50S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: il valore di next event è: PT25S
-[Chunk] INFO: Il chunk del task 0 ha eseguito per PT15S secondi
-[RMScheduler] INFO: il valore di next event è: PT10S
-[RMScheduler] INFO: prima di aver rimosso il prossimo evento PT50S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT0S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: dopo aver rimosso il prossimo evento PT50S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: dopo aver preso il prossimo evento PT1M15S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: il valore di next event è: PT25S
-[Chunk] INFO: Il chunk del task 0 ha eseguito per PT15S secondi
-[RMScheduler] INFO: il valore di next event è: PT10S
-[RMScheduler] INFO: prima di aver rimosso il prossimo evento PT1M15S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT0S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: dopo aver rimosso il prossimo evento PT1M15S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: dopo aver preso il prossimo evento PT1M40S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: il valore di next event è: PT25S
-[Chunk] INFO: Il chunk del task 0 ha eseguito per PT15S secondi
-[RMScheduler] INFO: il valore di next event è: PT10S
-[RMScheduler] INFO: prima di aver rimosso il prossimo evento PT1M40S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT0S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT0S
-[RMScheduler] INFO: dopo aver rimosso il prossimo evento PT1M40S i tempi rimanenti sono : 
-[RMScheduler] INFO: - Il task : 0 ha tempo rimanente PT15S
-[RMScheduler] INFO: - Il task : 1 ha tempo rimanente PT5S
+[RMScheduler] INFO: - Il tempo disponibile è: PT20S
+[Chunk] INFO: Il chunk 0 del task 0 ha eseguito per PT10S
+[Chunk] INFO: Il chunk 1 del task 0 ha eseguito per PT3S
+[Chunk] INFO: Il chunk 0 del task 1 ha eseguito per PT5S
+[Chunk] INFO: Il chunk 1 del task 1 ha eseguito per PT2S
+[RMScheduler] INFO: - Al tempo PT20S il task controllato e resettato: 0
+[RMScheduler] INFO: I task nella coda sono: 
+[RMScheduler] INFO: 0
+[RMScheduler] INFO: 1
+[RMScheduler] INFO: 2
+[RMScheduler] INFO: - Il tempo disponibile è: PT20S
+[Chunk] INFO: Il chunk 0 del task 0 ha eseguito per PT10S
+[Chunk] INFO: Il chunk 1 del task 0 ha eseguito per PT3S
+[Chunk] INFO: Il chunk 1 del task 1 ha eseguito per PT4S
+[Chunk] INFO: Il chunk 0 del task 2 ha eseguito per PT3S
+[RMScheduler] INFO: - Al tempo PT40S il task controllato e resettato: 0
+[RMScheduler] INFO: I task nella coda sono: 
+[RMScheduler] INFO: 0
+[RMScheduler] INFO: 2
+[RMScheduler] INFO: - Il tempo disponibile è: PT10S
+[Chunk] INFO: Il chunk 0 del task 0 ha eseguito per PT10S
+[RMScheduler] INFO: - Al tempo PT50S il task controllato e resettato: 1
+[RMScheduler] INFO: I task nella coda sono: 
+[RMScheduler] INFO: 0
+[RMScheduler] INFO: 1
+[RMScheduler] INFO: 2
+[RMScheduler] INFO: - Il tempo disponibile è: PT10S
+[Chunk] INFO: Il chunk 1 del task 0 ha eseguito per PT3S
+[Chunk] INFO: Il chunk 0 del task 1 ha eseguito per PT5S
+[Chunk] INFO: Il chunk 1 del task 1 ha eseguito per PT2S
+[RMScheduler] INFO: - Al tempo PT1M il task controllato e resettato: 0
+[RMScheduler] INFO: I task nella coda sono: 
+[RMScheduler] INFO: 0
+[RMScheduler] INFO: 1
+[RMScheduler] INFO: 2
+[RMScheduler] INFO: - Il tempo disponibile è: PT20S
+[Chunk] INFO: Il chunk 0 del task 0 ha eseguito per PT10S
+[Chunk] INFO: Il chunk 1 del task 0 ha eseguito per PT3S
+[Chunk] INFO: Il chunk 1 del task 1 ha eseguito per PT4S
+[Chunk] INFO: Il chunk 0 del task 2 ha eseguito per PT1S
+[RMScheduler] INFO: - Al tempo PT1M20S il task controllato e resettato: 0
+[RMScheduler] INFO: I task nella coda sono: 
+[RMScheduler] INFO: 0
+[RMScheduler] INFO: - Il tempo disponibile è: PT20S
+[Chunk] INFO: Il chunk 0 del task 0 ha eseguito per PT10S
+[Chunk] INFO: Il chunk 1 del task 0 ha eseguito per PT3S
+[RMScheduler] INFO: - Al tempo PT1M40S il task controllato e resettato: 0
+[RMScheduler] INFO: I task nella coda sono: 
+[RMScheduler] INFO: 0
+[RMScheduler] INFO: - Al tempo PT1M40S il task controllato e resettato: 1
+[RMScheduler] INFO: I task nella coda sono: 
+[RMScheduler] INFO: 0
+[RMScheduler] INFO: 1
+[RMScheduler] INFO: - Al tempo PT1M40S il task controllato e resettato: 2
+[RMScheduler] INFO: I task nella coda sono: 
+[RMScheduler] INFO: 0
+[RMScheduler] INFO: 1
+[RMScheduler] INFO: 2

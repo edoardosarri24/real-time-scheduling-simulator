@@ -1,9 +1,6 @@
 package swees.taskset;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class TaskSet {
 
@@ -15,12 +12,6 @@ public class TaskSet {
 
     public Set<Task> getTasks() {
         return this.tasks;
-    }
-
-    public List<Task> orderByPeriod() {
-        return tasks.stream()
-                .sorted(Comparator.comparing(Task::getPeriod))
-                .collect(Collectors.toList());
     }
 
 }

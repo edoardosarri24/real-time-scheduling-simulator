@@ -7,19 +7,28 @@ import swees.utils.LoggingConfig;
 
 public class Chunk {
 
-    private Duration executionTime;
+    private final int id;
+    private final Duration executionTime;
+    private Duration remainingExecutionTime;
     private static final Logger logger = LoggingConfig.getLogger();
 
-    public Chunk(Duration executionTime) {
+    public Chunk(int id, Duration executionTime) {
+        this.id = id;
         this.executionTime = executionTime;
+        this.remainingExecutionTime = executionTime;
     }
 
-    Duration getExecutionTime() {
-        return this.executionTime;
+    Duration getRemainingExecutionTime() {
+        return this.remainingExecutionTime;
     }
 
-    public void execute(Duration currentExecTime, Task task) {
-        logger.info("Il chunk del task " + task.getId()  + " ha eseguito per " + currentExecTime + " secondi");
+    void execute(Duration executionTime, Task task) {
+        remainingExecutionTime = remainingExecutionTime.minus(executionTime);
+        logger.info("Il chunk " + this.id + " del task " + task.getId()  + " ha eseguito per " + executionTime);
+    }
+
+    void reset() {
+        this.remainingExecutionTime = this.executionTime;
     }
 
 }

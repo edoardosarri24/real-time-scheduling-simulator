@@ -1,4 +1,4 @@
-package swees.scheduler;
+package scheduler;
 
 import java.time.Duration;
 import java.util.Comparator;
@@ -8,10 +8,10 @@ import java.util.TreeSet;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import swees.taskset.Task;
-import swees.taskset.TaskSet;
-import swees.utils.LoggingConfig;
-import swees.utils.Multiple;
+import taskset.Task;
+import taskset.TaskSet;
+import utils.Multiple;
+import utils.Logger.LoggingConfig;
 
 public class RMScheduler {
 

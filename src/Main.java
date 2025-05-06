@@ -1,13 +1,11 @@
-package swees;
-
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-import swees.scheduler.RMScheduler;
-import swees.taskset.Chunk;
-import swees.taskset.Task;
-import swees.taskset.TaskSet;
+import scheduler.RMScheduler;
+import taskset.Chunk;
+import taskset.Task;
+import taskset.TaskSet;
 
 public class Main {
     public static void main(String[] args) {

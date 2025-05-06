@@ -1,4 +1,4 @@
-package swees.utils;
+package utils;
 
 import com.google.common.math.LongMath;
 

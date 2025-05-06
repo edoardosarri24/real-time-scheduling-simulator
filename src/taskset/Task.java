@@ -1,11 +1,11 @@
-package swees.taskset;
+package taskset;
 
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import swees.utils.LoggingConfig;
+import utils.Logger.LoggingConfig;
 
 public class Task {
 

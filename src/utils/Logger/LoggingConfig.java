@@ -1,4 +1,4 @@
-package swees.utils;
+package utils.Logger;
 
 import java.io.IOException;
 import java.util.logging.*;

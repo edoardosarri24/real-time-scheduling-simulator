@@ -1,4 +1,4 @@
-package swees.taskset;
+package taskset;
 
 import java.util.Set;
 

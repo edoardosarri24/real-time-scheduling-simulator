@@ -5,9 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import utils.Logger.LoggingConfig;
+import utils.logger.LoggingConfig;
 
-public class Task {
+public final class Task {
 
     private static int idCounter = 0;
     private final int id;

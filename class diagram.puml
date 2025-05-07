@@ -2,20 +2,27 @@
 skinparam classAttributeIconSize 0
 
 ' classi
-class Task {
-    - releasePattern: Sampler
+class Task <<final>> {
+    - id: int
+    - period: Duration
+    - deadline: Duration
     - chunks: List<Chunk>
-    - deadline: double
+    - isExecuted: boolean
     - nominalPriority: int
     - dinamicPrioriy: int
+    + execute(): Duration
+    + checkAndReset(): void
 }
 
-class Chunk {
-    - executionTime: Sampler
+class Chunk <<final>> {
+    - id: int
+    - executionTime: Duration
     - resource: Resource
+    + execute(): void
+    + reset(): void
 }
 
-class Taskset {
+class Taskset <<final>> {
     - tasks: Set<Task>
 }
 
@@ -24,11 +31,13 @@ class Resource {
 }
 
 abstract class Scheduler {
-    - taskset: Taskset
+    - taskSet: Taskset
     - resAccProtocol: ResAccProtocol
+    + schedule() <<abstract>>
 }
 
 class RMScheduler <<final>> {
+    - checkPeriocity()
 }
 
 class EDFScheduler <<final>> {

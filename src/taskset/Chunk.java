@@ -3,9 +3,9 @@ package taskset;
 import java.time.Duration;
 import java.util.logging.Logger;
 
-import utils.Logger.LoggingConfig;
+import utils.logger.LoggingConfig;
 
-public class Chunk {
+public final class Chunk {
 
     private final int id;
     private final Duration executionTime;

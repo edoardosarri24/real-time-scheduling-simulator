@@ -18,7 +18,7 @@ public class Main {
             Duration.ofSeconds(50),
             Duration.ofSeconds(50),
             List.of(new Chunk(0, Duration.ofSeconds(5)),
-                    new Chunk(1, Duration.ofSeconds(6))));
+                    new Chunk(1, Duration.ofSeconds(26))));
         Task task2 = new Task(
             Duration.ofSeconds(100),
             Duration.ofSeconds(100),

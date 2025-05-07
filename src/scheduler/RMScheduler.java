@@ -5,28 +5,24 @@ import java.util.Comparator;
 import java.util.List;
 
 import java.util.TreeSet;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import taskset.Task;
 import taskset.TaskSet;
 import utils.Multiple;
-import utils.Logger.LoggingConfig;
 
-public class RMScheduler {
-
-    private TaskSet taskSet;
-    private static final Logger logger = LoggingConfig.getLogger();
+public final class RMScheduler extends Scheduler {
 
     public RMScheduler(TaskSet taskSet) {
-        this.taskSet = taskSet;
+        super(taskSet);
         checkPeriocity();
     }
 
+    @Override
     public void schedule() {
         // strutture
         TreeSet<Task> orderedTasks = new TreeSet<>(Comparator.comparing(Task::getPeriod));
-        this.taskSet.getTasks().forEach(orderedTasks::add);
+        getTaskSet().getTasks().forEach(orderedTasks::add);
         List<Duration> periods = orderedTasks.stream()
             .map(Task::getPeriod)
             .collect(Collectors.toList());
@@ -37,7 +33,7 @@ public class RMScheduler {
             // prossimo evento dove fare i controllli
             Duration nextEvent = events.removeFirst();
             Duration availableTime = nextEvent.minus(currentTime);
-            logger.info("- Il tempo disponibile è: " + availableTime);
+            getLogger().info("- Il tempo disponibile è: " + availableTime);
 
             while (availableTime.isPositive()) {
                 if (orderedTasks.isEmpty()) {
@@ -58,26 +54,26 @@ public class RMScheduler {
 
             // per ogni task il cui periodo è scaduto controllo se ha superato la deadline
             currentTime = nextEvent;
-            for (Task task : this.taskSet.getTasks()) {
+            for (Task task : getTaskSet().getTasks()) {
                 if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
-                    logger.info("- Al tempo "  + currentTime + " il task controllato e resettato: " + task.getId());
+                    getLogger().info("- Al tempo "  + currentTime + " il task controllato e resettato: " + task.getId());
                     task.checkAndReset(currentTime);
                     orderedTasks.add(task);
-                    logger.info("I task nella coda sono: ");
+                    getLogger().info("I task nella coda sono: ");
                     for (Task t : orderedTasks)
-                        logger.info(""+ t.getId());
+                        getLogger().info(""+ t.getId());
                 }
             }
         }
     }
 
     private void checkPeriocity() {
-        this.taskSet.getTasks().stream()
+        getTaskSet().getTasks().stream()
             .forEach(task -> {
                 if (task.getPeriod().compareTo(task.getDeadline()) != 0) {
-                    logger.warning("Il task " + task.getId() + " non è puramente periocico");
-                    logger.warning("Il task " + task.getId() + " ha periodo " + task.getPeriod() + " e deadline " + task.getDeadline());
-                    logger.warning("RM richiede task puramente periocici");
+                    getLogger().warning("Il task " + task.getId() + " non è puramente periocico");
+                    getLogger().warning("Il task " + task.getId() + " ha periodo " + task.getPeriod() + " e deadline " + task.getDeadline());
+                    getLogger().warning("RM richiede task puramente periocici");
                     System.exit(1);
                 }
             });

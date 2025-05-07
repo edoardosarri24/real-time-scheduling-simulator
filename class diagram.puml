@@ -17,7 +17,7 @@ class Task <<final>> {
 class Chunk <<final>> {
     - id: int
     - executionTime: Duration
-    - resource: Resource
+    - resource: Set<Resource>
     + execute(): void
     + reset(): void
 }
@@ -26,8 +26,8 @@ class Taskset <<final>> {
     - tasks: Set<Task>
 }
 
-class Resource {
-    - sempahore: Semaphore
+class Resource <<final>> {
+    - free: boolean
 }
 
 abstract class Scheduler {
@@ -40,17 +40,10 @@ class RMScheduler <<final>> {
     - checkPeriocity()
 }
 
-class EDFScheduler <<final>> {
-}
-
 abstract class ResAccProtocol {
 }
 
 class PriorityCeilingProtocol <<final>> {
-}
-
-class Semaphore{
-    - ceiling: int
 }
 
 ' relazioni
@@ -58,10 +51,8 @@ Task "1...*" *-- "1...*" Chunk
 Taskset "1...*" *-- "1...*" Task
 Chunk "*" *-- "*" Resource
 Scheduler <|-- RMScheduler
-Scheduler <|-- EDFScheduler
 Scheduler "*" *-- "1" Taskset
 ResAccProtocol <|-- PriorityCeilingProtocol
 Scheduler "*" *-- "1" ResAccProtocol
-Resource "1...*" *-- "1" Semaphore
 
 @enduml

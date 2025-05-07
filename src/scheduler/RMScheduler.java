@@ -46,9 +46,8 @@ public final class RMScheduler extends Scheduler {
                     // aggiorno il tempo rimanente
                     availableTime = availableTime.minus(exetutedTime);
                     // se il task non è finito lo rimetto in coda
-                    if (!currentTask.isExecuted()) {
+                    if (!currentTask.isExecuted())
                         orderedTasks.add(currentTask);
-                    }
                 }
             }
 

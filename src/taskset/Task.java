@@ -16,6 +16,8 @@ public final class Task {
     private final List<Chunk> chunks;
     private List<Chunk> chunkToExecute;
     private boolean isExecuted = false;
+    private final int nominalPriority;
+    private int dinamicPriority;
     private static final Logger logger = LoggingConfig.getLogger();
 
     public Task(Duration period, Duration deadline, List<Chunk> chunks) {
@@ -24,6 +26,16 @@ public final class Task {
         this.deadline = deadline;
         this.chunks = chunks;
         this.chunkToExecute = new LinkedList<>(chunks);
+        this.nominalPriority = 0;
+    }
+
+    public Task(Duration period, Duration deadline, List<Chunk> chunks, int priority) {
+        this.id = idCounter++;
+        this.period = period;
+        this.deadline = deadline;
+        this.chunks = chunks;
+        this.chunkToExecute = new LinkedList<>(chunks);
+        this.nominalPriority = priority;
     }
 
     public Duration getPeriod() {

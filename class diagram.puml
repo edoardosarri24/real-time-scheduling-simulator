@@ -40,7 +40,7 @@ class RMScheduler <<final>> {
     - checkPeriocity()
 }
 
-abstract class ResAccProtocol {
+abstract class ResAccessProtocol {
 }
 
 class PriorityCeilingProtocol <<final>> {
@@ -52,7 +52,7 @@ Taskset "1...*" *-- "1...*" Task
 Chunk "*" *-- "*" Resource
 Scheduler <|-- RMScheduler
 Scheduler "*" *-- "1" Taskset
-ResAccProtocol <|-- PriorityCeilingProtocol
-Scheduler "*" *-- "1" ResAccProtocol
+ResAccessProtocol <|-- PriorityCeilingProtocol
+Scheduler "*" *-- "1" ResAccessProtocol
 
 @enduml

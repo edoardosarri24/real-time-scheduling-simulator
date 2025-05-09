@@ -16,6 +16,7 @@ public final class Chunk {
     private Set<Resource> resources;
     private static final Logger logger = LoggingConfig.getLogger();
 
+    // CONSTRUCTOR
     public Chunk(int id, Duration executionTime) {
         this.id = id;
         this.executionTime = executionTime;
@@ -29,10 +30,16 @@ public final class Chunk {
         this.resources = new HashSet<>(resources);
     }
 
+    // GETTER AND SETTER
     Duration getRemainingExecutionTime() {
         return this.remainingExecutionTime;
     }
 
+    public Set<Resource> getResources() {
+        return this.resources;
+    }
+
+    // METHOD
     void execute(Duration executionTime, Task task) {
         remainingExecutionTime = remainingExecutionTime.minus(executionTime);
         logger.info("Il chunk " + this.id + " del task " + task.getId()  + " ha eseguito per " + executionTime);

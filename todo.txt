@@ -1,0 +1,2 @@
+- priorità dinamica e nominale
+- ordine delle strutture

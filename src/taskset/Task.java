@@ -3,11 +3,10 @@ package taskset;
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
+import java.util.TreeSet;
 import java.util.logging.Logger;
 
 import resource.PriorityCeilingProtocol;
-import resource.Resource;
 import scheduler.RMScheduler;
 import utils.logger.LoggingConfig;
 
@@ -52,6 +51,10 @@ public final class Task {
         return this.nominalPriority;
     }
 
+    public int getDinamicPriority() {
+        return this.getDinamicPriority();
+    }
+
     public Duration getDeadline() {
         return this.deadline;
     }
@@ -69,32 +72,36 @@ public final class Task {
     }
 
     public void setDinamicPriority (int priority) {
-        this.dinamicPriority = Math.max(this.dinamicPriority, priority);
+        this.dinamicPriority = priority;
     }
 
     // METHOD
-    public Duration execute(Duration availableTime, RMScheduler scheduler) {
+    public Duration execute(Duration availableTime, TreeSet<Task> orderedTasks, RMScheduler scheduler) {
         Duration remainingTime = availableTime;
         PriorityCeilingProtocol resAccProtocol = scheduler.getResProtocol();
         while (remainingTime.isPositive()) {
-            if (chunkToExecute.isEmpty()) {
+            if (this.chunkToExecute.isEmpty()) {
                 this.isExecuted = true;
                 break;
             } else {
-                Chunk chunk = chunkToExecute.removeFirst();
-                if (!(chunk.getResources()==null)) {
+                Chunk currentChucnk = this.chunkToExecute.removeFirst();
+                boolean hasResources = currentChucnk.getResources() != null;
+                if (hasResources) {
                     boolean accessOk = resAccProtocol.access(this, scheduler);
-                    if (!accessOk)
+                    if (!accessOk) {
+                        this.chunkToExecute.addFirst(currentChucnk);
                         return Duration.ZERO;
-                    resAccProtocol.progress(chunk, this);
+                    }
+                    resAccProtocol.progress(currentChucnk, this);
                 }
-                // SONO AL CHUNK CHE DEVE ESEGUIRE HO FATTO ACCESSO E PROGRESSO
-                Duration executionTime = chunk.getRemainingExecutionTime();
+                Duration executionTime = currentChucnk.getRemainingExecutionTime();
                 if (remainingTime.compareTo(executionTime) < 0) {
-                    chunk.execute(remainingTime, this);
-                    this.chunkToExecute.addFirst(chunk);
+                    currentChucnk.execute(remainingTime, this);
+                    this.chunkToExecute.addFirst(currentChucnk);
                 } else {
-                    chunk.execute(executionTime, this);
+                    currentChucnk.execute(executionTime, this);
+                    if (hasResources)
+                        resAccProtocol.release(currentChucnk, scheduler, orderedTasks);
                 }
                 remainingTime = remainingTime.minus(executionTime);
             }

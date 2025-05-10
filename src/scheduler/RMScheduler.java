@@ -22,6 +22,7 @@ public final class RMScheduler {
 
     private static final Logger logger = LoggingConfig.getLogger();
 
+    // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {
         this.taskSet = taskSet;
         checkPeriocity();
@@ -34,10 +35,16 @@ public final class RMScheduler {
         this.blockedTask = new ArrayList<>();
     }
 
+    // GETTER AND SETTER
     public PriorityCeilingProtocol getResProtocol() {
         return this.resProtocol;
     }
 
+    public List<Task> getBlockedTask() {
+        return this.blockedTask;
+    }
+
+    // METHOD
     public void schedule() {
         // strutture
         TreeSet<Task> orderedTasks = new TreeSet<>(Comparator.comparing(Task::getPeriod));
@@ -61,7 +68,7 @@ public final class RMScheduler {
                     // prendo il task a priorità più alta
                     Task currentTask = orderedTasks.pollFirst();
                     // lo eseguo per al più il tempo rimanente
-                    Duration exetutedTime = currentTask.execute(availableTime, this);
+                    Duration exetutedTime = currentTask.execute(availableTime, orderedTasks, this);
                     // aggiorno il tempo rimanente
                     availableTime = availableTime.minus(exetutedTime);
                     // se il task non è finito lo rimetto in coda
@@ -85,6 +92,7 @@ public final class RMScheduler {
         }
     }
 
+    // HELPER
     private void checkPeriocity() {
         this.taskSet.getTasks().stream()
             .forEach(task -> {
@@ -95,10 +103,6 @@ public final class RMScheduler {
                     System.exit(1);
                 }
             });
-    }
-
-    public void block(Task task) {
-        this.blockedTask.addLast(task);
     }
 
 }

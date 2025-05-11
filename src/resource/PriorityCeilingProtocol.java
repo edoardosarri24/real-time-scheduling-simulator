@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.TreeSet;
 
 import scheduler.RMScheduler;
-import taskset.Chunk;
-import taskset.Task;
-import taskset.TaskSet;
+import taskSet.Chunk;
+import taskSet.Task;
+import taskSet.TaskSet;
 
 public final class PriorityCeilingProtocol {
 

@@ -3,9 +3,9 @@ import java.util.List;
 import java.util.Set;
 
 import scheduler.RMScheduler;
-import taskset.Chunk;
-import taskset.Task;
-import taskset.TaskSet;
+import taskSet.Chunk;
+import taskSet.Task;
+import taskSet.TaskSet;
 
 public class Main {
     public static void main(String[] args) {

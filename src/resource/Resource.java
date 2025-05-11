@@ -2,7 +2,7 @@ package resource;
 
 import java.util.List;
 
-import taskset.Task;
+import taskSet.Task;
 
 public final class Resource {
 

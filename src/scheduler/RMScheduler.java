@@ -9,8 +9,8 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import resource.PriorityCeilingProtocol;
-import taskset.Task;
-import taskset.TaskSet;
+import taskSet.Task;
+import taskSet.TaskSet;
 import utils.Multiple;
 import utils.logger.LoggingConfig;
 

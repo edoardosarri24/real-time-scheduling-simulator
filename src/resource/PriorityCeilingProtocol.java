@@ -55,10 +55,11 @@ public final class PriorityCeilingProtocol {
             .mapToInt(Task::getNominalPriority)
             .max()
             .orElse(Integer.MIN_VALUE);
-            task.setDinamicPriority(Math.max(
-                task.getNominalPriority(),
-                MaxDinamicPriorityBlockedtask));
+        task.setDinamicPriority(Math.max(
+            task.getNominalPriority(),
+            MaxDinamicPriorityBlockedtask));
         this.busyResources.addAll(resources);
+        task.getResourcesAcquired().addAll(resources);
     }
 
     public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks, Task task) {
@@ -72,14 +73,15 @@ public final class PriorityCeilingProtocol {
             scheduler.getBlockedTask().remove(taskMaxPriority);
             orderedTasks.add(taskMaxPriority);
             tasksBlockedOnResource.remove(taskMaxPriority);
-            tasksBlockedOnResource.stream()
-                .mapToInt(Task::getNominalPriority)
-                .max()
-                .ifPresentOrElse(
-                    task::setDinamicPriority,
-                    () -> task.setDinamicPriority(task.getNominalPriority())
-                );
+            task.getResourcesAcquired().remove(resource);
         }
+        task.getResourcesAcquired().stream()
+            .flatMap(res -> res.getBlockedTasks().stream())
+            .mapToInt(Task::getNominalPriority)
+            .max()
+            .ifPresentOrElse(
+                task::setDinamicPriority,
+                () -> task.setDinamicPriority(task.getNominalPriority()));
     }
 
 }

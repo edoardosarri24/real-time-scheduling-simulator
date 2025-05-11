@@ -22,7 +22,7 @@ public final class Task {
     private boolean isExecuted = false;
     private int nominalPriority;
     private int dinamicPriority;
-    private List<Resource> resourcesAcquired;
+    private List<Resource> resourcesAcquired = new LinkedList<>();
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
@@ -42,7 +42,6 @@ public final class Task {
         this.chunkToExecute = new LinkedList<>(chunks);
         this.nominalPriority = priority;
         this.dinamicPriority = priority;
-        this.resourcesAcquired = new LinkedList<>();
     }
 
     // GETTER AND SETTER
@@ -92,7 +91,7 @@ public final class Task {
                 break;
             } else {
                 Chunk currentChucnk = this.chunkToExecute.removeFirst();
-                boolean hasResources = currentChucnk.getResources().isEmpty();
+                boolean hasResources = !currentChucnk.getResources().isEmpty();
                 if (hasResources) {
                     boolean accessOk = resAccProtocol.access(this, scheduler, currentChucnk);
                     if (!accessOk) {

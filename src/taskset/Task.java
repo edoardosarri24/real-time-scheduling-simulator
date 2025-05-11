@@ -52,7 +52,7 @@ public final class Task {
     }
 
     public int getDinamicPriority() {
-        return this.getDinamicPriority();
+        return this.dinamicPriority;
     }
 
     public Duration getDeadline() {

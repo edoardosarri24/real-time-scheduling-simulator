@@ -1,8 +1,8 @@
 package resource;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -20,6 +20,7 @@ public final class PriorityCeilingProtocol {
 
     // CONSTRUCTOR
     public PriorityCeilingProtocol (TaskSet taskSet) {
+        this.ceiling = new HashMap<>();
         this.busyResources = new HashMap<>();
         for (Task task : taskSet.getTasks())
             for (Chunk chunk : task.getChunks())
@@ -43,7 +44,7 @@ public final class PriorityCeilingProtocol {
                 if (task.getNominalPriority() <= entry.getValue()) {
                     scheduler.getBlockedTask().add(task);
                     this.busyResources
-                        .computeIfAbsent(entry.getKey(), _ -> new ArrayList<>())
+                        .computeIfAbsent(entry.getKey(), _ -> new LinkedList<>())
                         .add(task);
                     return false;
                 }
@@ -67,21 +68,24 @@ public final class PriorityCeilingProtocol {
     public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) {
         for (Resource resource : chunk.getResources()) {
             List<Task> tasksBlockedOnResource = this.busyResources.get(resource);
-            if (!tasksBlockedOnResource.isEmpty()) {
-                Task taskMaxPriority = tasksBlockedOnResource.stream()
-                    .max(Comparator.comparingInt(Task::getNominalPriority))
-                    .get();
-                tasksBlockedOnResource.remove(taskMaxPriority);
-                if (tasksBlockedOnResource.isEmpty())
-                    this.busyResources.remove(resource);
-                scheduler.getBlockedTask().remove(taskMaxPriority);
-                orderedTasks.add(taskMaxPriority);
-                taskMaxPriority.setDinamicPriority(this.busyResources.get(resource).stream()
-                    .mapToInt(Task::getNominalPriority)
-                    .max()
-                    .orElse(taskMaxPriority.getNominalPriority()));
-            }
+            if (tasksBlockedOnResource == null || tasksBlockedOnResource.isEmpty())
+                continue;
+            Task taskMaxPriority = tasksBlockedOnResource.stream()
+                .max(Comparator.comparingInt(Task::getNominalPriority))
+                .get();
+            scheduler.getBlockedTask().remove(taskMaxPriority);
+            orderedTasks.add(taskMaxPriority);
+            tasksBlockedOnResource.remove(taskMaxPriority);
+            tasksBlockedOnResource.stream()
+                .mapToInt(Task::getNominalPriority)
+                .max()
+                .ifPresentOrElse(
+                    taskMaxPriority::setDinamicPriority,
+                    () -> {
+                        this.busyResources.remove(resource);
+                        taskMaxPriority.setDinamicPriority(taskMaxPriority.getNominalPriority());
+                    }
+                );
         }
     }
-    
 }

@@ -21,7 +21,7 @@ public final class PriorityCeilingProtocol {
     // CONSTRUCTOR
     public PriorityCeilingProtocol (TaskSet taskSet) {
         this.ceiling = new HashMap<>();
-        this.busyResources = new HashMap<>();
+        this.busyResources = new LinkedList<>();
         for (Task task : taskSet.getTasks())
             for (Chunk chunk : task.getChunks())
                 for (Resource resource : chunk.getResources())

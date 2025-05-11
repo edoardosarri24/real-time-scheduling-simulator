@@ -8,6 +8,7 @@ import java.util.TreeSet;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+import exeptions.PurelyPeriodicException;
 import resource.PriorityCeilingProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
@@ -99,7 +100,7 @@ public final class RMScheduler {
                     logger.warning("Il task " + task.getId() + " non è puramente periocico");
                     logger.warning("Il task " + task.getId() + " ha periodo " + task.getPeriod() + " e deadline " + task.getDeadline());
                     logger.warning("RM richiede task puramente periocici");
-                    System.exit(1);
+                    throw new PurelyPeriodicException("Il task " + task.getId() + " non è puramente periocico");
                 }
             });
     }

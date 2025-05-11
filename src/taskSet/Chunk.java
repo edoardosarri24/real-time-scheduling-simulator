@@ -40,9 +40,13 @@ public final class Chunk {
         return this.resources;
     }
 
+    void setRemainingExecutionTime (Duration remainingExecutionTime) {
+        this.remainingExecutionTime = remainingExecutionTime;
+    }
+
     // METHOD
     void execute(Duration executionTime, Task task) {
-        remainingExecutionTime = remainingExecutionTime.minus(executionTime);
+        this.remainingExecutionTime = this.remainingExecutionTime.minus(executionTime);
         logger.info("Il chunk " + this.id + " del task " + task.getId()  + " ha eseguito per " + executionTime);
     }
 

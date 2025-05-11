@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.logging.Logger;
 
+import exeptions.DeadlineMissedException;
 import resource.PriorityCeilingProtocol;
 import resource.Resource;
 import scheduler.RMScheduler;
@@ -117,8 +118,8 @@ public final class Task {
 
     public void checkAndReset(Duration currentTime) {
         if (!this.isExecuted) {
-            logger.warning("Il task " + this.id + " ha superato la deadline");  
-            System.exit(1);
+            logger.warning("Il task " + this.id + " ha superato la deadline");
+            throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         } else {
             this.chunkToExecute = new LinkedList<>(chunks);
             this.isExecuted = false;

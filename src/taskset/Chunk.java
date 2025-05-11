@@ -1,8 +1,8 @@
 package taskset;
 
 import java.time.Duration;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import resource.Resource;
@@ -13,7 +13,7 @@ public final class Chunk {
     private final int id;
     private final Duration executionTime;
     private Duration remainingExecutionTime;
-    private Set<Resource> resources;
+    private List<Resource> resources;
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
@@ -23,11 +23,11 @@ public final class Chunk {
         this.remainingExecutionTime = executionTime;
     }
 
-    public Chunk(int id, Duration executionTime, Set<Resource> resources) {
+    public Chunk(int id, Duration executionTime, List<Resource> resources) {
         this.id = id;
         this.executionTime = executionTime;
         this.remainingExecutionTime = executionTime;
-        this.resources = new HashSet<>(resources);
+        this.resources = new LinkedList<>(resources);
     }
 
     // GETTER AND SETTER
@@ -35,7 +35,7 @@ public final class Chunk {
         return this.remainingExecutionTime;
     }
 
-    public Set<Resource> getResources() {
+    public List<Resource> getResources() {
         return this.resources;
     }
 

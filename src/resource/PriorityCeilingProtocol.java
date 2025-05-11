@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.TreeSet;
 
 import scheduler.RMScheduler;
@@ -16,7 +15,7 @@ import taskset.TaskSet;
 public final class PriorityCeilingProtocol {
 
     private Map<Resource, Integer> ceiling;
-    private Map<Resource, List<Task>> busyResources;
+    private List<Resource> busyResources;
 
     // CONSTRUCTOR
     public PriorityCeilingProtocol (TaskSet taskSet) {
@@ -34,41 +33,38 @@ public final class PriorityCeilingProtocol {
     }
 
     // METHOD
-    public boolean access (Task task, RMScheduler scheduler) {
-        Optional<Map.Entry<Resource, Integer>> maxEntry = this.busyResources.entrySet().stream()
-            .filter(res -> !res.getValue().contains(task))
-            .map(entry -> Map.entry(entry.getKey(), this.ceiling.get(entry.getKey())))
-            .max(Comparator.comparingInt(Map.Entry::getValue));
-        return maxEntry.map(
-            entry -> {
-                if (task.getNominalPriority() <= entry.getValue()) {
-                    scheduler.getBlockedTask().add(task);
-                    this.busyResources
-                        .computeIfAbsent(entry.getKey(), _ -> new LinkedList<>())
-                        .add(task);
-                    return false;
-                }
-                return false;
-            })
-            .orElse(true);
+    public boolean access (Task task, RMScheduler scheduler, Chunk chunk) {
+        int maxCeiling = this.busyResources.stream()
+            .filter(res -> !task.getResourcesAcquired().contains(res))
+            .mapToInt(res -> this.ceiling.get(res))
+            .max()
+            .orElse(Integer.MIN_VALUE);
+        if (task.getNominalPriority() <= maxCeiling) {
+            scheduler.getBlockedTask().add(task);
+            chunk.getResources().forEach(res -> res.getBlockedTasks().add(task));
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public void progress (Chunk chunk, Task task) {
-        int maxDynamicPriority = chunk.getResources().stream()
-            .filter(resource -> this.busyResources.containsKey(resource))
-            .flatMap(resource -> this.busyResources.get(resource).stream())
+        List<Resource> resources = chunk.getResources();
+        int MaxDinamicPriorityBlockedtask = resources.stream()
+            .flatMap(res -> res.getBlockedTasks().stream())
             .mapToInt(Task::getNominalPriority)
             .max()
-            .orElse(task.getNominalPriority());
-        task.setDinamicPriority(Math.max(
-            task.getNominalPriority(),
-            maxDynamicPriority));
+            .orElse(Integer.MIN_VALUE);
+            task.setDinamicPriority(Math.max(
+                task.getNominalPriority(),
+                MaxDinamicPriorityBlockedtask));
+        this.busyResources.addAll(resources);
     }
 
-    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) {
+    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks, Task task) {
         for (Resource resource : chunk.getResources()) {
-            List<Task> tasksBlockedOnResource = this.busyResources.get(resource);
-            if (tasksBlockedOnResource == null || tasksBlockedOnResource.isEmpty())
+            List<Task> tasksBlockedOnResource = resource.getBlockedTasks();
+            if (tasksBlockedOnResource.isEmpty())
                 continue;
             Task taskMaxPriority = tasksBlockedOnResource.stream()
                 .max(Comparator.comparingInt(Task::getNominalPriority))
@@ -80,12 +76,10 @@ public final class PriorityCeilingProtocol {
                 .mapToInt(Task::getNominalPriority)
                 .max()
                 .ifPresentOrElse(
-                    taskMaxPriority::setDinamicPriority,
-                    () -> {
-                        this.busyResources.remove(resource);
-                        taskMaxPriority.setDinamicPriority(taskMaxPriority.getNominalPriority());
-                    }
+                    task::setDinamicPriority,
+                    () -> task.setDinamicPriority(task.getNominalPriority())
                 );
         }
     }
+
 }

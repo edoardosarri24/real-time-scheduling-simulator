@@ -1,7 +1,19 @@
 package resource;
 
+import java.util.List;
+
+import taskset.Task;
+
 public final class Resource {
 
-    private boolean free = true;
+    private List<Task> blockedTasks;
+
+    public Resource(List<Task> blockedTasks) {
+        this.blockedTasks = blockedTasks;
+    }
+
+    public List<Task> getBlockedTasks() {
+        return this.blockedTasks;
+    }
     
 }

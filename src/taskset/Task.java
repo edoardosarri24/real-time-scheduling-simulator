@@ -7,6 +7,7 @@ import java.util.TreeSet;
 import java.util.logging.Logger;
 
 import resource.PriorityCeilingProtocol;
+import resource.Resource;
 import scheduler.RMScheduler;
 import utils.logger.LoggingConfig;
 
@@ -21,6 +22,7 @@ public final class Task {
     private boolean isExecuted = false;
     private int nominalPriority;
     private int dinamicPriority;
+    private List<Resource> resourcesAcquired;
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
@@ -40,6 +42,7 @@ public final class Task {
         this.chunkToExecute = new LinkedList<>(chunks);
         this.nominalPriority = priority;
         this.dinamicPriority = priority;
+        this.resourcesAcquired = new LinkedList<>();
     }
 
     // GETTER AND SETTER
@@ -53,6 +56,10 @@ public final class Task {
 
     public int getDinamicPriority() {
         return this.dinamicPriority;
+    }
+
+    public List<Resource> getResourcesAcquired () {
+        return this.resourcesAcquired;
     }
 
     public Duration getDeadline() {
@@ -85,9 +92,9 @@ public final class Task {
                 break;
             } else {
                 Chunk currentChucnk = this.chunkToExecute.removeFirst();
-                boolean hasResources = currentChucnk.getResources() != null;
+                boolean hasResources = currentChucnk.getResources().isEmpty();
                 if (hasResources) {
-                    boolean accessOk = resAccProtocol.access(this, scheduler);
+                    boolean accessOk = resAccProtocol.access(this, scheduler, currentChucnk);
                     if (!accessOk) {
                         this.chunkToExecute.addFirst(currentChucnk);
                         return Duration.ZERO;
@@ -101,7 +108,7 @@ public final class Task {
                 } else {
                     currentChucnk.execute(executionTime, this);
                     if (hasResources)
-                        resAccProtocol.release(currentChucnk, scheduler, orderedTasks);
+                        resAccProtocol.release(currentChucnk, scheduler, orderedTasks, this);
                 }
                 remainingTime = remainingTime.minus(executionTime);
             }

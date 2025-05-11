@@ -21,6 +21,7 @@ public final class Chunk {
         this.id = id;
         this.executionTime = executionTime;
         this.remainingExecutionTime = executionTime;
+        this.resources = new LinkedList<>();
     }
 
     public Chunk(int id, Duration executionTime, List<Resource> resources) {

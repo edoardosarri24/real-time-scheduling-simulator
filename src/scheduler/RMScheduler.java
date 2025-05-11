@@ -1,8 +1,8 @@
 package scheduler;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.logging.Logger;
@@ -18,7 +18,7 @@ public final class RMScheduler {
 
     private TaskSet taskSet;
     private PriorityCeilingProtocol resProtocol;
-    private List<Task> blockedTask;
+    private List<Task> blockedTask = new LinkedList<>();;
 
     private static final Logger logger = LoggingConfig.getLogger();
 
@@ -32,7 +32,6 @@ public final class RMScheduler {
         this.taskSet = taskSet;
         checkPeriocity();
         this.resProtocol = resProtocol;
-        this.blockedTask = new ArrayList<>();
     }
 
     // GETTER AND SETTER

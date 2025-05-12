@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
-
 import resource.Resource;
 import utils.logger.LoggingConfig;
 
@@ -32,7 +31,7 @@ public final class Chunk {
     }
 
     // GETTER AND SETTER
-    Duration getRemainingExecutionTime() {
+    public Duration getRemainingExecutionTime() {
         return this.remainingExecutionTime;
     }
 
@@ -40,17 +39,17 @@ public final class Chunk {
         return this.resources;
     }
 
-    void setRemainingExecutionTime (Duration remainingExecutionTime) {
+    public void setRemainingExecutionTime (Duration remainingExecutionTime) {
         this.remainingExecutionTime = remainingExecutionTime;
     }
 
     // METHOD
-    void execute(Duration executionTime, Task task) {
+    public void execute(Duration executionTime, Task task) {
         this.remainingExecutionTime = this.remainingExecutionTime.minus(executionTime);
         logger.info("Il chunk " + this.id + " del task " + task.getId()  + " ha eseguito per " + executionTime);
     }
 
-    void reset() {
+    public void reset() {
         this.remainingExecutionTime = this.executionTime;
     }
 

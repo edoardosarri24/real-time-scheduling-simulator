@@ -7,6 +7,7 @@ import java.util.TreeSet;
 import java.util.logging.Logger;
 
 import exeptions.DeadlineMissedException;
+import exeptions.PurelyPeriodicException;
 import resource.PriorityCeilingProtocol;
 import resource.Resource;
 import scheduler.RMScheduler;
@@ -116,9 +117,8 @@ public final class Task {
         return availableTime.minus(remainingTime);
     }
 
-    public void checkAndReset(Duration currentTime) {
+    public void checkAndReset(Duration currentTime) throws DeadlineMissedException {
         if (!this.isExecuted) {
-            logger.warning("Il task " + this.id + " ha superato la deadline");
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         } else {
             this.chunkToExecute = new LinkedList<>(chunks);
@@ -127,6 +127,11 @@ public final class Task {
                 chunk.reset();
             }
         }
+    }
+
+    public void purelyPeriodicCheck() throws PurelyPeriodicException {
+        if (this.period.compareTo(this.deadline) != 0)
+            throw new PurelyPeriodicException("Il task " + this.id + " non è puramente periocico: ha periodo " + this.period + " e deadline " + this.deadline);
     }
 
 }

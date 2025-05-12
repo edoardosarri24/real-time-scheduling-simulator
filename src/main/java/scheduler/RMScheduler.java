@@ -8,6 +8,7 @@ import java.util.TreeSet;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+import exeptions.DeadlineMissedException;
 import exeptions.PurelyPeriodicException;
 import resource.PriorityCeilingProtocol;
 import taskSet.Task;
@@ -20,18 +21,31 @@ public final class RMScheduler {
     private TaskSet taskSet;
     private PriorityCeilingProtocol resProtocol;
     private List<Task> blockedTask = new LinkedList<>();;
-
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {
+        taskSet.getTasks().forEach(task -> {
+            try {
+                task.purelyPeriodicCheck();
+            } catch (PurelyPeriodicException e) {
+                e.printStackTrace();
+                System.exit(-1);
+            }
+        });
         this.taskSet = taskSet;
-        checkPeriocity();
     }
 
     public RMScheduler(TaskSet taskSet, PriorityCeilingProtocol resProtocol) {
+        taskSet.getTasks().forEach(task -> {
+            try {
+                task.purelyPeriodicCheck();
+            } catch (PurelyPeriodicException e) {
+                e.printStackTrace();
+                System.exit(-1);
+            }
+        });
         this.taskSet = taskSet;
-        checkPeriocity();
         this.resProtocol = resProtocol;
     }
 
@@ -45,7 +59,7 @@ public final class RMScheduler {
     }
 
     // METHOD
-    public void schedule() {
+    public void schedule() throws DeadlineMissedException {
         // strutture
         TreeSet<Task> orderedTasks = new TreeSet<>(Comparator.comparing(Task::getPeriod));
         this.taskSet.getTasks().forEach(orderedTasks::add);
@@ -90,19 +104,6 @@ public final class RMScheduler {
                 }
             }
         }
-    }
-
-    // HELPER
-    private void checkPeriocity() {
-        this.taskSet.getTasks().stream()
-            .forEach(task -> {
-                if (task.getPeriod().compareTo(task.getDeadline()) != 0) {
-                    logger.warning("Il task " + task.getId() + " non è puramente periocico");
-                    logger.warning("Il task " + task.getId() + " ha periodo " + task.getPeriod() + " e deadline " + task.getDeadline());
-                    logger.warning("RM richiede task puramente periocici");
-                    throw new PurelyPeriodicException("Il task " + task.getId() + " non è puramente periocico");
-                }
-            });
     }
 
 }

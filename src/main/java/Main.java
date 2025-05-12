@@ -2,6 +2,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
+import exeptions.DeadlineMissedException;
 import scheduler.RMScheduler;
 import taskSet.Chunk;
 import taskSet.Task;
@@ -25,7 +26,12 @@ public class Main {
             List.of(new Chunk(0, Duration.ofSeconds(4))));
         TaskSet taskset = new TaskSet(Set.of(task0, task1, task2));
         RMScheduler scheduler = new RMScheduler(taskset);
-        scheduler.schedule();
+        try {
+            scheduler.schedule();
+        } catch (DeadlineMissedException e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
     }
 
 }

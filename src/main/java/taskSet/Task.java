@@ -4,14 +4,12 @@ import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
-import java.util.logging.Logger;
 
 import exeptions.DeadlineMissedException;
 import exeptions.PurelyPeriodicException;
 import resource.PriorityCeilingProtocol;
 import resource.Resource;
 import scheduler.RMScheduler;
-import utils.logger.LoggingConfig;
 
 public final class Task {
 
@@ -25,7 +23,6 @@ public final class Task {
     private int nominalPriority;
     private int dinamicPriority;
     private List<Resource> resourcesAcquired = new LinkedList<>();
-    private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public Task(Duration period, Duration deadline, List<Chunk> chunks) {
@@ -55,19 +52,15 @@ public final class Task {
         return this.nominalPriority;
     }
 
-    public int getDinamicPriority() {
-        return this.dinamicPriority;
+    public List<Chunk> getChunkToExecute() {
+        return this.chunkToExecute;
     }
 
     public List<Resource> getResourcesAcquired () {
         return this.resourcesAcquired;
     }
 
-    public Duration getDeadline() {
-        return this.deadline;
-    }
-
-    public boolean isExecuted() {
+    public boolean getIsExecuted() {
         return this.isExecuted;
     }
 
@@ -117,15 +110,14 @@ public final class Task {
         return availableTime.minus(remainingTime);
     }
 
-    public void checkAndReset(Duration currentTime) throws DeadlineMissedException {
+    public void checkAndReset() throws DeadlineMissedException {
         if (!this.isExecuted) {
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         } else {
             this.chunkToExecute = new LinkedList<>(chunks);
             this.isExecuted = false;
-            for (Chunk chunk : this.chunkToExecute) {
+            for (Chunk chunk : this.chunkToExecute)
                 chunk.reset();
-            }
         }
     }
 

@@ -86,7 +86,7 @@ public final class RMScheduler {
                     // aggiorno il tempo rimanente
                     availableTime = availableTime.minus(exetutedTime);
                     // se il task non è finito lo rimetto in coda
-                    if (!currentTask.isExecuted() && !this.blockedTask.contains(currentTask))
+                    if (!currentTask.getIsExecuted() && !this.blockedTask.contains(currentTask))
                         orderedTasks.add(currentTask);
                 }
             }
@@ -96,7 +96,7 @@ public final class RMScheduler {
             for (Task task : this.taskSet.getTasks()) {
                 if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
                     logger.info("- Al tempo "  + currentTime + " il task controllato e resettato: " + task.getId());
-                    task.checkAndReset(currentTime);
+                    task.checkAndReset();
                     orderedTasks.add(task);
                     logger.info("I task nella coda sono: ");
                     for (Task t : orderedTasks)

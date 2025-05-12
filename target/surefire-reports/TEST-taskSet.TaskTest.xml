@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="taskSet.ChunkTest" time="0.024" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="taskSet.TaskTest" time="0.085" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -58,12 +58,8 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="execute" classname="taskSet.ChunkTest" time="0.022">
-    <system-err><![CDATA[mag 12, 2025 10:47:46 PM taskSet.Chunk execute
-INFORMAZIONI: Il chunk 0 del task 5 ha eseguito per PT4S
-mag 12, 2025 10:47:46 PM taskSet.Chunk execute
-INFORMAZIONI: Il chunk 0 del task 5 ha eseguito per PT6S
-]]></system-err>
-  </testcase>
-  <testcase name="reset" classname="taskSet.ChunkTest" time="0.0"/>
+  <testcase name="checkAndResetElse" classname="taskSet.TaskTest" time="0.049"/>
+  <testcase name="checkAndResetIf" classname="taskSet.TaskTest" time="0.001"/>
+  <testcase name="purelyPeriodicCheckKO" classname="taskSet.TaskTest" time="0.006"/>
+  <testcase name="purelyPeriodicCheckOK" classname="taskSet.TaskTest" time="0.0"/>
 </testsuite>

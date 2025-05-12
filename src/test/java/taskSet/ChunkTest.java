@@ -3,6 +3,8 @@ package taskSet;
 import org.junit.Before;
 import org.junit.Test;
 
+import utils.ReflectionUtils;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -36,7 +38,12 @@ public class ChunkTest {
 
     @Test
     public void reset() {
-        this.chunk.setRemainingExecutionTime(Duration.ofSeconds(3));
+        assertThat(this.chunk.getRemainingExecutionTime())
+            .isEqualTo(Duration.ofSeconds(10));
+        ReflectionUtils.setField(
+            this.chunk,
+            "remainingExecutionTime",
+            Duration.ofSeconds(3));
         this.chunk.reset();
         assertThat(this.chunk.getRemainingExecutionTime())
             .isEqualTo(Duration.ofSeconds(10));

@@ -39,7 +39,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>31.0-jre</version>
+            <version>31.0.1-jre</version>
         </dependency>
 
         <dependency>
@@ -55,5 +55,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 </project>

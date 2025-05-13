@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import exeptions.DeadlineMissedException;
 import exeptions.PurelyPeriodicException;
@@ -31,6 +32,7 @@ public final class RMScheduler {
     public RMScheduler(TaskSet taskSet, PriorityCeilingProtocol resProtocol) {
         this.taskSet = taskSet;
         this.purelyPeriodicCheck();
+        this.assignPriority();
         this.resProtocol = resProtocol;
     }
 
@@ -46,7 +48,7 @@ public final class RMScheduler {
     // METHOD
     public void schedule() throws DeadlineMissedException {
         // structures
-        TreeSet<Task> orderedTasks = new TreeSet<>(Comparator.comparing(Task::getPeriod));
+        TreeSet<Task> orderedTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
         this.taskSet.getTasks().forEach(orderedTasks::add);
         List<Duration> periods = orderedTasks.stream()
             .map(Task::getPeriod)
@@ -54,6 +56,7 @@ public final class RMScheduler {
         List<Duration> events = Multiple.generateMultiplesUpToLCM(periods);
         Duration currentTime = Duration.ZERO;
 
+        // execution
         while (!events.isEmpty()) {
             // prossimo evento dove fare i controllli
             Duration nextEvent = events.removeFirst();
@@ -103,6 +106,19 @@ public final class RMScheduler {
                 throw new IllegalArgumentException(e.getMessage(), e);
             }
         });
+    }
+
+    private void assignPriority() {
+        List<Task> sortedByPeriod = this.taskSet.getTasks().stream()
+            .sorted(Comparator.comparing(Task::getPeriod))
+            .collect(Collectors.toList());
+        IntStream.range(0, sortedByPeriod.size())
+            .forEach(i -> {
+                int priority = 5 + i * 2;
+                Task task = sortedByPeriod.get(i);
+                task.setDinamicPriority(priority);
+                task.setNominalPriority(priority);
+            });
     }
 
 }

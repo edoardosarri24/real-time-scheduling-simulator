@@ -22,6 +22,7 @@ public final class Task {
     private boolean isExecuted = false;
     private int nominalPriority;
     private int dinamicPriority;
+
     private List<Resource> resourcesAcquired = new LinkedList<>();
 
     // CONSTRUCTOR
@@ -33,16 +34,6 @@ public final class Task {
         this.chunkToExecute = new LinkedList<>(chunks);
     }
 
-    public Task(Duration period, Duration deadline, List<Chunk> chunks, int priority) {
-        this.id = idCounter++;
-        this.period = period;
-        this.deadline = deadline;
-        this.chunks = chunks;
-        this.chunkToExecute = new LinkedList<>(chunks);
-        this.nominalPriority = priority;
-        this.dinamicPriority = priority;
-    }
-
     // GETTER AND SETTER
     public Duration getPeriod() {
         return this.period;
@@ -50,6 +41,18 @@ public final class Task {
 
     public int getNominalPriority() {
         return this.nominalPriority;
+    }
+
+    public void setNominalPriority(int nominalPriority) {
+        this.nominalPriority = nominalPriority;
+    }
+
+    public void setDinamicPriority(int dinamicPriority) {
+        this.dinamicPriority = dinamicPriority;
+    }
+
+    public int getDinamicPriority() {
+        return this.dinamicPriority;
     }
 
     List<Chunk> getChunkToExecute() {
@@ -70,10 +73,6 @@ public final class Task {
 
     public List<Chunk> getChunks() {
         return this.chunks;
-    }
-
-    public void setDinamicPriority (int priority) {
-        this.dinamicPriority = priority;
     }
 
     // METHOD

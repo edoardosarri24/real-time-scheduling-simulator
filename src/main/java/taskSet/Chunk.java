@@ -31,7 +31,7 @@ public final class Chunk {
     }
 
     // GETTER AND SETTER
-    public Duration getRemainingExecutionTime() {
+    Duration getRemainingExecutionTime() {
         return this.remainingExecutionTime;
     }
 

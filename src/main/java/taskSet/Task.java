@@ -52,7 +52,7 @@ public final class Task {
         return this.nominalPriority;
     }
 
-    public List<Chunk> getChunkToExecute() {
+    List<Chunk> getChunkToExecute() {
         return this.chunkToExecute;
     }
 
@@ -123,7 +123,8 @@ public final class Task {
 
     public void purelyPeriodicCheck() throws PurelyPeriodicException {
         if (this.period.compareTo(this.deadline) != 0)
-            throw new PurelyPeriodicException("Il task " + this.id + " non è puramente periocico: ha periodo " + this.period + " e deadline " + this.deadline);
+            throw new PurelyPeriodicException(
+                "Il task " + this.id + " non è puramente periocico: ha periodo " + this.period + " e deadline " + this.deadline);
     }
 
 }

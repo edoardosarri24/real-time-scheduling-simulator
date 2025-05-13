@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="taskSet.ChunkTest" time="0.031" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="utils.MultipleTest" time="0.0" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -58,12 +58,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="execute" classname="taskSet.ChunkTest" time="0.029">
-    <system-err><![CDATA[mag 13, 2025 11:24:33 AM taskSet.Chunk execute
-INFORMAZIONI: Il chunk 0 del task 6 ha eseguito per PT4S
-mag 13, 2025 11:24:33 AM taskSet.Chunk execute
-INFORMAZIONI: Il chunk 0 del task 6 ha eseguito per PT6S
-]]></system-err>
-  </testcase>
-  <testcase name="reset" classname="taskSet.ChunkTest" time="0.001"/>
+  <testcase name="generateMultiplesUpToLCM1" classname="utils.MultipleTest" time="0.0"/>
+  <testcase name="generateMultiplesUpToLCM2" classname="utils.MultipleTest" time="0.0"/>
+  <testcase name="generateMultiplesUpToLCM3" classname="utils.MultipleTest" time="0.0"/>
 </testsuite>

@@ -2,8 +2,6 @@ package taskSet;
 
 import java.util.Set;
 
-import exeptions.PurelyPeriodicException;
-
 public final class TaskSet {
 
     private Set<Task> tasks;
@@ -16,7 +14,7 @@ public final class TaskSet {
         return this.tasks;
     }
 
-    public void purelyPeriodicCheck() throws PurelyPeriodicException {
+    public void purelyPeriodicCheck() {
         for (Task task : this.tasks)
             task.purelyPeriodicCheck();
     }

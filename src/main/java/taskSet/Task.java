@@ -5,10 +5,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 
+import exeptions.AccessResourceProtocolExecption;
 import exeptions.DeadlineMissedException;
-import exeptions.PurelyPeriodicException;
-import resource.PriorityCeilingProtocol;
+import exeptions.NoResourceExecption;
 import resource.Resource;
+import resource.ResourceProtocol;
 import scheduler.RMScheduler;
 
 public final class Task {
@@ -78,21 +79,20 @@ public final class Task {
     // METHOD
     public Duration execute(Duration availableTime, TreeSet<Task> orderedTasks, RMScheduler scheduler) {
         Duration remainingTime = availableTime;
-        PriorityCeilingProtocol resAccProtocol = scheduler.getResProtocol();
+        ResourceProtocol resAccProtocol = scheduler.getResProtocol();
         while (remainingTime.isPositive()) {
             if (this.chunkToExecute.isEmpty()) {
                 this.isExecuted = true;
                 break;
             } else {
                 Chunk currentChucnk = this.chunkToExecute.removeFirst();
-                boolean hasResources = !currentChucnk.getResources().isEmpty();
-                if (hasResources) {
-                    boolean accessOk = resAccProtocol.access(this, scheduler, currentChucnk);
-                    if (!accessOk) {
-                        this.chunkToExecute.addFirst(currentChucnk);
-                        return Duration.ZERO;
-                    }
+                try {
+                    resAccProtocol.access(this, scheduler, currentChucnk);
                     resAccProtocol.progress(currentChucnk, this);
+                } catch (NoResourceExecption e) {
+                } catch (AccessResourceProtocolExecption e) {
+                    this.chunkToExecute.addFirst(currentChucnk);
+                    return Duration.ZERO;
                 }
                 Duration executionTime = currentChucnk.getRemainingExecutionTime();
                 if (remainingTime.compareTo(executionTime) < 0) {
@@ -100,8 +100,9 @@ public final class Task {
                     this.chunkToExecute.addFirst(currentChucnk);
                 } else {
                     currentChucnk.execute(executionTime, this);
-                    if (hasResources)
+                    try {
                         resAccProtocol.release(currentChucnk, scheduler, orderedTasks, this);
+                    } catch (NoResourceExecption e) {}                        
                 }
                 remainingTime = remainingTime.minus(executionTime);
             }
@@ -120,10 +121,10 @@ public final class Task {
         }
     }
 
-    void purelyPeriodicCheck() throws PurelyPeriodicException {
+    void purelyPeriodicCheck() {
         if (this.period.compareTo(this.deadline) != 0)
-            throw new PurelyPeriodicException(
-                "Il task " + this.id + " non è puramente periocico: ha periodo " + this.period + " e deadline " + this.deadline);
+            throw new IllegalArgumentException(
+                "Il task " + this.id + " non è puramente periodico: ha periodo " + this.period + " e deadline " + this.deadline);
     }
 
 }

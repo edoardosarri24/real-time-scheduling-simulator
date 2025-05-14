@@ -29,7 +29,6 @@ public class Main {
         try {
             scheduler.schedule();
         } catch (DeadlineMissedException e) {
-            e.printStackTrace();
             System.exit(-1);
         }
     }

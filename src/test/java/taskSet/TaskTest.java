@@ -3,7 +3,6 @@ package taskSet;
 import org.junit.Before;
 import org.junit.Test;
 import exeptions.DeadlineMissedException;
-import exeptions.PurelyPeriodicException;
 import helper.ReflectionUtils;
 import java.time.Duration;
 import java.util.List;
@@ -36,8 +35,8 @@ public class TaskTest {
             Duration.ofMillis(3),
             List.of(this.chunk));
         assertThatThrownBy(() -> task.purelyPeriodicCheck())
-            .isInstanceOf(PurelyPeriodicException.class)
-            .hasMessage("Il task " + task.getId() + " non è puramente periocico: ha periodo PT0.01S e deadline PT0.003S");
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Il task " + task.getId() + " non è puramente periodico: ha periodo PT0.01S e deadline PT0.003S");
     }
 
     @Test

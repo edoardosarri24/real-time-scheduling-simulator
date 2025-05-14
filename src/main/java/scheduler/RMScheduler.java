@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import exeptions.DeadlineMissedException;
-import exeptions.PurelyPeriodicException;
-import resource.PriorityCeilingProtocol;
+import resource.NoResourceProtocol;
+import resource.ResourceProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.Multiple;
@@ -20,28 +20,24 @@ import utils.logger.LoggingConfig;
 public final class RMScheduler {
 
     private TaskSet taskSet;
-    private PriorityCeilingProtocol resProtocol;
+    private ResourceProtocol resProtocol;
     private List<Task> blockedTask = new LinkedList<>();;
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {
-        this(taskSet, null);
+        this(taskSet, new NoResourceProtocol());
     }
 
-    public RMScheduler(TaskSet taskSet, PriorityCeilingProtocol resProtocol) {
-        try {
-            taskSet.purelyPeriodicCheck();
-        } catch (PurelyPeriodicException e) {
-            throw new IllegalArgumentException(e.getMessage(), e);
-        }
+    public RMScheduler(TaskSet taskSet, ResourceProtocol resProtocol) {
+        taskSet.purelyPeriodicCheck();
         this.taskSet = taskSet;
         this.assignPriority();
         this.resProtocol = resProtocol;
     }
 
     // GETTER AND SETTER
-    public PriorityCeilingProtocol getResProtocol() {
+    public ResourceProtocol getResProtocol() {
         return this.resProtocol;
     }
 
@@ -71,13 +67,9 @@ public final class RMScheduler {
                 if (orderedTasks.isEmpty()) {
                     availableTime = Duration.ZERO;
                 } else {
-                    // prendo il task a priorità più alta
                     Task currentTask = orderedTasks.pollFirst();
-                    // lo eseguo per al più il tempo rimanente
                     Duration executedTime = currentTask.execute(availableTime, orderedTasks, this);
-                    // aggiorno il tempo rimanente
                     availableTime = availableTime.minus(executedTime);
-                    // se il task non è finito lo rimetto in coda
                     if (!currentTask.getIsExecuted() && !this.blockedTask.contains(currentTask))
                         orderedTasks.add(currentTask);
                 }

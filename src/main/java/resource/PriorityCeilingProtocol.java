@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 
+import exeptions.AccessResourceProtocolExecption;
+import exeptions.NoResourceExecption;
 import scheduler.RMScheduler;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
 
-public final class PriorityCeilingProtocol {
+public final class PriorityCeilingProtocol implements ResourceProtocol {
 
     private Map<Resource, Integer> ceiling;
     private List<Resource> busyResources;
@@ -33,7 +35,9 @@ public final class PriorityCeilingProtocol {
     }
 
     // METHOD
-    public boolean access (Task task, RMScheduler scheduler, Chunk chunk) {
+    public void access (Task task, RMScheduler scheduler, Chunk chunk) throws NoResourceExecption, AccessResourceProtocolExecption {
+        if (chunk.getResources().isEmpty())
+            throw new NoResourceExecption();
         int maxCeiling = this.busyResources.stream()
             .filter(res -> !task.getResourcesAcquired().contains(res))
             .mapToInt(res -> this.ceiling.get(res))
@@ -42,9 +46,7 @@ public final class PriorityCeilingProtocol {
         if (task.getNominalPriority() <= maxCeiling) {
             scheduler.getBlockedTask().add(task);
             chunk.getResources().forEach(res -> res.getBlockedTasks().add(task));
-            return false;
-        } else {
-            return true;
+            throw new AccessResourceProtocolExecption();
         }
     }
 
@@ -62,7 +64,9 @@ public final class PriorityCeilingProtocol {
         task.getResourcesAcquired().addAll(resources);
     }
 
-    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks, Task task) {
+    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks, Task task) throws NoResourceExecption {
+        if (chunk.getResources().isEmpty())
+            throw new NoResourceExecption();
         for (Resource resource : chunk.getResources()) {
             List<Task> tasksBlockedOnResource = resource.getBlockedTasks();
             if (tasksBlockedOnResource.isEmpty())

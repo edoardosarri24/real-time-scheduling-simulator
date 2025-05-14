@@ -1,0 +1,254 @@
+- Time: 0. Tutti i task sono stati rilascaiti
+- Il chunk 0 del task 1 ha eseguito per PT10S
+- Il chunk 1 del task 1 ha eseguito per PT3S
+- Il chunk 2 del task 2 ha eseguito per PT5S
+- Il chunk 3 del task 2 ha eseguito per PT2S
+- Time: PT20S
+- Il task 1 è stato rilasciato
+- Il chunk 0 del task 1 ha eseguito per PT10S
+- Il chunk 1 del task 1 ha eseguito per PT3S
+- Il chunk 4 del task 3 ha eseguito per PT4S
+- Time: PT40S
+- Il task 1 è stato rilasciato
+- Il chunk 0 del task 1 ha eseguito per PT10S
+- Time: PT50S
+- Il task 2 è stato rilasciato
+- Il chunk 1 del task 1 ha eseguito per PT3S
+- Il chunk 2 del task 2 ha eseguito per PT5S
+- Il chunk 3 del task 2 ha eseguito per PT2S
+- Time: PT1M
+- Il task 1 è stato rilasciato
+- Il chunk 0 del task 1 ha eseguito per PT10S
+- Il chunk 1 del task 1 ha eseguito per PT3S
+- Time: PT1M20S
+- Il task 1 è stato rilasciato
+- Il chunk 0 del task 1 ha eseguito per PT10S
+- Il chunk 1 del task 1 ha eseguito per PT3S
+- Time: PT1M40S
+- Il task 3 è stato rilasciato
+- Il task 2 è stato rilasciato
+- Il task 1 è stato rilasciato
+- La generazione di tracce è avvenuta con successo!
+- Time: 0. Tutti i task sono stati rilascaiti
+- Il chunk 0 del task 4 ha eseguito per PT10S
+- Il chunk 1 del task 4 ha eseguito per PT3S
+- Il chunk 2 del task 5 ha eseguito per PT5S
+- Il chunk 3 del task 5 ha eseguito per PT2S
+- Time: PT20S
+- Il task 4 è stato rilasciato
+- Il chunk 0 del task 4 ha eseguito per PT10S
+- Il chunk 1 del task 4 ha eseguito per PT3S
+- Il chunk 3 del task 5 ha eseguito per PT7S
+- Time: PT40S
+- Il task 4 è stato rilasciato
+- Il chunk 0 del task 4 ha eseguito per PT10S
+- Time: PT50S
+- Time: 0. Tutti i task sono stati rilascaiti
+- Il chunk 0 del task 7 ha eseguito per PT10S
+- Il chunk 1 del task 7 ha eseguito per PT3S
+- Il chunk 2 del task 8 ha eseguito per PT5S
+- Il chunk 3 del task 8 ha eseguito per PT2S
+- Time: PT20S
+- Il task 7 è stato rilasciato
+- Il chunk 0 del task 7 ha eseguito per PT10S
+- Il chunk 1 del task 7 ha eseguito per PT3S
+- Il chunk 4 del task 9 ha eseguito per PT7S
+- Time: PT40S
+- Il task 7 è stato rilasciato
+- Il chunk 0 del task 7 ha eseguito per PT10S
+- Time: PT50S
+- Il task 8 è stato rilasciato
+- Il chunk 1 del task 7 ha eseguito per PT3S
+- Il chunk 2 del task 8 ha eseguito per PT5S
+- Il chunk 3 del task 8 ha eseguito per PT2S
+- Time: PT1M
+- Il task 7 è stato rilasciato
+- Il chunk 0 del task 7 ha eseguito per PT10S
+- Il chunk 1 del task 7 ha eseguito per PT3S
+- Il chunk 4 del task 9 ha eseguito per PT7S
+- Time: PT1M20S
+- Il task 7 è stato rilasciato
+- Il chunk 0 del task 7 ha eseguito per PT10S
+- Il chunk 1 del task 7 ha eseguito per PT3S
+- Il chunk 4 del task 9 ha eseguito per PT7S
+- Time: PT1M40S
+- Il task 8 è stato rilasciato
+- Time: 0. Tutti i task sono stati rilascaiti
+- Il chunk 0 del task 10 ha eseguito per PT10S
+- Il chunk 1 del task 10 ha eseguito per PT10S
+- Time: PT20S
+- Time: 0. Tutti i task sono stati rilascaiti
+- Il chunk 0 del task 16 ha eseguito per PT1S
+- Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 16 ha eseguito per PT2S
+- Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
+- Il chunk 2 del task 17 ha acquisito le risorse [0]. La priorità dinamica del task ora è 7
+- Il chunk 2 del task 17 ha eseguito per PT2S
+- Il chunk 2 del task 17 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 7
+- Il chunk 3 del task 17 ha eseguito per PT1S
+- Il chunk 4 del task 17 ha acquisito le risorse [1]. La priorità dinamica del task ora è 7
+- Il chunk 4 del task 17 ha eseguito per PT2S
+- Il chunk 4 del task 17 ha rilasciato le risorse [1]. La priorità dinamica del task ora è 7
+- Il chunk 5 del task 18 ha acquisito le risorse [1]. La priorità dinamica del task ora è 9
+- Il chunk 5 del task 18 ha eseguito per PT3S
+- Il chunk 5 del task 18 ha rilasciato le risorse [1]. La priorità dinamica del task ora è 9
+- Il chunk 6 del task 18 ha eseguito per PT1S
+- Il chunk 7 del task 18 ha eseguito per PT2S
+- Time: PT20S
+- Il task 16 è stato rilasciato
+- Il chunk 0 del task 16 ha eseguito per PT1S
+- Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 16 ha eseguito per PT2S
+- Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
+- Time: PT40S
+- Il task 16 è stato rilasciato
+- Il chunk 0 del task 16 ha eseguito per PT1S
+- Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 16 ha eseguito per PT2S
+- Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
+- Time: PT50S
+- Il task 17 è stato rilasciato
+- Il chunk 2 del task 17 ha acquisito le risorse [0]. La priorità dinamica del task ora è 7
+- Il chunk 2 del task 17 ha eseguito per PT2S
+- Il chunk 2 del task 17 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 7
+- Il chunk 3 del task 17 ha eseguito per PT1S
+- Il chunk 4 del task 17 ha acquisito le risorse [1]. La priorità dinamica del task ora è 7
+- Il chunk 4 del task 17 ha eseguito per PT2S
+- Il chunk 4 del task 17 ha rilasciato le risorse [1]. La priorità dinamica del task ora è 7
+- Time: PT1M
+- Il task 16 è stato rilasciato
+- Il chunk 0 del task 16 ha eseguito per PT1S
+- Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 16 ha eseguito per PT2S
+- Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
+- Time: PT1M20S
+- Il task 16 è stato rilasciato
+- Il chunk 0 del task 16 ha eseguito per PT1S
+- Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 16 ha eseguito per PT2S
+- Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
+- Time: PT1M40S
+- Il task 16 è stato rilasciato
+- Il task 17 è stato rilasciato
+- Il task 18 è stato rilasciato
+- La generazione di tracce è avvenuta con successo!
+- Time: 0. Tutti i task sono stati rilascaiti
+- Il chunk 0 del task 19 ha eseguito per PT1S
+- Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 19 ha eseguito per PT2S
+- Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Il chunk 2 del task 20 ha acquisito le risorse [2]. La priorità dinamica del task ora è 7
+- Il chunk 2 del task 20 ha eseguito per PT2S
+- Il chunk 2 del task 20 ha rilasciato le risorse [2]. La priorità dinamica del task ora è 7
+- Il chunk 3 del task 20 ha eseguito per PT12S
+- Il chunk 4 del task 20 ha acquisito le risorse [3]. La priorità dinamica del task ora è 7
+- Il chunk 4 del task 20 ha eseguito per PT2S
+- Il chunk 4 del task 20 ha rilasciato le risorse [3]. La priorità dinamica del task ora è 7
+- Il chunk 5 del task 21 ha acquisito le risorse [3]. La priorità dinamica del task ora è 9
+- Il chunk 5 del task 21 ha eseguito per PT1S
+- Time: PT20S
+- Il task 19 è stato rilasciato
+- Il chunk 0 del task 19 ha eseguito per PT1S
+- Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 19 ha eseguito per PT2S
+- Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Il chunk 5 del task 21 ha acquisito le risorse [3]. La priorità dinamica del task ora è 9
+- Il chunk 5 del task 21 ha eseguito per PT12S
+- Il chunk 5 del task 21 ha rilasciato le risorse [3]. La priorità dinamica del task ora è 9
+- Il chunk 6 del task 21 ha eseguito per PT1S
+- Il chunk 7 del task 21 ha eseguito per PT2S
+- Time: PT40S
+- Il task 19 è stato rilasciato
+- Il chunk 0 del task 19 ha eseguito per PT1S
+- Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 19 ha eseguito per PT2S
+- Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Time: PT50S
+- Il task 20 è stato rilasciato
+- Il chunk 2 del task 20 ha acquisito le risorse [2]. La priorità dinamica del task ora è 7
+- Il chunk 2 del task 20 ha eseguito per PT2S
+- Il chunk 2 del task 20 ha rilasciato le risorse [2]. La priorità dinamica del task ora è 7
+- Il chunk 3 del task 20 ha eseguito per PT8S
+- Time: PT1M
+- Il task 19 è stato rilasciato
+- Il chunk 0 del task 19 ha eseguito per PT1S
+- Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 19 ha eseguito per PT2S
+- Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Il chunk 3 del task 20 ha eseguito per PT4S
+- Il chunk 4 del task 20 ha acquisito le risorse [3]. La priorità dinamica del task ora è 7
+- Il chunk 4 del task 20 ha eseguito per PT2S
+- Il chunk 4 del task 20 ha rilasciato le risorse [3]. La priorità dinamica del task ora è 7
+- Time: PT1M20S
+- Il task 19 è stato rilasciato
+- Il chunk 0 del task 19 ha eseguito per PT1S
+- Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 19 ha eseguito per PT2S
+- Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
+- Time: PT1M40S
+- Il task 20 è stato rilasciato
+- Il task 21 è stato rilasciato
+- Il task 19 è stato rilasciato
+- La generazione di tracce è avvenuta con successo!
+- Time: 0. Tutti i task sono stati rilascaiti
+- Il chunk 0 del task 22 ha eseguito per PT1S
+- Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 22 ha eseguito per PT2S
+- Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 2 del task 23 ha acquisito le risorse [4]. La priorità dinamica del task ora è 7
+- Il chunk 2 del task 23 ha eseguito per PT12S
+- Il chunk 2 del task 23 ha rilasciato le risorse [4]. La priorità dinamica del task ora è 7
+- Il chunk 3 del task 23 ha eseguito per PT5S
+- Time: PT20S
+- Il task 22 è stato rilasciato
+- Il chunk 0 del task 22 ha eseguito per PT1S
+- Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 22 ha eseguito per PT2S
+- Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 3 del task 23 ha eseguito per PT7S
+- Il chunk 4 del task 23 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 7
+- Il chunk 4 del task 23 ha eseguito per PT2S
+- Il chunk 4 del task 23 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 7
+- Il chunk 5 del task 24 ha acquisito le risorse [5]. La priorità dinamica del task ora è 9
+- Il chunk 5 del task 24 ha eseguito per PT8S
+- Time: PT40S
+- Il task 22 è stato rilasciato
+- Il chunk 0 del task 22 ha eseguito per PT1S
+- Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 22 ha eseguito per PT2S
+- Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 5 del task 24 ha acquisito le risorse [5]. La priorità dinamica del task ora è 9
+- Il chunk 5 del task 24 ha eseguito per PT5S
+- Il chunk 5 del task 24 ha rilasciato le risorse [5]. La priorità dinamica del task ora è 9
+- Il chunk 6 del task 24 ha eseguito per PT1S
+- Il chunk 7 del task 24 ha eseguito per PT1S
+- Time: PT50S
+- Il task 23 è stato rilasciato
+- Il chunk 2 del task 23 ha acquisito le risorse [4]. La priorità dinamica del task ora è 7
+- Il chunk 2 del task 23 ha eseguito per PT10S
+- Time: PT1M
+- Il task 22 è stato rilasciato
+- Il chunk 0 del task 22 ha eseguito per PT1S
+- Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 22 ha eseguito per PT2S
+- Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 2 del task 23 ha acquisito le risorse [4]. La priorità dinamica del task ora è 7
+- Il chunk 2 del task 23 ha eseguito per PT2S
+- Il chunk 2 del task 23 ha rilasciato le risorse [4]. La priorità dinamica del task ora è 7
+- Il chunk 3 del task 23 ha eseguito per PT12S
+- Il chunk 4 del task 23 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 7
+- Il chunk 4 del task 23 ha eseguito per PT2S
+- Il chunk 4 del task 23 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 7
+- Il chunk 7 del task 24 ha eseguito per PT1S
+- Time: PT1M20S
+- Il task 22 è stato rilasciato
+- Il chunk 0 del task 22 ha eseguito per PT1S
+- Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 1 del task 22 ha eseguito per PT2S
+- Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
+- Il chunk 7 del task 24 ha eseguito per PT17S
+- Time: PT1M40S
+- Il task 22 è stato rilasciato
+- Il task 25 è stato rilasciato
+- Il chunk 0 del task 30 ha eseguito per PT4S
+- Il chunk 0 del task 30 ha eseguito per PT6S

@@ -39,6 +39,10 @@ public final class Chunk {
         return this.resources;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
     // METHOD
     public void execute(Duration executionTime, Task task) {
         this.remainingExecutionTime = this.remainingExecutionTime.minus(executionTime);

@@ -12,6 +12,6 @@
 /Users/edoardosarri/Documents/SWEES/src/main/java/taskSet/TaskSet.java
 /Users/edoardosarri/Documents/SWEES/src/main/java/utils/Multiple.java
 /Users/edoardosarri/Documents/SWEES/src/main/java/utils/logger/LoggingConfig.java
-/Users/edoardosarri/Documents/SWEES/src/main/java/utils/logger/SimpleFormatter.java
+/Users/edoardosarri/Documents/SWEES/src/main/java/utils/logger/MyFormatter.java
 /Users/edoardosarri/Documents/SWEES/src/main/java/utils/sampler/ConstantSampler.java
 /Users/edoardosarri/Documents/SWEES/src/main/java/utils/sampler/SamplerAdapter.java

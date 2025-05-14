@@ -57,11 +57,11 @@ public final class RMScheduler {
         Duration currentTime = Duration.ZERO;
 
         // execution
+        logger.info("Time: 0. Tutti i task sono stati rilascaiti");
         while (!events.isEmpty()) {
             // prossimo evento dove fare i controllli
             Duration nextEvent = events.removeFirst();
             Duration availableTime = nextEvent.minus(currentTime);
-            logger.info("- Il tempo disponibile è: " + availableTime);
 
             while (availableTime.isPositive()) {
                 if (orderedTasks.isEmpty()) {
@@ -77,15 +77,11 @@ public final class RMScheduler {
 
             // per ogni task il cui periodo è scaduto controllo se ha superato la deadline
             currentTime = nextEvent;
+            logger.info("Time: " + currentTime);
             for (Task task : this.taskSet.getTasks()) {
                 if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
-                    logger.info("- Al tempo "  + currentTime + " il task controllato e resettato: " + task.getId());
                     task.checkAndReset();
                     orderedTasks.add(task);
-                    logger.info("I task nella coda sono: " + 
-                        orderedTasks.stream()
-                            .map(Task::getId)
-                            .collect(Collectors.toList()));
                 }
             }
         }

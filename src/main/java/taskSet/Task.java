@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
+import java.util.logging.Logger;
 
 import exeptions.AccessResourceProtocolExecption;
 import exeptions.DeadlineMissedException;
@@ -11,6 +12,7 @@ import exeptions.NoResourceExecption;
 import resource.Resource;
 import resource.ResourceProtocol;
 import scheduler.RMScheduler;
+import utils.logger.LoggingConfig;
 
 public final class Task {
 
@@ -23,8 +25,8 @@ public final class Task {
     private boolean isExecuted = false;
     private int nominalPriority;
     private int dinamicPriority;
-
     private List<Resource> resourcesAcquired = new LinkedList<>();
+    private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public Task(Duration period, Duration deadline, List<Chunk> chunks) {
@@ -116,6 +118,7 @@ public final class Task {
         } else {
             this.chunkToExecute = new LinkedList<>(chunks);
             this.isExecuted = false;
+            logger.info("Il task " + this.id + " è stato rilasciato");
             for (Chunk chunk : this.chunkToExecute)
                 chunk.reset();
         }

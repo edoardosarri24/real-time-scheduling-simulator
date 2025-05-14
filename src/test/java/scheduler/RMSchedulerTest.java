@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import exeptions.DeadlineMissedException;
 import helper.ReflectionUtils;
+import resource.PriorityCeilingProtocol;
 import resource.Resource;
 
 import static org.assertj.core.api.Assertions.*;
@@ -184,9 +185,64 @@ public class RMSchedulerTest {
                     new Chunk(6, Duration.ofSeconds(1)),
                     new Chunk(7, Duration.ofSeconds(2))));
         TaskSet taskset = new TaskSet(Set.of(task0, task1, task2));
-        RMScheduler scheduler = new RMScheduler(taskset);
+        RMScheduler scheduler = new RMScheduler(taskset, new PriorityCeilingProtocol(taskset));
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
+    }
+
+    @Test
+    public void scheduleWRes2() {
+        Resource res1 = new Resource();
+        Resource res2 = new Resource();
+        Task task0 = new Task(
+            Duration.ofSeconds(20),
+            Duration.ofSeconds(20),
+            List.of(new Chunk(0, Duration.ofSeconds(1)),
+                    new Chunk(1, Duration.ofSeconds(2), List.of(res1, res2))));
+        Task task1 = new Task(
+            Duration.ofSeconds(50),
+            Duration.ofSeconds(50),
+            List.of(new Chunk(2, Duration.ofSeconds(2), List.of(res1)),
+                    new Chunk(3, Duration.ofSeconds(12)),
+                    new Chunk(4, Duration.ofSeconds(2), List.of(res2))));
+        Task task2 = new Task(
+            Duration.ofSeconds(100),
+            Duration.ofSeconds(100),
+            List.of(new Chunk(5, Duration.ofSeconds(13), List.of(res2)),
+                    new Chunk(6, Duration.ofSeconds(1)),
+                    new Chunk(7, Duration.ofSeconds(2))));
+        TaskSet taskset = new TaskSet(Set.of(task0, task1, task2));
+        RMScheduler scheduler = new RMScheduler(taskset, new PriorityCeilingProtocol(taskset));
+        assertThatCode(() -> scheduler.schedule())
+            .doesNotThrowAnyException();
+    }
+
+    @Test
+    public void scheduleWRes3() {
+        Resource res1 = new Resource();
+        Resource res2 = new Resource();
+        Task task0 = new Task(
+            Duration.ofSeconds(20),
+            Duration.ofSeconds(20),
+            List.of(new Chunk(0, Duration.ofSeconds(1)),
+                    new Chunk(1, Duration.ofSeconds(2), List.of(res1, res2))));
+        Task task1 = new Task(
+            Duration.ofSeconds(50),
+            Duration.ofSeconds(50),
+            List.of(new Chunk(2, Duration.ofSeconds(12), List.of(res1)),
+                    new Chunk(3, Duration.ofSeconds(12)),
+                    new Chunk(4, Duration.ofSeconds(2), List.of(res1, res2))));
+        Task task2 = new Task(
+            Duration.ofSeconds(100),
+            Duration.ofSeconds(100),
+            List.of(new Chunk(5, Duration.ofSeconds(13), List.of(res2)),
+                    new Chunk(6, Duration.ofSeconds(1)),
+                    new Chunk(7, Duration.ofSeconds(22))));
+        TaskSet taskset = new TaskSet(Set.of(task0, task1, task2));
+        RMScheduler scheduler = new RMScheduler(taskset, new PriorityCeilingProtocol(taskset));
+        assertThatThrownBy(() -> scheduler.schedule())
+            .isInstanceOf(DeadlineMissedException.class)
+            .hasMessage("Il task " + task2.getId() + " ha superato la deadline");
     }
     
 }

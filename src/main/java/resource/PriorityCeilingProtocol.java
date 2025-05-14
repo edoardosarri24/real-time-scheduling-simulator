@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import exeptions.AccessResourceProtocolExecption;
 import exeptions.NoResourceExecption;
@@ -13,11 +15,13 @@ import scheduler.RMScheduler;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
+import utils.logger.LoggingConfig;
 
 public final class PriorityCeilingProtocol implements ResourceProtocol {
 
     private Map<Resource, Integer> ceiling;
     private List<Resource> busyResources;
+    private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public PriorityCeilingProtocol (TaskSet taskSet) {
@@ -46,6 +50,7 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
         if (task.getNominalPriority() <= maxCeiling) {
             scheduler.getBlockedTask().add(task);
             chunk.getResources().forEach(res -> res.getBlockedTasks().add(task));
+            logger.info("Il chunk " + chunk.getId() + " del task " + task.getId() + " si è bloccato sulle risorse " + chunk.getResources());
             throw new AccessResourceProtocolExecption();
         }
     }
@@ -62,12 +67,18 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
             MaxDinamicPriorityBlockedtask));
         this.busyResources.addAll(resources);
         task.getResourcesAcquired().addAll(resources);
+        String resourcesId = resources.stream()
+                              .map(Resource::getId)
+                              .map(String::valueOf)
+                              .collect(Collectors.joining(", ", "[", "]"));
+        logger.info("Il chunk " + chunk.getId() + " del task " + task.getId() + " ha acquisito le risorse " + resourcesId + ". La priorità dinamica del task ora è " + task.getDinamicPriority());
     }
 
     public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks, Task task) throws NoResourceExecption {
-        if (chunk.getResources().isEmpty())
+        List<Resource> resources = chunk.getResources();
+        if (resources.isEmpty())
             throw new NoResourceExecption();
-        for (Resource resource : chunk.getResources()) {
+        for (Resource resource : resources) {
             List<Task> tasksBlockedOnResource = resource.getBlockedTasks();
             if (tasksBlockedOnResource.isEmpty())
                 continue;
@@ -86,6 +97,11 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
             .ifPresentOrElse(
                 task::setDinamicPriority,
                 () -> task.setDinamicPriority(task.getNominalPriority()));
+        String resourcesId = resources.stream()
+                              .map(Resource::getId)
+                              .map(String::valueOf)
+                              .collect(Collectors.joining(", ", "[", "]"));
+        logger.info("Il chunk " + chunk.getId() + " del task " + task.getId() + " ha rilasciato le risorse " + resourcesId + ". La priorità dinamica del task ora è " + task.getDinamicPriority());
     }
 
 }

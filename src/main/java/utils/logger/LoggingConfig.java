@@ -9,8 +9,8 @@ public class LoggingConfig {
     static {
         try {
             logger = Logger.getLogger(LoggingConfig.class.getName());
-            FileHandler fileHandler = new FileHandler("logging.log", false);
-            fileHandler.setFormatter(new SimpleFormatter());
+            FileHandler fileHandler = new FileHandler("trace.log", false);
+            fileHandler.setFormatter(new MyFormatter());
             logger.addHandler(fileHandler);
             logger.setLevel(Level.ALL);
 

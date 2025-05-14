@@ -1,5 +1,3 @@
 utils/MultipleTest.class
-helper/ReflectionUtils.class
 taskSet/TaskTest.class
-scheduler/RMSchedulerTest.class
 taskSet/ChunkTest.class

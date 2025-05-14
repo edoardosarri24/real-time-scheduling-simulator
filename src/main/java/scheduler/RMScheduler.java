@@ -30,8 +30,12 @@ public final class RMScheduler {
     }
 
     public RMScheduler(TaskSet taskSet, PriorityCeilingProtocol resProtocol) {
+        try {
+            taskSet.purelyPeriodicCheck();
+        } catch (PurelyPeriodicException e) {
+            throw new IllegalArgumentException(e.getMessage(), e);
+        }
         this.taskSet = taskSet;
-        this.purelyPeriodicCheck();
         this.assignPriority();
         this.resProtocol = resProtocol;
     }
@@ -97,17 +101,6 @@ public final class RMScheduler {
     }
 
     // HELPER
-    private void purelyPeriodicCheck() {
-        this.taskSet.getTasks().forEach(task -> {
-            try {
-                task.purelyPeriodicCheck();
-            } catch (PurelyPeriodicException e) {
-                e.printStackTrace();
-                throw new IllegalArgumentException(e.getMessage(), e);
-            }
-        });
-    }
-
     private void assignPriority() {
         List<Task> sortedByPeriod = this.taskSet.getTasks().stream()
             .sorted(Comparator.comparing(Task::getPeriod))

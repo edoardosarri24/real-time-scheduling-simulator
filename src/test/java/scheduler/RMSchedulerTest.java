@@ -3,15 +3,10 @@ package scheduler;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
-
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-
 import helper.ReflectionUtils;
-
 import static org.assertj.core.api.Assertions.*;
-
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;

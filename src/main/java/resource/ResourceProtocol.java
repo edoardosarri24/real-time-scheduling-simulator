@@ -7,6 +7,7 @@ import exeptions.NoResourceExecption;
 import scheduler.RMScheduler;
 import taskSet.Chunk;
 import taskSet.Task;
+import taskSet.TaskSet;
 
 public interface ResourceProtocol {
 
@@ -19,5 +20,7 @@ public interface ResourceProtocol {
     public default void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) throws NoResourceExecption {
         throw new NoResourceExecption();
     }
+
+    public default void initStructures(TaskSet taskSet) {}
     
 }

@@ -19,7 +19,7 @@ public class PriorityCeilingProtocolTest {
 
     @SuppressWarnings("unchecked")
     @Test
-    public void initCeiling() {
+    public void initStructures() {
         Resource res0 = new Resource();
         Resource res1 = new Resource();
         Resource res2 = new Resource();
@@ -41,8 +41,8 @@ public class PriorityCeilingProtocolTest {
             Duration.ofSeconds(10),
             List.of(chunk3, chunk4));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
-        new RMScheduler(taskSet);
         PriorityCeilingProtocol protocol = new PriorityCeilingProtocol(taskSet);
+        new RMScheduler(taskSet, protocol);
         Map<Resource, Integer> ceiling = (Map<Resource, Integer>) ReflectionUtils.getField(protocol, "ceiling");
         assertThat(ceiling.keySet())
             .containsExactlyInAnyOrder(res0, res1, res2);

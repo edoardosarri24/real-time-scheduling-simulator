@@ -26,7 +26,6 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
     public PriorityCeilingProtocol (TaskSet taskSet) {
         this.ceiling = new HashMap<>();
         this.busyResources = new LinkedList<>();
-        this.initCeiling(taskSet);
     }
 
     // GETTER AND SETTER
@@ -104,8 +103,8 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
         logger.info("Il chunk " + chunk.getId() + " del task " + parentTask.getId() + " ha rilasciato le risorse " + resourcesId + ". La priorità dinamica del task ora è " + parentTask.getDinamicPriority());
     }
 
-    // HELPER
-    private void initCeiling(TaskSet taskSet) {
+    @Override
+    public void initStructures(TaskSet taskSet) {
         for (Task task : taskSet.getTasks())
             for (Chunk chunk : task.getChunks())
                 for (Resource resource : chunk.getResources())

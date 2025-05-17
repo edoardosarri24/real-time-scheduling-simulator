@@ -21,7 +21,7 @@ public final class RMScheduler {
 
     private TaskSet taskSet;
     private ResourceProtocol resProtocol;
-    private List<Task> blockedTask = new LinkedList<>();;
+    private List<Task> blockedTask = new LinkedList<>();
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
@@ -41,16 +41,20 @@ public final class RMScheduler {
         return this.resProtocol;
     }
 
-    public List<Task> getBlockedTask() {
-        return this.blockedTask;
+    public void blockTask(Task task) {
+        this.blockedTask.add(task);
+    }
+
+    public void unblockTask(Task task) {
+        this.blockedTask.remove(task);
     }
 
     // METHOD
     public void schedule() throws DeadlineMissedException {
         // structures
-        TreeSet<Task> orderedTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
-        this.taskSet.getTasks().forEach(orderedTasks::add);
-        List<Duration> periods = orderedTasks.stream()
+        TreeSet<Task> readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
+        this.taskSet.getTasks().forEach(readyTasks::add);
+        List<Duration> periods = readyTasks.stream()
             .map(Task::getPeriod)
             .collect(Collectors.toList());
         List<Duration> events = Multiple.generateMultiplesUpToLCM(periods);
@@ -64,14 +68,14 @@ public final class RMScheduler {
             Duration availableTime = nextEvent.minus(currentTime);
 
             while (availableTime.isPositive()) {
-                if (orderedTasks.isEmpty()) {
-                    availableTime = Duration.ZERO;
+                if (readyTasks.isEmpty()) {
+                    break;
                 } else {
-                    Task currentTask = orderedTasks.pollFirst();
-                    Duration executedTime = currentTask.execute(availableTime, orderedTasks, this);
+                    Task currentTask = readyTasks.pollFirst();
+                    Duration executedTime = currentTask.execute(availableTime, readyTasks, this);
                     availableTime = availableTime.minus(executedTime);
                     if (!currentTask.getIsExecuted() && !this.blockedTask.contains(currentTask))
-                        orderedTasks.add(currentTask);
+                        readyTasks.add(currentTask);
                 }
             }
 
@@ -81,7 +85,7 @@ public final class RMScheduler {
             for (Task task : this.taskSet.getTasks()) {
                 if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
                     task.checkAndReset();
-                    orderedTasks.add(task);
+                    readyTasks.add(task);
                 }
             }
         }
@@ -97,8 +101,7 @@ public final class RMScheduler {
             .forEach(i -> {
                 int priority = 5 + i * 2;
                 Task task = sortedByPeriod.get(i);
-                task.setDinamicPriority(priority);
-                task.setNominalPriority(priority);
+                task.initPriority(priority);
             });
     }
 

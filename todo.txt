@@ -1,5 +1,0 @@
-
-
-- gestire il fatto che due chunk consecutivi sono indipendenti sull'acquisizione di risorse.
-- La policy di progresso e rilascio sono le stesse di PIP?
-- Trovare test affidbili.

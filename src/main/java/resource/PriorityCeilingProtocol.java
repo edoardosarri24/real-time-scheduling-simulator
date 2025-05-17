@@ -1,6 +1,5 @@
 package resource;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -43,13 +42,13 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
         if (chunk.getResources().isEmpty())
             throw new NoResourceExecption();
         int maxCeiling = this.busyResources.stream()
-            .filter(res -> !task.getResourcesAcquired().contains(res))
+            .filter(res -> !task.hasAquiredThatResource(res))
             .mapToInt(res -> this.ceiling.get(res))
             .max()
             .orElse(Integer.MIN_VALUE);
         if (task.getNominalPriority() <= maxCeiling) {
-            scheduler.getBlockedTask().add(task);
-            chunk.getResources().forEach(res -> res.getBlockedTasks().add(task));
+            scheduler.blockTask(task);
+            chunk.getResources().forEach(res -> res.addBlockedTask(task));
             logger.info("Il chunk " + chunk.getId() + " del task " + task.getId() + " si è bloccato sulle risorse " + chunk.getResources());
             throw new AccessResourceProtocolExecption();
         }
@@ -66,7 +65,7 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
             task.getNominalPriority(),
             MaxDinamicPriorityBlockedtask));
         this.busyResources.addAll(resources);
-        task.getResourcesAcquired().addAll(resources);
+        task.acquireResources(resources);
         String resourcesId = resources.stream()
                               .map(Resource::getId)
                               .map(String::valueOf)
@@ -74,23 +73,21 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
         logger.info("Il chunk " + chunk.getId() + " del task " + task.getId() + " ha acquisito le risorse " + resourcesId + ". La priorità dinamica del task ora è " + task.getDinamicPriority());
     }
 
-    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks, Task task) throws NoResourceExecption {
+    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> readyTasks, Task task) throws NoResourceExecption {
         List<Resource> resources = chunk.getResources();
         if (resources.isEmpty())
             throw new NoResourceExecption();
         for (Resource resource : resources) {
-            List<Task> tasksBlockedOnResource = resource.getBlockedTasks();
-            if (tasksBlockedOnResource.isEmpty())
-                continue;
-            Task taskMaxPriority = tasksBlockedOnResource.stream()
-                .max(Comparator.comparingInt(Task::getNominalPriority))
-                .get();
-            scheduler.getBlockedTask().remove(taskMaxPriority);
-            orderedTasks.add(taskMaxPriority);
-            tasksBlockedOnResource.remove(taskMaxPriority);
-            task.getResourcesAcquired().remove(resource);
+            resource.getMaxDinamicPriorityBlockedtask().ifPresentOrElse(
+                t -> {
+                    scheduler.unblockTask(t);
+                    readyTasks.add(t);
+                    resource.removeBlockedTask(t);
+                    task.releaseResource(resource);
+                },
+                () -> {});
         }
-        task.getResourcesAcquired().stream()
+        task.getResourcesAcquiredStream()
             .flatMap(res -> res.getBlockedTasks().stream())
             .mapToInt(Task::getNominalPriority)
             .max()

@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 import exeptions.AccessResourceProtocolExecption;
 import exeptions.DeadlineMissedException;
@@ -46,10 +47,6 @@ public final class Task {
         return this.nominalPriority;
     }
 
-    public void setNominalPriority(int nominalPriority) {
-        this.nominalPriority = nominalPriority;
-    }
-
     public void setDinamicPriority(int dinamicPriority) {
         this.dinamicPriority = dinamicPriority;
     }
@@ -62,8 +59,8 @@ public final class Task {
         return this.chunkToExecute;
     }
 
-    public List<Resource> getResourcesAcquired () {
-        return this.resourcesAcquired;
+    public Stream<Resource> getResourcesAcquiredStream () {
+        return this.resourcesAcquired.stream();
     }
 
     public boolean getIsExecuted() {
@@ -78,8 +75,25 @@ public final class Task {
         return this.chunks;
     }
 
+    public void initPriority(int priority) {
+        this.nominalPriority = priority;
+        this.dinamicPriority = priority;
+    }
+
+    public boolean hasAquiredThatResource(Resource resource) {
+        return this.resourcesAcquired.contains(resource);
+    }
+
+    public void releaseResource(Resource resource) {
+        this.resourcesAcquired.remove(resource);
+    }
+
+    public void acquireResources(List<Resource> resources) {
+        this.resourcesAcquired.addAll(resources);
+    }
+
     // METHOD
-    public Duration execute(Duration availableTime, TreeSet<Task> orderedTasks, RMScheduler scheduler) {
+    public Duration execute(Duration availableTime, TreeSet<Task> readyTasks, RMScheduler scheduler) {
         Duration remainingTime = availableTime;
         ResourceProtocol resAccProtocol = scheduler.getResProtocol();
         while (remainingTime.isPositive()) {
@@ -96,17 +110,20 @@ public final class Task {
                     this.chunkToExecute.addFirst(currentChucnk);
                     return Duration.ZERO;
                 }
-                Duration executionTime = currentChucnk.getRemainingExecutionTime();
-                if (remainingTime.compareTo(executionTime) < 0) {
+                Duration chunkExecutionTime = currentChucnk.getRemainingExecutionTime();
+                logger.info("il tempo rimanente è " + remainingTime);
+                if (remainingTime.compareTo(chunkExecutionTime) < 0) {
                     currentChucnk.execute(remainingTime, this);
+                    remainingTime = Duration.ZERO;
                     this.chunkToExecute.addFirst(currentChucnk);
                 } else {
-                    currentChucnk.execute(executionTime, this);
+                    currentChucnk.execute(chunkExecutionTime, this);
+                    remainingTime = remainingTime.minus(chunkExecutionTime);
                     try {
-                        resAccProtocol.release(currentChucnk, scheduler, orderedTasks, this);
-                    } catch (NoResourceExecption e) {}                        
+                        resAccProtocol.release(currentChucnk, scheduler, readyTasks, this);
+                    } catch (NoResourceExecption e) {}
                 }
-                remainingTime = remainingTime.minus(executionTime);
+                logger.info("il tempo rimanente è " + remainingTime);
             }
         }
         return availableTime.minus(remainingTime);

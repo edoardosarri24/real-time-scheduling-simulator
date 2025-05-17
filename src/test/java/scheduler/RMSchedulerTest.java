@@ -186,7 +186,7 @@ public class RMSchedulerTest {
         RMScheduler scheduler = new RMScheduler(taskset, new PriorityCeilingProtocol(taskset));
         assertThatThrownBy(() -> scheduler.schedule())
             .isInstanceOf(DeadlineMissedException.class)
-            .hasMessage("Il task " + task2.getId() + " ha superato la deadline");
+            .hasMessage("Il task " + task0.getId() + " ha superato la deadline");
     }
     
 }

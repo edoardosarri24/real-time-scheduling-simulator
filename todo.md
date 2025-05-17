@@ -4,9 +4,7 @@
 - Trovare test affidbili.
 
 # Io
-- Rifattorizzare
 - Documentazione
-- Codice più leggibile
 
 
 - manca da testare:

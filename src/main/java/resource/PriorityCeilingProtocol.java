@@ -42,7 +42,7 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
         int maxCeiling = this.busyResources.stream()
             .filter(res -> !parentTask.hasAquiredThatResource(res))
             .mapToInt(res -> this.ceiling.get(res))
-            .max()
+            .min()
             .orElse(Integer.MIN_VALUE);
         if (parentTask.getNominalPriority() <= maxCeiling) {
             scheduler.blockTask(parentTask);
@@ -62,9 +62,9 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
         int MaxDinamicPriorityBlockedtask = resources.stream()
             .flatMap(res -> res.getBlockedTasks().stream())
             .mapToInt(Task::getNominalPriority)
-            .max()
+            .min()
             .orElse(Integer.MIN_VALUE);
-        parentTask.setDinamicPriority(Math.max(
+        parentTask.setDinamicPriority(Math.min(
             parentTask.getNominalPriority(),
             MaxDinamicPriorityBlockedtask));
         this.busyResources.addAll(resources);
@@ -82,19 +82,18 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
         if (resources.isEmpty())
             throw new NoResourceExecption();
         for (Resource resource : resources) {
-            resource.getMaxDinamicPriorityBlockedtask().ifPresentOrElse(
+            resource.getMaxDinamicPriorityBlockedtask().ifPresent(
                 t -> {
                     scheduler.unblockTask(t);
                     readyTasks.add(t);
                     resource.removeBlockedTask(t);
                     parentTask.releaseResource(resource);
-                },
-                () -> {});
+                });
         }
         parentTask.getResourcesAcquiredStream()
             .flatMap(res -> res.getBlockedTasks().stream())
             .mapToInt(Task::getNominalPriority)
-            .max()
+            .min()
             .ifPresentOrElse(
                 parentTask::setDinamicPriority,
                 () -> parentTask.setDinamicPriority(parentTask.getNominalPriority()));
@@ -110,7 +109,7 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
         for (Task task : taskSet.getTasks())
             for (Chunk chunk : task.getChunks())
                 for (Resource resource : chunk.getResources())
-                    this.ceiling.merge(resource, task.getNominalPriority(), Math::max);
+                    this.ceiling.merge(resource, task.getNominalPriority(), Math::min);
     }
 
 }

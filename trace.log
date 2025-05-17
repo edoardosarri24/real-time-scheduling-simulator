@@ -249,9 +249,9 @@
 - Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
 - il tempo rimanente è PT17S
 - Time: PT1M40S
-- Il task 18 è stato rilasciato
-- Il task 16 è stato rilasciato
 - Il task 17 è stato rilasciato
+- Il task 16 è stato rilasciato
+- Il task 18 è stato rilasciato
 - La generazione di tracce è avvenuta con successo!
 - Time: 0. Tutti i task sono stati rilascaiti
 - il tempo rimanente è PT20S

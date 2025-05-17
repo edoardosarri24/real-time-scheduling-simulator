@@ -10,12 +10,11 @@ import static org.assertj.core.api.Assertions.*;
 public class ChunkTest {
 
     private Chunk chunk;
-    private Task task;
 
     @Before
     public void setUp() {
         this.chunk = new Chunk(0, Duration.ofSeconds(10));
-        this.task = new Task(
+        new Task(
             Duration.ofSeconds(10),
             Duration.ofSeconds(10),
             List.of(this.chunk));

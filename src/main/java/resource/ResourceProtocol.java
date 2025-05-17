@@ -10,8 +10,14 @@ import taskSet.Task;
 
 public interface ResourceProtocol {
 
-    public void access(RMScheduler scheduler, Chunk chunk) throws NoResourceExecption, AccessResourceProtocolExecption;
-    public void progress(Chunk chunk);
-    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) throws NoResourceExecption;
+    public default void access(RMScheduler scheduler, Chunk chunk) throws NoResourceExecption, AccessResourceProtocolExecption {
+        throw new NoResourceExecption();
+    }
+
+    public default void progress(Chunk chunk) {}
+    
+    public default void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) throws NoResourceExecption {
+        throw new NoResourceExecption();
+    }
     
 }

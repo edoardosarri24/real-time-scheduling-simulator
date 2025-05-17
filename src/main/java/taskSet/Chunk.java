@@ -12,16 +12,13 @@ public final class Chunk {
     private final int id;
     private final Duration executionTime;
     private Duration remainingExecutionTime;
-    private List<Resource> resources;
+    private final List<Resource> resources;
     private Task parent;
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public Chunk(int id, Duration executionTime) {
-        this.id = id;
-        this.executionTime = executionTime;
-        this.remainingExecutionTime = executionTime;
-        this.resources = new LinkedList<>();
+        this(id, executionTime, List.of());
     }
 
     public Chunk(int id, Duration executionTime, List<Resource> resources) {
@@ -50,6 +47,10 @@ public final class Chunk {
 
     public Task getParent() {
         return this.parent;
+    }
+
+    public boolean hasResources() {
+        return !this.resources.isEmpty();
     }
 
     // METHOD

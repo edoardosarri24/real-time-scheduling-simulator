@@ -56,10 +56,6 @@ public final class Task {
         return this.dinamicPriority;
     }
 
-    List<Chunk> getChunkToExecute() {
-        return this.chunkToExecute;
-    }
-
     public Stream<Resource> getResourcesAcquiredStream () {
         return this.resourcesAcquired.stream();
     }
@@ -134,7 +130,7 @@ public final class Task {
         if (!this.isExecuted) {
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         } else {
-            this.chunkToExecute = new LinkedList<>(chunks);
+            this.chunkToExecute = new LinkedList<>(this.chunks);
             this.isExecuted = false;
             logger.info("Il task " + this.id + " è stato rilasciato");
             for (Chunk chunk : this.chunkToExecute)

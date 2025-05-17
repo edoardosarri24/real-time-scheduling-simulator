@@ -19,8 +19,8 @@ import utils.logger.LoggingConfig;
 
 public final class RMScheduler {
 
-    private TaskSet taskSet;
-    private ResourceProtocol resProtocol;
+    private final TaskSet taskSet;
+    private final ResourceProtocol resProtocol;
     private List<Task> blockedTask = new LinkedList<>();
     private static final Logger logger = LoggingConfig.getLogger();
 

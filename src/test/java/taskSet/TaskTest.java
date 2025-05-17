@@ -6,6 +6,7 @@ import exeptions.DeadlineMissedException;
 import helper.ReflectionUtils;
 import java.time.Duration;
 import java.util.List;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class TaskTest {
@@ -46,23 +47,29 @@ public class TaskTest {
             .hasMessage("Il task " + this.task.getId() + " ha superato la deadline");
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void checkAndResetElse() {
-        assertThat(this.task.getChunkToExecute())
+        List<Chunk> chunkToExectute = (List<Chunk>) ReflectionUtils.getField(this.task, "chunkToExecute");
+        assertThat(chunkToExectute)
             .containsExactly(this.chunk);
         Chunk newChunk = new Chunk(1, Duration.ofMillis(1));
-        this.task.getChunkToExecute().add(newChunk);
-        assertThat(this.task.getChunkToExecute())
+        chunkToExectute.add(newChunk);
+        assertThat(chunkToExectute)
             .containsExactly(this.chunk, newChunk);
         ReflectionUtils.setField(
-            this.task, 
-            "isExecuted", 
+            this.task,
+            "isExecuted",
             true);
+        assertThat(this.task.getIsExecuted())
+            .isTrue();
         assertThatCode(() -> this.task.checkAndReset())
             .doesNotThrowAnyException();
-        assertThat(this.task.getChunkToExecute())
-            .containsExactly(this.chunk);
-        assertThat((boolean) ReflectionUtils.getField(this.task, "isExecuted"))
+        chunkToExectute = (List<Chunk>) ReflectionUtils.getField(this.task, "chunkToExecute");
+        assertThat(chunkToExectute)
+            .hasSize(1)
+            .allMatch(chunk -> chunk.equals(this.chunk));
+        assertThat(this.task.getIsExecuted())
             .isFalse();
     }
 

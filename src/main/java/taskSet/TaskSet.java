@@ -4,7 +4,7 @@ import java.util.Set;
 
 public final class TaskSet {
 
-    private Set<Task> tasks;
+    private final Set<Task> tasks;
 
     public TaskSet(Set<Task> tasks) {
         this.tasks = tasks;

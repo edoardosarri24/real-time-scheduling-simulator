@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="taskSet.TaskTest" time="0.001" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="scheduler.SchedulerTest" time="0.088" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -7,7 +7,6 @@
     <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="user.timezone" value="Europe/Rome"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="23"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -59,13 +58,6 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="checkAndResetElse" classname="taskSet.TaskTest" time="0.0">
-    <system-err><![CDATA[mag 17, 2025 3:26:44 PM taskSet.Task checkAndReset
-INFORMAZIONI: Il task 25 è stato rilasciato
-]]></system-err>
-  </testcase>
-  <testcase name="constructor" classname="taskSet.TaskTest" time="0.0"/>
-  <testcase name="checkAndResetIf" classname="taskSet.TaskTest" time="0.0"/>
-  <testcase name="purelyPeriodicCheckKO" classname="taskSet.TaskTest" time="0.0"/>
-  <testcase name="purelyPeriodicCheckOK" classname="taskSet.TaskTest" time="0.0"/>
+  <testcase name="constructorKO" classname="scheduler.SchedulerTest" time="0.053"/>
+  <testcase name="assignPriority" classname="scheduler.SchedulerTest" time="0.002"/>
 </testsuite>

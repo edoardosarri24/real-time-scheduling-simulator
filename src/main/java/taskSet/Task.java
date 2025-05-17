@@ -15,7 +15,7 @@ import resource.ResourceProtocol;
 import scheduler.RMScheduler;
 import utils.logger.LoggingConfig;
 
-public final class Task {
+public class Task {
 
     private static int idCounter = 0;
     private final int id;

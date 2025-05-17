@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import exeptions.DeadlineMissedException;
 import resource.NoResourceProtocol;
@@ -17,11 +18,12 @@ public final class RMScheduler extends Scheduler {
 
     // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {
-        super(taskSet, new NoResourceProtocol());
+        this(taskSet, new NoResourceProtocol());
     }
 
     public RMScheduler(TaskSet taskSet, ResourceProtocol resProtocol) {
         super(taskSet, resProtocol);
+        getTaskSet().purelyPeriodicCheck();
     }
 
     // METHOD
@@ -65,6 +67,19 @@ public final class RMScheduler extends Scheduler {
             }
         }
         getLogger().info("La generazione di tracce è avvenuta con successo!");
+    }
+
+    @Override
+    protected void assignPriority() {
+        List<Task> sortedByPeriod = getTaskSet().getTasks().stream()
+            .sorted(Comparator.comparing(Task::getPeriod))
+            .collect(Collectors.toList());
+        IntStream.range(0, sortedByPeriod.size())
+            .forEach(i -> {
+                int priority = 5 + i * 2;
+                Task task = sortedByPeriod.get(i);
+                task.initPriority(priority);
+            });
     }
 
 }

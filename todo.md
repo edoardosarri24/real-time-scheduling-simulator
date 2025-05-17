@@ -10,4 +10,4 @@
 # Io
 - Documentazione
 - Singleton Scheduler e semplifica metodi senza passare lo scheduler
-- Rivedi funzionamento
+- Rivedi funzionamento e testa schedule()

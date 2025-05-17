@@ -2,7 +2,7 @@ package taskSet;
 
 import java.util.Set;
 
-public final class TaskSet {
+public class TaskSet {
 
     private final Set<Task> tasks;
 

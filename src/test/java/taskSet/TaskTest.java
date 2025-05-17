@@ -30,7 +30,7 @@ public class TaskTest {
     }
 
     @Test
-    public void purelyPeriodicCheckKO() {
+    public void purelyPeriodicCheck() {
         Task task = new Task(
             Duration.ofMillis(10),
             Duration.ofMillis(3),
@@ -74,7 +74,7 @@ public class TaskTest {
     }
 
     @Test
-    public void constructor() {
+    public void constructorParent() {
         Chunk chunk0 = new Chunk(0, Duration.ofMillis(5));
         Chunk chunk1 = new Chunk(1, Duration.ofMillis(5));
         Task task = new Task(

@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import resource.Resource;
 import utils.logger.LoggingConfig;
 
-public final class Chunk {
+public class Chunk {
 
     private final int id;
     private final Duration executionTime;

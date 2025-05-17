@@ -1,11 +1,8 @@
 package scheduler;
 
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import resource.ResourceProtocol;
 import taskSet.Task;
@@ -21,15 +18,13 @@ public abstract class Scheduler {
 
     // CONSTRUCTOR
     public Scheduler(TaskSet taskSet, ResourceProtocol resProtocol) {
-        taskSet.purelyPeriodicCheck();
         this.taskSet = taskSet;
-        this.assignPriority();
         this.resProtocol = resProtocol;
+        this.assignPriority();
         this.resProtocol.initStructures(this.taskSet);
     }
 
     // GETTER AND SETTER
-
     protected Logger getLogger() {
         return logger;
     }
@@ -54,17 +49,7 @@ public abstract class Scheduler {
         return this.blockedTask.contains(task);
     }
 
-    // HELPER
-    private void assignPriority() {
-        List<Task> sortedByPeriod = this.taskSet.getTasks().stream()
-            .sorted(Comparator.comparing(Task::getPeriod))
-            .collect(Collectors.toList());
-        IntStream.range(0, sortedByPeriod.size())
-            .forEach(i -> {
-                int priority = 5 + i * 2;
-                Task task = sortedByPeriod.get(i);
-                task.initPriority(priority);
-            });
-    }
+    // METHOD
+    protected abstract void assignPriority();
     
 }

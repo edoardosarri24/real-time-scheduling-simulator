@@ -25,10 +25,10 @@ public class ChunkTest {
     public void execute() {
         assertThat(chunk.getRemainingExecutionTime())
             .isEqualTo(Duration.ofSeconds(10));
-        chunk.execute(Duration.ofSeconds(4), this.task);
+        chunk.execute(Duration.ofSeconds(4));
         assertThat(chunk.getRemainingExecutionTime())
             .isEqualTo(Duration.ofSeconds(6));
-        chunk.execute(Duration.ofSeconds(6), this.task);
+        chunk.execute(Duration.ofSeconds(6));
         assertThat(chunk.getRemainingExecutionTime())
             .isEqualTo(Duration.ZERO);
     }

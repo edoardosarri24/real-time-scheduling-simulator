@@ -55,9 +55,9 @@
 - Il chunk 1 del task 1 ha eseguito per PT3S
 - il tempo rimanente è PT7S
 - Time: PT1M40S
-- Il task 3 è stato rilasciato
 - Il task 2 è stato rilasciato
 - Il task 1 è stato rilasciato
+- Il task 3 è stato rilasciato
 - La generazione di tracce è avvenuta con successo!
 - Time: 0. Tutti i task sono stati rilascaiti
 - il tempo rimanente è PT20S
@@ -152,7 +152,6 @@
 - Il chunk 4 del task 9 ha eseguito per PT7S
 - il tempo rimanente è PT0S
 - Time: PT1M40S
-- Il task 8 è stato rilasciato
 - Time: 0. Tutti i task sono stati rilascaiti
 - il tempo rimanente è PT20S
 - Il chunk 0 del task 10 ha eseguito per PT10S
@@ -250,9 +249,9 @@
 - Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
 - il tempo rimanente è PT17S
 - Time: PT1M40S
-- Il task 17 è stato rilasciato
 - Il task 18 è stato rilasciato
 - Il task 16 è stato rilasciato
+- Il task 17 è stato rilasciato
 - La generazione di tracce è avvenuta con successo!
 - Time: 0. Tutti i task sono stati rilascaiti
 - il tempo rimanente è PT20S
@@ -350,9 +349,9 @@
 - Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
 - il tempo rimanente è PT17S
 - Time: PT1M40S
-- Il task 20 è stato rilasciato
 - Il task 21 è stato rilasciato
 - Il task 19 è stato rilasciato
+- Il task 20 è stato rilasciato
 - La generazione di tracce è avvenuta con successo!
 - Time: 0. Tutti i task sono stati rilascaiti
 - il tempo rimanente è PT20S
@@ -460,6 +459,8 @@
 - Il chunk 7 del task 24 ha eseguito per PT17S
 - il tempo rimanente è PT0S
 - Time: PT1M40S
+- Il task 22 è stato rilasciato
+- Il task 23 è stato rilasciato
 - Il task 25 è stato rilasciato
-- Il chunk 0 del task 30 ha eseguito per PT4S
-- Il chunk 0 del task 30 ha eseguito per PT6S
+- Il chunk 0 del task 32 ha eseguito per PT4S
+- Il chunk 0 del task 32 ha eseguito per PT6S

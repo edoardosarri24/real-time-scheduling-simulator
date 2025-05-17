@@ -13,6 +13,7 @@ public final class Chunk {
     private final Duration executionTime;
     private Duration remainingExecutionTime;
     private List<Resource> resources;
+    private Task parent;
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
@@ -43,10 +44,18 @@ public final class Chunk {
         return this.id;
     }
 
+    public void setParent(Task task) {
+        this.parent = task;
+    }
+
+    public Task getParent() {
+        return this.parent;
+    }
+
     // METHOD
-    public void execute(Duration executionTime, Task task) {
+    public void execute(Duration executionTime) {
         this.remainingExecutionTime = this.remainingExecutionTime.minus(executionTime);
-        logger.info("Il chunk " + this.id + " del task " + task.getId()  + " ha eseguito per " + executionTime);
+        logger.info("Il chunk " + this.id + " del task " + this.getParent().getId()  + " ha eseguito per " + executionTime);
     }
 
     public void reset() {

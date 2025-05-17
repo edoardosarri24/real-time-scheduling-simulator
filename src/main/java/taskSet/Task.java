@@ -36,6 +36,7 @@ public final class Task {
         this.deadline = deadline;
         this.chunks = chunks;
         this.chunkToExecute = new LinkedList<>(chunks);
+        this.initChunkPrent();
     }
 
     // GETTER AND SETTER
@@ -103,8 +104,8 @@ public final class Task {
             } else {
                 Chunk currentChucnk = this.chunkToExecute.removeFirst();
                 try {
-                    resAccProtocol.access(this, scheduler, currentChucnk);
-                    resAccProtocol.progress(currentChucnk, this);
+                    resAccProtocol.access(scheduler, currentChucnk);
+                    resAccProtocol.progress(currentChucnk);
                 } catch (NoResourceExecption e) {
                 } catch (AccessResourceProtocolExecption e) {
                     this.chunkToExecute.addFirst(currentChucnk);
@@ -113,14 +114,14 @@ public final class Task {
                 Duration chunkExecutionTime = currentChucnk.getRemainingExecutionTime();
                 logger.info("il tempo rimanente è " + remainingTime);
                 if (remainingTime.compareTo(chunkExecutionTime) < 0) {
-                    currentChucnk.execute(remainingTime, this);
+                    currentChucnk.execute(remainingTime);
                     remainingTime = Duration.ZERO;
                     this.chunkToExecute.addFirst(currentChucnk);
                 } else {
-                    currentChucnk.execute(chunkExecutionTime, this);
+                    currentChucnk.execute(chunkExecutionTime);
                     remainingTime = remainingTime.minus(chunkExecutionTime);
                     try {
-                        resAccProtocol.release(currentChucnk, scheduler, readyTasks, this);
+                        resAccProtocol.release(currentChucnk, scheduler, readyTasks);
                     } catch (NoResourceExecption e) {}
                 }
                 logger.info("il tempo rimanente è " + remainingTime);
@@ -145,6 +146,12 @@ public final class Task {
         if (this.period.compareTo(this.deadline) != 0)
             throw new IllegalArgumentException(
                 "Il task " + this.id + " non è puramente periodico: ha periodo " + this.period + " e deadline " + this.deadline);
+    }
+
+    // HELPER
+    private void initChunkPrent() {
+        for (Chunk chunk : this.chunks)
+            chunk.setParent(this);
     }
 
 }

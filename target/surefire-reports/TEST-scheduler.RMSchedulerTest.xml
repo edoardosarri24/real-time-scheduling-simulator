@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="scheduler.RMSchedulerTest" time="0.216" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="scheduler.RMSchedulerTest" time="0.209" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IT"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/edoardosarri/Documents/SWEES/target/surefire/surefirebooter-20250517123129691_3.jar /Users/edoardosarri/Documents/SWEES/target/surefire 2025-05-17T12-31-29_639-jvmRun1 surefire-20250517123129691_1tmp surefire_0-20250517123129691_2tmp"/>
+    <property name="sun.java.command" value="/Users/edoardosarri/Documents/SWEES/target/surefire/surefirebooter-20250517125156770_3.jar /Users/edoardosarri/Documents/SWEES/target/surefire 2025-05-17T12-51-56_722-jvmRun1 surefire-20250517125156770_1tmp surefire_0-20250517125156770_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/edoardosarri/Documents/SWEES/target/test-classes:/Users/edoardosarri/Documents/SWEES/target/classes:/Users/edoardosarri/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/edoardosarri/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:/Users/edoardosarri/.m2/repository/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/Users/edoardosarri/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/edoardosarri/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/edoardosarri/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/edoardosarri/.m2/repository/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar:/Users/edoardosarri/.m2/repository/com/google/errorprone/error_prone_annotations/2.7.1/error_prone_annotations-2.7.1.jar:/Users/edoardosarri/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/edoardosarri/.m2/repository/it/sirio/sirio/2.0.4/sirio-2.0.4.jar:/Users/edoardosarri/.m2/repository/com/google/auto/value/auto-value-annotations/1.8.2/auto-value-annotations-1.8.2.jar:/Users/edoardosarri/.m2/repository/org/jfree/jfreechart/1.5.3/jfreechart-1.5.3.jar:/Users/edoardosarri/.m2/repository/org/tinyjee/jgraphx/jgraphx/3.4.1.3/jgraphx-3.4.1.3.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-all/0.41/ejml-all-0.41.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-core/0.41/ejml-core-0.41.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-fdense/0.41/ejml-fdense-0.41.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-ddense/0.41/ejml-ddense-0.41.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-cdense/0.41/ejml-cdense-0.41.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-zdense/0.41/ejml-zdense-0.41.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-dsparse/0.41/ejml-dsparse-0.41.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-simple/0.41/ejml-simple-0.41.jar:/Users/edoardosarri/.m2/repository/org/ejml/ejml-fsparse/0.41/ejml-fsparse-0.41.jar:/Users/edoardosarri/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/edoardosarri/.m2/repository/org/la4j/la4j/0.6.0/la4j-0.6.0.jar:/Users/edoardosarri/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/edoardosarri/.m2/repository/org/apache/commons/commons-csv/1.9.0/commons-csv-1.9.0.jar:/Users/edoardosarri/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/edoardosarri/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/edoardosarri/Documents/SWEES/target/surefire/surefirebooter-20250517123129691_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/edoardosarri/Documents/SWEES/target/surefire/surefirebooter-20250517125156770_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="23.0.2"/>
@@ -58,951 +58,953 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="constructorKO" classname="scheduler.RMSchedulerTest" time="0.052"/>
-  <testcase name="schedule1" classname="scheduler.RMSchedulerTest" time="0.052">
-    <system-err><![CDATA[mag 17, 2025 12:31:29 PM scheduler.RMScheduler schedule
+  <testcase name="constructorKO" classname="scheduler.RMSchedulerTest" time="0.049"/>
+  <testcase name="schedule1" classname="scheduler.RMSchedulerTest" time="0.05">
+    <system-err><![CDATA[mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: 0. Tutti i task sono stati rilascaiti
-mag 17, 2025 12:31:29 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:29 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 1 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 1 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 2 ha eseguito per PT5S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 2 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 1 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 1 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 1 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 3 ha eseguito per PT4S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT3S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 1 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 1 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT50S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 2 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 1 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 2 ha eseguito per PT5S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 2 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 1 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 1 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 1 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 1 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 1 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 1 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
-INFORMAZIONI: Il task 3 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 2 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 1 è stato rilasciato
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
+INFORMAZIONI: Il task 3 è stato rilasciato
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: La generazione di tracce è avvenuta con successo!
 ]]></system-err>
   </testcase>
   <testcase name="schedule2" classname="scheduler.RMSchedulerTest" time="0.006">
-    <system-err><![CDATA[mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+    <system-err><![CDATA[mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: 0. Tutti i task sono stati rilascaiti
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 4 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 4 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 5 ha eseguito per PT5S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 5 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 4 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 4 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 4 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 5 ha eseguito per PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 4 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 4 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT50S
 ]]></system-err>
   </testcase>
   <testcase name="schedule3" classname="scheduler.RMSchedulerTest" time="0.015">
-    <system-err><![CDATA[mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+    <system-err><![CDATA[mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: 0. Tutti i task sono stati rilascaiti
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 7 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 7 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 8 ha eseguito per PT5S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 8 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 7 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 7 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 7 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 9 ha eseguito per PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 7 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 7 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT50S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 8 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 7 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 8 ha eseguito per PT5S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 8 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 7 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 7 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 7 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 9 ha eseguito per PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 7 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 7 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 7 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 9 ha eseguito per PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
-INFORMAZIONI: Il task 8 è stato rilasciato
 ]]></system-err>
   </testcase>
   <testcase name="schedule4" classname="scheduler.RMSchedulerTest" time="0.002">
-    <system-err><![CDATA[mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+    <system-err><![CDATA[mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: 0. Tutti i task sono stati rilascaiti
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 10 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 10 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT20S
 ]]></system-err>
   </testcase>
   <testcase name="assignPriority" classname="scheduler.RMSchedulerTest" time="0.003"/>
-  <testcase name="scheduleWRes1" classname="scheduler.RMSchedulerTest" time="0.026">
-    <system-err><![CDATA[mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+  <testcase name="scheduleWRes1" classname="scheduler.RMSchedulerTest" time="0.025">
+    <system-err><![CDATA[mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: 0. Tutti i task sono stati rilascaiti
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 16 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 16 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 2 del task 17 ha acquisito le risorse [0]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 17 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 2 del task 17 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT15S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT15S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 17 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT14S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 4 del task 17 ha acquisito le risorse [1]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT14S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 17 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 4 del task 17 ha rilasciato le risorse [1]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT12S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 5 del task 18 ha acquisito le risorse [1]. La priorità dinamica del task ora è 9
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT12S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 5 del task 18 ha eseguito per PT3S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 5 del task 18 ha rilasciato le risorse [1]. La priorità dinamica del task ora è 9
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT9S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT9S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 6 del task 18 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT8S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT8S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 7 del task 18 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT6S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 16 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 16 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 16 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 16 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 16 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT9S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT9S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 16 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT50S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 17 è stato rilasciato
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 2 del task 17 ha acquisito le risorse [0]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 17 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 2 del task 17 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT8S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT8S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 17 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 4 del task 17 ha acquisito le risorse [1]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 17 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 4 del task 17 ha rilasciato le risorse [1]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT5S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 16 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 16 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 16 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 16 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 16 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 16 ha acquisito le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 16 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 16 ha rilasciato le risorse [0]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
-INFORMAZIONI: Il task 17 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 18 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 16 è stato rilasciato
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
+INFORMAZIONI: Il task 17 è stato rilasciato
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: La generazione di tracce è avvenuta con successo!
 ]]></system-err>
   </testcase>
-  <testcase name="scheduleWRes2" classname="scheduler.RMSchedulerTest" time="0.014">
-    <system-err><![CDATA[mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+  <testcase name="scheduleWRes2" classname="scheduler.RMSchedulerTest" time="0.012">
+    <system-err><![CDATA[mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: 0. Tutti i task sono stati rilascaiti
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 19 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 19 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 2 del task 20 ha acquisito le risorse [2]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 20 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 2 del task 20 ha rilasciato le risorse [2]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT15S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT15S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 20 ha eseguito per PT12S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT3S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 4 del task 20 ha acquisito le risorse [3]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT3S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 20 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 4 del task 20 ha rilasciato le risorse [3]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT1S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 5 del task 21 ha acquisito le risorse [3]. La priorità dinamica del task ora è 9
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT1S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 5 del task 21 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 19 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 19 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 19 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 5 del task 21 ha acquisito le risorse [3]. La priorità dinamica del task ora è 9
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 5 del task 21 ha eseguito per PT12S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 5 del task 21 ha rilasciato le risorse [3]. La priorità dinamica del task ora è 9
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT5S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT5S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 6 del task 21 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT4S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT4S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 7 del task 21 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 19 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 19 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT9S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT9S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 19 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT50S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 20 è stato rilasciato
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 2 del task 20 ha acquisito le risorse [2]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 20 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 2 del task 20 ha rilasciato le risorse [2]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT8S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT8S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 20 ha eseguito per PT8S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 19 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 19 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 19 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 20 ha eseguito per PT4S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT13S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 4 del task 20 ha acquisito le risorse [3]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT13S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 20 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 4 del task 20 ha rilasciato le risorse [3]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT11S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 19 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 19 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 19 ha acquisito le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 19 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 19 ha rilasciato le risorse [2, 3]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
-INFORMAZIONI: Il task 20 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 21 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 19 è stato rilasciato
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
+INFORMAZIONI: Il task 20 è stato rilasciato
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: La generazione di tracce è avvenuta con successo!
 ]]></system-err>
   </testcase>
-  <testcase name="scheduleWRes3" classname="scheduler.RMSchedulerTest" time="0.013">
-    <system-err><![CDATA[mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+  <testcase name="scheduleWRes3" classname="scheduler.RMSchedulerTest" time="0.012">
+    <system-err><![CDATA[mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: 0. Tutti i task sono stati rilascaiti
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 22 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 22 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 2 del task 23 ha acquisito le risorse [4]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 23 ha eseguito per PT12S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 2 del task 23 ha rilasciato le risorse [4]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT5S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT5S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 23 ha eseguito per PT5S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 22 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 22 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 22 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 23 ha eseguito per PT7S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 4 del task 23 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 23 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 4 del task 23 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT8S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 5 del task 24 ha acquisito le risorse [5]. La priorità dinamica del task ora è 9
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT8S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 5 del task 24 ha eseguito per PT8S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT40S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 22 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 22 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT9S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT9S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 22 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 5 del task 24 ha acquisito le risorse [5]. La priorità dinamica del task ora è 9
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT7S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 5 del task 24 ha eseguito per PT5S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 5 del task 24 ha rilasciato le risorse [5]. La priorità dinamica del task ora è 9
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT2S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 6 del task 24 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT1S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 7 del task 24 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT50S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 23 è stato rilasciato
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 2 del task 23 ha acquisito le risorse [4]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT10S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 23 ha eseguito per PT10S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 22 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 22 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 22 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 2 del task 23 ha acquisito le risorse [4]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 2 del task 23 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 2 del task 23 ha rilasciato le risorse [4]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT15S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT15S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 3 del task 23 ha eseguito per PT12S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT3S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 4 del task 23 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT3S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 4 del task 23 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 4 del task 23 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 7
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT1S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 7 del task 24 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M20S
-mag 17, 2025 12:31:30 PM taskSet.Task checkAndReset
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
 INFORMAZIONI: Il task 22 è stato rilasciato
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT20S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 0 del task 22 ha eseguito per PT1S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol progress
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol progress
 INFORMAZIONI: Il chunk 1 del task 22 ha acquisito le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT19S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 1 del task 22 ha eseguito per PT2S
-mag 17, 2025 12:31:30 PM resource.PriorityCeilingProtocol release
+mag 17, 2025 12:51:57 PM resource.PriorityCeilingProtocol release
 INFORMAZIONI: Il chunk 1 del task 22 ha rilasciato le risorse [4, 5]. La priorità dinamica del task ora è 5
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT17S
-mag 17, 2025 12:31:30 PM taskSet.Chunk execute
+mag 17, 2025 12:51:57 PM taskSet.Chunk execute
 INFORMAZIONI: Il chunk 7 del task 24 ha eseguito per PT17S
-mag 17, 2025 12:31:30 PM taskSet.Task execute
+mag 17, 2025 12:51:57 PM taskSet.Task execute
 INFORMAZIONI: il tempo rimanente è PT0S
-mag 17, 2025 12:31:30 PM scheduler.RMScheduler schedule
+mag 17, 2025 12:51:57 PM scheduler.RMScheduler schedule
 INFORMAZIONI: Time: PT1M40S
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
+INFORMAZIONI: Il task 22 è stato rilasciato
+mag 17, 2025 12:51:57 PM taskSet.Task checkAndReset
+INFORMAZIONI: Il task 23 è stato rilasciato
 ]]></system-err>
   </testcase>
 </testsuite>

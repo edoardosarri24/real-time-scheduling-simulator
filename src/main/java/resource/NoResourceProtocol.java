@@ -9,16 +9,16 @@ import taskSet.Task;
 
 public class NoResourceProtocol implements ResourceProtocol{
 
-    public void access (Task task, RMScheduler scheduler, Chunk chunk) throws NoResourceExecption {
+    public void access (RMScheduler scheduler, Chunk chunk) throws NoResourceExecption {
         throw new NoResourceExecption();
     }
 
-    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks, Task task) throws NoResourceExecption {
+    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) throws NoResourceExecption {
         throw new NoResourceExecption();
     }
 
     @Override
-    public void progress(Chunk chunk, Task task) {
+    public void progress(Chunk chunk) {
     
     }
     

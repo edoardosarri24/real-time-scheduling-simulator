@@ -65,5 +65,19 @@ public class TaskTest {
         assertThat((boolean) ReflectionUtils.getField(this.task, "isExecuted"))
             .isFalse();
     }
+
+    @Test
+    public void constructor() {
+        Chunk chunk0 = new Chunk(0, Duration.ofMillis(5));
+        Chunk chunk1 = new Chunk(1, Duration.ofMillis(5));
+        Task task = new Task(
+            Duration.ofMillis(10),
+            Duration.ofMillis(10),
+            List.of(chunk0, chunk1));
+        assertThat(chunk0.getParent())
+            .isSameAs(task);
+        assertThat(chunk1.getParent())
+            .isSameAs(task);
+    }
     
 }

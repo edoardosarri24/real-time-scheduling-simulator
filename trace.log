@@ -1,4 +1,58 @@
+- Time: 0. Tutti i task sono stati rilascaiti
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Il chunk 0 del task 1 ha eseguito per PT4S
+- Il chunk 1 del task 1 ha eseguito per PT2S
+- Il chunk 0 del task 2 ha eseguito per PT3S
+- Il chunk 1 del task 2 ha eseguito per PT2S
+- Il chunk 2 del task 2 ha eseguito per PT1S
+- Il chunk 0 del task 3 ha eseguito per PT5S
+- Il chunk 1 del task 3 ha eseguito per PT1S
+- Time: PT20S
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Il chunk 1 del task 3 ha eseguito per PT3S
+- Time: PT40S
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Time: PT50S
 - Il task 1 è stato rilasciato
-- Il task 9 è stato rilasciato
-- Il chunk 0 del task 16 ha eseguito per PT4S
-- Il chunk 0 del task 17 ha eseguito per PT10S
+- Il chunk 0 del task 1 ha eseguito per PT4S
+- Il chunk 1 del task 1 ha eseguito per PT2S
+- Time: PT1M
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Time: PT1M20S
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Time: PT1M40S
+- Il task 2 è stato rilasciato
+- Il task 1 è stato rilasciato
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Il chunk 0 del task 1 ha eseguito per PT4S
+- Il chunk 1 del task 1 ha eseguito per PT2S
+- Il chunk 0 del task 2 ha eseguito per PT3S
+- Il chunk 1 del task 2 ha eseguito per PT2S
+- Il chunk 2 del task 2 ha eseguito per PT1S
+- Time: PT2M
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Time: PT2M20S
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Time: PT2M30S
+- Il task 1 è stato rilasciato
+- Il chunk 0 del task 1 ha eseguito per PT4S
+- Il chunk 1 del task 1 ha eseguito per PT2S
+- Time: PT2M40S
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Time: PT3M
+- Il task 0 è stato rilasciato
+- Il chunk 0 del task 0 ha eseguito per PT2S
+- Time: PT3M20S
+- Il task 2 è stato rilasciato
+- Il task 1 è stato rilasciato
+- Il task 0 è stato rilasciato
+- Il task 3 è stato rilasciato
+- La generazione di tracce è avvenuta con successo!

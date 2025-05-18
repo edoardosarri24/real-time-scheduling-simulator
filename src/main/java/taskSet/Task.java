@@ -113,7 +113,7 @@ public class Task {
                 return Duration.ZERO;
             }
             remainingTime = remainingTime.minus(currentChunk.execute(remainingTime));
-            if (!currentChunk.equals(this.chunkToExecute.getFirst())) {
+            if (!this.chunkToExecute.isEmpty() && !currentChunk.equals(this.chunkToExecute.getFirst())) {
                 try {
                     resAccProtocol.release(currentChunk, scheduler, readyTasks);
                 } catch (NoResourceExecption e) {

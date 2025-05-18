@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import exeptions.DeadlineMissedException;
 import resource.ResourceProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
@@ -51,5 +52,7 @@ public abstract class Scheduler {
 
     // METHOD
     protected abstract void assignPriority();
+
+    public abstract void schedule() throws DeadlineMissedException;
     
 }

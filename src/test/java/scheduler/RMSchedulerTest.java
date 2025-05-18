@@ -89,5 +89,38 @@ public class RMSchedulerTest {
         assertThat(readyTasks)
             .containsExactly(task1, task0, task2);
     }
+
+    @Test
+    public void schedule() {
+        Chunk chunk0 = new Chunk(0, Duration.ofSeconds(2));
+        Chunk chunk1 = new Chunk(1, Duration.ofSeconds(4));
+        Chunk chunk2 = new Chunk(2, Duration.ofSeconds(2));
+        Chunk chunk3 = new Chunk(3, Duration.ofSeconds(3));
+        Chunk chunk4 = new Chunk(4, Duration.ofSeconds(2));
+        Chunk chunk5 = new Chunk(5, Duration.ofSeconds(1));
+        Chunk chunk6 = new Chunk(6, Duration.ofSeconds(5));
+        Chunk chunk7  = new Chunk(7, Duration.ofSeconds(4));
+        Task task0 = new Task(
+            Duration.ofSeconds(20),
+            Duration.ofSeconds(20),
+            List.of(chunk0));
+        Task task1 = new Task(
+            Duration.ofSeconds(50),
+            Duration.ofSeconds(50),
+            List.of(chunk1, chunk2));
+        Task task2 = new Task(
+            Duration.ofSeconds(100),
+            Duration.ofSeconds(100),
+            List.of(chunk3, chunk4, chunk5));
+        Task task3 = new Task(
+            Duration.ofSeconds(200),
+            Duration.ofSeconds(200),
+            List.of(chunk6, chunk7));
+
+        TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2, task3));
+        RMScheduler scheduler = new RMScheduler(taskSet);
+        assertThatCode(() -> scheduler.schedule())
+            .doesNotThrowAnyException();
+    }
     
 }

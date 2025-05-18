@@ -27,6 +27,7 @@ public final class RMScheduler extends Scheduler {
     }
 
     // METHOD
+    @Override
     public void schedule() throws DeadlineMissedException {
         // structures
         TreeSet<Task> readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));

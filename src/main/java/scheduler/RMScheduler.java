@@ -43,24 +43,10 @@ public final class RMScheduler extends Scheduler {
             // prossimo evento dove fare i controllli
             Duration nextEvent = events.removeFirst();
             Duration availableTime = nextEvent.minus(currentTime);
-
-            while (availableTime.isPositive() && !readyTasks.isEmpty()) {
-                Task currentTask = readyTasks.pollFirst();
-                Duration executedTime = currentTask.execute(availableTime, readyTasks, this);
-                availableTime = availableTime.minus(executedTime);
-                if (!currentTask.getIsExecuted() && !blockedTasksContains(currentTask))
-                    readyTasks.add(currentTask);
-            }
-
-            // per ogni task il cui periodo è scaduto controllo se ha superato la deadline
+            this.executeUntil(readyTasks, availableTime);
             currentTime = nextEvent;
             getLogger().info("Time: " + currentTime);
-            for (Task task : getTaskSet().getTasks()) {
-                if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
-                    task.checkAndReset();
-                    readyTasks.add(task);
-                }
-            }
+            this.relasePeriodTasks(readyTasks, currentTime);
         }
         getLogger().info("La generazione di tracce è avvenuta con successo!");
     }
@@ -76,6 +62,26 @@ public final class RMScheduler extends Scheduler {
                 Task task = sortedByPeriod.get(i);
                 task.initPriority(priority);
             });
+    }
+
+    // HELPER
+    private void relasePeriodTasks(TreeSet<Task> readyTasks, Duration currentTime) throws DeadlineMissedException {
+        for (Task task : getTaskSet().getTasks()) {
+            if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
+                task.checkAndReset();
+                readyTasks.add(task);
+            }
+        }
+    }
+
+    private void executeUntil(TreeSet<Task> readyTasks, Duration availableTime) {
+        while (availableTime.isPositive() && !readyTasks.isEmpty()) {
+            Task currentTask = readyTasks.pollFirst();
+            Duration executedTime = currentTask.execute(availableTime, readyTasks, this);
+            availableTime = availableTime.minus(executedTime);
+            if (!currentTask.getIsExecuted() && !blockedTasksContains(currentTask))
+                readyTasks.add(currentTask);
+        }
     }
 
 }

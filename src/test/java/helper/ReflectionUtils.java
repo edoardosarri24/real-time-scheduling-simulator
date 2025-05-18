@@ -54,4 +54,23 @@ public class ReflectionUtils {
         }
     }
 
+    /**
+     * Invokes a method with parameters on the given target object using reflection.
+     * @param target       the object on which to invoke the method
+     * @param methodName   the name of the method to invoke
+     * @param parameterTypes the types of the parameters
+     * @param args         the arguments to pass to the method
+     * @return the result of the method invocation, or null if the method returns void
+     * @throws RuntimeException if the method cannot be found or invoked
+     */
+    public static Object invokeMethod(Object target, String methodName, Class<?>[] parameterTypes, Object[] args) {
+        try {
+            var method = target.getClass().getDeclaredMethod(methodName, parameterTypes);
+            method.setAccessible(true);
+            return method.invoke(target, args);
+        } catch (Exception e) {
+            throw new RuntimeException("Errore nell'invocazione del metodo " + methodName, e);
+        }
+    }
+
 }

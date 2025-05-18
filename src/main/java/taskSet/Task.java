@@ -89,6 +89,10 @@ public class Task {
         this.resourcesAcquired.addAll(resources);
     }
 
+    void addChunkToExecute(Chunk chunk) {
+        this.chunkToExecute.addFirst(chunk);
+    }
+
     // METHOD
     public Duration execute(Duration availableTime, TreeSet<Task> readyTasks, RMScheduler scheduler) {
         Duration remainingTime = availableTime;
@@ -108,20 +112,14 @@ public class Task {
                 this.chunkToExecute.addFirst(currentChunk);
                 return Duration.ZERO;
             }
-            Duration chunkExecutionTime = currentChunk.getRemainingExecutionTime();
-            logger.info("il tempo rimanente è " + remainingTime);
-            if (remainingTime.compareTo(chunkExecutionTime) < 0) {
-                currentChunk.execute(remainingTime);
-                remainingTime = Duration.ZERO;
-                this.chunkToExecute.addFirst(currentChunk);
-            } else {
-                currentChunk.execute(chunkExecutionTime);
-                remainingTime = remainingTime.minus(chunkExecutionTime);
+            remainingTime = remainingTime.minus(currentChunk.execute(remainingTime));
+            if (!currentChunk.equals(this.chunkToExecute.getFirst())) {
                 try {
                     resAccProtocol.release(currentChunk, scheduler, readyTasks);
-                } catch (NoResourceExecption e) {}
+                } catch (NoResourceExecption e) {
+                    // if chunk has no resources, don't use the protocol
+                }
             }
-            logger.info("il tempo rimanente è " + remainingTime);
         }
         return availableTime.minus(remainingTime);
     }

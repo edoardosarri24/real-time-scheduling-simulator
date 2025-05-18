@@ -5,6 +5,8 @@ import org.junit.Test;
 import helper.ReflectionUtils;
 import java.time.Duration;
 import java.util.List;
+import java.util.function.Supplier;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class ChunkTest {
@@ -21,27 +23,38 @@ public class ChunkTest {
     }
 
     @Test
-    public void execute() {
-        assertThat(chunk.getRemainingExecutionTime())
-            .isEqualTo(Duration.ofSeconds(10));
-        chunk.execute(Duration.ofSeconds(4));
-        assertThat(chunk.getRemainingExecutionTime())
-            .isEqualTo(Duration.ofSeconds(6));
-        chunk.execute(Duration.ofSeconds(6));
-        assertThat(chunk.getRemainingExecutionTime())
-            .isEqualTo(Duration.ZERO);
-    }
-
-    @Test
     public void reset() {
-        assertThat(this.chunk.getRemainingExecutionTime())
+        Supplier<Duration> remainingExecutionTime = (() -> (Duration) ReflectionUtils.getField(this.chunk, "remainingExecutionTime"));
+        assertThat(remainingExecutionTime.get())
             .isEqualTo(Duration.ofSeconds(10));
         ReflectionUtils.setField(
             this.chunk,
             "remainingExecutionTime",
             Duration.ofSeconds(3));
         this.chunk.reset();
-        assertThat(this.chunk.getRemainingExecutionTime())
+        assertThat(remainingExecutionTime.get())
+            .isEqualTo(Duration.ofSeconds(10));
+    }
+
+    @SuppressWarnings("unchecked")
+    @Test
+    public void executeIf() {
+        Duration availableTime = Duration.ofSeconds(4);
+        Duration result = this.chunk.execute(availableTime);
+        assertThat(ReflectionUtils.getField(this.chunk, "remainingExecutionTime"))
+            .isEqualTo(Duration.ofSeconds(6));
+        List<Chunk> chunkToExecute = (List<Chunk>) ReflectionUtils.getField(this.chunk.getParent(), "chunkToExecute");
+        assertThat(chunkToExecute.getFirst())
+            .isSameAs(this.chunk);
+        assertThat(result)
+            .isEqualTo(Duration.ofSeconds(4));
+    }
+
+    @Test
+    public void executeElse() {
+        Duration availableTime = Duration.ofSeconds(12);
+        Duration result = this.chunk.execute(availableTime);
+        assertThat(result)
             .isEqualTo(Duration.ofSeconds(10));
     }
     

@@ -44,16 +44,12 @@ public final class RMScheduler extends Scheduler {
             Duration nextEvent = events.removeFirst();
             Duration availableTime = nextEvent.minus(currentTime);
 
-            while (availableTime.isPositive()) {
-                if (readyTasks.isEmpty()) {
-                    break;
-                } else {
-                    Task currentTask = readyTasks.pollFirst();
-                    Duration executedTime = currentTask.execute(availableTime, readyTasks, this);
-                    availableTime = availableTime.minus(executedTime);
-                    if (!currentTask.getIsExecuted() && !blockeTasksContainTask(currentTask))
-                        readyTasks.add(currentTask);
-                }
+            while (availableTime.isPositive() && !readyTasks.isEmpty()) {
+                Task currentTask = readyTasks.pollFirst();
+                Duration executedTime = currentTask.execute(availableTime, readyTasks, this);
+                availableTime = availableTime.minus(executedTime);
+                if (!currentTask.getIsExecuted() && !blockedTasksContains(currentTask))
+                    readyTasks.add(currentTask);
             }
 
             // per ogni task il cui periodo è scaduto controllo se ha superato la deadline

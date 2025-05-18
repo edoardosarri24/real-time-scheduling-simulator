@@ -8,6 +8,7 @@
     - Tutto PCP
 
 # Io
-- Documentazione
-- Singleton Scheduler e semplifica metodi senza passare lo scheduler
-- Rivedi funzionamento e testa schedule()
+- Documentazione.
+- Singleton Scheduler e semplifica metodi senza passare lo scheduler.
+- Testa schedule() con scheduling noti.
+- Controllare la gestione delle priorità con min e max.

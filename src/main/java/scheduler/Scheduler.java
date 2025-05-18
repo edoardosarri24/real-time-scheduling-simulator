@@ -45,7 +45,7 @@ public abstract class Scheduler {
         this.blockedTask.remove(task);
     }
 
-    protected boolean blockeTasksContainTask(Task task) {
+    protected boolean blockedTasksContains(Task task) {
         return this.blockedTask.contains(task);
     }
 

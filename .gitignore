@@ -1,0 +1,11 @@
+# file
+trace.log
+todo.md
+class diagram.puml
+.DS_Store
+
+#folders
+.vscode/
+bin/
+latex/
+target/

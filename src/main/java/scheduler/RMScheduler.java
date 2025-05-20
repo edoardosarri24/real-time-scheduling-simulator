@@ -39,7 +39,9 @@ public final class RMScheduler extends Scheduler {
         Duration currentTime = Duration.ZERO;
 
         // execution
-        getLogger().info("Time: 0. Tutti i task sono stati rilascaiti");
+        for (Task task : readyTasks) {
+            getLogger().info("<" + currentTime + ", release " + task.toString() + ">");
+        }
         while (!events.isEmpty()) {
             // prossimo evento dove fare i controllli
             Duration nextEvent = events.removeFirst();
@@ -49,7 +51,7 @@ public final class RMScheduler extends Scheduler {
             getLogger().info("Time: " + currentTime);
             this.relasePeriodTasks(readyTasks, currentTime);
         }
-        getLogger().info("La generazione di tracce è avvenuta con successo!");
+        getLogger().info("<" + currentTime + ", end>");
     }
 
     @Override

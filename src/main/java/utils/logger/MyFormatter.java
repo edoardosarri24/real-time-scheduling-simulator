@@ -8,7 +8,7 @@ public class MyFormatter extends Formatter {
     @Override
     public String format(LogRecord record) {
         return String.format(
-            "- %s%n",
+            "%s%n",
             record.getMessage()
         );
     }

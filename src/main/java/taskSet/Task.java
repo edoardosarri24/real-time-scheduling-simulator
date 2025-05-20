@@ -17,7 +17,7 @@ import utils.logger.LoggingConfig;
 
 public class Task {
 
-    private static int idCounter = 0;
+    private static int idCounter = 1;
     private final int id;
     private final Duration period;
     private final Duration deadline;
@@ -140,6 +140,11 @@ public class Task {
         if (this.period.compareTo(this.deadline) != 0)
             throw new IllegalArgumentException(
                 "Il task " + this.id + " non è puramente periodico: ha periodo " + this.period + " e deadline " + this.deadline);
+    }
+
+    @Override
+    public String toString() {
+        return "Task" + this.id;
     }
 
     // HELPER

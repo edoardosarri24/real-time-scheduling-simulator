@@ -3,6 +3,8 @@ package taskSet;
 import org.junit.Before;
 import org.junit.Test;
 import helper.ReflectionUtils;
+import utils.VirtualClock;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.function.Supplier;
@@ -12,6 +14,7 @@ import static org.assertj.core.api.Assertions.*;
 public class ChunkTest {
 
     private Chunk chunk;
+    private VirtualClock clock;
 
     @Before
     public void setUp() {
@@ -20,6 +23,7 @@ public class ChunkTest {
             Duration.ofSeconds(10),
             Duration.ofSeconds(10),
             List.of(this.chunk));
+        this.clock = new VirtualClock();
     }
 
     @Test
@@ -38,9 +42,9 @@ public class ChunkTest {
 
     @SuppressWarnings("unchecked")
     @Test
-    public void executeIf() {
+    public void exectuteRemainingExecutionTime() {
         Duration availableTime = Duration.ofSeconds(4);
-        Duration result = this.chunk.execute(availableTime);
+        Duration result = this.chunk.execute(availableTime, this.clock);
         assertThat(ReflectionUtils.getField(this.chunk, "remainingExecutionTime"))
             .isEqualTo(Duration.ofSeconds(6));
         List<Chunk> chunkToExecute = (List<Chunk>) ReflectionUtils.getField(this.chunk.getParent(), "chunkToExecute");
@@ -48,13 +52,17 @@ public class ChunkTest {
             .isSameAs(this.chunk);
         assertThat(result)
             .isEqualTo(Duration.ofSeconds(4));
+        assertThat(clock.getCurrentTime())
+            .isEqualTo(Duration.ofSeconds(4));
     }
 
     @Test
-    public void executeElse() {
+    public void executeAvailableTime() {
         Duration availableTime = Duration.ofSeconds(12);
-        Duration result = this.chunk.execute(availableTime);
+        Duration result = this.chunk.execute(availableTime, this.clock);
         assertThat(result)
+            .isEqualTo(Duration.ofSeconds(10));
+        assertThat(clock.getCurrentTime())
             .isEqualTo(Duration.ofSeconds(10));
     }
     

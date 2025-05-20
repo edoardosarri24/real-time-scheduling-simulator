@@ -1,4 +1,4 @@
-package utils.sampler;
+package utils;
 
 import java.time.Duration;
 

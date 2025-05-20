@@ -38,16 +38,14 @@ public final class RMScheduler extends Scheduler {
         List<Duration> events = Multiple.generateMultiplesUpToLCM(periods);
 
         // execution
-        for (Task task : readyTasks) {
+        for (Task task : readyTasks)
             getLogger().info("<" + this.getClock().getCurrentTime() + ", release " + task.toString() + ">");
-        }
         while (!events.isEmpty()) {
-            // prossimo evento dove fare i controllli
             Duration nextEvent = events.removeFirst();
+            getLogger().info("");
             Duration availableTime = nextEvent.minus(this.getClock().getCurrentTime());
             this.executeUntil(readyTasks, availableTime);
             this.getClock().advanceTo(nextEvent);
-            getLogger().info("Time: " + this.getClock().getCurrentTime());
             this.relasePeriodTasks(readyTasks, this.getClock().getCurrentTime());
         }
         getLogger().info("<" + this.getClock().getCurrentTime() + ", end>");
@@ -70,7 +68,7 @@ public final class RMScheduler extends Scheduler {
     private void relasePeriodTasks(TreeSet<Task> readyTasks, Duration currentTime) throws DeadlineMissedException {
         for (Task task : getTaskSet().getTasks()) {
             if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
-                task.checkAndReset();
+                task.checkAndReset(currentTime);
                 readyTasks.add(task);
             }
         }

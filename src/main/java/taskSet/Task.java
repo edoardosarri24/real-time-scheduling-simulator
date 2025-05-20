@@ -100,6 +100,7 @@ public class Task {
         while (remainingTime.isPositive()) {
             if (this.chunkToExecute.isEmpty()) {
                 this.isExecuted = true;
+                logger.info("<" + scheduler.getClock().getCurrentTime() + ", complete " + this.toString() + ">");
                 break;
             }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
@@ -112,7 +113,7 @@ public class Task {
                 this.chunkToExecute.addFirst(currentChunk);
                 return Duration.ZERO;
             }
-            Duration executedTime = currentChunk.execute(remainingTime);
+            Duration executedTime = currentChunk.execute(remainingTime, scheduler.getClock());
             remainingTime = remainingTime.minus(executedTime);
             if (!this.chunkToExecute.isEmpty() && !currentChunk.equals(this.chunkToExecute.getFirst())) {
                 try {
@@ -125,13 +126,13 @@ public class Task {
         return availableTime.minus(remainingTime);
     }
 
-    public void checkAndReset() throws DeadlineMissedException {
+    public void checkAndReset(Duration currentTime) throws DeadlineMissedException {
         if (!this.isExecuted) {
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         } else {
             this.chunkToExecute = new LinkedList<>(this.chunks);
             this.isExecuted = false;
-            logger.info("Il task " + this.id + " è stato rilasciato");
+            logger.info("<" + currentTime + ", release " + this.toString() + ">");
             for (Chunk chunk : this.chunkToExecute)
                 chunk.reset();
         }

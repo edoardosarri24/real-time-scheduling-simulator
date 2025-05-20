@@ -8,8 +8,8 @@ import exeptions.DeadlineMissedException;
 import resource.ResourceProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
+import utils.VirtualClock;
 import utils.logger.LoggingConfig;
-import utils.sampler.VirtualClock;
 
 public abstract class Scheduler {
 

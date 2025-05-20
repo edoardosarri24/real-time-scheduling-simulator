@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import resource.Resource;
+import utils.VirtualClock;
 import utils.logger.LoggingConfig;
 
 public class Chunk {
@@ -51,24 +52,26 @@ public class Chunk {
     }
 
     // METHOD
-    public Duration execute(Duration availableTime) {
+    public Duration execute(Duration availableTime, VirtualClock clock) {
+        Duration executedTime = this.remainingExecutionTime;
         if (availableTime.compareTo(this.remainingExecutionTime) < 0) {
-            this.remainingExecutionTime = this.remainingExecutionTime.minus(availableTime);
-            logger.info("Il chunk " + this.id
-                + " del task " + this.getParent().getId() 
-                + " ha eseguito per "+ availableTime);
+            executedTime = availableTime;
+            this.remainingExecutionTime = this.remainingExecutionTime.minus(executedTime);
             this.parent.addChunkToExecute(this);
-            return availableTime;
-        } else {
-            logger.info("Il chunk " + this.id
-                + " del task " + this.getParent().getId() 
-                + " ha eseguito per " + this.remainingExecutionTime);
-            return this.remainingExecutionTime;
         }
+        logger.info("<" + clock.getCurrentTime() + ", exectute " + this.toString() + ">");
+        clock.advanceBy(executedTime);
+        logger.info("<" + clock.getCurrentTime() + ", finsih " + this.toString() + ">");
+        return executedTime;
     }
 
     public void reset() {
         this.remainingExecutionTime = this.executionTime;
+    }
+
+    @Override
+    public String toString() {
+        return ("Chunk" + this.parent.getId() + "." + this.id);
     }
 
 }

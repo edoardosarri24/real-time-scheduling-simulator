@@ -36,22 +36,21 @@ public final class RMScheduler extends Scheduler {
             .map(Task::getPeriod)
             .collect(Collectors.toList());
         List<Duration> events = Multiple.generateMultiplesUpToLCM(periods);
-        Duration currentTime = Duration.ZERO;
 
         // execution
         for (Task task : readyTasks) {
-            getLogger().info("<" + currentTime + ", release " + task.toString() + ">");
+            getLogger().info("<" + this.getClock().getCurrentTime() + ", release " + task.toString() + ">");
         }
         while (!events.isEmpty()) {
             // prossimo evento dove fare i controllli
             Duration nextEvent = events.removeFirst();
-            Duration availableTime = nextEvent.minus(currentTime);
+            Duration availableTime = nextEvent.minus(this.getClock().getCurrentTime());
             this.executeUntil(readyTasks, availableTime);
-            currentTime = nextEvent;
-            getLogger().info("Time: " + currentTime);
-            this.relasePeriodTasks(readyTasks, currentTime);
+            this.getClock().advanceTo(nextEvent);
+            getLogger().info("Time: " + this.getClock().getCurrentTime());
+            this.relasePeriodTasks(readyTasks, this.getClock().getCurrentTime());
         }
-        getLogger().info("<" + currentTime + ", end>");
+        getLogger().info("<" + this.getClock().getCurrentTime() + ", end>");
     }
 
     @Override

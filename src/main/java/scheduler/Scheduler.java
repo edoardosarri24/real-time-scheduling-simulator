@@ -9,12 +9,14 @@ import resource.ResourceProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.logger.LoggingConfig;
+import utils.sampler.VirtualClock;
 
 public abstract class Scheduler {
 
     private final TaskSet taskSet;
     private final ResourceProtocol resProtocol;
     private List<Task> blockedTask = new LinkedList<>();
+    private VirtualClock clock = new VirtualClock();
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
@@ -48,6 +50,10 @@ public abstract class Scheduler {
 
     protected boolean blockedTasksContains(Task task) {
         return this.blockedTask.contains(task);
+    }
+
+    public VirtualClock getClock() {
+        return this.clock;
     }
 
     // METHOD

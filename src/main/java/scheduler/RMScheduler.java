@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
 import exeptions.DeadlineMissedException;
 import resource.NoResourceProtocol;
 import resource.ResourceProtocol;
@@ -17,7 +16,7 @@ import utils.Multiple;
 
 public final class RMScheduler extends Scheduler {
 
-    private Task lastTaskExecuted = null;
+    private Task lastTaskExecuted;
 
     // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {

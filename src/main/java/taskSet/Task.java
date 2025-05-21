@@ -153,6 +153,11 @@ public class Task {
         return this.id == other.id;
     }
 
+    @Override
+    public int hashCode() {
+        return this.id;
+    }
+
     // HELPER
     private void initChunkPrent() {
         this.chunks.forEach(chunk -> chunk.setParent(this));

@@ -2,7 +2,7 @@ package utils;
 
 import java.time.Duration;
 
-public class VirtualClock {
+public final class VirtualClock {
 
     private Duration currentTime = Duration.ZERO;
 

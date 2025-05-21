@@ -1,0 +1,1 @@
+- logging di preemption con blocco su risorse.

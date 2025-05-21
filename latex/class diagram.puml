@@ -2,57 +2,71 @@
 skinparam classAttributeIconSize 0
 
 ' classi
-class Task <<final>> {
-    - id: int
-    - period: Duration
-    - deadline: Duration
-    - chunks: List<Chunk>
-    - isExecuted: boolean
-    - nominalPriority: int
-    - dinamicPrioriy: int
-    + execute(): Duration
-    + checkAndReset(): void
-}
-
-class Chunk <<final>> {
-    - id: int
-    - executionTime: Duration
-    - resource: Set<Resource>
-    + execute(): void
-    + reset(): void
-}
-
-class Taskset <<final>> {
-    - tasks: Set<Task>
-}
-
-class Resource <<final>> {
-    - free: boolean
-}
-
 abstract class Scheduler {
     - taskSet: Taskset
-    - resAccProtocol: ResAccProtocol
-    + schedule() <<abstract>>
+    - resProtocol: ResourceProtocol
+    - clock: VirtualClock
+    + schedule(): void <<abstract>>
+    + assignPriority(): void <<abstract>>
+}
+
+class VirtualClock <<final>> {
+    - currentTime: Duration
 }
 
 class RMScheduler <<final>> {
-    - checkPeriocity()
 }
 
-abstract class ResAccessProtocol {
+abstract class ResourceProtocol <<abstract>> {
+    - protocol: ResAccessProtocol
+    + access: void
+    + prgress: void
+    + release: void
 }
 
 class PriorityCeilingProtocol <<final>> {
 }
 
+class NoResourceProtocol <<final>> {
+}
+
+class Resource <<final>> {
+    - blockedTasks: List<Task>
+}
+
+class Taskset <<final>> {
+    - tasks: Set<Task>
+    + purelyPeriodicCheck(): void
+}
+
+class Task <<final>> {
+    - period: Duration
+    - deadline: Duration
+    - chunks: List<Chunk>
+    - nominalPriority: int
+    - dinamicPrioriy: int
+    + execute(): Duration
+    + checkAndReset(): void
+    + purelyPeriodicCheck: void
+}
+
+class Chunk <<final>> {
+    - executionTime: Duration
+    - resources: List<Resource>
+    + execute(): Duration
+    + reset(): void
+}
+
 ' relazioni
-Task "1...*" *-- "1...*" Chunk
-Taskset "1...*" *-- "1...*" Task
-Chunk "*" *-- "*" Resource
 Scheduler <|-- RMScheduler
-Scheduler "*" *-- "1" Taskset
-ResAccessProtocol <|-- PriorityCeilingProtocol
-Scheduler "*" *-- "1" ResAccessProtocol
+Scheduler "1" --> "1" VirtualClock
+Scheduler "*" --> "*" ResourceProtocol
+ResourceProtocol <|-- PriorityCeilingProtocol
+ResourceProtocol <|-- NoResourceProtocol
+Scheduler "*" --> "1" Taskset
+Taskset "1" *-- "1...*" Task
+Task "1" *-- "1...*" Chunk
+Chunk "*" -> "*" Resource
+
 
 @enduml

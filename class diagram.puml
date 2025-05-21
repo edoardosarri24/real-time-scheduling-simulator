@@ -1,0 +1,58 @@
+@startuml Analisi
+skinparam classAttributeIconSize 0
+
+' classi
+class Task <<final>> {
+    - id: int
+    - period: Duration
+    - deadline: Duration
+    - chunks: List<Chunk>
+    - isExecuted: boolean
+    - nominalPriority: int
+    - dinamicPrioriy: int
+    + execute(): Duration
+    + checkAndReset(): void
+}
+
+class Chunk <<final>> {
+    - id: int
+    - executionTime: Duration
+    - resource: Set<Resource>
+    + execute(): void
+    + reset(): void
+}
+
+class Taskset <<final>> {
+    - tasks: Set<Task>
+}
+
+class Resource <<final>> {
+    - free: boolean
+}
+
+abstract class Scheduler {
+    - taskSet: Taskset
+    - resAccProtocol: ResAccProtocol
+    + schedule() <<abstract>>
+}
+
+class RMScheduler <<final>> {
+    - checkPeriocity()
+}
+
+abstract class ResAccessProtocol {
+}
+
+class PriorityCeilingProtocol <<final>> {
+}
+
+' relazioni
+Task "1...*" *-- "1...*" Chunk
+Taskset "1...*" *-- "1...*" Task
+Chunk "*" *-- "*" Resource
+Scheduler <|-- RMScheduler
+Scheduler "*" *-- "1" Taskset
+ResAccessProtocol <|-- PriorityCeilingProtocol
+Scheduler "*" *-- "1" ResAccessProtocol
+
+@enduml

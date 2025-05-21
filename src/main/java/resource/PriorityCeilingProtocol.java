@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import exeptions.AccessResourceProtocolExecption;
 import scheduler.RMScheduler;
+import scheduler.Scheduler;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
@@ -34,7 +35,7 @@ public final class PriorityCeilingProtocol extends ResourceProtocol {
 
     // METHOD
     @Override
-    public void access(Chunk chunk) throws AccessResourceProtocolExecption {
+    public void access(Chunk chunk, Scheduler scheduler) throws AccessResourceProtocolExecption {
         if (!chunk.hasResources())
             return;
         Task parentTask = chunk.getParent();
@@ -44,6 +45,9 @@ public final class PriorityCeilingProtocol extends ResourceProtocol {
             .min()
             .orElse(Integer.MIN_VALUE);
         if (parentTask.getNominalPriority() <= maxCeiling) {
+            chunk.getResources().forEach(res -> res.addBlockedTask(parentTask));
+            scheduler.blockTask(parentTask);
+            parentTask.addChunkToExecute(chunk);
             String resourcesId = chunk.getResources().stream()
                               .map(Resource::toString)
                               .map(String::valueOf)

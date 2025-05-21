@@ -23,7 +23,7 @@ public abstract class ResourceProtocol {
     }
 
     // METHOD
-    public void access(Chunk chunk) throws AccessResourceProtocolExecption {}
+    public void access(Chunk chunk, Scheduler scheduler) throws AccessResourceProtocolExecption {}
 
     public void progress(Chunk chunk) {};
     

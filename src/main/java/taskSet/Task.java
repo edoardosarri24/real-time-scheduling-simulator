@@ -89,7 +89,7 @@ public class Task {
         this.resourcesAcquired.addAll(resources);
     }
 
-    void addChunkToExecute(Chunk chunk) {
+    public void addChunkToExecute(Chunk chunk) {
         this.chunkToExecute.addFirst(chunk);
     }
 
@@ -105,12 +105,9 @@ public class Task {
             }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
             try {
-                resAccProtocol.access(currentChunk);
+                resAccProtocol.access(currentChunk, scheduler);
                 resAccProtocol.progress(currentChunk);
             } catch (AccessResourceProtocolExecption e) {
-                scheduler.blockTask(this);
-                currentChunk.getResources().forEach(res -> res.addBlockedTask(this));
-                this.chunkToExecute.addFirst(currentChunk);
                 return Duration.ZERO;
             }
             Duration executedTime = currentChunk.execute(remainingTime, scheduler.getClock());

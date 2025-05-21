@@ -1,0 +1,20 @@
+\documentclass[12pt, a4paper, oneside, openright, footsepline]{scrreprt}
+\input{preambolo}
+\begin{document}
+\include{copertina}
+
+%%%%%%%%%%%%%%%%%%%%%%%INDICE%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\listoffigures
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%CAPITOLI%%%%%%%%%%%%%%%%%%%%%%
+\include{capitoli/1-introduzione}
+\include{capitoli/2-analisi}
+\include{capitoli/3-implementazione}
+\include{capitoli/0-dubbi}
+
+%%%%%%%%%%%%%%%%%%%%%%%FINE%%%%%%%%%%%%%%%%%%%%%%%%
+\nocite{*}
+\printbibliography
+\end{document}

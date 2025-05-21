@@ -1,0 +1,38 @@
+\chapter{Analisi}
+In questo capitolo analiziamo la struttura del progetto, partendo dai suoi componenti e definendo la loro relazione.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Componenti}
+
+\subsection{Task}
+Un task è definito da:
+\begin{itemize}
+    \item Pattern di rilascio, cioè una distribuzione del tempo tra due arrivi consecutivi; rappresenta il periodo del task. Ci semplifica la vita rappresnetare la distribuzione con il suo Samplar (vedi Sirio); aggiungiamo a questi il DeterministicSampler parametrizzato dal tempo di rilascio.
+    \item Numero e tipo di chunk.
+    \item Deadline. Forse conviene considerare la deadline relativa; a lezione abbiamo visto questa soluzione per implementare i vari resource access protocol.
+    \item Priorità nominale e dinamica.
+\end{itemize}
+
+Non ci interessa definire un activation time perché vogliamo considerare il caso pessimo: l'activation time sarà l'istante inziale per tutti i task.
+
+\myskip
+
+Un chunk, cioè una computazione atomica del task, è definito da: una distribuzione del tempo di esecuzione; una eventuale richiesta di risorse da usare in mutua esclusione (da acquisire prima dell'esecuzione e rilascaire subito dopo).
+
+\subsection{Taskset}
+È un insieme di task. È l'oggetto principale gestito dallo scheduler.
+
+\subsection{Risorse}
+Sono le risorse da utilizzare in mutua esclusione. Ongi risorsa è gestita da un semaforo binario.
+
+\subsection{CPU}
+È l'unità di elaborazione. Supponiamo essere unica.
+
+\subsection{Scheduler}
+È il componente che assegna un task al processore. Per il momento implementiamo solo Rate Monotonic (RM) e Earliest Deadline First (EDF).
+
+\subsection{Protocollo di accesso alle risorse}
+È il meccanismo che garantisce la mutua esclusione di una risorsa. Per il momento implementiamo solo Priority Ceiling Protocol (PCP). Forse poi anche Priority Inheritance Protocol (PIP), ma vediamo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Class diagram}

@@ -383,6 +383,11 @@ INPUT ./capitoli/2-analisi.tex
 INPUT ./capitoli/2-analisi.tex
 INPUT capitoli/2-analisi.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecsx1440.tfm
+INPUT ./immagini/class diagram.pdf
+INPUT ./immagini/class diagram.pdf
+INPUT ./immagini/class diagram.pdf
+INPUT ./immagini/class diagram.pdf
+INPUT ./immagini/class diagram.pdf
 INPUT ./capitoli/3-implementazione.tex
 INPUT ./capitoli/3-implementazione.tex
 OUTPUT build/capitoli/3-implementazione.aux

@@ -10,15 +10,11 @@ import taskSet.TaskSet;
 
 public interface ResourceProtocol {
 
-    public default void access(RMScheduler scheduler, Chunk chunk) throws AccessResourceProtocolExecption {
-        return;
-    }
+    public default void access(Chunk chunk) throws AccessResourceProtocolExecption {return;}
 
     public default void progress(Chunk chunk) {}
     
-    public default void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) {
-        return;
-    }
+    public default void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) {return;}
 
     public default void initStructures(TaskSet taskSet) {}
     

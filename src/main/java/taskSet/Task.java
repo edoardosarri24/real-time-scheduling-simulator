@@ -105,9 +105,11 @@ public class Task {
             }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
             try {
-                resAccProtocol.access(scheduler, currentChunk);
+                resAccProtocol.access(currentChunk);
                 resAccProtocol.progress(currentChunk);
             } catch (AccessResourceProtocolExecption e) {
+                scheduler.blockTask(this);
+                currentChunk.getResources().forEach(res -> res.addBlockedTask(this));
                 this.chunkToExecute.addFirst(currentChunk);
                 return Duration.ZERO;
             }

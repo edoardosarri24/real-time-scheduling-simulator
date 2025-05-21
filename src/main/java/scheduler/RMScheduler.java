@@ -2,6 +2,7 @@ package scheduler;
 
 import java.time.Duration;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -48,7 +49,8 @@ public final class RMScheduler extends Scheduler {
             Duration availableTime = nextEvent.minus(this.getClock().getCurrentTime());
             this.executeUntil(readyTasks, availableTime);
             this.getClock().advanceTo(nextEvent);
-            this.relasePeriodTasks(readyTasks, this.getClock().getCurrentTime());
+            List<Task> releasedTasks = this.relasePeriodTasks(this.getClock().getCurrentTime());
+            readyTasks.addAll(releasedTasks);
         }
         getLogger().info("<" + this.getClock().getCurrentTime() + ", end>");
     }
@@ -67,7 +69,8 @@ public final class RMScheduler extends Scheduler {
     }
 
     // HELPER
-    private void relasePeriodTasks(TreeSet<Task> readyTasks, Duration currentTime) throws DeadlineMissedException {
+    private List<Task> relasePeriodTasks(Duration currentTime) throws DeadlineMissedException {
+        List<Task> taskToRelease = new LinkedList<>();
         for (Task task : getTaskSet().getTasks()) {
             if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
                 try {
@@ -76,9 +79,10 @@ public final class RMScheduler extends Scheduler {
                     getLogger().info("<" + this.getClock().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());
                 }
-                readyTasks.add(task);
+                taskToRelease.add(task);
             }
         }
+        return taskToRelease;
     }
 
     private void executeUntil(TreeSet<Task> readyTasks, Duration availableTime) {

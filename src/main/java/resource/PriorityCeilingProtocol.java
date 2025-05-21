@@ -33,18 +33,16 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
     }
 
     // METHOD
-    public void access(RMScheduler scheduler, Chunk chunk) throws AccessResourceProtocolExecption {
-        Task parentTask = chunk.getParent();
+    public void access(Chunk chunk) throws AccessResourceProtocolExecption {
         if (!chunk.hasResources())
             return;
+        Task parentTask = chunk.getParent();
         int maxCeiling = this.busyResources.stream()
             .filter(res -> !parentTask.hasAquiredThatResource(res))
             .mapToInt(res -> this.ceiling.get(res))
             .min()
             .orElse(Integer.MIN_VALUE);
         if (parentTask.getNominalPriority() <= maxCeiling) {
-            scheduler.blockTask(parentTask);
-            chunk.getResources().forEach(res -> res.addBlockedTask(parentTask));
             String resourcesId = chunk.getResources().stream()
                               .map(Resource::getId)
                               .map(String::valueOf)
@@ -75,10 +73,10 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
     }
 
     public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> readyTasks) {
-        Task parentTask = chunk.getParent();
         List<Resource> resources = chunk.getResources();
         if (resources.isEmpty())
             return;
+        Task parentTask = chunk.getParent();
         for (Resource resource : resources) {
             resource.getMaxDinamicPriorityBlockedtask().ifPresent(
                 t -> {

@@ -25,6 +25,7 @@ public abstract class Scheduler {
         this.resProtocol = resProtocol;
         this.assignPriority();
         this.resProtocol.initStructures(this.taskSet);
+        this.resProtocol.setScheduler(this);
     }
 
     // GETTER AND SETTER

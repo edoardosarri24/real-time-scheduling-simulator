@@ -115,7 +115,10 @@ public class Task {
             }
             Duration executedTime = currentChunk.execute(remainingTime, scheduler.getClock());
             remainingTime = remainingTime.minus(executedTime);
-            if (!this.chunkToExecute.isEmpty() && !currentChunk.equals(this.chunkToExecute.getFirst()))
+            if(!this.chunkToExecute.stream()
+                .filter(chunk -> chunk.equals(currentChunk))
+                .findFirst()
+                .isPresent())
                 resAccProtocol.release(currentChunk, scheduler, readyTasks);
         }
         return availableTime.minus(remainingTime);

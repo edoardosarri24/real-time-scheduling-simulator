@@ -15,7 +15,7 @@ import taskSet.Task;
 import taskSet.TaskSet;
 import utils.logger.LoggingConfig;
 
-public final class PriorityCeilingProtocol implements ResourceProtocol {
+public final class PriorityCeilingProtocol extends ResourceProtocol {
 
     private final Map<Resource, Integer> ceiling;
     private List<Resource> busyResources;
@@ -33,6 +33,7 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
     }
 
     // METHOD
+    @Override
     public void access(Chunk chunk) throws AccessResourceProtocolExecption {
         if (!chunk.hasResources())
             return;
@@ -44,14 +45,15 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
             .orElse(Integer.MIN_VALUE);
         if (parentTask.getNominalPriority() <= maxCeiling) {
             String resourcesId = chunk.getResources().stream()
-                              .map(Resource::getId)
+                              .map(Resource::toString)
                               .map(String::valueOf)
                               .collect(Collectors.joining(", ", "[", "]"));
-            logger.info("Il chunk " + chunk.getId() + " del task " + parentTask.getId() + " si è bloccato sulle risorse " + resourcesId);
+            logger.info("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + "blockedOn " + resourcesId + ">");
             throw new AccessResourceProtocolExecption();
         }
     }
 
+    @Override
     public void progress(Chunk chunk) {
         Task parentTask = chunk.getParent();
         List<Resource> resources = chunk.getResources();
@@ -59,19 +61,22 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
             .flatMap(res -> res.getBlockedTasks().stream())
             .mapToInt(Task::getNominalPriority)
             .min()
-            .orElse(Integer.MIN_VALUE);
+            .orElse(Integer.MAX_VALUE);
         parentTask.setDinamicPriority(Math.min(
             parentTask.getNominalPriority(),
             MaxDinamicPriorityBlockedtask));
-        this.busyResources.addAll(resources);
-        parentTask.acquireResources(resources);
-        String resourcesId = resources.stream()
-                              .map(Resource::getId)
-                              .map(String::valueOf)
-                              .collect(Collectors.joining(", ", "[", "]"));
-        logger.info("Il chunk " + chunk.getId() + " del task " + parentTask.getId() + " ha acquisito le risorse " + resourcesId + ". La priorità dinamica del task ora è " + parentTask.getDinamicPriority());
+        if (!resources.isEmpty()) {
+            this.busyResources.addAll(resources);
+            parentTask.acquireResources(resources);
+            String resourcesId = resources.stream()
+                                  .map(Resource::toString)
+                                  .map(String::valueOf)
+                                  .collect(Collectors.joining(", ", "[", "]"));
+            logger.info("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + " lock " + resourcesId + ">");
+        }
     }
 
+    @Override
     public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> readyTasks) {
         List<Resource> resources = chunk.getResources();
         if (resources.isEmpty())
@@ -94,10 +99,10 @@ public final class PriorityCeilingProtocol implements ResourceProtocol {
                 parentTask::setDinamicPriority,
                 () -> parentTask.setDinamicPriority(parentTask.getNominalPriority()));
         String resourcesId = resources.stream()
-                              .map(Resource::getId)
+                              .map(Resource::toString)
                               .map(String::valueOf)
                               .collect(Collectors.joining(", ", "[", "]"));
-        logger.info("Il chunk " + chunk.getId() + " del task " + parentTask.getId() + " ha rilasciato le risorse " + resourcesId + ". La priorità dinamica del task ora è " + parentTask.getDinamicPriority());
+        logger.info("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + " unlock " + resourcesId + ">");
     }
 
     @Override

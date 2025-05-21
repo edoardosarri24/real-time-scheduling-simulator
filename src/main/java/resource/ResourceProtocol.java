@@ -4,18 +4,31 @@ import java.util.TreeSet;
 
 import exeptions.AccessResourceProtocolExecption;
 import scheduler.RMScheduler;
+import scheduler.Scheduler;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
 
-public interface ResourceProtocol {
+public abstract class ResourceProtocol {
 
-    public default void access(Chunk chunk) throws AccessResourceProtocolExecption {return;}
+    private Scheduler scheduler;
 
-    public default void progress(Chunk chunk) {}
+    // GETTER AND SETTER
+    public void setScheduler(Scheduler scheduler) {
+        this.scheduler = scheduler;
+    }
+
+    protected Scheduler getScheduler() {
+        return this.scheduler;
+    }
+
+    // METHOD
+    public void access(Chunk chunk) throws AccessResourceProtocolExecption {}
+
+    public void progress(Chunk chunk) {};
     
-    public default void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) {return;}
+    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) {}
 
-    public default void initStructures(TaskSet taskSet) {}
+    public void initStructures(TaskSet taskSet) {};
     
 }

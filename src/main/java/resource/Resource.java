@@ -9,7 +9,7 @@ import taskSet.Task;
 
 public final class Resource {
 
-    private static int idCounter = 0;
+    private static int idCounter = 1;
     private final int id;
     private List<Task> blockedTasks = new LinkedList<>();
 
@@ -43,6 +43,11 @@ public final class Resource {
     public Optional<Task> getMaxDinamicPriorityBlockedtask() {
         return this.blockedTasks.stream()
             .min(Comparator.comparingInt(Task::getNominalPriority));
+    }
+
+    @Override
+    public String toString() {
+        return "Res" + this.id;
     }
     
 }

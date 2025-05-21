@@ -1,5 +1,5 @@
 package resource;
 
-public class NoResourceProtocol implements ResourceProtocol{
+public class NoResourceProtocol extends ResourceProtocol{
     
 }

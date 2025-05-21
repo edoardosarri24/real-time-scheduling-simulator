@@ -5,6 +5,5 @@ class diagram.puml
 .DS_Store
 
 #folders
-.vscode/
 bin/
 target/

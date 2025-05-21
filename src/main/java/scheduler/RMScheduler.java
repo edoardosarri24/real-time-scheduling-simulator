@@ -16,6 +16,8 @@ import utils.Multiple;
 
 public final class RMScheduler extends Scheduler {
 
+    private Task lastTaskExecuted = null;
+
     // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {
         this(taskSet, new NoResourceProtocol());
@@ -68,7 +70,12 @@ public final class RMScheduler extends Scheduler {
     private void relasePeriodTasks(TreeSet<Task> readyTasks, Duration currentTime) throws DeadlineMissedException {
         for (Task task : getTaskSet().getTasks()) {
             if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
-                task.checkAndReset(currentTime);
+                try {
+                    task.checkAndReset(currentTime);
+                } catch (DeadlineMissedException e) {
+                    getLogger().info("<" + this.getClock().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
+                    throw new DeadlineMissedException(e.getMessage());
+                }
                 readyTasks.add(task);
             }
         }
@@ -77,7 +84,13 @@ public final class RMScheduler extends Scheduler {
     private void executeUntil(TreeSet<Task> readyTasks, Duration availableTime) {
         while (availableTime.isPositive() && !readyTasks.isEmpty()) {
             Task currentTask = readyTasks.pollFirst();
+            if (!(lastTaskExecuted==null)
+                && !lastTaskExecuted.equals(currentTask)
+                && !lastTaskExecuted.getIsExecuted())
+                getLogger().info("<" + this.getClock().getCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
             Duration executedTime = currentTask.execute(availableTime, readyTasks, this);
+            if (executedTime.isPositive())
+                this.lastTaskExecuted = currentTask;
             availableTime = availableTime.minus(executedTime);
             if (!currentTask.getIsExecuted() && !blockedTasksContains(currentTask))
                 readyTasks.add(currentTask);

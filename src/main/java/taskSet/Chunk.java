@@ -13,8 +13,9 @@ public class Chunk {
 
     private final int id;
     private final Duration executionTime;
-    private Duration remainingExecutionTime;
     private final List<Resource> resources;
+
+    private Duration remainingExecutionTime;
     private Task parent;
     private static final Logger logger = LoggingConfig.getLogger();
 
@@ -51,18 +52,20 @@ public class Chunk {
         return !this.resources.isEmpty();
     }
 
-    // METHOD
+    // METHOD controlla
     public Duration execute(Duration availableTime, VirtualClock clock) {
-        Duration executedTime = this.remainingExecutionTime;
         if (availableTime.compareTo(this.remainingExecutionTime) < 0) {
-            executedTime = availableTime;
-            this.remainingExecutionTime = this.remainingExecutionTime.minus(executedTime);
+            this.remainingExecutionTime = this.remainingExecutionTime.minus(availableTime);
             this.parent.addChunkToExecute(this);
+            logger.info("<" + clock.getCurrentTime() + ", exectute " + this.toString() + ">");
+            clock.advanceBy(availableTime);
+            return availableTime;
+        } else {
+            logger.info("<" + clock.getCurrentTime() + ", exectute " + this.toString() + ">");
+            clock.advanceBy(this.remainingExecutionTime);
+            logger.info("<" + clock.getCurrentTime() + ", finish " + this.toString() + ">");
+            return this.remainingExecutionTime;
         }
-        logger.info("<" + clock.getCurrentTime() + ", exectute " + this.toString() + ">");
-        clock.advanceBy(executedTime);
-        logger.info("<" + clock.getCurrentTime() + ", finsih " + this.toString() + ">");
-        return executedTime;
     }
 
     public void reset() {

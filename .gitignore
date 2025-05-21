@@ -7,5 +7,4 @@ class diagram.puml
 #folders
 .vscode/
 bin/
-latex/
 target/

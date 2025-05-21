@@ -9,7 +9,6 @@ import java.util.stream.Stream;
 
 import exeptions.AccessResourceProtocolExecption;
 import exeptions.DeadlineMissedException;
-import exeptions.NoResourceExecption;
 import resource.Resource;
 import resource.ResourceProtocol;
 import scheduler.RMScheduler;
@@ -17,15 +16,16 @@ import utils.logger.LoggingConfig;
 
 public class Task {
 
-    private static int idCounter = 1;
     private final int id;
     private final Duration period;
     private final Duration deadline;
     private final List<Chunk> chunks;
-    private List<Chunk> chunkToExecute;
-    private boolean isExecuted = false;
     private int nominalPriority;
     private int dinamicPriority;
+
+    private static int idCounter = 1;
+    private List<Chunk> chunkToExecute;
+    private boolean isExecuted = false;
     private List<Resource> resourcesAcquired = new LinkedList<>();
     private static final Logger logger = LoggingConfig.getLogger();
 
@@ -107,41 +107,33 @@ public class Task {
             try {
                 resAccProtocol.access(scheduler, currentChunk);
                 resAccProtocol.progress(currentChunk);
-            } catch (NoResourceExecption e) {
-                // if chunk has no resources, don't use the protocol
             } catch (AccessResourceProtocolExecption e) {
                 this.chunkToExecute.addFirst(currentChunk);
                 return Duration.ZERO;
             }
             Duration executedTime = currentChunk.execute(remainingTime, scheduler.getClock());
             remainingTime = remainingTime.minus(executedTime);
-            if (!this.chunkToExecute.isEmpty() && !currentChunk.equals(this.chunkToExecute.getFirst())) {
-                try {
-                    resAccProtocol.release(currentChunk, scheduler, readyTasks);
-                } catch (NoResourceExecption e) {
-                    // if chunk has no resources, don't use the protocol
-                }
-            }
+            if (!this.chunkToExecute.isEmpty() && !currentChunk.equals(this.chunkToExecute.getFirst()))
+                resAccProtocol.release(currentChunk, scheduler, readyTasks);
         }
         return availableTime.minus(remainingTime);
     }
 
     public void checkAndReset(Duration currentTime) throws DeadlineMissedException {
-        if (!this.isExecuted) {
+        if (!this.isExecuted)
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
-        } else {
-            this.chunkToExecute = new LinkedList<>(this.chunks);
-            this.isExecuted = false;
-            logger.info("<" + currentTime + ", release " + this.toString() + ">");
-            for (Chunk chunk : this.chunkToExecute)
-                chunk.reset();
-        }
+        this.chunkToExecute = new LinkedList<>(this.chunks);
+        this.isExecuted = false;
+        logger.info("<" + currentTime + ", release " + this.toString() + ">");
+        this.chunkToExecute.forEach(Chunk::reset);
     }
 
     void purelyPeriodicCheck() {
         if (this.period.compareTo(this.deadline) != 0)
             throw new IllegalArgumentException(
-                "Il task " + this.id + " non è puramente periodico: ha periodo " + this.period + " e deadline " + this.deadline);
+                "Il task " + this.id
+                + " non è puramente periodico: ha periodo " + this.period
+                + " e deadline " + this.deadline);
     }
 
     @Override
@@ -149,10 +141,19 @@ public class Task {
         return "Task" + this.id;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (getClass() != obj.getClass())
+            return false;
+        Task other = (Task) obj;
+        return this.id == other.id;
+    }
+
     // HELPER
     private void initChunkPrent() {
-        for (Chunk chunk : this.chunks)
-            chunk.setParent(this);
+        this.chunks.forEach(chunk -> chunk.setParent(this));
     }
 
 }

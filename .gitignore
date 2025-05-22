@@ -1,7 +1,7 @@
 # file
 trace.log
-.DS_Store
 
 #folders
 bin/
 target/
+out/

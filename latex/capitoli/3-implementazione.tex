@@ -1,13 +1,41 @@
 \chapter{Implementazione}
 
-\section{Rate Monotonic}
-Descrivere come è stato implementato.
+\section{Scheduler}
+Come prima osservazione specifichiamo che la classe \texttt{RMScheduler} è una sotto classe di \texttt{Scheduler}. questo permette in futuro di implementare altri tipi di scheduler e di dataarli facilmente al sistema.
 
-\section{Priority Ceiling Protocol}
+Ogni oggetto che estende \texttt{Scheduler} ha, oltre a ciò che definisce uno scheduler (e.g. taskSet e l'eventuale protocollo di accesso alle risorse), un oggetto di tipo \texttt{VirtualClock} che rappresenta il clock globale del sistema e una lista di task bloccati \texttt{blockedTask}.
+
+Ogni scheduler deve associare una priorità; ad esempio RM la assegna in modo opposto rispetto alla durata del periodo. Questo compito è svolto dal metodo \texttt{assignPriority}. Ovviamente poi abbiamo il metodo \texttt{schedule} che viene chiamato per avviare la simulazione.
+
+\subsection{Rate Monotonic}
+Descriviamo brevemente l'idea di implementazione di RM.
+
+Durante la creazione dello scheduler si fa un controllo per valutare che tutti i task del taskSet siano puramente periodici.
+
+\myskip
+
+La simulazione si basa su due strutture principali:
+\begin{itemize}
+    \item \texttt{taskReady} \\
+        Ospita i task che si contendono l'accesso alla CPU. Al suo interno si usa un'ordinamento inverso rispetto alla durata del periodo dei vari task.
+    \item \texttt{events} \\
+    Gestisce gli eventi importnati, cioè i momenti in cui finisce il periodo di un task. Nell'intervallo tra un perido e il successivo infatti lo scheduler non fa altro che mandare in esecuzione uno dopo l'altro il task a priorità maggiore. Quando arriva il momento di un evento, vengono controllati i task il cui periodo è finito; questo controllo serve per valutare se una deadline è stata mancata e per rilasciare nuovamente il task nel caso non ci siano errori.
+\end{itemize}
+
+\myskip
+
+Il metodo \texttt{schedule} poi delega la gestione dei chunk di ogni task alla classe \texttt{Task}, la quale a sua volta rimanda alla calsse \texttt{Chunk} la loro esecuione (e.g. il logging).
+
+\section{Resource Access Protocol}
+Ogni implementazione di un protocollo di accesso alle risorse deve estendere la classe \texttt{ResourceProtocol}.
+
+\subsection{Priority Ceiling Protocol}
 
 \section{Varie}
 
 \subsection{Loggin}
 Per il logging è stato implementato un semplice logging su un file e viene rappresnetato come una sequenza di coppie $<evento,tempo>$.
+
+Il file di destinazione delle tracce loggate è \texttt{trace.log}.
 
 \subsection{Sampling dei tempi}

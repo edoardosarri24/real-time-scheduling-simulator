@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/main"] 1747923328.89203 "build/main.bcf" "build/main.bbl" "build/main" 1747927330.82602 0
+["biber build/main"] 1747923328.89203 "build/main.bcf" "build/main.bbl" "build/main" 1747927350.85448 0
   "bibliografia.bib" 1747918841.17822 282 ffefee4a7170487fee28a69bf94a6f06 ""
-  "build/main.bcf" 1747927330.69091 108559 42b171097643dbc2f66bb384b95aabcb "pdflatex"
+  "build/main.bcf" 1747927350.71547 108559 42b171097643dbc2f66bb384b95aabcb "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1747927328.24884 "/Users/edoardosarri/Documents/SWEES/latex/main.tex" "build/main.pdf" "main" 1747927330.82651 0
+["pdflatex"] 1747927348.21556 "/Users/edoardosarri/Documents/SWEES/latex/main.tex" "build/main.pdf" "main" 1747927350.85491 0
   "/Users/edoardosarri/Documents/SWEES/latex/main.tex" 1747924003.22373 490 90abaae2995d79b3b5dfd9c7efbe5ebf ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -163,18 +163,18 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1747861545 5523539 cbe340ff87ac4cfddcdc6361a84e52ac ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1747306050 3568606 04d85b451c732eef86869f254975de2c ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "build/capitoli/0-dubbi.aux" 1747927330.66473 4360 448b41fbce92380df0d289d925a3ba30 "pdflatex"
-  "build/capitoli/1-introduzione.aux" 1747927330.61271 4373 d52850f87d23ad6d9e7d3513aada2833 "pdflatex"
-  "build/capitoli/2-analisi.aux" 1747927330.63614 5459 004f0fef37495fba7f76d28e3d161bc9 "pdflatex"
-  "build/capitoli/3-implementazione.aux" 1747927330.65821 5237 9e6723f7d5dfe0cd4a4e73adf2b07f38 "pdflatex"
-  "build/copertina.aux" 1747927330.57475 4026 e5805e1f4b7d37f1f338c4ddb91d9dbc "pdflatex"
-  "build/main.aux" 1747927330.6812 5812 a571a951bb7b43f65c2513aef6648a44 "pdflatex"
+  "build/capitoli/0-dubbi.aux" 1747927350.68938 4360 448b41fbce92380df0d289d925a3ba30 "pdflatex"
+  "build/capitoli/1-introduzione.aux" 1747927350.63829 4373 d52850f87d23ad6d9e7d3513aada2833 "pdflatex"
+  "build/capitoli/2-analisi.aux" 1747927350.6602 5459 004f0fef37495fba7f76d28e3d161bc9 "pdflatex"
+  "build/capitoli/3-implementazione.aux" 1747927350.68243 5237 9e6723f7d5dfe0cd4a4e73adf2b07f38 "pdflatex"
+  "build/copertina.aux" 1747927350.602 4026 e5805e1f4b7d37f1f338c4ddb91d9dbc "pdflatex"
+  "build/main.aux" 1747927350.70538 5812 a571a951bb7b43f65c2513aef6648a44 "pdflatex"
   "build/main.bbl" 1747923330.88397 2117 5d56f78704c30f285a9a2e30983212e3 "biber build/main"
-  "build/main.lof" 1747927330.69205 299 d90b03f7d3068d48d602118caff0155f "pdflatex"
-  "build/main.out" 1747927330.26492 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "build/main.run.xml" 1747927330.69191 2307 bf6ceb3555aadcd71ee87d4770d42729 "pdflatex"
-  "build/main.toc" 1747927330.69201 1867 649af9bc09e9ac99ec0954ce820d1a23 "pdflatex"
-  "capitoli/0-dubbi.tex" 1747927328.00666 349 0dd18df90ca94e6a3b6eedf68cdd86db ""
+  "build/main.lof" 1747927350.71659 299 d90b03f7d3068d48d602118caff0155f "pdflatex"
+  "build/main.out" 1747927350.28074 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "build/main.run.xml" 1747927350.71646 2307 bf6ceb3555aadcd71ee87d4770d42729 "pdflatex"
+  "build/main.toc" 1747927350.71656 1867 649af9bc09e9ac99ec0954ce820d1a23 "pdflatex"
+  "capitoli/0-dubbi.tex" 1747927347.98168 348 54874ed261bdf456f04fb008650ee567 ""
   "capitoli/1-introduzione.tex" 1747926727.3984 1164 06cb5d9ec5a291db34616575534c7514 ""
   "capitoli/2-analisi.tex" 1747918841.18046 1754 6ccddb96101f8f427b8badbc3c26088e ""
   "capitoli/3-implementazione.tex" 1747923161.30085 4442 58589a9f8a5997cca0afc454ebafea51 ""

@@ -1,4 +1,4 @@
-@startuml Analisi
+@startuml class diagram
 skinparam classAttributeIconSize 0
 
 ' classi

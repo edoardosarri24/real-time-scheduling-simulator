@@ -5,12 +5,19 @@ Come prima osservazione specifichiamo che la classe \texttt{RMScheduler} è una 
 
 Ogni oggetto che estende \texttt{Scheduler} ha, oltre a ciò che definisce uno scheduler (e.g. taskSet e l'eventuale protocollo di accesso alle risorse), un oggetto di tipo \texttt{VirtualClock} che rappresenta il clock globale del sistema e una lista di task bloccati \texttt{blockedTask}.
 
-Ogni scheduler deve associare una priorità; ad esempio RM la assegna in modo opposto rispetto alla durata del periodo. Questo compito è svolto dal metodo \texttt{assignPriority}. Ovviamente poi abbiamo il metodo \texttt{schedule} che viene chiamato per avviare la simulazione.
+Ogni scheduler deve associare una priorità; ad esempio RM la assegna in modo opposto rispetto alla durata del periodo. Questo compito è delegato dal metodo \texttt{assignPriority}. Ovviamente poi abbiamo il metodo \texttt{schedule} che viene chiamato per avviare la simulazione.
 
 \subsection{Rate Monotonic}
-Descriviamo brevemente l'idea di implementazione di RM.
+Descriviamo brevemente l'idea di implementazione di RM e osserviamo il relativo Sequence Diagram in Figura \ref{fig:sdRM}.
 
 Durante la creazione dello scheduler si fa un controllo per valutare che tutti i task del taskSet siano puramente periodici.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{immagini/sequence diagram RM.pdf}
+    \caption{Sequence Siagram RM}
+    \label{fig:sdRM}
+\end{figure}
 
 \myskip
 

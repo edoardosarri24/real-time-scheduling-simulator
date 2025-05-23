@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import exeptions.AccessResourceProtocolExecption;
 import exeptions.DeadlineMissedException;
 import resource.Resource;
-import resource.ResourceProtocol;
+import resource.ResourcesProtocol;
 import scheduler.RMScheduler;
 import utils.logger.LoggingConfig;
 
@@ -96,7 +96,7 @@ public class Task {
     // METHOD
     public Duration execute(Duration availableTime, TreeSet<Task> readyTasks, RMScheduler scheduler) {
         Duration remainingTime = availableTime;
-        ResourceProtocol resAccProtocol = scheduler.getResProtocol();
+        ResourcesProtocol resAccProtocol = scheduler.getResProtocol();
         while (remainingTime.isPositive()) {
             if (this.chunkToExecute.isEmpty()) {
                 this.isExecuted = true;
@@ -105,7 +105,7 @@ public class Task {
             }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
             try {
-                resAccProtocol.access(currentChunk, scheduler);
+                resAccProtocol.access(currentChunk);
                 resAccProtocol.progress(currentChunk);
             } catch (AccessResourceProtocolExecption e) {
                 return Duration.ZERO;
@@ -116,12 +116,12 @@ public class Task {
                 .filter(chunk -> chunk.equals(currentChunk))
                 .findFirst()
                 .isPresent())
-                resAccProtocol.release(currentChunk, scheduler, readyTasks);
+                resAccProtocol.release(currentChunk, readyTasks);
         }
         return availableTime.minus(remainingTime);
     }
 
-    public void checkAndReset(Duration currentTime) throws DeadlineMissedException {
+    public void relasePeriodTasks(Duration currentTime) throws DeadlineMissedException {
         if (!this.isExecuted)
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         this.chunkToExecute = new LinkedList<>(this.chunks);

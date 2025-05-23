@@ -42,7 +42,7 @@ public class TaskTest {
 
     @Test
     public void checkAndResetIf() {
-        assertThatThrownBy(() -> this.task.checkAndReset(Duration.ZERO))
+        assertThatThrownBy(() -> this.task.relasePeriodTasks(Duration.ZERO))
             .isInstanceOf(DeadlineMissedException.class)
             .hasMessage("Il task " + this.task.getId() + " ha superato la deadline");
     }
@@ -63,7 +63,7 @@ public class TaskTest {
             true);
         assertThat(this.task.getIsExecuted())
             .isTrue();
-        assertThatCode(() -> this.task.checkAndReset(Duration.ZERO))
+        assertThatCode(() -> this.task.relasePeriodTasks(Duration.ZERO))
             .doesNotThrowAnyException();
         chunkToExectute = (List<Chunk>) ReflectionUtils.getField(this.task, "chunkToExecute");
         assertThat(chunkToExectute)

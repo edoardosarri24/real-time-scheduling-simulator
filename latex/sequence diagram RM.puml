@@ -1,0 +1,13 @@
+@startuml sequence diagram RM
+Client -> RMScheduler : schedule
+RMScheduler -> RMScheduler : assignPriority
+RMScheduler -> Task : execute
+Task -> ResourcesProtocol : access
+Task -> ResourcesProtocol : progress
+Task -> Chunk : execute
+Task -> ResourcesProtocol : release
+RMScheduler -> VirtualClock : advanceTo
+RMScheduler -> Task : relasePeriodTasks
+Task -> Chunk : reset
+RMScheduler --> Client : trace.log
+@enduml

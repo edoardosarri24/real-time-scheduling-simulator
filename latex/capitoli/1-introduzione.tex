@@ -5,10 +5,8 @@ Un $evento$ può essere: rilascio di un job di un task; acquisizione/rilascio di
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Capacità}
-Vogliamo avere la possibilità di:
+A partire da un taskset, il sistema ha le capacità di:
 \begin{itemize}
-    \item Iniettrare fault \\
-        Si vuole avere la possibilità di iniettare fallimenti tramite due tecniche: aggiungere un task che fa cycle stealing (implementato tramite un task a priorità massima che non appartine al task set da schedulare); task programming defect, cioè se abbiamo un'implementazione non funzione di un task scorretta (es: acquisisce il semaforo ma non si alza la priorità).
     \item Osservare possibili fallimenti \\
         I possibili fallimenti che si voglio osservare sono: deadline miss; violazione del tempo di computazionde del chunck (sia in eccesso che in difetto).
 \end{itemize}

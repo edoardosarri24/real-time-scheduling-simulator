@@ -9,14 +9,12 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import exeptions.AccessResourceProtocolExecption;
-import scheduler.RMScheduler;
-import scheduler.Scheduler;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.logger.LoggingConfig;
 
-public final class PriorityCeilingProtocol extends ResourceProtocol {
+public final class PriorityCeilingProtocol extends ResourcesProtocol {
 
     private final Map<Resource, Integer> ceiling;
     private List<Resource> busyResources;
@@ -35,7 +33,7 @@ public final class PriorityCeilingProtocol extends ResourceProtocol {
 
     // METHOD
     @Override
-    public void access(Chunk chunk, Scheduler scheduler) throws AccessResourceProtocolExecption {
+    public void access(Chunk chunk) throws AccessResourceProtocolExecption {
         if (!chunk.hasResources())
             return;
         Task parentTask = chunk.getParent();
@@ -46,7 +44,7 @@ public final class PriorityCeilingProtocol extends ResourceProtocol {
             .orElse(Integer.MIN_VALUE);
         if (parentTask.getNominalPriority() <= maxCeiling) {
             chunk.getResources().forEach(res -> res.addBlockedTask(parentTask));
-            scheduler.blockTask(parentTask);
+            getScheduler().blockTask(parentTask);
             parentTask.addChunkToExecute(chunk);
             String resourcesId = chunk.getResources().stream()
                               .map(Resource::toString)
@@ -81,7 +79,7 @@ public final class PriorityCeilingProtocol extends ResourceProtocol {
     }
 
     @Override
-    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> readyTasks) {
+    public void release(Chunk chunk, TreeSet<Task> readyTasks) {
         List<Resource> resources = chunk.getResources();
         if (resources.isEmpty())
             return;
@@ -89,7 +87,7 @@ public final class PriorityCeilingProtocol extends ResourceProtocol {
         for (Resource resource : resources) {
             resource.getMaxDinamicPriorityBlockedtask().ifPresent(
                 t -> {
-                    scheduler.unblockTask(t);
+                    getScheduler().unblockTask(t);
                     readyTasks.add(t);
                     resource.removeBlockedTask(t);
                     parentTask.releaseResource(resource);

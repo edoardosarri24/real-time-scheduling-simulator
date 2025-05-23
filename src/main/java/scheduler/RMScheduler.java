@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import exeptions.DeadlineMissedException;
 import resource.NoResourceProtocol;
-import resource.ResourceProtocol;
+import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.Multiple;
@@ -23,7 +23,7 @@ public final class RMScheduler extends Scheduler {
         this(taskSet, new NoResourceProtocol());
     }
 
-    public RMScheduler(TaskSet taskSet, ResourceProtocol resProtocol) {
+    public RMScheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
         super(taskSet, resProtocol);
         getTaskSet().purelyPeriodicCheck();
     }
@@ -73,7 +73,7 @@ public final class RMScheduler extends Scheduler {
         for (Task task : getTaskSet().getTasks()) {
             if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
                 try {
-                    task.checkAndReset(currentTime);
+                    task.relasePeriodTasks(currentTime);
                 } catch (DeadlineMissedException e) {
                     getLogger().info("<" + this.getClock().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());

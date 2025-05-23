@@ -3,13 +3,12 @@ package resource;
 import java.util.TreeSet;
 
 import exeptions.AccessResourceProtocolExecption;
-import scheduler.RMScheduler;
 import scheduler.Scheduler;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
 
-public abstract class ResourceProtocol {
+public abstract class ResourcesProtocol {
 
     private Scheduler scheduler;
 
@@ -23,11 +22,11 @@ public abstract class ResourceProtocol {
     }
 
     // METHOD
-    public void access(Chunk chunk, Scheduler scheduler) throws AccessResourceProtocolExecption {}
+    public void access(Chunk chunk) throws AccessResourceProtocolExecption {}
 
     public void progress(Chunk chunk) {};
     
-    public void release(Chunk chunk, RMScheduler scheduler, TreeSet<Task> orderedTasks) {}
+    public void release(Chunk chunk, TreeSet<Task> orderedTasks) {}
 
     public void initStructures(TaskSet taskSet) {};
     

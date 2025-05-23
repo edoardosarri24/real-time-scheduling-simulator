@@ -1,8 +1,8 @@
-PWD /Users/edoardosarri/Documents/SWEES/latex
+PWD /Users/edoardosarri/Documents/real-time-scheduling-simulator/latex
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/edoardosarri/Documents/SWEES/latex/main.tex
+INPUT /Users/edoardosarri/Documents/real-time-scheduling-simulator/latex/main.tex
 OUTPUT build/main.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrreprt.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrreprt.cls
@@ -112,11 +112,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/atveryend/atveryend.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -391,6 +391,11 @@ INPUT ./capitoli/3-implementazione.tex
 INPUT ./capitoli/3-implementazione.tex
 INPUT capitoli/3-implementazione.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
+INPUT ./immagini/sequence diagram RM.pdf
+INPUT ./immagini/sequence diagram RM.pdf
+INPUT ./immagini/sequence diagram RM.pdf
+INPUT ./immagini/sequence diagram RM.pdf
+INPUT ./immagini/sequence diagram RM.pdf
 INPUT ./capitoli/0-dubbi.tex
 INPUT ./capitoli/0-dubbi.tex
 OUTPUT build/capitoli/0-dubbi.aux

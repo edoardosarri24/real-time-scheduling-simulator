@@ -17,10 +17,10 @@
 \contentsline {subsection}{\numberline {3.1.1}Rate Monotonic}{7}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Resource Access Protocol}{8}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Priority Ceiling Protocol}{8}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Utilità}{8}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Loggin}{8}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Clock}{8}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Sampling dei tempi}{8}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.3}Utilità}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Loggin}{9}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Clock}{9}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Sampling dei tempi}{9}{subsection.3.3.3}%
 \contentsline {chapter}{\numberline {4}Dubbi}{10}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Domande}{10}{section.4.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

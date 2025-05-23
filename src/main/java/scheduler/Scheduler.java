@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import exeptions.DeadlineMissedException;
-import resource.ResourceProtocol;
+import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.VirtualClock;
@@ -14,13 +14,13 @@ import utils.logger.LoggingConfig;
 public abstract class Scheduler {
 
     private final TaskSet taskSet;
-    private final ResourceProtocol resProtocol;
+    private final ResourcesProtocol resProtocol;
     private List<Task> blockedTask = new LinkedList<>();
     private VirtualClock clock = new VirtualClock();
     private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
-    public Scheduler(TaskSet taskSet, ResourceProtocol resProtocol) {
+    public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
         this.taskSet = taskSet;
         this.resProtocol = resProtocol;
         this.assignPriority();
@@ -37,7 +37,7 @@ public abstract class Scheduler {
         return this.taskSet;
     }
 
-    public ResourceProtocol getResProtocol() {
+    public ResourcesProtocol getResProtocol() {
         return this.resProtocol;
     }
 

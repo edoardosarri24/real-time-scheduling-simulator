@@ -13,8 +13,10 @@ The main goal is generate execution traces where each trace is a sequence of pai
 
 ### Getting Started
 - Clone the repository:
-`git clone https://github.com/edoardosarri24/real-time-scheduling-simulator`
-cd real-time-scheduling-simulator`
+```bash
+git clone https://github.com/edoardosarri24/real-time-scheduling-simulator
+cd real-time-scheduling-simulator
+```
 - Test: `mvn test`
 - Eseguire: `mvn compile exec:java`. To run the simulator, you need to define all the necessary objects in the *main.java* file, including tasks, jobs, resources, and eventually scheduling protocols.
 

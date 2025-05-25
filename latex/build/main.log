@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.15)  23 MAY 2025 12:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.23)  25 MAY 2025 23:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -926,11 +926,11 @@ File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 
  (./capitoli/2-analisi.tex
 chapter 2.
-<immagini/class diagram.pdf, id=95, 1061.9675pt x 759.83875pt>
+<immagini/class diagram.pdf, id=95, 785.93625pt x 672.5125pt>
 File: immagini/class diagram.pdf Graphic file (type pdf)
 <use immagini/class diagram.pdf>
 Package pdftex.def Info: immagini/class diagram.pdf  used on input line 35.
-(pdftex.def)             Requested size: 452.9679pt x 324.104pt.
+(pdftex.def)             Requested size: 452.9679pt x 387.60497pt.
 )
 
 [5
@@ -947,16 +947,11 @@ Package pdftex.def Info: immagini/class diagram.pdf  used on input line 35.
  (./capitoli/3-implementazione.tex
 chapter 3.
 
-Overfull \hbox (2.00122pt too wide) in paragraph at lines 6--7
-\T1/ppl/m/n/12 ta-sk-Set e l'e-ven-tua-le pro-to-col-lo di ac-ces-so al-le ri-sor-se), un og-get-to di ti-po \T1/cmtt/m/n/12 VirtualClock
- []
-
-
 Overfull \hbox (40.7245pt too wide) in paragraph at lines 8--9
 \T1/ppl/m/n/12 po-sto ri-spet-to al-la du-ra-ta del pe-rio-do. Que-sto com-pi-to è de-le-ga-to dal me-to-do \T1/cmtt/m/n/12 assignPriority\T1/ppl/m/n/12 .
  []
 
-<immagini/sequence diagram RM.pdf, id=110, 609.27625pt x 427.5975pt>
+<immagini/sequence diagram RM.pdf, id=114, 609.27625pt x 427.5975pt>
 File: immagini/sequence diagram RM.pdf Graphic file (type pdf)
 <use immagini/sequence diagram RM.pdf>
 Package pdftex.def Info: immagini/sequence diagram RM.pdf  used on input line 17.
@@ -1013,10 +1008,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,7n,107p,10983b,1893s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on build/main.pdf (11 pages, 332491 bytes).
+Output written on build/main.pdf (11 pages, 328438 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
+ 272 PDF objects out of 1000 (max. 8388607)
+ 230 compressed objects within 3 object streams
  43 named destinations out of 1000 (max. 500000)
  200 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,13 +5,15 @@ skinparam classAttributeIconSize 0
 abstract class Scheduler {
     - taskSet: Taskset
     - resProtocol: ResourceProtocol
-    - clock: VirtualClock
     + schedule(): void <<abstract>>
     + assignPriority(): void <<abstract>>
 }
 
-class VirtualClock <<final>> {
+class MyClock <<final>> {
     - currentTime: Duration
+    + getCurrentTime: void
+    + advanceTo: void
+    + advanceBy: void
 }
 
 class RMScheduler <<final>> {
@@ -59,7 +61,6 @@ class Chunk <<final>> {
 
 ' relazioni
 Scheduler <|-- RMScheduler
-Scheduler "1" --> "1" VirtualClock
 Scheduler "*" --> "*" ResourceProtocol
 ResourceProtocol <|-- PriorityCeilingProtocol
 ResourceProtocol <|-- NoResourceProtocol

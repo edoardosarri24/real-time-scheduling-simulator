@@ -13,6 +13,7 @@ import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.Multiple;
+import utils.logger.MyLogger;
 
 public final class RMScheduler extends Scheduler {
 
@@ -41,17 +42,17 @@ public final class RMScheduler extends Scheduler {
 
         // execution
         for (Task task : readyTasks)
-            getLogger().info("<" + this.getClock().getCurrentTime() + ", release " + task.toString() + ">");
+            MyLogger.log("<" + this.getClock().getCurrentTime() + ", release " + task.toString() + ">");
         while (!events.isEmpty()) {
             Duration nextEvent = events.removeFirst();
-            getLogger().info("");
+            MyLogger.log("");
             Duration availableTime = nextEvent.minus(this.getClock().getCurrentTime());
             this.executeUntil(readyTasks, availableTime);
             this.getClock().advanceTo(nextEvent);
             List<Task> releasedTasks = this.relasePeriodTasks(this.getClock().getCurrentTime());
             readyTasks.addAll(releasedTasks);
         }
-        getLogger().info("<" + this.getClock().getCurrentTime() + ", end>");
+        MyLogger.log("<" + this.getClock().getCurrentTime() + ", end>");
     }
 
     @Override
@@ -75,7 +76,7 @@ public final class RMScheduler extends Scheduler {
                 try {
                     task.relasePeriodTasks(currentTime);
                 } catch (DeadlineMissedException e) {
-                    getLogger().info("<" + this.getClock().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
+                    MyLogger.log("<" + this.getClock().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());
                 }
                 taskToRelease.add(task);
@@ -90,7 +91,7 @@ public final class RMScheduler extends Scheduler {
             if (!(lastTaskExecuted==null)
                 && !lastTaskExecuted.equals(currentTask)
                 && !lastTaskExecuted.getIsExecuted())
-                getLogger().info("<" + this.getClock().getCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
+                MyLogger.log("<" + this.getClock().getCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
             Duration executedTime = currentTask.execute(availableTime, readyTasks, this);
             if (executedTime.isPositive())
                 this.lastTaskExecuted = currentTask;

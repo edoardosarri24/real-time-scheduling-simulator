@@ -2,14 +2,11 @@ package scheduler;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Logger;
-
 import exeptions.DeadlineMissedException;
 import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.VirtualClock;
-import utils.logger.LoggingConfig;
 
 public abstract class Scheduler {
 
@@ -17,7 +14,6 @@ public abstract class Scheduler {
     private final ResourcesProtocol resProtocol;
     private List<Task> blockedTask = new LinkedList<>();
     private VirtualClock clock = new VirtualClock();
-    private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
@@ -29,10 +25,6 @@ public abstract class Scheduler {
     }
 
     // GETTER AND SETTER
-    protected Logger getLogger() {
-        return logger;
-    }
-
     protected TaskSet getTaskSet() {
         return this.taskSet;
     }
@@ -61,5 +53,5 @@ public abstract class Scheduler {
     protected abstract void assignPriority();
 
     public abstract void schedule() throws DeadlineMissedException;
-    
+
 }

@@ -2,7 +2,7 @@ package resource;
 
 import java.util.TreeSet;
 
-import exeptions.AccessResourceProtocolExecption;
+import exeptions.AccessResourceProtocolExeption;
 import scheduler.Scheduler;
 import taskSet.Chunk;
 import taskSet.Task;
@@ -22,7 +22,7 @@ public abstract class ResourcesProtocol {
     }
 
     // METHOD
-    public void access(Chunk chunk) throws AccessResourceProtocolExecption {}
+    public void access(Chunk chunk) throws AccessResourceProtocolExeption {}
 
     public void progress(Chunk chunk) {};
     

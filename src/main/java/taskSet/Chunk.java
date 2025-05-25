@@ -3,11 +3,10 @@ package taskSet;
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import resource.Resource;
 import utils.VirtualClock;
-import utils.logger.LoggingConfig;
+import utils.logger.MyLogger;
 
 public class Chunk {
 
@@ -17,7 +16,6 @@ public class Chunk {
 
     private Duration remainingExecutionTime;
     private Task parent;
-    private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public Chunk(int id, Duration executionTime) {
@@ -57,13 +55,13 @@ public class Chunk {
         if (availableTime.compareTo(this.remainingExecutionTime) < 0) {
             this.remainingExecutionTime = this.remainingExecutionTime.minus(availableTime);
             this.parent.addChunkToExecute(this);
-            logger.info("<" + clock.getCurrentTime() + ", exectute " + this.toString() + ">");
+            MyLogger.log("<" + clock.getCurrentTime() + ", execute " + this.toString() + ">");
             clock.advanceBy(availableTime);
             return availableTime;
         } else {
-            logger.info("<" + clock.getCurrentTime() + ", exectute " + this.toString() + ">");
+            MyLogger.log("<" + clock.getCurrentTime() + ", execute " + this.toString() + ">");
             clock.advanceBy(this.remainingExecutionTime);
-            logger.info("<" + clock.getCurrentTime() + ", finish " + this.toString() + ">");
+            MyLogger.log("<" + clock.getCurrentTime() + ", finish " + this.toString() + ">");
             return this.remainingExecutionTime;
         }
     }

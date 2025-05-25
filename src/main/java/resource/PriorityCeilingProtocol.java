@@ -5,20 +5,18 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import exeptions.AccessResourceProtocolExecption;
+import exeptions.AccessResourceProtocolExeption;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
-import utils.logger.LoggingConfig;
+import utils.logger.MyLogger;
 
 public final class PriorityCeilingProtocol extends ResourcesProtocol {
 
     private final Map<Resource, Integer> ceiling;
     private List<Resource> busyResources;
-    private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public PriorityCeilingProtocol (TaskSet taskSet) {
@@ -33,7 +31,7 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
 
     // METHOD
     @Override
-    public void access(Chunk chunk) throws AccessResourceProtocolExecption {
+    public void access(Chunk chunk) throws AccessResourceProtocolExeption {
         if (!chunk.hasResources())
             return;
         Task parentTask = chunk.getParent();
@@ -47,11 +45,11 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
             getScheduler().blockTask(parentTask);
             parentTask.addChunkToExecute(chunk);
             String resourcesId = chunk.getResources().stream()
-                              .map(Resource::toString)
-                              .map(String::valueOf)
-                              .collect(Collectors.joining(", ", "[", "]"));
-            logger.info("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + "blockedOn " + resourcesId + ">");
-            throw new AccessResourceProtocolExecption();
+                .map(Resource::toString)
+                .map(String::valueOf)
+                .collect(Collectors.joining(", ", "[", "]"));
+            MyLogger.log("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + "blockedOn " + resourcesId + ">");
+            throw new AccessResourceProtocolExeption();
         }
     }
 
@@ -71,10 +69,10 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
             this.busyResources.addAll(resources);
             parentTask.acquireResources(resources);
             String resourcesId = resources.stream()
-                                  .map(Resource::toString)
-                                  .map(String::valueOf)
-                                  .collect(Collectors.joining(", ", "[", "]"));
-            logger.info("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + " lock " + resourcesId + ">");
+                .map(Resource::toString)
+                .map(String::valueOf)
+                .collect(Collectors.joining(", ", "[", "]"));
+            MyLogger.log("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + " lock " + resourcesId + ">");
         }
     }
 
@@ -101,10 +99,10 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
                 parentTask::setDinamicPriority,
                 () -> parentTask.setDinamicPriority(parentTask.getNominalPriority()));
         String resourcesId = resources.stream()
-                              .map(Resource::toString)
-                              .map(String::valueOf)
-                              .collect(Collectors.joining(", ", "[", "]"));
-        logger.info("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + " unlock " + resourcesId + ">");
+            .map(Resource::toString)
+            .map(String::valueOf)
+            .collect(Collectors.joining(", ", "[", "]"));
+        MyLogger.log("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + " unlock " + resourcesId + ">");
     }
 
     @Override

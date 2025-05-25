@@ -4,15 +4,14 @@ import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
-import java.util.logging.Logger;
 import java.util.stream.Stream;
 
-import exeptions.AccessResourceProtocolExecption;
+import exeptions.AccessResourceProtocolExeption;
 import exeptions.DeadlineMissedException;
 import resource.Resource;
 import resource.ResourcesProtocol;
 import scheduler.RMScheduler;
-import utils.logger.LoggingConfig;
+import utils.logger.MyLogger;
 
 public class Task {
 
@@ -27,7 +26,6 @@ public class Task {
     private List<Chunk> chunkToExecute;
     private boolean isExecuted = false;
     private List<Resource> resourcesAcquired = new LinkedList<>();
-    private static final Logger logger = LoggingConfig.getLogger();
 
     // CONSTRUCTOR
     public Task(Duration period, Duration deadline, List<Chunk> chunks) {
@@ -100,14 +98,14 @@ public class Task {
         while (remainingTime.isPositive()) {
             if (this.chunkToExecute.isEmpty()) {
                 this.isExecuted = true;
-                logger.info("<" + scheduler.getClock().getCurrentTime() + ", complete " + this.toString() + ">");
+                MyLogger.log("<" + scheduler.getClock().getCurrentTime() + ", complete " + this.toString() + ">");
                 break;
             }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
             try {
                 resAccProtocol.access(currentChunk);
                 resAccProtocol.progress(currentChunk);
-            } catch (AccessResourceProtocolExecption e) {
+            } catch (AccessResourceProtocolExeption e) {
                 return Duration.ZERO;
             }
             Duration executedTime = currentChunk.execute(remainingTime, scheduler.getClock());
@@ -126,7 +124,7 @@ public class Task {
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         this.chunkToExecute = new LinkedList<>(this.chunks);
         this.isExecuted = false;
-        logger.info("<" + currentTime + ", release " + this.toString() + ">");
+        MyLogger.log("<" + currentTime + ", release " + this.toString() + ">");
         this.chunkToExecute.forEach(Chunk::reset);
     }
 

@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import exeptions.DeadlineMissedException;
 import helper.ReflectionUtils;
+import utils.MyClock;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -21,6 +23,7 @@ public class TaskTest {
             Duration.ofMillis(10),
             Duration.ofMillis(10),
             List.of(this.chunk));
+        MyClock.reset();
     }
 
     @Test

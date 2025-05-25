@@ -3,9 +3,8 @@ package taskSet;
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
-
 import resource.Resource;
-import utils.VirtualClock;
+import utils.MyClock;
 import utils.logger.MyLogger;
 
 public class Chunk {
@@ -51,17 +50,17 @@ public class Chunk {
     }
 
     // METHOD controlla
-    public Duration execute(Duration availableTime, VirtualClock clock) {
+    public Duration execute(Duration availableTime) {
         if (availableTime.compareTo(this.remainingExecutionTime) < 0) {
             this.remainingExecutionTime = this.remainingExecutionTime.minus(availableTime);
             this.parent.addChunkToExecute(this);
-            MyLogger.log("<" + clock.getCurrentTime() + ", execute " + this.toString() + ">");
-            clock.advanceBy(availableTime);
+            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", execute " + this.toString() + ">");
+            MyClock.getInstance().advanceBy(availableTime);
             return availableTime;
         } else {
-            MyLogger.log("<" + clock.getCurrentTime() + ", execute " + this.toString() + ">");
-            clock.advanceBy(this.remainingExecutionTime);
-            MyLogger.log("<" + clock.getCurrentTime() + ", finish " + this.toString() + ">");
+            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", execute " + this.toString() + ">");
+            MyClock.getInstance().advanceBy(this.remainingExecutionTime);
+            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", finish " + this.toString() + ">");
             return this.remainingExecutionTime;
         }
     }

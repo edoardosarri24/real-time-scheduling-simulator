@@ -14,12 +14,14 @@ import scheduler.RMScheduler;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
+import utils.MyClock;
 
 public class PriorityCeilingProtocolTest {
 
     @SuppressWarnings("unchecked")
     @Test
     public void initStructures() {
+        MyClock.reset();
         Resource res0 = new Resource();
         Resource res1 = new Resource();
         Resource res2 = new Resource();
@@ -53,5 +55,5 @@ public class PriorityCeilingProtocolTest {
         assertThat(ceiling.get(res2))
             .isEqualTo(7);
     }
-    
+
 }

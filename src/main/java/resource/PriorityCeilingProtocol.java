@@ -11,6 +11,7 @@ import exeptions.AccessResourceProtocolExeption;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
+import utils.MyClock;
 import utils.logger.MyLogger;
 
 public final class PriorityCeilingProtocol extends ResourcesProtocol {
@@ -48,7 +49,7 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
                 .map(Resource::toString)
                 .map(String::valueOf)
                 .collect(Collectors.joining(", ", "[", "]"));
-            MyLogger.log("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + "blockedOn " + resourcesId + ">");
+            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", " + chunk.toString() + "blockedOn " + resourcesId + ">");
             throw new AccessResourceProtocolExeption();
         }
     }
@@ -72,7 +73,7 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
                 .map(Resource::toString)
                 .map(String::valueOf)
                 .collect(Collectors.joining(", ", "[", "]"));
-            MyLogger.log("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + " lock " + resourcesId + ">");
+            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", " + chunk.toString() + " lock " + resourcesId + ">");
         }
     }
 
@@ -102,7 +103,7 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
             .map(Resource::toString)
             .map(String::valueOf)
             .collect(Collectors.joining(", ", "[", "]"));
-        MyLogger.log("<" + getScheduler().getClock().getCurrentTime() + ", " + chunk.toString() + " unlock " + resourcesId + ">");
+        MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", " + chunk.toString() + " unlock " + resourcesId + ">");
     }
 
     @Override

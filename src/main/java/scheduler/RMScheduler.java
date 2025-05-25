@@ -13,6 +13,7 @@ import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.Multiple;
+import utils.MyClock;
 import utils.logger.MyLogger;
 
 public final class RMScheduler extends Scheduler {
@@ -42,17 +43,17 @@ public final class RMScheduler extends Scheduler {
 
         // execution
         for (Task task : readyTasks)
-            MyLogger.log("<" + this.getClock().getCurrentTime() + ", release " + task.toString() + ">");
+            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", release " + task.toString() + ">");
         while (!events.isEmpty()) {
             Duration nextEvent = events.removeFirst();
             MyLogger.log("");
-            Duration availableTime = nextEvent.minus(this.getClock().getCurrentTime());
+            Duration availableTime = nextEvent.minus(MyClock.getInstance().getCurrentTime());
             this.executeUntil(readyTasks, availableTime);
-            this.getClock().advanceTo(nextEvent);
-            List<Task> releasedTasks = this.relasePeriodTasks(this.getClock().getCurrentTime());
+            MyClock.getInstance().advanceTo(nextEvent);
+            List<Task> releasedTasks = this.relasePeriodTasks(MyClock.getInstance().getCurrentTime());
             readyTasks.addAll(releasedTasks);
         }
-        MyLogger.log("<" + this.getClock().getCurrentTime() + ", end>");
+        MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", end>");
     }
 
     @Override
@@ -76,7 +77,7 @@ public final class RMScheduler extends Scheduler {
                 try {
                     task.relasePeriodTasks(currentTime);
                 } catch (DeadlineMissedException e) {
-                    MyLogger.log("<" + this.getClock().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
+                    MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());
                 }
                 taskToRelease.add(task);
@@ -91,8 +92,8 @@ public final class RMScheduler extends Scheduler {
             if (!(lastTaskExecuted==null)
                 && !lastTaskExecuted.equals(currentTask)
                 && !lastTaskExecuted.getIsExecuted())
-                MyLogger.log("<" + this.getClock().getCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
-            Duration executedTime = currentTask.execute(availableTime, readyTasks, this);
+                MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
+            Duration executedTime = currentTask.execute(availableTime, readyTasks, this.getResProtocol());
             if (executedTime.isPositive())
                 this.lastTaskExecuted = currentTask;
             availableTime = availableTime.minus(executedTime);

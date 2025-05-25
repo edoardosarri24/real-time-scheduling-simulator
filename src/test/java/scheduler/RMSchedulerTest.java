@@ -12,6 +12,7 @@ import resource.ResourcesProtocol;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
+import utils.MyClock;
 import utils.sampler.ConstantSampler;
 import utils.sampler.SampleDuration;
 
@@ -29,6 +30,7 @@ public class RMSchedulerTest {
     @Before
     public void setup() {
         this.chunk = new Chunk(0, Duration.ofSeconds(1));
+        MyClock.reset();
     }
 
     @Test

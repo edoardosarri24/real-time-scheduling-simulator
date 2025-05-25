@@ -2,9 +2,21 @@ package utils;
 
 import java.time.Duration;
 
-public final class VirtualClock {
+public final class MyClock {
 
+    private static MyClock INSTANCE = new MyClock();
     private Duration currentTime = Duration.ZERO;
+
+    private MyClock() {}
+
+    public static MyClock getInstance() {
+        return INSTANCE;
+    }
+
+    public static MyClock reset() {
+        INSTANCE = new MyClock();
+        return INSTANCE;
+    }
 
     public Duration getCurrentTime() {
         return this.currentTime;
@@ -22,5 +34,5 @@ public final class VirtualClock {
             throw new IllegalArgumentException("Cannot advance by negative duration");
         this.currentTime = this.currentTime.plus(delta);
     }
-    
+
 }

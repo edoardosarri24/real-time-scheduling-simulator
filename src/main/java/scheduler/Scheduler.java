@@ -6,14 +6,12 @@ import exeptions.DeadlineMissedException;
 import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
-import utils.VirtualClock;
 
 public abstract class Scheduler {
 
     private final TaskSet taskSet;
     private final ResourcesProtocol resProtocol;
     private List<Task> blockedTask = new LinkedList<>();
-    private VirtualClock clock = new VirtualClock();
 
     // CONSTRUCTOR
     public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
@@ -43,10 +41,6 @@ public abstract class Scheduler {
 
     protected boolean blockedTasksContains(Task task) {
         return this.blockedTask.contains(task);
-    }
-
-    public VirtualClock getClock() {
-        return this.clock;
     }
 
     // METHOD

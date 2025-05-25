@@ -10,7 +10,7 @@ import exeptions.AccessResourceProtocolExeption;
 import exeptions.DeadlineMissedException;
 import resource.Resource;
 import resource.ResourcesProtocol;
-import scheduler.RMScheduler;
+import utils.MyClock;
 import utils.logger.MyLogger;
 
 public class Task {
@@ -92,13 +92,12 @@ public class Task {
     }
 
     // METHOD
-    public Duration execute(Duration availableTime, TreeSet<Task> readyTasks, RMScheduler scheduler) {
+    public Duration execute(Duration availableTime, TreeSet<Task> readyTasks, ResourcesProtocol resAccProtocol) {
         Duration remainingTime = availableTime;
-        ResourcesProtocol resAccProtocol = scheduler.getResProtocol();
         while (remainingTime.isPositive()) {
             if (this.chunkToExecute.isEmpty()) {
                 this.isExecuted = true;
-                MyLogger.log("<" + scheduler.getClock().getCurrentTime() + ", complete " + this.toString() + ">");
+                MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", complete " + this.toString() + ">");
                 break;
             }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
@@ -108,7 +107,7 @@ public class Task {
             } catch (AccessResourceProtocolExeption e) {
                 return Duration.ZERO;
             }
-            Duration executedTime = currentChunk.execute(remainingTime, scheduler.getClock());
+            Duration executedTime = currentChunk.execute(remainingTime);
             remainingTime = remainingTime.minus(executedTime);
             if(!this.chunkToExecute.stream()
                 .filter(chunk -> chunk.equals(currentChunk))

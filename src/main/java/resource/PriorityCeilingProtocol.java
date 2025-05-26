@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import exeptions.AccessResourceProtocolExeption;
@@ -78,7 +77,7 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
     }
 
     @Override
-    public void release(Chunk chunk, TreeSet<Task> readyTasks) {
+    public void release(Chunk chunk) {
         List<Resource> resources = chunk.getResources();
         if (resources.isEmpty())
             return;
@@ -87,7 +86,7 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
             resource.getMaxDinamicPriorityBlockedtask().ifPresent(
                 t -> {
                     getScheduler().unblockTask(t);
-                    readyTasks.add(t);
+                    this.getScheduler().addReadyTask(t);
                     resource.removeBlockedTask(t);
                     parentTask.releaseResource(resource);
                 });

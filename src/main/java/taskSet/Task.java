@@ -3,13 +3,13 @@ package taskSet;
 import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeSet;
 import java.util.stream.Stream;
 
 import exeptions.AccessResourceProtocolExeption;
 import exeptions.DeadlineMissedException;
 import resource.Resource;
 import resource.ResourcesProtocol;
+import scheduler.Scheduler;
 import utils.MyClock;
 import utils.logger.MyLogger;
 
@@ -92,7 +92,8 @@ public class Task {
     }
 
     // METHOD
-    public Duration execute(Duration availableTime, TreeSet<Task> readyTasks, ResourcesProtocol resAccProtocol) {
+    public Duration execute(Duration availableTime, Scheduler scheduler) {
+        ResourcesProtocol resAccProtocol = scheduler.getResProtocol();
         Duration remainingTime = availableTime;
         while (remainingTime.isPositive()) {
             if (this.chunkToExecute.isEmpty()) {
@@ -113,7 +114,7 @@ public class Task {
                 .filter(chunk -> chunk.equals(currentChunk))
                 .findFirst()
                 .isPresent())
-                resAccProtocol.release(currentChunk, readyTasks);
+                resAccProtocol.release(currentChunk);
         }
         return availableTime.minus(remainingTime);
     }

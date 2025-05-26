@@ -1,7 +1,10 @@
 package scheduler;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.TreeSet;
+
 import exeptions.DeadlineMissedException;
 import resource.ResourcesProtocol;
 import taskSet.Task;
@@ -12,11 +15,13 @@ public abstract class Scheduler {
     private final TaskSet taskSet;
     private final ResourcesProtocol resProtocol;
     private List<Task> blockedTask = new LinkedList<>();
+    private TreeSet<Task> readyTasks;
 
     // CONSTRUCTOR
     public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
         this.taskSet = taskSet;
         this.resProtocol = resProtocol;
+        this.readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
         this.assignPriority();
         this.resProtocol.initStructures(this.taskSet);
         this.resProtocol.setScheduler(this);
@@ -25,6 +30,22 @@ public abstract class Scheduler {
     // GETTER AND SETTER
     protected TaskSet getTaskSet() {
         return this.taskSet;
+    }
+
+    public TreeSet<Task> getReadyTasks() {
+        return this.readyTasks;
+    }
+
+    public void addReadyTask(Task task) {
+        this.readyTasks.add(task);
+    }
+
+    public Task removeFirstReadyTask() {
+        return this.readyTasks.pollFirst();
+    }
+
+    public boolean thereIsAnotherReadyTask() {
+        return !this.readyTasks.isEmpty();
     }
 
     public ResourcesProtocol getResProtocol() {

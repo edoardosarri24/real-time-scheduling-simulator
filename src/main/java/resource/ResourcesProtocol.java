@@ -1,11 +1,8 @@
 package resource;
 
-import java.util.TreeSet;
-
 import exeptions.AccessResourceProtocolExeption;
 import scheduler.Scheduler;
 import taskSet.Chunk;
-import taskSet.Task;
 import taskSet.TaskSet;
 
 public abstract class ResourcesProtocol {
@@ -26,7 +23,7 @@ public abstract class ResourcesProtocol {
 
     public void progress(Chunk chunk) {};
     
-    public void release(Chunk chunk, TreeSet<Task> orderedTasks) {}
+    public void release(Chunk chunk) {}
 
     public void initStructures(TaskSet taskSet) {};
     

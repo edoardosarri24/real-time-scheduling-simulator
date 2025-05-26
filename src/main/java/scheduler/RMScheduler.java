@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import exeptions.DeadlineMissedException;
@@ -34,24 +33,23 @@ public final class RMScheduler extends Scheduler {
     @Override
     public void schedule() throws DeadlineMissedException {
         // structures
-        TreeSet<Task> readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
-        getTaskSet().getTasks().forEach(readyTasks::add);
-        List<Duration> periods = readyTasks.stream()
+        getTaskSet().getTasks().forEach(this.getReadyTasks()::add);
+        List<Duration> periods = this.getReadyTasks().stream()
             .map(Task::getPeriod)
             .collect(Collectors.toList());
         List<Duration> events = Multiple.generateMultiplesUpToLCM(periods);
 
         // execution
-        for (Task task : readyTasks)
+        for (Task task : this.getReadyTasks())
             MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", release " + task.toString() + ">");
         while (!events.isEmpty()) {
             Duration nextEvent = events.removeFirst();
             MyLogger.log("");
             Duration availableTime = nextEvent.minus(MyClock.getInstance().getCurrentTime());
-            this.executeUntil(readyTasks, availableTime);
+            this.executeFor(availableTime);
             MyClock.getInstance().advanceTo(nextEvent);
             List<Task> releasedTasks = this.relasePeriodTasks(MyClock.getInstance().getCurrentTime());
-            readyTasks.addAll(releasedTasks);
+            releasedTasks.forEach(this::addReadyTask);
         }
         MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", end>");
     }
@@ -86,19 +84,19 @@ public final class RMScheduler extends Scheduler {
         return taskToRelease;
     }
 
-    private void executeUntil(TreeSet<Task> readyTasks, Duration availableTime) {
-        while (availableTime.isPositive() && !readyTasks.isEmpty()) {
-            Task currentTask = readyTasks.pollFirst();
+    private void executeFor(Duration availableTime) {
+        while (availableTime.isPositive() && this.thereIsAnotherReadyTask()) {
+            Task currentTask = this.removeFirstReadyTask();
             if (!(lastTaskExecuted==null)
                 && !lastTaskExecuted.equals(currentTask)
                 && !lastTaskExecuted.getIsExecuted())
                 MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
-            Duration executedTime = currentTask.execute(availableTime, readyTasks, this.getResProtocol());
+            Duration executedTime = currentTask.execute(availableTime, this);
             if (executedTime.isPositive())
                 this.lastTaskExecuted = currentTask;
             availableTime = availableTime.minus(executedTime);
             if (!currentTask.getIsExecuted() && !blockedTasksContains(currentTask))
-                readyTasks.add(currentTask);
+                this.addReadyTask(currentTask);
         }
     }
 

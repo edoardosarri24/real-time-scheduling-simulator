@@ -22,9 +22,9 @@ public abstract class ResourcesProtocol {
     public void access(Chunk chunk) throws AccessResourceProtocolExeption {}
 
     public void progress(Chunk chunk) {};
-    
+
     public void release(Chunk chunk) {}
 
     public void initStructures(TaskSet taskSet) {};
-    
+
 }

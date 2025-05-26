@@ -34,7 +34,7 @@ public class Task {
         this.deadline = deadline;
         this.chunks = chunks;
         this.chunkToExecute = new LinkedList<>(chunks);
-        this.initChunkPrent();
+        this.initChunkParent();
     }
 
     // GETTER AND SETTER
@@ -119,15 +119,6 @@ public class Task {
         return availableTime.minus(remainingTime);
     }
 
-    public void relasePeriodTasks(Duration currentTime) throws DeadlineMissedException {
-        if (!this.isExecuted)
-            throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
-        this.chunkToExecute = new LinkedList<>(this.chunks);
-        this.isExecuted = false;
-        MyLogger.log("<" + currentTime + ", release " + this.toString() + ">");
-        this.chunkToExecute.forEach(Chunk::reset);
-    }
-
     void purelyPeriodicCheck() {
         if (this.period.compareTo(this.deadline) != 0)
             throw new IllegalArgumentException(
@@ -136,6 +127,16 @@ public class Task {
                 + " e deadline " + this.deadline);
     }
 
+    public void relasePeriodTasks() throws DeadlineMissedException {
+        if (!this.isExecuted)
+            throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
+        this.chunkToExecute = new LinkedList<>(this.chunks);
+        this.isExecuted = false;
+        MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", release " + this.toString() + ">");
+        this.chunkToExecute.forEach(Chunk::reset);
+    }
+
+    // OBJECT METHODS
     @Override
     public String toString() {
         return "Task" + this.id;
@@ -157,7 +158,7 @@ public class Task {
     }
 
     // HELPER
-    private void initChunkPrent() {
+    private void initChunkParent() {
         this.chunks.forEach(chunk -> chunk.setParent(this));
     }
 

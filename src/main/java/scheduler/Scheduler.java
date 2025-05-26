@@ -1,6 +1,5 @@
 package scheduler;
 
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
@@ -21,7 +20,6 @@ public abstract class Scheduler {
     public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
         this.taskSet = taskSet;
         this.resProtocol = resProtocol;
-        this.readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
         this.assignPriority();
         this.resProtocol.initStructures(this.taskSet);
         this.resProtocol.setScheduler(this);
@@ -30,6 +28,10 @@ public abstract class Scheduler {
     // GETTER AND SETTER
     protected TaskSet getTaskSet() {
         return this.taskSet;
+    }
+
+    protected void setReadyTasks(TreeSet<Task> readyTasks) {
+        this.readyTasks = readyTasks;
     }
 
     public TreeSet<Task> getReadyTasks() {

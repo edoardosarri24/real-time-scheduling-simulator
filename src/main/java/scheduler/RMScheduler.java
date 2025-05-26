@@ -2,8 +2,8 @@ package scheduler;
 
 import java.time.Duration;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import exeptions.DeadlineMissedException;
@@ -32,24 +32,16 @@ public final class RMScheduler extends Scheduler {
     // METHOD
     @Override
     public void schedule() throws DeadlineMissedException {
-        // structures
-        getTaskSet().getTasks().forEach(this.getReadyTasks()::add);
-        List<Duration> periods = this.getReadyTasks().stream()
-            .map(Task::getPeriod)
-            .collect(Collectors.toList());
-        List<Duration> events = Multiple.generateMultiplesUpToLCM(periods);
+        List<Duration> events = initStructures();
 
-        // execution
-        for (Task task : this.getReadyTasks())
-            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", release " + task.toString() + ">");
+        releaseAllTasks();
         while (!events.isEmpty()) {
             Duration nextEvent = events.removeFirst();
             MyLogger.log("");
             Duration availableTime = nextEvent.minus(MyClock.getInstance().getCurrentTime());
             this.executeFor(availableTime);
             MyClock.getInstance().advanceTo(nextEvent);
-            List<Task> releasedTasks = this.relasePeriodTasks(MyClock.getInstance().getCurrentTime());
-            releasedTasks.forEach(this::addReadyTask);
+            this.relasePeriodTasks();
         }
         MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", end>");
     }
@@ -68,20 +60,33 @@ public final class RMScheduler extends Scheduler {
     }
 
     // HELPER
-    private List<Task> relasePeriodTasks(Duration currentTime) throws DeadlineMissedException {
-        List<Task> taskToRelease = new LinkedList<>();
+    private List<Duration> initStructures() {
+        this.setReadyTasks(new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority)));
+        this.getTaskSet().getTasks().forEach(this.getReadyTasks()::add);
+        List<Duration> periods = this.getReadyTasks().stream()
+            .map(Task::getPeriod)
+            .collect(Collectors.toList());
+        List<Duration> events = Multiple.generateMultiplesUpToLCM(periods);
+        return events;
+    }
+
+    private void releaseAllTasks() {
+        for (Task task : this.getReadyTasks())
+            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", release " + task.toString() + ">");
+    }
+
+    private void relasePeriodTasks() throws DeadlineMissedException {
         for (Task task : getTaskSet().getTasks()) {
-            if (currentTime.toMillis() % task.getPeriod().toMillis() == 0) {
+            if (MyClock.getInstance().getCurrentTime().toMillis() % task.getPeriod().toMillis() == 0) {
                 try {
-                    task.relasePeriodTasks(currentTime);
+                    task.relasePeriodTasks();
                 } catch (DeadlineMissedException e) {
                     MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());
                 }
-                taskToRelease.add(task);
+                this.addReadyTask(task);
             }
         }
-        return taskToRelease;
     }
 
     private void executeFor(Duration availableTime) {

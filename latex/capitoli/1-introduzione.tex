@@ -1,12 +1,12 @@
 \chapter{Introduzione}
-L'obiettivo è creare un sistema (in Java) eseguibile da linea di comando che permetta di generare tracce di un'esecuzione. Ogni traccia è definita come una sequenza di coppie $<tempo, evento>$.
+Il progetto vuole modellare e implementare un sistema in Java che permetta di generare tracce di un'esecuzione a partire dalla definizione di un taskset con o senza risorse da usare in mutua esclusione. Le eventuali risorse sono gestite da un protocollo di accesso alle risorse.
 
-Un $evento$ può essere: rilascio di un job di un task; acquisizione/rilascio di un semaforo da parte di un job di un task; completamento di un chunk; completamento di un job di un task.
+Ogni traccia è definita come una sequenza di coppie $<tempo, evento>$, dove un $evento$ può essere: rilascio di un job di un task; acquisizione/rilascio di un semaforo da parte di un job di un task; completamento di un chunk; completamento di un job di un task.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Capacità}
 A partire da un taskset, il sistema ha le capacità di:
 \begin{itemize}
-    \item Osservare possibili fallimenti \\
-        I possibili fallimenti che si voglio osservare sono: deadline miss; violazione del tempo di computazionde del chunck (sia in eccesso che in difetto).
+    \item Generare la traccia di esecuzione del taskset schedulato tramite un dato algoritmo di scheduling e ed un eventuale protocollo di accesso alle risorse.
+    \item Rilevare eventuali deadline miss. Se al termine del prorpio periodo, un task non ha completato un tutti i chunk di cui è composto allora il sistema lo evidenzia e si arresta.
 \end{itemize}

@@ -5,12 +5,12 @@ In questo capitolo analiziamo la struttura del progetto, partendo dai suoi compo
 \section{Componenti}
 
 \subsection{Task}
-Un task è definito da: un un insieme di Chunk; la deadline; la priorità nominale e dinamica; il pattern di rilascio.
+Un task è definito da: un un insieme di Chunk; una deadline; una priorità nominale e dinamica; un pattern di rilascio.
 
-Non ci interessa definire un activation time perché vogliamo considerare il caso pessimo: l'activation time sarà l'istante inziale per tutti i task.
+Non ci interessa definire un activation time perché vogliamo considerare il caso pessimo: l'activation time sarà uguale per tutti i task e coinciderà con l'istante inziale.
 
 \subsection{Chunk}
-Un chunk, cioè una computazione atomica del task. È definito da: una distribuzione del tempo di esecuzione; una eventuale richiesta di risorse da usare in mutua esclusione (da acquisire prima dell'esecuzione e rilascaire subito dopo).
+Un chunk, cioè una computazione atomica del task. È definito da: una distribuzione del tempo di esecuzione; un'eventuale richiesta di risorse da usare in mutua esclusione (da acquisire prima dell'esecuzione e rilascaire subito dopo).
 
 \subsection{Taskset}
 È un insieme di task. È l'oggetto principale gestito dallo scheduler.
@@ -22,14 +22,14 @@ Sono le risorse da utilizzare in mutua esclusione. Ogni risorsa è gestita da un
 È l'unità di elaborazione. Supponiamo essere unica.
 
 \subsection{Scheduler}
-È il componente che assegna un task al processore. Al momento abbiamo implementato solo Rate Monotonic (RM).
+È il componente che assegna un task al processore. Sono stati implementati Rate Monotonic (RM) e Earlist Deadline First (EDF).
 
 \subsection{Protocollo di accesso alle risorse}
-È il meccanismo che garantisce la mutua esclusione di una risorsa. Al momento abbiamo implementato solo Priority Ceiling Protocol (PCP).
+È il meccanismo che garantisce la mutua esclusione di una risorsa. È stato implementato Priority Ceiling Protocol (PCP).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Class diagram}
-Per capire meglio la struttura del progetto, analizziamo il diagramma delle classi.
+Per capire meglio la struttura del progetto, analizziamo il diagramma delle classi. In questo modello sono definiti solo i campi che definiscono i vari componenti; per chiarezza del sistema non sono stati infatti introdotti gli oggetti necessari all'implementazione.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{immagini/class diagram.pdf}

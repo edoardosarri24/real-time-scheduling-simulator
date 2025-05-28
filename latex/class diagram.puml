@@ -19,7 +19,7 @@ class MyClock <<final>> {
 class RMScheduler <<final>> {
 }
 
-abstract class ResourceProtocol <<abstract>> {
+abstract class ResourceProtocol {
     - protocol: ResAccessProtocol
     + access: void
     + prgress: void

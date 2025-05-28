@@ -19,12 +19,12 @@ public abstract class ResourcesProtocol {
     }
 
     // METHOD
-    public void access(Chunk chunk) throws AccessResourceProtocolExeption {}
+    public abstract void access(Chunk chunk) throws AccessResourceProtocolExeption;
 
-    public void progress(Chunk chunk) {};
+    public abstract void progress(Chunk chunk);
 
-    public void release(Chunk chunk) {}
+    public abstract void release(Chunk chunk);
 
-    public void initStructures(TaskSet taskSet) {};
+    public abstract void initStructures(TaskSet taskSet);
 
 }

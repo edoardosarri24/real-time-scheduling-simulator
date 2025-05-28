@@ -1,6 +1,6 @@
 @startuml sequence diagram RM
 Client -> RMScheduler : schedule
-RMScheduler -> RMScheduler : assignPriority
+RMScheduler -> RMScheduler : initStructures
 RMScheduler -> Task : execute
 Task -> ResourcesProtocol : access
 Task -> ResourcesProtocol : progress

@@ -55,13 +55,13 @@ public class Chunk {
         if (availableTime.compareTo(this.remainingExecutionTime) < 0) {
             this.remainingExecutionTime = this.remainingExecutionTime.minus(availableTime);
             this.parent.addChunkToExecute(this);
-            MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", execute " + this.toString() + ">");
+            MyLogger.log("<" + Utils.printCurrentTime() + ", execute " + this.toString() + ">");
             MyClock.getInstance().advanceBy(availableTime);
             return availableTime;
         } else {
-            MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", execute " + this.toString() + ">");
+            MyLogger.log("<" + Utils.printCurrentTime() + ", execute " + this.toString() + ">");
             MyClock.getInstance().advanceBy(this.remainingExecutionTime);
-            MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", finish " + this.toString() + ">");
+            MyLogger.log("<" + Utils.printCurrentTime() + ", finish " + this.toString() + ">");
             return this.remainingExecutionTime;
         }
     }

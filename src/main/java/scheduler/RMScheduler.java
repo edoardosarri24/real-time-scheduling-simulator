@@ -45,7 +45,7 @@ public final class RMScheduler extends Scheduler {
             MyClock.getInstance().advanceTo(nextEvent);
             this.relasePeriodTasks();
         }
-        MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", end>");
+        MyLogger.log("<" + Utils.printCurrentTime() + ", end>");
     }
 
     @Override
@@ -74,7 +74,7 @@ public final class RMScheduler extends Scheduler {
 
     private void releaseAllTasks() {
         for (Task task : this.getReadyTasks())
-            MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", release " + task.toString() + ">");
+            MyLogger.log("<" + Utils.printCurrentTime() + ", release " + task.toString() + ">");
     }
 
     private void relasePeriodTasks() throws DeadlineMissedException {
@@ -83,7 +83,7 @@ public final class RMScheduler extends Scheduler {
                 try {
                     task.relasePeriodTasks();
                 } catch (DeadlineMissedException e) {
-                    MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", deadlineMiss " + task.toString() + ">");
+                    MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());
                 }
                 this.addReadyTask(task);
@@ -97,7 +97,7 @@ public final class RMScheduler extends Scheduler {
             if (!(lastTaskExecuted==null)
                 && !lastTaskExecuted.equals(currentTask)
                 && !lastTaskExecuted.getIsExecuted())
-                MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", preempt " + lastTaskExecuted.toString() + ">");
+                MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
             Duration executedTime = currentTask.execute(availableTime, this);
             if (executedTime.isPositive())
                 this.lastTaskExecuted = currentTask;

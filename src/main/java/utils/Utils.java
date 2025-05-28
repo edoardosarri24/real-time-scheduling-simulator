@@ -6,8 +6,9 @@ import java.time.Duration;
 
 public class Utils {
 
-    public static String durationPrinter(Duration duration) {
-        long nanos = duration.toNanos();
+    public static String printCurrentTime() {
+        Duration currentTime = MyClock.getInstance().getCurrentTime();
+        long nanos = currentTime.toNanos();
         BigDecimal millis = new BigDecimal(nanos).divide(BigDecimal.TEN.pow(6), 3, RoundingMode.HALF_UP);
         return "" + millis;
     }

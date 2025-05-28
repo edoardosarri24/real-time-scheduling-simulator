@@ -39,7 +39,7 @@ public final class Resource {
     public void removeBlockedTask(Task task) {
         this.blockedTasks.remove(task);
     }
-    
+
     public Optional<Task> getMaxDinamicPriorityBlockedtask() {
         return this.blockedTasks.stream()
             .min(Comparator.comparingInt(Task::getNominalPriority));
@@ -49,5 +49,5 @@ public final class Resource {
     public String toString() {
         return "Res" + this.id;
     }
-    
+
 }

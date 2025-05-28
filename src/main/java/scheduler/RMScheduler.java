@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
 import exeptions.DeadlineMissedException;
 import resource.NoResourceProtocol;
 import resource.ResourcesProtocol;
@@ -13,6 +14,7 @@ import taskSet.Task;
 import taskSet.TaskSet;
 import utils.Multiple;
 import utils.MyClock;
+import utils.Utils;
 import utils.logger.MyLogger;
 
 public final class RMScheduler extends Scheduler {
@@ -43,7 +45,7 @@ public final class RMScheduler extends Scheduler {
             MyClock.getInstance().advanceTo(nextEvent);
             this.relasePeriodTasks();
         }
-        MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", end>");
+        MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", end>");
     }
 
     @Override
@@ -72,7 +74,7 @@ public final class RMScheduler extends Scheduler {
 
     private void releaseAllTasks() {
         for (Task task : this.getReadyTasks())
-            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", release " + task.toString() + ">");
+            MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", release " + task.toString() + ">");
     }
 
     private void relasePeriodTasks() throws DeadlineMissedException {
@@ -81,7 +83,7 @@ public final class RMScheduler extends Scheduler {
                 try {
                     task.relasePeriodTasks();
                 } catch (DeadlineMissedException e) {
-                    MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", deadlineMiss " + task.toString() + ">");
+                    MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());
                 }
                 this.addReadyTask(task);
@@ -95,7 +97,7 @@ public final class RMScheduler extends Scheduler {
             if (!(lastTaskExecuted==null)
                 && !lastTaskExecuted.equals(currentTask)
                 && !lastTaskExecuted.getIsExecuted())
-                MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
+                MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", preempt " + lastTaskExecuted.toString() + ">");
             Duration executedTime = currentTask.execute(availableTime, this);
             if (executedTime.isPositive())
                 this.lastTaskExecuted = currentTask;

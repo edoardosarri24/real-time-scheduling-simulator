@@ -11,6 +11,7 @@ import resource.Resource;
 import resource.ResourcesProtocol;
 import scheduler.Scheduler;
 import utils.MyClock;
+import utils.Utils;
 import utils.logger.MyLogger;
 
 public class Task {
@@ -98,7 +99,7 @@ public class Task {
         while (remainingTime.isPositive()) {
             if (this.chunkToExecute.isEmpty()) {
                 this.isExecuted = true;
-                MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", complete " + this.toString() + ">");
+                MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", complete " + this.toString() + ">");
                 break;
             }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
@@ -132,7 +133,7 @@ public class Task {
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         this.chunkToExecute = new LinkedList<>(this.chunks);
         this.isExecuted = false;
-        MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", release " + this.toString() + ">");
+        MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", release " + this.toString() + ">");
         this.chunkToExecute.forEach(Chunk::reset);
     }
 

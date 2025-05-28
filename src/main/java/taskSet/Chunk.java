@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import resource.Resource;
 import utils.MyClock;
+import utils.Utils;
 import utils.logger.MyLogger;
 
 public class Chunk {
@@ -54,13 +55,13 @@ public class Chunk {
         if (availableTime.compareTo(this.remainingExecutionTime) < 0) {
             this.remainingExecutionTime = this.remainingExecutionTime.minus(availableTime);
             this.parent.addChunkToExecute(this);
-            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", execute " + this.toString() + ">");
+            MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", execute " + this.toString() + ">");
             MyClock.getInstance().advanceBy(availableTime);
             return availableTime;
         } else {
-            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", execute " + this.toString() + ">");
+            MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", execute " + this.toString() + ">");
             MyClock.getInstance().advanceBy(this.remainingExecutionTime);
-            MyLogger.log("<" + MyClock.getInstance().getCurrentTime() + ", finish " + this.toString() + ">");
+            MyLogger.log("<" + Utils.durationPrinter(MyClock.getInstance().getCurrentTime()) + ", finish " + this.toString() + ">");
             return this.remainingExecutionTime;
         }
     }

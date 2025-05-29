@@ -83,10 +83,18 @@ Il clock del sistema è rappresnetato dalla classe \texttt{MyClock}. Questa non 
 
 Il tempo è gestito tramite oggetti di tipo \texttt{Duration}, classe di \texttt{java.time} che implementa oggetti immutabili e che permetto una facile gestione del tempo.
 
+In particolare il tempo deve essere consdierato dall'utente (i.e., passato in input e restituito poi in output) in millesecondi, ma il sistema lo gestisce tramite i nanosecondi. Questo permette di lavorare con millisecondi frazionari quando si campiona dalle distribuzioni di Sirio.
+
+La stampa all'interno delf ile di log \texttt{trace.log} nel formato corretto è implementa nel metodo \texttt{Utils.printCurrentTime}.
+
 \subsection{Sampling dei tempi}
 Quando si deve definire i tempi che definiscono i vari componenti del sistema, cioè come il periodo, la dealine, l'execution time di un chunk, si usa un campionamento da un data distribuzione.
 
 Le distribuzioni sono implementate dalla libreria \texttt{Sirio}; oltre a quelle definite dalla libreria è stata implementata la classe \texttt{ConstantSampler}, che permette di gestire tempi costanti, mantenendo l'astrazione della libreria Sirio.
+
+\myskip
+
+I sampler di Sirio restiuiscono oggetti di tipo \texttt{BigDecimal}. Come detto nel paragrafo sopra il sistema gestisce il tempo come oggetti di tipo \texttt{Duration}. Per implementare questo meccanismo è stata implementata la classe \texttt{SampleDuration}, che preso un \texttt{Sampler} restituisce il rispettivo tempo in nanosecondi.
 
 \subsection{Eccezioni}
 Durante l'esecuzione si possono verificare dei problemi, più o meno previsti. Questi sono gestiti tramite eccezioni; questo permette in futuro di cambiare o aggiungere un comportamente del sistema quando si verificano determinate situazioni.

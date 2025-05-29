@@ -5,11 +5,6 @@ import com.google.common.math.LongMath;
 import java.time.Duration;
 import java.util.*;
 
-/**
- * Utility class for computing and generating multiples of time durations.
- * It supports calculating the least common multiple (LCM) of a list of durations
- * and generating their multiples up to a defined upper bound.
- */
 public class Multiple {
 
     /**
@@ -24,7 +19,6 @@ public class Multiple {
         List<Double> doubleNumbers = new ArrayList<>();
         for (Duration number : numbers)
             doubleNumbers.add((double) number.toMillis());
-
         double lcm = computeLCMOfDoubleList(doubleNumbers);
         double maxNumber = Collections.max(doubleNumbers);
         double limit = Math.min(lcm, maxNumber * 10);

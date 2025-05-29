@@ -12,7 +12,6 @@ import resource.NoResourceProtocol;
 import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
-import utils.Multiple;
 import utils.MyClock;
 import utils.Utils;
 import utils.logger.MyLogger;
@@ -68,7 +67,7 @@ public final class RMScheduler extends Scheduler {
         List<Duration> periods = this.getReadyTasks().stream()
             .map(Task::getPeriod)
             .collect(Collectors.toList());
-        List<Duration> events = Multiple.generateMultiplesUpToLCM(periods);
+        List<Duration> events = Utils.generateMultiplesUpToLCM(periods);
         return events;
     }
 

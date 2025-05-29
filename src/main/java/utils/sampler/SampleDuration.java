@@ -11,13 +11,9 @@ public class SampleDuration {
      * @param sampler the sampler from which to sample the value
      * @return the sampled duration as a {@link Duration} object
      */
-
     public static Duration sample(Sampler sampler) {
         BigDecimal sample = sampler.getSample();
-        System.out.println(sample);
         sample = sample.multiply(BigDecimal.TEN.pow(6));
-        System.out.println(sample);
-        System.out.println(sample.longValue());
         return Duration.ofNanos(sample.longValue());
     }
 

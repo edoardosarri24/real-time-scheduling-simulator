@@ -32,11 +32,11 @@ public final class RMScheduler extends Scheduler {
     @Override
     public void schedule() throws DeadlineMissedException {
         List<Duration> events = initStructures();
-
-        releaseAllTasks();
+        this.releaseAllTasks();
+        if (!this.getTaskSet().hyperbolicBoundTest())
+            MyLogger.wrn("L'hyperbolic bound test non è passato: il taskset potrebbe non essere schedulabile.");
         while (!events.isEmpty()) {
             Duration nextEvent = events.removeFirst();
-            MyLogger.log("");
             Duration availableTime = nextEvent.minus(MyClock.getInstance().getCurrentTime());
             this.executeFor(availableTime);
             MyClock.getInstance().advanceTo(nextEvent);

@@ -136,6 +136,15 @@ public class Task {
         this.chunkToExecute.forEach(Chunk::reset);
     }
 
+    double utilizationFactor() {
+        long executionTime = this.chunks.stream()
+            .map(Chunk::getExecutionTime)
+            .mapToLong(Duration::toNanos)
+            .sum();
+        long period = this.period.toNanos();
+        return (double) executionTime / period;
+    }
+
     // OBJECT METHODS
     @Override
     public String toString() {

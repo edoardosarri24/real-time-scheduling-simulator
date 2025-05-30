@@ -15,14 +15,15 @@
 \contentsline {chapter}{\numberline {3}Implementazione}{7}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Scheduler}{7}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Rate Monotonic}{7}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Resource Access Protocol}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.1.2}Test}{8}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Resource Access Protocol}{9}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Priority Ceiling Protocol}{9}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Fault injection}{9}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Utilità}{9}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Loggin}{9}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.3}Fault injection}{10}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Utilità}{10}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Loggin}{10}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Clock}{10}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Sampling dei tempi}{10}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Eccezioni}{10}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.3}Sampling dei tempi}{11}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Eccezioni}{11}{subsection.3.4.4}%
 \contentsline {chapter}{\numberline {4}Dubbi}{12}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Domande}{12}{section.4.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

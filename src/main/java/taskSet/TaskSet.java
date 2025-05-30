@@ -19,4 +19,18 @@ public class TaskSet {
             task.purelyPeriodicCheck();
     }
 
+    public boolean hyperbolicBoundTest() {
+        this.purelyPeriodicCheck();
+        double hyperbolicProduct = tasks.stream()
+            .mapToDouble(task -> task.utilizationFactor()+1)
+            .reduce(1.0, (a,b) -> a*b);
+        return hyperbolicProduct <= 2;
+    }
+
+    public double utilizationFactor() {
+        return this.tasks.stream()
+            .mapToDouble(Task::utilizationFactor)
+            .sum();
+    }
+
 }

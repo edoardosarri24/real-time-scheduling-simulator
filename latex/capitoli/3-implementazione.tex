@@ -42,6 +42,18 @@ La simulazione di scheduling si basa su due strutture principali:
 
 Il metodo \texttt{schedule} poi delega la gestione dei chunk di ogni task alla classe \texttt{Task}, la quale a sua volta rimanda alla calsse \texttt{Chunk} la loro esecuzione (i.e. il logging).
 
+\subsection{Test}
+Consideriamo situazioni diverse:
+\begin{itemize}
+    \item Schedulabile, senza risorse \\
+        Il test esegue l'hyperbolic bound test che passa; siccome il test è sufficiente sappiamo che la sua accettazione ci assicura che il taskset sia schedulabile da RM. A questo punto oltre a verificare che schedulare il taskset non sollevi un'eccezione, è stata valutata a mano la sequenza di tracce generata.
+    \item Non schedulabile, senza risorse \\
+        È stato preso in questo caso un taskset con fattore di utilizzo maggiore di 1: in questo modo sicuramente la schedulabilità non deve passare. Dopo aver verficato che l'hyperbolic test non passi, verifichaimo che vengano sollevate le corrette eccezioni.
+    \item Schedulabile e non schedulabile, con risorse \\
+        Sono state presi dei task generati tramite chatGPT. Ci siamo accertati che quello generato dal modello di OpenAI rispetti quanto detto vericando il sollevamento o meno di eccezioni. Potrebbero essere implementati i test di schedulabilità estesi per risovere questo problema.
+\end{itemize}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resource Access Protocol}
 Ogni implementazione di un protocollo di accesso alle risorse deve estendere la classe \texttt{ResourceProtocol}.

@@ -3,18 +3,20 @@ package taskSet;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
-
+import org.junit.Before;
 import org.junit.Test;
-
 import utils.MyClock;
-
 import static org.assertj.core.api.Assertions.*;
 
 public class TaskSetTest {
 
+    @Before
+    public void setUp() {
+        MyClock.reset();
+    }
+
     @Test
     public void notPurelyPeriodic() {
-        MyClock.reset();
         Chunk chunk = new Chunk(0, Duration.ofSeconds(1));
         Task task0 = new Task(
             Duration.ofSeconds(10),
@@ -32,6 +34,76 @@ public class TaskSetTest {
         assertThatThrownBy(() -> taskSet.purelyPeriodicCheck())
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("Il task " + task1.getId() + " non è puramente periodico: ha periodo PT5S e deadline PT1S");
+    }
+
+    @Test
+    public void hyperbolicBoundTestTrue() {
+        Task task0 = new Task(
+            Duration.ofSeconds(10),
+            Duration.ofSeconds(10),
+            List.of(
+                new Chunk(0, Duration.ofSeconds(1)),
+                new Chunk(0, Duration.ofSeconds(2))));
+        Task task1 = new Task(
+            Duration.ofSeconds(5),
+            Duration.ofSeconds(5),
+            List.of(new Chunk(1, Duration.ofSeconds(1))));
+        Task task2 = new Task(
+            Duration.ofSeconds(50),
+            Duration.ofSeconds(50),
+            List.of(
+                new Chunk(2, Duration.ofSeconds(8)),
+                new Chunk(2, Duration.ofSeconds(2))));
+        TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
+        assertThat(taskSet.hyperbolicBoundTest())
+            .isTrue();
+    }
+
+    @Test
+    public void hyperbolicBoundTestFalse() {
+        Task task0 = new Task(
+            Duration.ofSeconds(10),
+            Duration.ofSeconds(10),
+            List.of(
+                new Chunk(0, Duration.ofSeconds(2)),
+                new Chunk(0, Duration.ofSeconds(3))));
+        Task task1 = new Task(
+            Duration.ofSeconds(5),
+            Duration.ofSeconds(5),
+            List.of(new Chunk(1, Duration.ofSeconds(1))));
+        Task task2 = new Task(
+            Duration.ofSeconds(20),
+            Duration.ofSeconds(20),
+            List.of(
+                new Chunk(2, Duration.ofSeconds(8)),
+                new Chunk(2, Duration.ofSeconds(2))));
+        TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
+        assertThat(taskSet.hyperbolicBoundTest())
+            .isFalse();
+    }
+
+    @Test
+    public void hyperbolicBoundTestWithNoPeriodicTask() {
+        Task task0 = new Task(
+            Duration.ofSeconds(10),
+            Duration.ofSeconds(10),
+            List.of(
+                new Chunk(0, Duration.ofSeconds(2)),
+                new Chunk(0, Duration.ofSeconds(3))));
+        Task task1 = new Task(
+            Duration.ofSeconds(5),
+            Duration.ofSeconds(4),
+            List.of(new Chunk(1, Duration.ofSeconds(1))));
+        Task task2 = new Task(
+            Duration.ofSeconds(20),
+            Duration.ofSeconds(20),
+            List.of(
+                new Chunk(2, Duration.ofSeconds(8)),
+                new Chunk(2, Duration.ofSeconds(2))));
+        TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
+        assertThatThrownBy(() -> taskSet.hyperbolicBoundTest())
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Il task " + task1.getId() + " non è puramente periodico: ha periodo PT5S e deadline PT4S");
     }
 
 }

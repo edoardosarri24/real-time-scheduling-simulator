@@ -60,6 +60,10 @@ public class Chunk {
         return !this.resources.isEmpty();
     }
 
+    Duration getExecutionTime() {
+        return this.executionTime;
+    }
+
     // METHOD controlla
     public Duration execute(Duration availableTime) {
         if (availableTime.compareTo(this.remainingExecutionTime) < 0) {

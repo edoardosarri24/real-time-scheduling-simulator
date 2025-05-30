@@ -89,5 +89,17 @@ public class TaskTest {
         assertThat(chunk1.getParent())
             .isSameAs(task);
     }
-    
+
+    @Test
+    public void utilizationFactor() {
+        Task task = new Task(
+            Duration.ofMillis(10),
+            Duration.ofMillis(10),
+            List.of(
+                new Chunk(0, Duration.ofMillis(2)),
+                new Chunk(1, Duration.ofMillis(3))));
+        assertThat(task.utilizationFactor())
+            .isEqualTo(0.5);
+    }
+
 }

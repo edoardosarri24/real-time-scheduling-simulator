@@ -18,8 +18,6 @@ import utils.logger.MyLogger;
 
 public final class RMScheduler extends Scheduler {
 
-    private Task lastTaskExecuted;
-
     // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {
         this(taskSet, new NoResourceProtocol());
@@ -93,13 +91,11 @@ public final class RMScheduler extends Scheduler {
     private void executeFor(Duration availableTime) {
         while (availableTime.isPositive() && this.thereIsAnotherReadyTask()) {
             Task currentTask = this.removeFirstReadyTask();
-            if (!(lastTaskExecuted==null)
-                && !lastTaskExecuted.equals(currentTask)
-                && !lastTaskExecuted.getIsExecuted())
-                MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + lastTaskExecuted.toString() + ">");
+            if (this.checkLastTaskExecuted(currentTask))
+                MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + this.getLastTaskExecuted().toString() + ">");
             Duration executedTime = currentTask.execute(availableTime, this);
             if (executedTime.isPositive())
-                this.lastTaskExecuted = currentTask;
+                this.setLastTaskExecuted(currentTask);
             availableTime = availableTime.minus(executedTime);
             if (!currentTask.getIsExecuted() && !blockedTasksContains(currentTask))
                 this.addReadyTask(currentTask);

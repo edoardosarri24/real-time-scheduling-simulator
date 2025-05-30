@@ -13,8 +13,10 @@ public abstract class Scheduler {
 
     private final TaskSet taskSet;
     private final ResourcesProtocol resProtocol;
+
     private List<Task> blockedTask = new LinkedList<>();
     private TreeSet<Task> readyTasks;
+    private Task lastTaskExecuted;
 
     // CONSTRUCTOR
     public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
@@ -26,6 +28,20 @@ public abstract class Scheduler {
     }
 
     // GETTER AND SETTER
+    void setLastTaskExecuted(Task task) {
+        this.lastTaskExecuted = task;
+    }
+
+    Task getLastTaskExecuted() {
+        return this.lastTaskExecuted;
+    }
+
+    boolean checkLastTaskExecuted(Task currentTask) {
+        return !(this.lastTaskExecuted==null)
+                && !this.lastTaskExecuted.equals(currentTask)
+                && !this.lastTaskExecuted.getIsExecuted();
+    }
+
     protected TaskSet getTaskSet() {
         return this.taskSet;
     }

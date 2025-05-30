@@ -3,10 +3,12 @@ package taskSet;
 import org.junit.Before;
 import org.junit.Test;
 import helper.ReflectionUtils;
+import scheduler.RMScheduler;
 import utils.MyClock;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Supplier;
 
 import static org.assertj.core.api.Assertions.*;
@@ -63,6 +65,16 @@ public class ChunkTest {
             .isEqualTo(Duration.ofSeconds(10));
         assertThat(MyClock.getInstance().getCurrentTime())
             .isEqualTo(Duration.ofSeconds(10));
+    }
+
+    // tested with the log in trace.log
+    @Test
+    public void executeWOverhead() {
+        Chunk chunk = new Chunk(0, Duration.ofSeconds(10), Duration.ofSeconds(2));
+        Task task = new Task(Duration.ofSeconds(20), Duration.ofSeconds(20), List.of(chunk));
+        RMScheduler scheduler = new RMScheduler(new TaskSet(Set.of(task)));
+        assertThatCode(() -> scheduler.schedule())
+            .doesNotThrowAnyException();
     }
 
 }

@@ -23,4 +23,8 @@ public class MyLogger {
         logger.info(message);
     }
 
+    public static void wrn(String message) {
+        logger.warning(message);
+    }
+
 }

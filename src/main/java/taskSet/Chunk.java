@@ -11,7 +11,8 @@ import utils.logger.MyLogger;
 public class Chunk {
 
     private final int id;
-    private final Duration executionTime;
+    private final Duration expectedExecutionTime;
+    private Duration executionTime;
     private final List<Resource> resources;
 
     private Duration remainingExecutionTime;
@@ -19,12 +20,21 @@ public class Chunk {
 
     // CONSTRUCTOR
     public Chunk(int id, Duration executionTime) {
-        this(id, executionTime, List.of());
+        this(id, executionTime, Duration.ZERO, List.of());
+    }
+
+    public Chunk(int id, Duration executionTime, Duration overheadExectutionTime) {
+        this(id, executionTime, overheadExectutionTime, List.of());
     }
 
     public Chunk(int id, Duration executionTime, List<Resource> resources) {
+        this(id, executionTime, Duration.ZERO, resources);
+    }
+
+    public Chunk(int id, Duration executionTime, Duration overheadExectutionTime, List<Resource> resources) {
         this.id = id;
-        this.executionTime = executionTime;
+        this.executionTime = executionTime.plus(overheadExectutionTime);
+        this.expectedExecutionTime = executionTime;
         this.remainingExecutionTime = executionTime;
         this.resources = new LinkedList<>(resources);
     }
@@ -62,6 +72,10 @@ public class Chunk {
             MyLogger.log("<" + Utils.printCurrentTime() + ", execute " + this.toString() + ">");
             MyClock.getInstance().advanceBy(this.remainingExecutionTime);
             MyLogger.log("<" + Utils.printCurrentTime() + ", finish " + this.toString() + ">");
+            if (!this.executionTime.equals(this.expectedExecutionTime))
+                MyLogger.wrn("Il chunk " + this.id
+                    + " ha eseguito per " + this.executionTime
+                    + ", ma il suo expected execution time era " + this.expectedExecutionTime);
             return this.remainingExecutionTime;
         }
     }

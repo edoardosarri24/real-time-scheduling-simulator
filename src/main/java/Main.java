@@ -1,19 +1,20 @@
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-import utils.Utils;
+import exeptions.DeadlineMissedException;
+import scheduler.RMScheduler;
+import taskSet.Chunk;
+import taskSet.Task;
+import taskSet.TaskSet;
 
 public class Main {
 
-    public static void main(String[] args) {
-        ArrayList<Duration> list = new ArrayList<>(List.of(
-            Duration.ofMillis(5),
-            Duration.ofMillis(3),
-            Duration.ofMillis(7),
-            Duration.ofMillis(11)));
-        List<Duration> multiples = Utils.generateMultiplesUpToLCM(list);
-        multiples.forEach(m -> System.out.println(m));
+    public static void main(String[] args) throws DeadlineMissedException {
+        Chunk chunk = new Chunk(0, Duration.ofSeconds(10), Duration.ofSeconds(2));
+        Task task = new Task(Duration.ofSeconds(20), Duration.ofSeconds(20), List.of(chunk));
+        RMScheduler scheduler = new RMScheduler(new TaskSet(Set.of(task)));
+        scheduler.schedule();
     }
 
 }

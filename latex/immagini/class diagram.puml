@@ -54,6 +54,7 @@ class Task <<final>> {
 
 class Chunk <<final>> {
     - executionTime: Duration
+    - expectedExecutionTime: Duration
     - resources: List<Resource>
     + execute(): Duration
     + reset(): void

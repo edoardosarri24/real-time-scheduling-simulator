@@ -10,7 +10,7 @@ Un task è definito da: un un insieme di Chunk; una deadline; una priorità nomi
 Non ci interessa definire un activation time perché vogliamo considerare il caso pessimo: l'activation time sarà uguale per tutti i task e coinciderà con l'istante inziale.
 
 \subsection{Chunk}
-Un chunk, cioè una computazione atomica del task. È definito da: una distribuzione del tempo di esecuzione; un'eventuale richiesta di risorse da usare in mutua esclusione (da acquisire prima dell'esecuzione e rilascaire subito dopo).
+Un chunk, cioè una computazione atomica del task. È definito da: una distribuzione del tempo di esecuzione previsto e un tempo di esecuzione effettivo; un'eventuale richiesta di risorse da usare in mutua esclusione (da acquisire prima dell'esecuzione e rilascaire subito dopo).
 
 \subsection{Taskset}
 È un insieme di task. È l'oggetto principale gestito dallo scheduler.

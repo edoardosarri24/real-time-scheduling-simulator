@@ -28,11 +28,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/typearea.sty
-INPUT ./preambolo.tex
-INPUT ./preambolo.tex
-INPUT ./preambolo.tex
-INPUT ./preambolo.tex
-INPUT preambolo.tex
+INPUT ./capitoli/preambolo.tex
+INPUT ./capitoli/preambolo.tex
+INPUT capitoli/preambolo.tex
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
@@ -226,9 +224,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
 INPUT build/main.aux
 INPUT build/main.aux
 INPUT build/main.aux
-INPUT build/copertina.aux
-INPUT build/copertina.aux
-INPUT build/copertina.aux
+INPUT build/capitoli/copertina.aux
+INPUT build/capitoli/copertina.aux
+INPUT build/capitoli/copertina.aux
 INPUT build/capitoli/1-introduzione.aux
 INPUT build/capitoli/1-introduzione.aux
 INPUT build/capitoli/1-introduzione.aux
@@ -274,12 +272,12 @@ INPUT build/main.bbl
 INPUT build/main.bbl
 INPUT build/main.bbl
 INPUT build/main.bbl
-INPUT ./copertina.tex
-INPUT ./copertina.tex
-OUTPUT build/copertina.aux
-INPUT ./copertina.tex
-INPUT ./copertina.tex
-INPUT copertina.tex
+INPUT ./capitoli/copertina.tex
+INPUT ./capitoli/copertina.tex
+OUTPUT build/capitoli/copertina.aux
+INPUT ./capitoli/copertina.tex
+INPUT ./capitoli/copertina.tex
+INPUT capitoli/copertina.tex
 INPUT ./immagini/logo UniFi.pdf
 INPUT ./immagini/logo UniFi.pdf
 INPUT ./immagini/logo UniFi.pdf
@@ -405,9 +403,9 @@ INPUT capitoli/0-dubbi.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplri8t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplri8t.vf
 INPUT build/main.aux
-INPUT build/copertina.aux
-INPUT build/copertina.aux
-INPUT build/copertina.aux
+INPUT build/capitoli/copertina.aux
+INPUT build/capitoli/copertina.aux
+INPUT build/capitoli/copertina.aux
 INPUT build/capitoli/1-introduzione.aux
 INPUT build/capitoli/1-introduzione.aux
 INPUT build/capitoli/1-introduzione.aux

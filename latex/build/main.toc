@@ -2,28 +2,29 @@
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduzione}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Capacità}{4}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Analisi}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Componenti}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Task}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Chunk}{5}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Taskset}{5}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Risorse}{5}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}CPU}{5}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Scheduler}{5}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}Protocollo di accesso alle risorse}{6}{subsection.2.1.7}%
-\contentsline {section}{\numberline {2.2}Class diagram}{6}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Implementazione}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Scheduler}{7}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Rate Monotonic}{7}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Test}{8}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Resource Access Protocol}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Priority Ceiling Protocol}{9}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Fault injection}{10}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Utilità}{10}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Loggin}{10}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Clock}{10}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Sampling dei tempi}{11}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Eccezioni}{11}{subsection.3.4.4}%
-\contentsline {chapter}{\numberline {4}Dubbi}{12}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Domande}{12}{section.4.1}%
+\contentsline {section}{\numberline {1.2}Utilizzo}{4}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Analisi}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Componenti}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Task}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Chunk}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Taskset}{6}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Risorse}{6}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}CPU}{6}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Scheduler}{6}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Protocollo di accesso alle risorse}{7}{subsection.2.1.7}%
+\contentsline {section}{\numberline {2.2}Class diagram}{7}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Implementazione}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Scheduler}{8}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Rate Monotonic}{8}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Test}{9}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Resource Access Protocol}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Priority Ceiling Protocol}{10}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Fault injection}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Utilità}{11}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Loggin}{11}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Clock}{11}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Sampling dei tempi}{12}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Eccezioni}{12}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Dubbi}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Domande}{13}{section.4.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

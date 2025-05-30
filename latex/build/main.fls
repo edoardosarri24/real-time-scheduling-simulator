@@ -363,6 +363,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplr8c.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -388,7 +389,6 @@ OUTPUT build/capitoli/3-implementazione.aux
 INPUT ./capitoli/3-implementazione.tex
 INPUT ./capitoli/3-implementazione.tex
 INPUT capitoli/3-implementazione.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
 INPUT ./immagini/sequence diagram RM.pdf
 INPUT ./immagini/sequence diagram RM.pdf
 INPUT ./immagini/sequence diagram RM.pdf

@@ -45,6 +45,7 @@ public final class RMScheduler extends Scheduler {
         MyLogger.log("<" + Utils.printCurrentTime() + ", end>");
     }
 
+    // HELPER
     @Override
     protected void assignPriority() {
         List<Task> sortedByPeriod = getTaskSet().getTasks().stream()
@@ -59,7 +60,6 @@ public final class RMScheduler extends Scheduler {
         );
     }
 
-    // HELPER
     private List<Duration> initStructures() {
         this.setReadyTasks(new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority)));
         this.getTaskSet().getTasks().forEach(this::addReadyTask);
@@ -72,7 +72,7 @@ public final class RMScheduler extends Scheduler {
 
     private void relasePeriodTasks() throws DeadlineMissedException {
         for (Task task : getTaskSet().getTasks()) {
-            if (MyClock.getInstance().getCurrentTime().toMillis() % task.getPeriod().toMillis() == 0) {
+            if (task.toBeRelease()) {
                 try {
                     task.relasePeriodTasks();
                 } catch (DeadlineMissedException e) {

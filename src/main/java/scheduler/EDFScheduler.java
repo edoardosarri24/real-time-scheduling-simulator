@@ -44,6 +44,7 @@ public final class EDFScheduler extends Scheduler {
         MyLogger.log("<" + Utils.printCurrentTime() + ", end>");
     }
 
+    // HELPER
     @Override
     protected void assignPriority() {
         List<Task> sortedByDeadline = getTaskSet().getTasks().stream()
@@ -58,31 +59,14 @@ public final class EDFScheduler extends Scheduler {
         );
     }
 
-    // HELPER
     private List<Duration> initStructures() {
         this.setReadyTasks(new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority)));
         this.getTaskSet().getTasks().forEach(this::addReadyTask);
-        List<Duration> events = Utils.generateDeadlineUpToLCM(this.getTaskSet().getTasks());
+        List<Duration> periods = this.getTaskSet().getTasks().stream()
+            .map(Task::getPeriod)
+            .collect(Collectors.toList());
+        List<Duration> events = Utils.generatePeriodUpToLCM(periods);
         return events;
-    }
-
-
-
-
-
-
-    private void relasePeriodTasks() throws DeadlineMissedException {
-        for (Task task : getTaskSet().getTasks()) {
-            if (MyClock.getInstance().getCurrentTime().toMillis() % task.getPeriod().toMillis() == 0) {
-                try {
-                    task.relasePeriodTasks();
-                } catch (DeadlineMissedException e) {
-                    MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">");
-                    throw new DeadlineMissedException(e.getMessage());
-                }
-                this.addReadyTask(task);
-            }
-        }
     }
 
     private void executeFor(Duration availableTime) throws DeadlineMissedException {

@@ -96,6 +96,10 @@ public class Task {
         return this.deadline;
     }
 
+    public boolean toBeRelease() {
+        return MyClock.getInstance().getCurrentTime().toMillis() % this.period.toMillis() == 0;
+    }
+
     // METHOD
     public Duration execute(Duration availableTime, Scheduler scheduler) throws DeadlineMissedException {
         ResourcesProtocol resAccProtocol = scheduler.getResProtocol();

@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import exeptions.DeadlineMissedException;
-import resource.NoResourceProtocol;
 import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
@@ -20,12 +19,13 @@ public final class RMScheduler extends Scheduler {
 
     // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {
-        this(taskSet, new NoResourceProtocol());
+        super(taskSet);
+        this.getTaskSet().purelyPeriodicCheck();
     }
 
     public RMScheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
         super(taskSet, resProtocol);
-        getTaskSet().purelyPeriodicCheck();
+        this.getTaskSet().purelyPeriodicCheck();
     }
 
     // METHOD
@@ -55,23 +55,19 @@ public final class RMScheduler extends Scheduler {
                 int priority = 5 + i * 2;
                 Task task = sortedByPeriod.get(i);
                 task.initPriority(priority);
-            });
+            }
+        );
     }
 
     // HELPER
     private List<Duration> initStructures() {
         this.setReadyTasks(new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority)));
-        this.getTaskSet().getTasks().forEach(this.getReadyTasks()::add);
-        List<Duration> periods = this.getReadyTasks().stream()
+        this.getTaskSet().getTasks().forEach(this::addReadyTask);
+        List<Duration> periods = this.getTaskSet().getTasks().stream()
             .map(Task::getPeriod)
             .collect(Collectors.toList());
-        List<Duration> events = Utils.generateMultiplesUpToLCM(periods);
+        List<Duration> events = Utils.generatePeriodUpToLCM(periods);
         return events;
-    }
-
-    private void releaseAllTasks() {
-        for (Task task : this.getReadyTasks())
-            MyLogger.log("<" + Utils.printCurrentTime() + ", release " + task.toString() + ">");
     }
 
     private void relasePeriodTasks() throws DeadlineMissedException {

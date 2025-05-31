@@ -44,11 +44,11 @@ public class ReflectionUtils {
      * @param methodName the name of the method to invoke
      * @throws RuntimeException if the method cannot be found or invoked
      */
-    public static void invokeMethod(Object target, String methodName) {
+    public static Object invokeMethod(Object target, String methodName) {
         try {
             var method = target.getClass().getDeclaredMethod(methodName);
             method.setAccessible(true);
-            method.invoke(target);
+            return method.invoke(target);
         } catch (Exception e) {
             throw new RuntimeException("Errore nell'invocazione del metodo " + methodName, e);
         }

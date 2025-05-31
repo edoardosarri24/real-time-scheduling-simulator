@@ -102,4 +102,26 @@ public class TaskTest {
             .isEqualTo(0.5);
     }
 
+    @Test
+    public void periodAndDealineCheckKo() {
+        Task task = new Task(
+            Duration.ofSeconds(10),
+            Duration.ofSeconds(12),
+            List.of(this.chunk));
+        assertThatThrownBy(() -> task.periodAndDealineCheck())
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("Il task "+ task.getId()
+                + " ha periodo PT10S e deadline PT12S. Il periodo non può essere minore della deadline");
+    }
+
+    @Test
+    public void periodAndDealineCheckOk() {
+        Task task = new Task(
+            Duration.ofSeconds(10),
+            Duration.ofSeconds(8),
+            List.of(this.chunk));
+        assertThatCode(() -> task.periodAndDealineCheck())
+            .doesNotThrowAnyException();
+    }
+
 }

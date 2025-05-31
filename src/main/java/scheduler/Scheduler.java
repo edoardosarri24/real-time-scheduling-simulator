@@ -5,9 +5,12 @@ import java.util.List;
 import java.util.TreeSet;
 
 import exeptions.DeadlineMissedException;
+import resource.NoResourceProtocol;
 import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
+import utils.Utils;
+import utils.logger.MyLogger;
 
 public abstract class Scheduler {
 
@@ -19,6 +22,10 @@ public abstract class Scheduler {
     private Task lastTaskExecuted;
 
     // CONSTRUCTOR
+    public Scheduler(TaskSet taskSet) {
+        this(taskSet, new NoResourceProtocol());
+    }
+
     public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
         this.taskSet = taskSet;
         this.resProtocol = resProtocol;
@@ -28,27 +35,6 @@ public abstract class Scheduler {
     }
 
     // GETTER AND SETTER
-    void setLastTaskExecuted(Task task) {
-        this.lastTaskExecuted = task;
-    }
-
-    Task getLastTaskExecuted() {
-        return this.lastTaskExecuted;
-    }
-
-    boolean checkLastTaskExecuted(Task currentTask) {
-        return !(this.lastTaskExecuted==null)
-                && !this.lastTaskExecuted.equals(currentTask)
-                && !this.lastTaskExecuted.getIsExecuted();
-    }
-
-    protected TaskSet getTaskSet() {
-        return this.taskSet;
-    }
-
-    protected void setReadyTasks(TreeSet<Task> readyTasks) {
-        this.readyTasks = readyTasks;
-    }
 
     public TreeSet<Task> getReadyTasks() {
         return this.readyTasks;
@@ -56,14 +42,6 @@ public abstract class Scheduler {
 
     public void addReadyTask(Task task) {
         this.readyTasks.add(task);
-    }
-
-    public Task removeFirstReadyTask() {
-        return this.readyTasks.pollFirst();
-    }
-
-    public boolean thereIsAnotherReadyTask() {
-        return !this.readyTasks.isEmpty();
     }
 
     public ResourcesProtocol getResProtocol() {
@@ -78,13 +56,48 @@ public abstract class Scheduler {
         this.blockedTask.remove(task);
     }
 
+    protected void setLastTaskExecuted(Task task) {
+        this.lastTaskExecuted = task;
+    }
+
+    protected Task getLastTaskExecuted() {
+        return this.lastTaskExecuted;
+    }
+
+    protected boolean checkLastTaskExecuted(Task currentTask) {
+        return !(this.lastTaskExecuted==null)
+                && !this.lastTaskExecuted.equals(currentTask)
+                && !this.lastTaskExecuted.getIsExecuted();
+    }
+
     protected boolean blockedTasksContains(Task task) {
         return this.blockedTask.contains(task);
+    }
+
+    protected Task removeFirstReadyTask() {
+        return this.readyTasks.pollFirst();
+    }
+
+    protected boolean thereIsAnotherReadyTask() {
+        return !this.readyTasks.isEmpty();
+    }
+    protected TaskSet getTaskSet() {
+        return this.taskSet;
+    }
+
+    protected void setReadyTasks(TreeSet<Task> readyTasks) {
+        this.readyTasks = readyTasks;
     }
 
     // METHOD
     protected abstract void assignPriority();
 
     public abstract void schedule() throws DeadlineMissedException;
+
+    // HELPER
+    protected void releaseAllTasks() {
+        for (Task task : this.readyTasks)
+            MyLogger.log("<" + Utils.printCurrentTime() + ", release " + task.toString() + ">");
+    }
 
 }

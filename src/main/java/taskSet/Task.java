@@ -91,6 +91,10 @@ public class Task {
         this.chunkToExecute.addFirst(chunk);
     }
 
+    public Duration getDeadline() {
+        return this.deadline;
+    }
+
     // METHOD
     public Duration execute(Duration availableTime, Scheduler scheduler) {
         ResourcesProtocol resAccProtocol = scheduler.getResProtocol();
@@ -143,6 +147,15 @@ public class Task {
             .sum();
         long period = this.period.toNanos();
         return (double) executionTime / period;
+    }
+
+    void periodAndDealineCheck() {
+        if (this.period.compareTo(this.deadline) < 0)
+            throw new IllegalArgumentException(
+                "Il task " + this.id
+                + " ha periodo " + this.period
+                + " e deadline " + this.deadline
+                + ". Il periodo non può essere minore della deadline");
     }
 
     // OBJECT METHODS

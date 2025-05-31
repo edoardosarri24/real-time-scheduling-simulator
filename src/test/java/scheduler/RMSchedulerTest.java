@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
-
 import helper.ReflectionUtils;
 import resource.PriorityCeilingProtocol;
 import resource.Resource;
@@ -17,12 +16,9 @@ import taskSet.TaskSet;
 import utils.MyClock;
 import utils.sampler.ConstantSampler;
 import utils.sampler.SampleDuration;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import exeptions.DeadlineMissedException;
-
 import static org.assertj.core.api.Assertions.*;
 
 public class RMSchedulerTest {

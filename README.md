@@ -2,9 +2,7 @@
 
 This project is a Java-based simulator for real-time task scheduling, managed with Maven.
 
-Descriptions of the implementation choices are available in the `report.pdf` document.
-
----
+Descriptions of the implementation choices are available in the [`report`](report.pdf) document.
 
 ### Features
 The main goal is generate execution traces where each trace is a sequence of pairs $<time,event>$ and an event can be job release of a task job semaphore acquire/release by a task job chunk completion or job completion of a task

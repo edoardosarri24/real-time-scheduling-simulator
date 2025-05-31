@@ -19,6 +19,11 @@ public class TaskSet {
             task.purelyPeriodicCheck();
     }
 
+    public void periodAndDealineCheck() {
+        for (Task task : this.tasks)
+            task.periodAndDealineCheck();
+    }
+
     public boolean hyperbolicBoundTest() {
         this.purelyPeriodicCheck();
         double hyperbolicProduct = tasks.stream()

@@ -7,9 +7,9 @@ Ogni traccia è definita come una sequenza di coppie $<tempo, evento>$, dove un 
 \section{Capacità}
 A partire da un taskset, il sistema ha le capacità di:
 \begin{itemize}
-    \item Generare la traccia di esecuzione del taskset schedulato tramite un dato algoritmo di scheduling e ed un eventuale protocollo di accesso alle risorse.
+    \item Generare la traccia di esecuzione del taskset schedulato tramite un dato algoritmo di scheduling (i.e., Rate Monotonic e Earlist Deadline First) e ed un eventuale protocollo di accesso alle risorse (i.e., Priority Ceiling Protocol).
     \item Rilevare eventuali deadline miss. Se al termine del prorpio periodo, un task non ha completato un tutti i chunk di cui è composto allora il sistema lo evidenzia e si arresta.
-    \item Introdurre e rilevare un additional execution time in un chunk. Questo modella un tempo di computazione di un chunk maggiore di quello che ci aspettiamo, cioè maggiore del WCET.
+    \item Introdurre e rilevare un additional execution time in un chunk. Questo modella un tempo di computazione di un chunk maggiore (o minore) di quello che ci aspettiamo, cioè maggiore del WCET.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

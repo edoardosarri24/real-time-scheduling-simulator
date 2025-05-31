@@ -37,9 +37,9 @@ public final class EDFScheduler extends Scheduler {
         while (!events.isEmpty()) {
             Duration nextEvent = events.removeFirst();
             Duration availableTime = nextEvent.minus(MyClock.getInstance().getCurrentTime());
-            //this.executeFor(availableTime);
+            this.executeFor(availableTime);
             MyClock.getInstance().advanceTo(nextEvent);
-            //this.relasePeriodTasks();
+            this.relasePeriodTasks();
         }
         MyLogger.log("<" + Utils.printCurrentTime() + ", end>");
     }
@@ -64,6 +64,45 @@ public final class EDFScheduler extends Scheduler {
         this.getTaskSet().getTasks().forEach(this::addReadyTask);
         List<Duration> events = Utils.generateDeadlineUpToLCM(this.getTaskSet().getTasks());
         return events;
+    }
+
+
+
+
+
+
+    private void relasePeriodTasks() throws DeadlineMissedException {
+        for (Task task : getTaskSet().getTasks()) {
+            if (MyClock.getInstance().getCurrentTime().toMillis() % task.getPeriod().toMillis() == 0) {
+                try {
+                    task.relasePeriodTasks();
+                } catch (DeadlineMissedException e) {
+                    MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">");
+                    throw new DeadlineMissedException(e.getMessage());
+                }
+                this.addReadyTask(task);
+            }
+        }
+    }
+
+    private void executeFor(Duration availableTime) throws DeadlineMissedException {
+        while (availableTime.isPositive() && this.thereIsAnotherReadyTask()) {
+            Task currentTask = this.removeFirstReadyTask();
+            if (this.checkLastTaskExecuted(currentTask))
+                MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + this.getLastTaskExecuted().toString() + ">");
+            Duration executedTime;
+            try {
+                executedTime = currentTask.execute(availableTime, this);
+            } catch (DeadlineMissedException e) {
+                MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + currentTask.toString() + ">");
+                throw new DeadlineMissedException(e.getMessage());
+            }
+            if (executedTime.isPositive())
+                this.setLastTaskExecuted(currentTask);
+            availableTime = availableTime.minus(executedTime);
+            if (!currentTask.getIsExecuted() && !taskIsBlocked(currentTask))
+                this.addReadyTask(currentTask);
+        }
     }
 
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
+
+import exeptions.DeadlineMissedException;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
@@ -54,6 +56,22 @@ public class EDFSchedulerTest {
         assertThat(task2.getNominalPriority())
             .isEqualTo(task2.getNominalPriority())
             .isEqualTo(9);
+    }
+
+    @Test
+    public void test() {
+        Task task0 = new Task(
+            Duration.ofMillis(10),
+            Duration.ofMillis(5),
+            List.of(new Chunk(0, Duration.ofMillis(7))));
+        Task task1 = new Task(
+            Duration.ofMillis(20),
+            Duration.ofMillis(20),
+            List.of(new Chunk(1, Duration.ofMillis(1))));
+        EDFScheduler scheduler = new EDFScheduler(new TaskSet(Set.of(task0, task1)));
+        assertThatThrownBy(() -> scheduler.schedule())
+            .isInstanceOf(DeadlineMissedException.class)
+            .hasMessage("Il task "+ task0.getId() + " ha superato la deadline");
     }
 
 }

@@ -1,0 +1,3 @@
+- test di schedulabilità in EDF. nel codice va dopo this.releaseAllTasks();
+-
+- riodinare task

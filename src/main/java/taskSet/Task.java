@@ -188,7 +188,6 @@ public class Task {
 
     private void checkDeadlineMiss() throws DeadlineMissedException {
         long numberOfPeriods = MyClock.getInstance().getCurrentTime().toNanos() / this.period.toNanos();
-        System.out.println("numbers of periods: " + numberOfPeriods);
         if (MyClock.getInstance().getCurrentTime().toNanos() > this.period.toNanos()*numberOfPeriods+this.deadline.toNanos())
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
     }

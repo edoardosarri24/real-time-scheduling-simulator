@@ -89,7 +89,13 @@ public final class RMScheduler extends Scheduler {
             Task currentTask = this.removeFirstReadyTask();
             if (this.checkLastTaskExecuted(currentTask))
                 MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + this.getLastTaskExecuted().toString() + ">");
-            Duration executedTime = currentTask.execute(availableTime, this);
+            Duration executedTime;
+            try {
+                executedTime = currentTask.execute(availableTime, this);
+            } catch (DeadlineMissedException e) {
+                MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + currentTask.toString() + ">");
+                throw new DeadlineMissedException(e.getMessage());
+            }
             if (executedTime.isPositive())
                 this.setLastTaskExecuted(currentTask);
             availableTime = availableTime.minus(executedTime);

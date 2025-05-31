@@ -70,8 +70,8 @@ public class ChunkTest {
     // tested with the log in trace.log
     @Test
     public void executeWOverhead() {
-        Chunk chunk = new Chunk(0, Duration.ofSeconds(10), Duration.ofSeconds(2));
-        Task task = new Task(Duration.ofSeconds(20), Duration.ofSeconds(20), List.of(chunk));
+        Chunk chunk = new Chunk(0, Duration.ofMillis(10), Duration.ofMillis(2));
+        Task task = new Task(Duration.ofMillis(20), Duration.ofMillis(20), List.of(chunk));
         RMScheduler scheduler = new RMScheduler(new TaskSet(Set.of(task)));
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();

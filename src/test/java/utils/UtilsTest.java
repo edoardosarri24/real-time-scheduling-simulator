@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.oristool.simulator.samplers.UniformSampler;
@@ -17,9 +18,13 @@ import static org.assertj.core.api.Assertions.*;
 
 public class UtilsTest {
 
+    @Before
+    public void setUp() {
+        MyClock.reset();
+    }
+
     @Test
     public void durationPrinter() {
-        MyClock.reset();
         MyClock.getInstance().advanceTo(Duration.ofMillis(5));
         assertThat(Utils.printCurrentTime())
             .isEqualTo("5.000");

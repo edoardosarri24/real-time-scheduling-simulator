@@ -84,7 +84,7 @@ public final class RMScheduler extends Scheduler {
         }
     }
 
-    private void executeFor(Duration availableTime) {
+    private void executeFor(Duration availableTime) throws DeadlineMissedException {
         while (availableTime.isPositive() && this.thereIsAnotherReadyTask()) {
             Task currentTask = this.removeFirstReadyTask();
             if (this.checkLastTaskExecuted(currentTask))
@@ -93,7 +93,7 @@ public final class RMScheduler extends Scheduler {
             if (executedTime.isPositive())
                 this.setLastTaskExecuted(currentTask);
             availableTime = availableTime.minus(executedTime);
-            if (!currentTask.getIsExecuted() && !blockedTasksContains(currentTask))
+            if (!currentTask.getIsExecuted() && !taskIsBlocked(currentTask))
                 this.addReadyTask(currentTask);
         }
     }

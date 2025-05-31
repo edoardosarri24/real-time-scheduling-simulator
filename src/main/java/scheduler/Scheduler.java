@@ -70,7 +70,7 @@ public abstract class Scheduler {
                 && !this.lastTaskExecuted.getIsExecuted();
     }
 
-    protected boolean blockedTasksContains(Task task) {
+    protected boolean taskIsBlocked(Task task) {
         return this.blockedTask.contains(task);
     }
 

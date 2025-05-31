@@ -10,6 +10,7 @@ import exeptions.DeadlineMissedException;
 import resource.Resource;
 import resource.ResourcesProtocol;
 import scheduler.Scheduler;
+import utils.MyClock;
 import utils.Utils;
 import utils.logger.MyLogger;
 
@@ -96,15 +97,10 @@ public class Task {
     }
 
     // METHOD
-    public Duration execute(Duration availableTime, Scheduler scheduler) {
+    public Duration execute(Duration availableTime, Scheduler scheduler) throws DeadlineMissedException {
         ResourcesProtocol resAccProtocol = scheduler.getResProtocol();
         Duration remainingTime = availableTime;
         while (remainingTime.isPositive()) {
-            if (this.chunkToExecute.isEmpty()) {
-                this.isExecuted = true;
-                MyLogger.log("<" + Utils.printCurrentTime() + ", complete " + this.toString() + ">");
-                break;
-            }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
             try {
                 resAccProtocol.access(currentChunk);
@@ -119,6 +115,12 @@ public class Task {
                 .findFirst()
                 .isPresent())
                 resAccProtocol.release(currentChunk);
+            if (this.chunkToExecute.isEmpty()) {
+                this.checkDeadlineMiss();
+                this.isExecuted = true;
+                MyLogger.log("<" + Utils.printCurrentTime() + ", complete " + this.toString() + ">");
+                break;
+            }
         }
         return availableTime.minus(remainingTime);
     }
@@ -182,6 +184,13 @@ public class Task {
     // HELPER
     private void initChunkParent() {
         this.chunks.forEach(chunk -> chunk.setParent(this));
+    }
+
+    private void checkDeadlineMiss() throws DeadlineMissedException {
+        long numberOfPeriods = MyClock.getInstance().getCurrentTime().toNanos() / this.period.toNanos();
+        System.out.println("numbers of periods: " + numberOfPeriods);
+        if (MyClock.getInstance().getCurrentTime().toNanos() > this.period.toNanos()*numberOfPeriods+this.deadline.toNanos())
+            throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
     }
 
 }

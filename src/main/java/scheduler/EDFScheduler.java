@@ -1,9 +1,11 @@
 package scheduler;
 
 import java.time.Duration;
+import java.util.AbstractMap;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeSet;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -16,6 +18,8 @@ import utils.Utils;
 import utils.logger.MyLogger;
 
 public final class EDFScheduler extends Scheduler {
+
+    List<Map.Entry<Task, Duration>> readyTasks;
 
     // CONSTRUCTOR
     public EDFScheduler(TaskSet taskSet) {
@@ -44,6 +48,15 @@ public final class EDFScheduler extends Scheduler {
         MyLogger.log("<" + Utils.printCurrentTime() + ", end>");
     }
 
+    @Override
+	public void addReadyTask(Task task) {
+        List<Task> ready = new LinkedList<>(this.getReadyTasks());
+        this.readyTasks = new LinkedList<>();
+        this.readyTasks.add(new AbstractMap.SimpleEntry<>(task, task.nextDeadline()));
+        ready.forEach(t -> this.readyTasks.add(new AbstractMap.SimpleEntry<>(t, t.nextDeadline())));
+        this.readyTasks.sort(Comparator.comparing(Map.Entry::getValue));
+	}
+
     // HELPER
     @Override
     protected void assignPriority() {
@@ -60,8 +73,10 @@ public final class EDFScheduler extends Scheduler {
     }
 
     private List<Duration> initStructures() {
-        this.setReadyTasks(new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority)));
-        this.getTaskSet().getTasks().forEach(this::addReadyTask);
+        this.readyTasks = new LinkedList<>();
+        this.getTaskSet().getTasks().forEach(
+            task -> this.readyTasks.add(new AbstractMap.SimpleEntry<>(task, task.getDeadline())));
+        this.readyTasks.sort(Comparator.comparing(Map.Entry::getValue));
         List<Duration> periods = this.getTaskSet().getTasks().stream()
             .map(Task::getPeriod)
             .collect(Collectors.toList());
@@ -70,8 +85,8 @@ public final class EDFScheduler extends Scheduler {
     }
 
     private void executeFor(Duration availableTime) throws DeadlineMissedException {
-        while (availableTime.isPositive() && this.thereIsAnotherReadyTask()) {
-            Task currentTask = this.removeFirstReadyTask();
+        while (availableTime.isPositive() && this.readyTasks.isEmpty()) {
+            Task currentTask = this.readyTasks.removeFirst().getKey();
             if (this.checkLastTaskExecuted(currentTask))
                 MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + this.getLastTaskExecuted().toString() + ">");
             Duration executedTime;
@@ -87,6 +102,38 @@ public final class EDFScheduler extends Scheduler {
             if (!currentTask.getIsExecuted() && !taskIsBlocked(currentTask))
                 this.addReadyTask(currentTask);
         }
+    }
+
+    private void relasePeriodTasks() throws DeadlineMissedException {
+        List<Task> ready = new LinkedList<>(this.getReadyTasks());
+        List<Map.Entry<Task, Duration>> released = new LinkedList<>();
+        for (Task task : getTaskSet().getTasks()) {
+            if (task.toBeRelease()) {
+                try {
+                    task.relasePeriodTasks();
+                } catch (DeadlineMissedException e) {
+                    MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">");
+                    throw new DeadlineMissedException(e.getMessage());
+                }
+                released.add(new AbstractMap.SimpleEntry<>(
+                    task,
+                    MyClock.getInstance().getCurrentTime().plus(task.getDeadline())));
+            }
+        }
+        this.readyTasks = new LinkedList<>(released);
+        ready.forEach(task -> this.readyTasks.add(new AbstractMap.SimpleEntry<>(task, task.nextDeadline())));
+        this.readyTasks.sort(Comparator.comparing(Map.Entry::getValue));
+    }
+
+    private void releaseAllTasks() {
+        for (Task task : this.getReadyTasks())
+            MyLogger.log("<" + Utils.printCurrentTime() + ", release " + task.toString() + ">");
+    }
+
+    private List<Task> getReadyTasks() {
+        return this.readyTasks.stream()
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toList());
     }
 
 }

@@ -164,6 +164,14 @@ public class Task {
                 + ". Il periodo non può essere minore della deadline");
     }
 
+    public Duration nextDeadline() {
+        Duration output = Duration.ZERO;
+        while (MyClock.getInstance().getCurrentTime().minus(output).isPositive()
+            && MyClock.getInstance().getCurrentTime().minus(output.plus(this.deadline)).isPositive())
+            output = output.plus(this.period);
+        return output.plus(this.deadline);
+    }
+
     // OBJECT METHODS
     @Override
     public String toString() {

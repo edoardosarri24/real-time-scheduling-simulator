@@ -85,7 +85,7 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
         for (Resource resource : resources) {
             resource.getMaxDinamicPriorityBlockedtask().ifPresent(
                 t -> {
-                    getScheduler().unblockTask(t);
+                    this.getScheduler().unblockTask(t);
                     this.getScheduler().addReadyTask(t);
                     resource.removeBlockedTask(t);
                     parentTask.releaseResource(resource);

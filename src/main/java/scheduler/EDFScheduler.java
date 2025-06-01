@@ -37,7 +37,8 @@ public final class EDFScheduler extends Scheduler {
     public void schedule() throws DeadlineMissedException {
         List<Duration> events = initStructures();
         this.releaseAllTasks();
-
+        if (this.getTaskSet().utilizationFactor() > 1)
+            MyLogger.wrn("Il fattore di utilizzo del taskset è maggiore di 1: il taskset non è schedulabile");
         while (!events.isEmpty()) {
             Duration nextEvent = events.removeFirst();
             Duration availableTime = nextEvent.minus(MyClock.getInstance().getCurrentTime());
@@ -85,7 +86,8 @@ public final class EDFScheduler extends Scheduler {
     }
 
     private void executeFor(Duration availableTime) throws DeadlineMissedException {
-        while (availableTime.isPositive() && this.readyTasks.isEmpty()) {
+        while (availableTime.isPositive() && !this.readyTasks.isEmpty()) {
+            this.readyTasks.sort(Comparator.comparing(Map.Entry::getValue));
             Task currentTask = this.readyTasks.removeFirst().getKey();
             if (this.checkLastTaskExecuted(currentTask))
                 MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + this.getLastTaskExecuted().toString() + ">");
@@ -110,7 +112,7 @@ public final class EDFScheduler extends Scheduler {
         for (Task task : getTaskSet().getTasks()) {
             if (task.toBeRelease()) {
                 try {
-                    task.relasePeriodTasks();
+                    task.relasePeriodTask();
                 } catch (DeadlineMissedException e) {
                     MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());

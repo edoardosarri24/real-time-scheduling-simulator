@@ -81,7 +81,7 @@ public final class RMScheduler extends Scheduler {
         for (Task task : getTaskSet().getTasks()) {
             if (task.toBeRelease()) {
                 try {
-                    task.relasePeriodTasks();
+                    task.relasePeriodTask();
                 } catch (DeadlineMissedException e) {
                     MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());

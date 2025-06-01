@@ -105,6 +105,12 @@ public class Task {
         ResourcesProtocol resAccProtocol = scheduler.getResProtocol();
         Duration remainingTime = availableTime;
         while (remainingTime.isPositive()) {
+            if (this.chunkToExecute.isEmpty()) {
+                this.checkDeadlineMiss();
+                this.isExecuted = true;
+                MyLogger.log("<" + Utils.printCurrentTime() + ", complete " + this.toString() + ">");
+                break;
+            }
             Chunk currentChunk = this.chunkToExecute.removeFirst();
             try {
                 resAccProtocol.access(currentChunk);
@@ -137,7 +143,7 @@ public class Task {
                 + " e deadline " + this.deadline);
     }
 
-    public void relasePeriodTasks() throws DeadlineMissedException {
+    public void relasePeriodTask() throws DeadlineMissedException {
         if (!this.isExecuted)
             throw new DeadlineMissedException("Il task " + this.id + " ha superato la deadline");
         this.chunkToExecute = new LinkedList<>(this.chunks);

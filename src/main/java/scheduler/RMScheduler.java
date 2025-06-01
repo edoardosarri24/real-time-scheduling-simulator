@@ -17,6 +17,8 @@ import utils.logger.MyLogger;
 
 public final class RMScheduler extends Scheduler {
 
+    private TreeSet<Task> readyTasks;
+
     // CONSTRUCTOR
     public RMScheduler(TaskSet taskSet) {
         super(taskSet);
@@ -26,6 +28,11 @@ public final class RMScheduler extends Scheduler {
     public RMScheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
         super(taskSet, resProtocol);
         this.getTaskSet().purelyPeriodicCheck();
+    }
+
+    // GETTER AND SETTER
+    public void addReadyTask(Task task) {
+        this.readyTasks.add(task);
     }
 
     // METHOD
@@ -61,7 +68,7 @@ public final class RMScheduler extends Scheduler {
     }
 
     private List<Duration> initStructures() {
-        this.setReadyTasks(new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority)));
+        this.readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
         this.getTaskSet().getTasks().forEach(this::addReadyTask);
         List<Duration> periods = this.getTaskSet().getTasks().stream()
             .map(Task::getPeriod)
@@ -85,8 +92,8 @@ public final class RMScheduler extends Scheduler {
     }
 
     private void executeFor(Duration availableTime) throws DeadlineMissedException {
-        while (availableTime.isPositive() && this.thereIsAnotherReadyTask()) {
-            Task currentTask = this.removeFirstReadyTask();
+        while (availableTime.isPositive() && !this.readyTasks.isEmpty()) {
+            Task currentTask = this.readyTasks.pollFirst();
             if (this.checkLastTaskExecuted(currentTask))
                 MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + this.getLastTaskExecuted().toString() + ">");
             Duration executedTime;
@@ -102,6 +109,11 @@ public final class RMScheduler extends Scheduler {
             if (!currentTask.getIsExecuted() && !taskIsBlocked(currentTask))
                 this.addReadyTask(currentTask);
         }
+    }
+
+    private void releaseAllTasks() {
+        for (Task task : this.readyTasks)
+            MyLogger.log("<" + Utils.printCurrentTime() + ", release " + task.toString() + ">");
     }
 
 }

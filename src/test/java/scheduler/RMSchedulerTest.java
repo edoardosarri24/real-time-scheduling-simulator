@@ -84,7 +84,7 @@ public class RMSchedulerTest {
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         RMScheduler scheduler = new RMScheduler(taskSet);
         TreeSet<Task> readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
-        scheduler.setReadyTasks(readyTasks);
+        ReflectionUtils.setField(scheduler, "readyTasks", readyTasks);
         readyTasks.add(task0);
         readyTasks.add(task2);
         MyClock.getInstance().advanceBy(Duration.ofSeconds(5));

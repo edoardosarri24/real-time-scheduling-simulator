@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.2)  2 JUN 2025 14:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.2)  2 JUN 2025 14:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -980,11 +980,6 @@ Package pdftex.def Info: immagini/sequence diagram RM.pdf  used on input line 26
 [9 <./immagini/sequence diagram RM.pdf>]
 
 [10]
-Overfull \hbox (74.35655pt too wide) in paragraph at lines 80--81
-\T1/ppl/m/n/12 sto un al-tro co-strut-to-re che pren-des-se, ol-tre ai pa-ra-me-tri pre-vi-sti, an-che un \T1/cmtt/m/n/12 overheadExectutionTime\T1/ppl/m/n/12 . 
- []
-
-
 
 [11])
 
@@ -1030,9 +1025,9 @@ Here is how much of TeX's memory you used:
  56415 multiletter control sequences out of 15000+600000
  654414 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,7n,107p,10996b,1895s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,8n,107p,10996b,1895s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on build/main.pdf (14 pages, 520127 bytes).
+Output written on build/main.pdf (14 pages, 520135 bytes).
 PDF statistics:
  309 PDF objects out of 1000 (max. 8388607)
  262 compressed objects within 3 object streams

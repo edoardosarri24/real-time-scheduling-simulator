@@ -77,7 +77,7 @@ Tralasciando quello che fanno i metodi di accesso, progresso e rilascio, che rif
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fault injection}
-Per implementare l'injection di un additional execution time in un \texttt{chunk} è stato previsto un altro costruttore che prendesse, oltre ai parametri previsti, anche un \texttt{overheadExectutionTime}.
+Per implementare il fault injection di un additional execution time in un \texttt{chunk} è stato previsto un altro costruttore che prendesse, oltre ai parametri previsti, anche un \texttt{overheadExectutionTime}.
 
 Il motivo per non introdurre una classe che eseguisse l'injection è stato che un chunk nella realtà nasce con il suo execution time e non ci sono altre entità che aumentano quello campionato; il costrutture vuole modellare questa idea.
 

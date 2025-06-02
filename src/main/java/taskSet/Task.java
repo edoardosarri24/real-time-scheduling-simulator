@@ -172,10 +172,13 @@ public class Task {
 
     public Duration nextDeadline() {
         Duration output = Duration.ZERO;
-        while (MyClock.getInstance().getCurrentTime().minus(output).isPositive()
-            && MyClock.getInstance().getCurrentTime().minus(output.plus(this.deadline)).isPositive())
+        while (MyClock.getInstance().getCurrentTime().minus(output).isPositive()) {
+            if (output.plus(this.deadline).minus(MyClock.getInstance().getCurrentTime()).isPositive())
+                break;
             output = output.plus(this.period);
-        return output.plus(this.deadline);
+        }
+        output = output.plus(this.deadline);
+        return output;
     }
 
     // OBJECT METHODS

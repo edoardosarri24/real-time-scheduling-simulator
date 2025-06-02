@@ -124,4 +124,39 @@ public class TaskTest {
             .doesNotThrowAnyException();
     }
 
+    @Test
+    public void nextDeadline() {
+        Task task = new Task(
+            Duration.ofMillis(5),
+            Duration.ofMillis(3),
+            List.of(this.chunk));
+        Duration output = task.nextDeadline();
+        assertThat(output)
+            .isEqualTo(Duration.ofMillis(3));
+        MyClock.getInstance().advanceTo(Duration.ofMillis(2));
+        output = task.nextDeadline();
+        assertThat(output)
+            .isEqualTo(Duration.ofMillis(3));
+        MyClock.getInstance().advanceTo(Duration.ofMillis(3));
+        output = task.nextDeadline();
+        assertThat(output)
+            .isEqualTo(Duration.ofMillis(8));
+        MyClock.getInstance().advanceTo(Duration.ofMillis(5));
+        output = task.nextDeadline();
+        assertThat(output)
+            .isEqualTo(Duration.ofMillis(8));
+        MyClock.getInstance().advanceTo(Duration.ofMillis(6));
+        output = task.nextDeadline();
+        assertThat(output)
+            .isEqualTo(Duration.ofMillis(8));
+        MyClock.getInstance().advanceTo(Duration.ofMillis(8));
+        output = task.nextDeadline();
+        assertThat(output)
+            .isEqualTo(Duration.ofMillis(13));
+        MyClock.getInstance().advanceTo(Duration.ofMillis(9));
+        output = task.nextDeadline();
+        assertThat(output)
+            .isEqualTo(Duration.ofMillis(13));
+    }
+
 }

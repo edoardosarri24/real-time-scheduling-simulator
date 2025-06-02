@@ -49,11 +49,11 @@ public class PriorityCeilingProtocolTest {
         assertThat(ceiling.keySet())
             .containsExactlyInAnyOrder(res0, res1, res2);
         assertThat(ceiling.get(res0))
-            .isEqualTo(5);
+            .isEqualTo(1);
         assertThat(ceiling.get(res1))
-            .isEqualTo(7);
+            .isEqualTo(2);
         assertThat(ceiling.get(res2))
-            .isEqualTo(7);
+            .isEqualTo(2);
     }
 
 }

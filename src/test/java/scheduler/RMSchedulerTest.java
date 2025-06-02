@@ -57,13 +57,13 @@ public class RMSchedulerTest {
         new RMScheduler(new TaskSet(Set.of(task0, task1, task2)));
         assertThat(task1.getNominalPriority())
             .isEqualTo((int) ReflectionUtils.getField(task1, "dinamicPriority"))
-            .isEqualTo(5);
+            .isEqualTo(1);
         assertThat(task0.getNominalPriority())
             .isEqualTo((int) ReflectionUtils.getField(task0, "dinamicPriority"))
-            .isEqualTo(7);
+            .isEqualTo(2);
         assertThat(task2.getNominalPriority())
             .isEqualTo((int) ReflectionUtils.getField(task2, "dinamicPriority"))
-            .isEqualTo(9);
+            .isEqualTo(3);
     }
 
     @Test

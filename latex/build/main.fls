@@ -389,11 +389,14 @@ OUTPUT build/capitoli/3-implementazione.aux
 INPUT ./capitoli/3-implementazione.tex
 INPUT ./capitoli/3-implementazione.tex
 INPUT capitoli/3-implementazione.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplb8t.tfm
 INPUT ./immagini/sequence diagram RM.pdf
 INPUT ./immagini/sequence diagram RM.pdf
 INPUT ./immagini/sequence diagram RM.pdf
 INPUT ./immagini/sequence diagram RM.pdf
 INPUT ./immagini/sequence diagram RM.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplb8t.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT ./capitoli/0-dubbi.tex
 INPUT ./capitoli/0-dubbi.tex
 OUTPUT build/capitoli/0-dubbi.aux

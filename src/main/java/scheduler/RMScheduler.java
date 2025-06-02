@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
 import exeptions.DeadlineMissedException;
 import resource.ResourcesProtocol;
 import taskSet.Task;
@@ -30,11 +29,6 @@ public final class RMScheduler extends Scheduler {
         this.getTaskSet().purelyPeriodicCheck();
     }
 
-    // GETTER AND SETTER
-    public void addReadyTask(Task task) {
-        this.readyTasks.add(task);
-    }
-
     // METHOD
     @Override
     public void schedule() throws DeadlineMissedException {
@@ -52,7 +46,6 @@ public final class RMScheduler extends Scheduler {
         MyLogger.log("<" + Utils.printCurrentTime() + ", end>");
     }
 
-    // HELPER
     @Override
     protected void assignPriority() {
         List<Task> sortedByPeriod = getTaskSet().getTasks().stream()
@@ -60,13 +53,18 @@ public final class RMScheduler extends Scheduler {
             .collect(Collectors.toList());
         IntStream.range(0, sortedByPeriod.size())
             .forEach(i -> {
-                int priority = 5 + i * 2;
                 Task task = sortedByPeriod.get(i);
-                task.initPriority(priority);
+                task.initPriority(i+1);
             }
         );
     }
 
+    @Override
+    public void addReadyTask(Task task) {
+        this.readyTasks.add(task);
+    }
+
+    // HELPER
     private List<Duration> initStructures() {
         this.readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
         this.getTaskSet().getTasks().forEach(this::addReadyTask);

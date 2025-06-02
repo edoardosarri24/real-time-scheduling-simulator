@@ -1,11 +1,11 @@
 package scheduler;
 
 import java.time.Duration;
-import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -19,7 +19,7 @@ import utils.logger.MyLogger;
 
 public final class EDFScheduler extends Scheduler {
 
-    List<Map.Entry<Task, Duration>> readyTasks;
+    private TreeSet<Task> readyTasks;
 
     // CONSTRUCTOR
     public EDFScheduler(TaskSet taskSet) {
@@ -51,14 +51,16 @@ public final class EDFScheduler extends Scheduler {
 
     @Override
 	public void addReadyTask(Task task) {
-        List<Task> ready = new LinkedList<>(this.getReadyTasks());
-        this.readyTasks = new LinkedList<>();
-        this.readyTasks.add(new AbstractMap.SimpleEntry<>(task, task.nextDeadline()));
-        ready.forEach(t -> this.readyTasks.add(new AbstractMap.SimpleEntry<>(t, t.nextDeadline())));
-        this.readyTasks.sort(Comparator.comparing(Map.Entry::getValue));
-	}
+        List<Task> temp = new ArrayList<>(this.readyTasks);
+        temp.addAll(Arrays.asList(task));
+        temp.sort(Comparator.comparing(Task::nextDeadline));
+        int priority = 1;
+        for (Task t : temp)
+            t.setDinamicPriority(priority++);
+        this.readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
+        this.readyTasks.addAll(temp);
+    }
 
-    // HELPER
     @Override
     protected void assignPriority() {
         List<Task> sortedByDeadline = getTaskSet().getTasks().stream()
@@ -66,18 +68,16 @@ public final class EDFScheduler extends Scheduler {
             .collect(Collectors.toList());
         IntStream.range(0, sortedByDeadline.size())
             .forEach(i -> {
-                int priority = 5 + i * 2;
                 Task task = sortedByDeadline.get(i);
-                task.initPriority(priority);
+                task.initPriority(i+1);
             }
         );
     }
 
+    // HELPER
     private List<Duration> initStructures() {
-        this.readyTasks = new LinkedList<>();
-        this.getTaskSet().getTasks().forEach(
-            task -> this.readyTasks.add(new AbstractMap.SimpleEntry<>(task, task.getDeadline())));
-        this.readyTasks.sort(Comparator.comparing(Map.Entry::getValue));
+        this.readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
+        this.getTaskSet().getTasks().forEach(this::addReadyTask);
         List<Duration> periods = this.getTaskSet().getTasks().stream()
             .map(Task::getPeriod)
             .collect(Collectors.toList());
@@ -87,8 +87,7 @@ public final class EDFScheduler extends Scheduler {
 
     private void executeFor(Duration availableTime) throws DeadlineMissedException {
         while (availableTime.isPositive() && !this.readyTasks.isEmpty()) {
-            this.readyTasks.sort(Comparator.comparing(Map.Entry::getValue));
-            Task currentTask = this.readyTasks.removeFirst().getKey();
+            Task currentTask = this.readyTasks.pollFirst();
             if (this.checkLastTaskExecuted(currentTask))
                 MyLogger.log("<" + Utils.printCurrentTime() + ", preempt " + this.getLastTaskExecuted().toString() + ">");
             Duration executedTime;
@@ -107,8 +106,6 @@ public final class EDFScheduler extends Scheduler {
     }
 
     private void relasePeriodTasks() throws DeadlineMissedException {
-        List<Task> ready = new LinkedList<>(this.getReadyTasks());
-        List<Map.Entry<Task, Duration>> released = new LinkedList<>();
         for (Task task : getTaskSet().getTasks()) {
             if (task.toBeRelease()) {
                 try {
@@ -117,25 +114,14 @@ public final class EDFScheduler extends Scheduler {
                     MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">");
                     throw new DeadlineMissedException(e.getMessage());
                 }
-                released.add(new AbstractMap.SimpleEntry<>(
-                    task,
-                    MyClock.getInstance().getCurrentTime().plus(task.getDeadline())));
+                this.addReadyTask(task);
             }
         }
-        this.readyTasks = new LinkedList<>(released);
-        ready.forEach(task -> this.readyTasks.add(new AbstractMap.SimpleEntry<>(task, task.nextDeadline())));
-        this.readyTasks.sort(Comparator.comparing(Map.Entry::getValue));
     }
 
     private void releaseAllTasks() {
-        for (Task task : this.getReadyTasks())
+        for (Task task : this.readyTasks)
             MyLogger.log("<" + Utils.printCurrentTime() + ", release " + task.toString() + ">");
-    }
-
-    private List<Task> getReadyTasks() {
-        return this.readyTasks.stream()
-            .map(Map.Entry::getKey)
-            .collect(Collectors.toList());
     }
 
 }

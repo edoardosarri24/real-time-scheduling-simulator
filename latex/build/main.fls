@@ -215,6 +215,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1ppl.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1ppl.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1ppl.fd
@@ -239,20 +245,7 @@ INPUT build/capitoli/0-dubbi.aux
 INPUT build/capitoli/0-dubbi.aux
 OUTPUT build/main.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
-INPUT build/main.out
-INPUT build/main.out
-INPUT build/main.out
-INPUT build/main.out
-INPUT build/main.out
-INPUT build/main.out
-OUTPUT build/main.out
 OUTPUT build/main.pdf
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -387,11 +380,11 @@ OUTPUT build/capitoli/3-implementazione.aux
 INPUT ./capitoli/3-implementazione.tex
 INPUT ./capitoli/3-implementazione.tex
 INPUT capitoli/3-implementazione.tex
-INPUT ./immagini/sequence diagram RM.pdf
-INPUT ./immagini/sequence diagram RM.pdf
-INPUT ./immagini/sequence diagram RM.pdf
-INPUT ./immagini/sequence diagram RM.pdf
-INPUT ./immagini/sequence diagram RM.pdf
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./immagini/sequence diagram.pdf
 INPUT ./capitoli/0-dubbi.tex
 INPUT ./capitoli/0-dubbi.tex
 OUTPUT build/capitoli/0-dubbi.aux
@@ -416,8 +409,6 @@ INPUT build/capitoli/3-implementazione.aux
 INPUT build/capitoli/0-dubbi.aux
 INPUT build/capitoli/0-dubbi.aux
 INPUT build/capitoli/0-dubbi.aux
-INPUT build/main.out
-INPUT build/main.out
 INPUT build/main.run.xml
 OUTPUT build/main.run.xml
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb

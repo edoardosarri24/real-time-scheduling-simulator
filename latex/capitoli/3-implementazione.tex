@@ -1,6 +1,6 @@
 \chapter{Implementazione}
 
-L'implementazione deve rappresentare una simulazione deterministica. Per questo motivo non sono stati usati tread (oggetti Java \texttt{Thread}).
+L'implementazione deve rappresentare una simulazione deterministica. Per questo motivo non sono stati usati tread (oggetti Java \texttt{Thread}), la gestione del tempo avviene in modo discreto.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scheduler}
@@ -10,37 +10,62 @@ Per l'implementazione, oltre a ciò che definisce uno scheduler (i.e., taskSet e
 
 \myskip
 
-Nella classe base sono presenti, oltre che ai classici getter e setter, anche i metodi fondamentali che ogni sotto classe deve implementare: \texttt{schedule} che definisce la politica di scheduling; \texttt{assignPriority} che definisce come assegnare la priorità ai task.
+L'implementazione della logica di scheduling è la stessa sia per RM che per EDF: il metodo \texttt{schedule} con i metodi healper necessari sono stati, per questo motivo, inseriti all'interno della classe base. Ogni implementazione concreta deve sono definire alcuni aspetti usati poi nella logica. Per modellare questo principio è stato usato il Template Mehod pattern: il metodo \texttt{schedule} è dichiaro pubblico e \texttt{final} in modo che non possa essere modificato dalle implementazioni, mentre gli hooks chiamati al suo interno sono dichiarati \texttt{abstract} e \texttt{protected}.
 
-Quando uno scheduler viene creato oltre a assegnare il taskset e il protocollo di accesso alle risorse, viene chiamato \texttt{assignPriority}, e vengono inizializzate le strutture relative al protocollo. La scelta di fare questo assegnamento qua e non nella classe dedicata al protocollo è dovuta alle dipendenze: per come è stato implementato l'oggetto principale (e anche l'ultimo che deve essere istanziato) è lo scheduler, e quindi è il protocollo si basa su di esso.
+\myskip
 
-\subsection{Rate Monotonic}
-Descriviamo brevemente l'idea di implementazione di RM. Per semplificare l'ordine con cui i vari componenti interagiscono è stato definito il sequence diagram in Figura~\ref{fig:sdRM}.
+Quando uno scheduler viene creato oltre a assegnare il taskset e il protocollo di accesso alle risorse, vengono inizializzate le strutture relative al protocollo. La scelta di fare questo assegnamento qua e non nel costruttore della classe dedicata al protocollo è dovuta alle dipendenze: per come è stato implementato il sistema, l'oggetto principale (e anche l'ultimo che deve essere istanziato) è lo scheduler, e quindi è il protocollo si basa su di esso.
+
+Per gestire i tempi rilevanti, cioè quelli in cui lo scheduler deve prendere il controllo del sistema per rivere la propria politica di scheduling, è delegata alla struttura \texttt{readyTasks}. Nell'intervallo tra un perido e il successivo infatti lo scheduler non fa altro che mandare in esecuzione uno dopo l'altro il task a priorità maggiore. Gli eventi rilevanti sono l’unione ordinata dei multipli di ciascun periodo fino al minimo comune multiplo dei periodi oppure fino a 10 volte il periodo maggiore (per semplicità del caso sia molto oneroso generare questa lista).
+
+Per capire i passaggi che esegue la simulazione consideriamo e analiziamo il sequence diagram di Figura~\ref{fig:sequenceDiagram}:
+\begin{itemize}
+    \item \texttt{assignPriority} \\
+        Assegna le priorità secondo l'implementazione in questione. È dichiarato astratto in \texttt{Scheduler} e deve essere implementato dalle classi concrete.
+    \item \texttt{initStructure} \\
+        Inizializza le strutture dati usate dalla simulazione: la lista di task pronti, e la lista di eventi importanti.
+    \item \texttt{checkFeasibility} \\
+        Controlla se è possibile, o meglio se non è possibile (e.g., per RM), schedulare il taskset secondo i test di schedulabilità implementati: per RM utilizza l'hyperbolic bound; per EDF valuta se il fattore di utilizzo è maggiore o minore dell'unità.
+    \item \texttt{Task.execute} \\
+        È il metodo che manda in esecuzione sistema per un tempo limitato. Questo tempo va dal tempo attuale fino al prossimo evento significativo.
+    \item \texttt{access-progress-release} \\
+        Sono i metodi che definsicono il protocollo di accesso alle risorse. I dettalgi implementativi sono specificati nel Paragrafo~\ref{sec:resaccprot}.
+    \item \texttt{Chunk.execute} \\
+        Definsice l'esecuzione del singolo chunk. In particolare si occupa della fase di logging.
+    \item \texttt{relasePeriodTasks} \\
+        Si occupa di rilasciare i task nel momento in cui scocca il suo periodo. Inoltre controlla che quei task abbiano finito di eseguire ed eventualmente sollava una \texttt{DeadlineMissExecption}.
+    \item \texttt{reset} \\
+        Durante l'esecuzione lo stato dei task e dei chunk cambia per riflettere informazioni relative all'esecuzione. Con questo metodo si vuole riportare i task e chunk al loro stato iniziale.
+\end{itemize}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=.9\textwidth]{immagini/sequence diagram RM.pdf}
-    \caption{Sequence Diagram RM}
-    \label{fig:sdRM}
+    \includegraphics[width=.9\textwidth]{immagini/sequence diagram.pdf}
+    \caption{Sequence Diagram scheduler}
+    \label{fig:sequenceDiagram}
 \end{figure}
 
-\myskip
-
-Dopo aver chiamato il costruttore della superclasse, RM valuta se tutti i task che compongono il taskset sono puramente periodici, cioè se hanno stesso periodo e deadline relativa.
-
-\myskip
-
-La simulazione di scheduling si basa su due strutture principali:
+\subsection{Rate Monotonic}
+Vediamo come sono implementati i metodi astratti della classe \texttt{Scheduler} in RM, cioè quelli che definsicono il suo comportamento rispetto agli altri scheduler.
 \begin{itemize}
-    \item \texttt{taskReady} \\
-        Ospita i task che si contendono l'accesso alla CPU. È stata implementa tramite un \texttt{Treeset} e al suo interno si mantiene un'ordinamento inverso rispetto alla durata del periodo dei vari task: task con periodo inferiore ha una priorità maggiore.
-    \item \texttt{events} \\
-        Gestisce gli eventi rilevanti per lo scheduler, cioè i momenti in cui deve valutare se i task che hanno terminato il periodo hanno superato la deadline oppure se devono essere rilasciati nuovamente. Nell'intervallo tra un perido e il successivo infatti lo scheduler non fa altro che mandare in esecuzione uno dopo l'altro il task a priorità maggiore. Gli eventi sono l’unione ordinata dei multipli di ciascun periodo fino al minimo comune multiplo dei periodi oppure fino a 10 volte il periodo maggiore (per semplicità del caso sia molto oneroso generare questa lista).
+    \item \texttt{checkFeasibility} \\
+        Viene controllato l'hyperbolic bound. È stato deciso di non cnsiderare il test di Lui \& Layland viesto che questo non è tight: se un taskset non risulta schedulabile seconda questo test, l'hyperbolic bound potrebbe definire che è schedulabile.
+    \item \texttt{assignPriority} \\
+        Assegna la priorità in modo inverso rispetto alla durata del periodo.
+    \item \texttt{addReadyTask} \\
+        Siccome la lsita dei task pronti per l'esecuzione è oridnata in modo dinamica (visto che è implementata come un $TreeSet<Task>$ con un comparatore) secondo la priorità dinamica, aggiunge semplicemente il task a tale lista.
 \end{itemize}
 
-\myskip
-
-Il metodo \texttt{schedule} poi delega la gestione dei chunk di ogni task alla classe \texttt{Task}, la quale a sua volta rimanda alla calsse \texttt{Chunk} la loro esecuzione (i.e. il logging).
+\subsection{Earlist Deadline First}
+Vediamo come sono implementati i metodi astratti della classe \texttt{Scheduler} in EDF, cioè quelli che definsicono il suo comportamento rispetto agli altri scheduler.
+\begin{itemize}
+    \item \texttt{checkFeasibility} \\
+        Viene controllato che il fattore di utilizzo del taskset sia minore o uguale a 1.
+    \item \texttt{assignPriority} \\
+        Assegna la priorità in modo inverso rispetto alla durata della dealine.
+    \item \texttt{addReadyTask} \\
+        Aggiunge il task alla lista dei task printi e poi la riordina secondo la prossima deadline. Il metodo che stabilisce la prossima deadline è \texttt{Task.nextDeadline}.
+\end{itemize}
 
 \subsection{Test}
 Consideriamo situazioni diverse:
@@ -56,6 +81,7 @@ Consideriamo situazioni diverse:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resource Access Protocol}
+\label{sec:resaccprot}
 Ogni implementazione di un protocollo di accesso alle risorse deve estendere la classe \texttt{ResourceProtocol}.
 
 l'idea iniziale era di implementare il concetto astratto di protocollo di accesso tramite un'interfaccia, ma vista la necessità di mantenere un riferimento allora scheduler nel protocollo si è introddo questo campo nella classe base.

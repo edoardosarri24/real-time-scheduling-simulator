@@ -19,6 +19,9 @@ class MyClock <<final>> {
 class RMScheduler <<final>> {
 }
 
+class EDFScheduler <<final>> {
+}
+
 abstract class ResourceProtocol {
     - protocol: ResAccessProtocol
     + access: void
@@ -62,6 +65,7 @@ class Chunk <<final>> {
 
 ' relazioni
 Scheduler <|-- RMScheduler
+Scheduler <|-- EDFScheduler
 Scheduler "*" --> "*" ResourceProtocol
 ResourceProtocol <|-- PriorityCeilingProtocol
 ResourceProtocol <|-- NoResourceProtocol
@@ -69,6 +73,5 @@ Scheduler "*" --> "1" Taskset
 Taskset "1" *-- "1...*" Task
 Task "1" *-- "1...*" Chunk
 Chunk "*" -> "*" Resource
-
 
 @enduml

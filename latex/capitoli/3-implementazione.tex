@@ -15,18 +15,18 @@ Nella classe base sono presenti, oltre che ai classici getter e setter, anche i 
 Quando uno scheduler viene creato oltre a assegnare il taskset e il protocollo di accesso alle risorse, viene chiamato \texttt{assignPriority}, e vengono inizializzate le strutture relative al protocollo. La scelta di fare questo assegnamento qua e non nella classe dedicata al protocollo è dovuta alle dipendenze: per come è stato implementato l'oggetto principale (e anche l'ultimo che deve essere istanziato) è lo scheduler, e quindi è il protocollo si basa su di esso.
 
 \subsection{Rate Monotonic}
-Descriviamo brevemente l'idea di implementazione di RM. Per semplificare l'ordine con cui i vari componenti interagiscono è stato definito il sequence diagram in Figura \ref{fig:sdRM}.
-
-\myskip
-
-Dopo aver chiamato il costruttore della superclasse, RM valuta se tutti i task che compongono il taskset sono puramente periodici, cioè se hanno stesso periodo e deadline relativa.
+Descriviamo brevemente l'idea di implementazione di RM. Per semplificare l'ordine con cui i vari componenti interagiscono è stato definito il sequence diagram in Figura~\ref{fig:sdRM}.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=.9\textwidth]{immagini/sequence diagram RM.pdf}
-    \caption{Sequence Siagram RM}
+    \caption{Sequence Diagram RM}
     \label{fig:sdRM}
 \end{figure}
+
+\myskip
+
+Dopo aver chiamato il costruttore della superclasse, RM valuta se tutti i task che compongono il taskset sono puramente periodici, cioè se hanno stesso periodo e deadline relativa.
 
 \myskip
 

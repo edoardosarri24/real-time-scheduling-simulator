@@ -65,6 +65,7 @@ public abstract class Scheduler {
 
     // METHOD
     public final void schedule() throws DeadlineMissedException {
+        MyClock.reset();
         List<Duration> events = initStructures();
         this.releaseAllTasks();
         this.checkFeasibility();
@@ -75,7 +76,7 @@ public abstract class Scheduler {
             MyClock.getInstance().advanceTo(nextEvent);
             this.relasePeriodTasks();
         }
-        MyLogger.log("<" + Utils.printCurrentTime() + ", end>");
+        MyLogger.log("<" + Utils.printCurrentTime() + ", end>\n");
     }
 
     public abstract void addReadyTask(Task task);

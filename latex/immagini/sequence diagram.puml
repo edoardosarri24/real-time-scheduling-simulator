@@ -3,6 +3,7 @@
 participant Client
 Scheduler -> Scheduler : assignPriority
 Client -> Scheduler : schedule
+Scheduler -> MyClock : reset
 Scheduler -> Scheduler : initStructures
 Scheduler -> TaskSet : checkFeasibility
 Scheduler -> Task : execute
@@ -10,7 +11,7 @@ Task -> ResourcesProtocol : access
 Task -> ResourcesProtocol : progress
 Task -> Chunk : execute
 Task -> ResourcesProtocol : release
-Scheduler -> VirtualClock : advanceTo
+Scheduler -> MyClock : advanceTo
 Scheduler -> Task : relasePeriodTasks
 Task -> Chunk : reset
 Scheduler --> Client : trace.log

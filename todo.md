@@ -1,0 +1,3 @@
+Potremmo aggiungere fault nella gestione del PCP, che avvengono con una certa probabilità (come nel caso di timeframe violation), in particolare:
+- innalzare la priorità dinamica di un task ad un valore errato (minore o maggiore di quello corretto) -> questo fault avviene a livello di PCP.
+- non acquisire (e quindi nemmeno rilaciare) un semaforo prima dell'uso di una risorsa condivisa --> questo fault avviene a livello di chunk.

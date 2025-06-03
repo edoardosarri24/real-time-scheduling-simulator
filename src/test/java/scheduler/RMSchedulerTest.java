@@ -195,4 +195,31 @@ public class RMSchedulerTest {
             .hasMessageContaining("Il task " + task2.getId() + " ha superato la deadline");
     }
 
+    @Test
+    public void twoConsecutiveSchedules() {
+        Task task1 = new Task(
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(20))),
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(20))),
+            List.of(
+                new Chunk(1, SampleDuration.sample(new ConstantSampler(new BigDecimal(4))))));
+        Task task2 = new Task(
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(50))),
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(50))),
+            List.of(
+                new Chunk(1, SampleDuration.sample(new ConstantSampler(new BigDecimal(6)))),
+                new Chunk(2, SampleDuration.sample(new ConstantSampler(new BigDecimal(3)))),
+                new Chunk(3, SampleDuration.sample(new ConstantSampler(new BigDecimal(3))))));
+        Task task3 = new Task(
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(100))),
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(100))),
+            List.of(
+                new Chunk(1, SampleDuration.sample(new ConstantSampler(new BigDecimal(10))))));
+        TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
+        RMScheduler scheduler = new RMScheduler(taskSet);
+        assertThatCode(() -> scheduler.schedule())
+            .doesNotThrowAnyException();
+        assertThatCode(() -> scheduler.schedule())
+            .doesNotThrowAnyException();
+    }
+
 }

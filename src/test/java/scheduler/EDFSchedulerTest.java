@@ -1,5 +1,6 @@
 package scheduler;
 
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.Comparator;
 import java.util.List;
@@ -7,14 +8,21 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import exeptions.DeadlineMissedException;
 import helper.ReflectionUtils;
+import resource.PriorityCeilingProtocol;
+import resource.Resource;
+import resource.ResourcesProtocol;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.MyClock;
+import utils.sampler.ConstantSampler;
+import utils.sampler.SampleDuration;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class EDFSchedulerTest {
@@ -148,6 +156,37 @@ public class EDFSchedulerTest {
         assertThatThrownBy(() -> scheduler.schedule())
             .isInstanceOf(DeadlineMissedException.class)
             .hasMessage("Il task " + task3.getId() + " ha superato la deadline");
+    }
+
+
+    
+    @Test
+    @Ignore
+    public void scheduleWResourceOK() {
+        Resource res1 = new Resource();
+        Resource res2 = new Resource();
+        Task task1 = new Task(
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(10))),
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(10))),
+            List.of(
+                new Chunk(1, SampleDuration.sample(new ConstantSampler(new BigDecimal(1))), List.of(res1)),
+                new Chunk(2, SampleDuration.sample(new ConstantSampler(new BigDecimal(2))))));
+        Task task2 = new Task(
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(15))),
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(15))),
+            List.of(
+                new Chunk(1, SampleDuration.sample(new ConstantSampler(new BigDecimal(2)))),
+                new Chunk(2, SampleDuration.sample(new ConstantSampler(new BigDecimal(1))), List.of(res1))));
+        Task task3 = new Task(
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(30))),
+            SampleDuration.sample(new ConstantSampler(new BigDecimal(10))),
+            List.of(
+                new Chunk(2, SampleDuration.sample(new ConstantSampler(new BigDecimal(2))), List.of(res2))));
+        TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
+        ResourcesProtocol protocol = new PriorityCeilingProtocol(taskSet);
+        Scheduler scheduler = new EDFScheduler(taskSet, protocol);
+        assertThatCode(() -> scheduler.schedule())
+            .doesNotThrowAnyException();
     }
 
 }

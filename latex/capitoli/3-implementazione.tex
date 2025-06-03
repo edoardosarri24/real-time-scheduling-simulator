@@ -22,6 +22,8 @@ Per capire i passaggi che esegue la simulazione consideriamo e analiziamo il seq
 \begin{itemize}
     \item \texttt{assignPriority} \\
         Assegna le priorità secondo l'implementazione in questione. È dichiarato astratto in \texttt{Scheduler} e deve essere implementato dalle classi concrete.
+    \item \texttt{Myclock.reset} \\
+        Resettando il clock di sistema prima di iniziare la simulazione, si permette di eseguire più volte il metodo \texttt{schedule} all'interno dello stesso main. Questo è necessario perchè, come viene descritto nella Sezione~\ref{subsec:clock}, il clock del sistema è implementato in maniera statica.
     \item \texttt{initStructure} \\
         Inizializza le strutture dati usate dalla simulazione: la lista di task pronti, e la lista di eventi importanti.
     \item \texttt{checkFeasibility} \\
@@ -40,7 +42,7 @@ Per capire i passaggi che esegue la simulazione consideriamo e analiziamo il seq
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=.9\textwidth]{immagini/sequence diagram.pdf}
+    \includegraphics[width=.75\textwidth]{immagini/sequence diagram.pdf}
     \caption{Sequence Diagram scheduler}
     \label{fig:sequenceDiagram}
 \end{figure}
@@ -75,7 +77,7 @@ Consideriamo situazioni diverse:
     \item Non schedulabile, senza risorse \\
         È stato preso in questo caso un taskset con fattore di utilizzo maggiore di 1: in questo modo sicuramente la schedulabilità non deve passare. Dopo aver verficato che l'hyperbolic test non passi, verifichaimo che vengano sollevate le corrette eccezioni.
     \item Schedulabile e non schedulabile, con risorse \\
-        Sono state presi dei task generati tramite chatGPT. Ci siamo accertati che quello generato dal modello di OpenAI rispetti quanto detto vericando il sollevamento o meno di eccezioni. Potrebbero essere implementati i test di schedulabilità estesi per risovere questo problema.
+        Sono state presi dei task generati tramite chatGPT. Ci siamo accertati che quello generato dal modello di OpenAI sia un taskset che rispetti quanto detto, vericando solo il sollevamento o meno di eccezioni. Potrebbero essere implementati i test di schedulabilità estesi per risovere questo problema.
 \end{itemize}
 
 
@@ -117,9 +119,8 @@ Per il logging è stato implementato un semplice logging su un file e viene rapp
 Il file di destinazione delle tracce loggate è \texttt{trace.log}.
 
 \subsection{Clock}
-Il tempo all'interno del sistema è gestito globalmente: ad ogni esecuzione del \texttt{main} il tempo viene resettato. Questa scelta è dovuta al fatto che praticamente tutti gli ogegtti devono accedere al clock del sistema; in questo modo si evita di passarlo ogni volta nei vari metodi chiamati a cascata. L'implementazione è stata fatta tramite il pattern Singleton.
-
-A causa della staticità si consiglia di usare eseguire una sola simulazione per esecuzione. C'è la possibilità di resettarlo manualmente (tramite \texttt{MyClock.reset()}); questa possibilità è stata introdotto per i test.
+\label{subsec:clock}
+Il tempo all'interno del sistema è gestito staticamente, e quindi a livello globale. Questa scelta è dovuta al fatto che praticamente tutti gli ogegtti devono accedere al clock del sistema; in questo modo si evita di passarlo ogni volta nei vari metodi chiamati a cascata. L'implementazione è stata fatta tramite il pattern Singleton.
 
 Il clock del sistema è rappresnetato dalla classe \texttt{MyClock}. Questa non fa altro che mantenere il tempo assoluto ed esporre due metodi che permettono di avanzare di un dato intervallo temporale e avanzare fino a un determinato tempo.
 

@@ -6,14 +6,17 @@ public class TaskSet {
 
     private final Set<Task> tasks;
 
+    // CONSTRUCTOR
     public TaskSet(Set<Task> tasks) {
         this.tasks = tasks;
     }
 
+    // GETTER AND SETTER
     public Set<Task> getTasks() {
         return this.tasks;
     }
 
+    // METHODS
     public void purelyPeriodicCheck() {
         for (Task task : this.tasks)
             task.purelyPeriodicCheck();

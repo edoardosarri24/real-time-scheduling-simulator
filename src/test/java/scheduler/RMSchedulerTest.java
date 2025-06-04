@@ -159,7 +159,7 @@ public class RMSchedulerTest {
                 new Chunk(1, SampleDuration.sample(new ConstantSampler(new BigDecimal(3))), List.of(res1)),
                 new Chunk(2, SampleDuration.sample(new ConstantSampler(new BigDecimal(6))))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2));
-        ResourcesProtocol protocol = new PriorityCeilingProtocol(taskSet);
+        ResourcesProtocol protocol = new PriorityCeilingProtocol();
         RMScheduler scheduler = new RMScheduler(taskSet, protocol);
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
@@ -188,7 +188,7 @@ public class RMSchedulerTest {
                 new Chunk(1, SampleDuration.sample(new ConstantSampler(new BigDecimal(5))), List.of(res2)),
                 new Chunk(2, SampleDuration.sample(new ConstantSampler(new BigDecimal(10))))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
-        ResourcesProtocol protocol = new PriorityCeilingProtocol(taskSet);
+        ResourcesProtocol protocol = new PriorityCeilingProtocol();
         RMScheduler scheduler = new RMScheduler(taskSet, protocol);
         assertThatThrownBy(() -> scheduler.schedule())
             .isInstanceOf(DeadlineMissedException.class)

@@ -43,7 +43,7 @@ public class PriorityCeilingProtocolTest {
             Duration.ofSeconds(10),
             List.of(chunk3, chunk4));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
-        PriorityCeilingProtocol protocol = new PriorityCeilingProtocol(taskSet);
+        PriorityCeilingProtocol protocol = new PriorityCeilingProtocol();
         new RMScheduler(taskSet, protocol);
         Map<Resource, Integer> ceiling = (Map<Resource, Integer>) ReflectionUtils.getField(protocol, "ceiling");
         assertThat(ceiling.keySet())

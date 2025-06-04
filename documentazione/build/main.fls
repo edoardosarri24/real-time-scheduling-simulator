@@ -1,8 +1,8 @@
-PWD /Users/edoardosarri/Documents/real-time-scheduling-simulator/latex
+PWD /Users/edoardosarri/Documents/real-time-scheduling-simulator/documentazione
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/edoardosarri/Documents/real-time-scheduling-simulator/latex/main.tex
+INPUT /Users/edoardosarri/Documents/real-time-scheduling-simulator/documentazione/main.tex
 OUTPUT build/main.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrreprt.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrreprt.cls

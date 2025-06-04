@@ -51,7 +51,7 @@ public abstract class Scheduler {
         this.blockedTask.remove(task);
     }
 
-    protected TaskSet getTaskSet() {
+    public TaskSet getTaskSet() {
         return this.taskSet;
     }
 

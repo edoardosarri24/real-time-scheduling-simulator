@@ -1,10 +1,12 @@
 package resource;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.oristool.simulator.samplers.UniformSampler;
 
 import exeptions.AccessResourceProtocolExeption;
 import taskSet.Chunk;
@@ -13,10 +15,25 @@ import taskSet.TaskSet;
 import utils.Utils;
 import utils.logger.MyLogger;
 
-public final class PriorityCeilingProtocol extends ResourcesProtocol {
+public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProtocol {
 
     private final Map<Resource, Integer> ceiling = new HashMap<>();
     private List<Resource> busyResources = new LinkedList<>();
+    private final int delta;
+
+    // CONSTRUCTOR
+    /**
+     * Constructs a PriorityCeilingProtocolFaultSetPriority instance.
+     * <p>
+     * The {@code delta} value, which is added to the dynamic priority set during the progress phase,
+     * will be sampled from a uniform distribution and will be strictly between {@code min} and {@code max} (exclusive).
+     *
+     * @param min the lower bound (exclusive) for sampling the delta value
+     * @param max the upper bound (exclusive) for sampling the delta value
+     */
+    public PriorityCeilingProtocolFaultSetPriority (double min, double max) {
+        this.delta = new UniformSampler(BigDecimal.valueOf(min), BigDecimal.valueOf(max)).getSample().intValue();
+    }
 
     // GETTER AND SETTER
     public int getCeilingValue(Resource resource) {
@@ -56,9 +73,11 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
             .mapToInt(Task::getNominalPriority)
             .min()
             .orElse(Integer.MAX_VALUE);
-        parentTask.setDinamicPriority(Math.min(
+        int faultPriority = Math.min(
             parentTask.getNominalPriority(),
-            MaxDinamicPriorityBlockedtask));
+            MaxDinamicPriorityBlockedtask)
+            + this.delta;
+        parentTask.setDinamicPriority(faultPriority);
         if (!resources.isEmpty()) {
             this.busyResources.addAll(resources);
             parentTask.acquireResources(resources);

@@ -159,7 +159,7 @@ public class EDFSchedulerTest {
     }
 
 
-    
+
     @Test
     @Ignore
     public void scheduleWResourceOK() {
@@ -183,7 +183,7 @@ public class EDFSchedulerTest {
             List.of(
                 new Chunk(2, SampleDuration.sample(new ConstantSampler(new BigDecimal(2))), List.of(res2))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
-        ResourcesProtocol protocol = new PriorityCeilingProtocol(taskSet);
+        ResourcesProtocol protocol = new PriorityCeilingProtocol();
         Scheduler scheduler = new EDFScheduler(taskSet, protocol);
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();

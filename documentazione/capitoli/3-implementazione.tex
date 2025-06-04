@@ -43,7 +43,7 @@ Per capire i passaggi che esegue la simulazione consideriamo e analiziamo il seq
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=.75\textwidth]{immagini/sequence diagram.pdf}
-    \caption{Sequence Diagram scheduler}
+    \caption{Sequence Diagram scheduling}
     \label{fig:sequenceDiagram}
 \end{figure}
 
@@ -105,9 +105,24 @@ Tralasciando quello che fanno i metodi di accesso, progresso e rilascio, che rif
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fault injection}
+
+\subsection{Additional execution time}
 Per implementare il fault injection di un additional execution time in un \texttt{chunk} è stato previsto un altro costruttore che prendesse, oltre ai parametri previsti, anche un \texttt{overheadExectutionTime}.
 
 Il motivo per non introdurre una classe che eseguisse l'injection è stato che un chunk nella realtà nasce con il suo execution time e non ci sono altre entità che aumentano quello campionato; il costrutture vuole modellare questa idea.
+
+\subsection{Priority Ceiling Protocol}
+Sono state aggiunte due classi che introducono due tipi di fault: il primo setta una priorità dinamica errata quando un task entra nella critical section; il secondo non fa acquisire una risorsa quando al chunk che la utilizza.
+
+\myskip
+
+Le classi che implementano questi comportamenti sono:
+\begin{itemize}
+    \item \texttt{PriorityCeilingProtocolFaultSetPriority} \\
+        L'idea è campionare un valore delta, da aggiungere poi alla priorità dinamica corretta, da una distribuzione uniforme. Tale distribuzione è un'istanza di \texttt{UniformSampler} della libreria Sirio. I due parametri necessari alla distribuzione sono presi tramite costruttore.
+    \item \texttt{PriorityCeilingProtocolFaultAquireResource} \\
+        Si campiona da una distribuzione uniforme (i.e., \texttt{Math.random()}) un valore compreso tra 0 e 1. Se il valore passato come soglia è minore di questo valore campionato allora si salta il blocco di codice responsabile dall'acquisizione del semaforo. Per non rilasciarlo al termine dell'esecuzione del chunk, questo viene inserito in una lista.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Utilità}

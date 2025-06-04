@@ -2,7 +2,7 @@
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduzione}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Capacità}{4}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Utilizzo}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Utilizzo}{5}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Analisi}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Componenti}{6}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Task}{6}{subsection.2.1.1}%
@@ -21,11 +21,14 @@
 \contentsline {section}{\numberline {3.2}Resource Access Protocol}{11}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Priority Ceiling Protocol}{12}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}Fault injection}{12}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Utilità}{12}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Loggin}{12}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Clock}{12}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.3.1}Additional execution time}{12}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Priority Ceiling Protocol}{12}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Utilità}{13}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Loggin}{13}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Clock}{13}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Sampling dei tempi}{13}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Eccezioni}{13}{subsection.3.4.4}%
-\contentsline {chapter}{\numberline {4}Dubbi}{14}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Domande}{14}{section.4.1}%
+\contentsline {subsection}{\numberline {3.4.4}Eccezioni}{14}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Dubbi}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Implementativi}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Varie}{15}{section.4.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

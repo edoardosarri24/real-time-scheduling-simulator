@@ -7,9 +7,11 @@ Ogni traccia è definita come una sequenza di coppie $<tempo, evento>$, dove un 
 \section{Capacità}
 A partire da un taskset, il sistema ha le capacità di:
 \begin{itemize}
-    \item Generare la traccia di esecuzione del taskset schedulato tramite un dato algoritmo di scheduling (i.e., Rate Monotonic e Earlist Deadline First) e ed un eventuale protocollo di accesso alle risorse (i.e., Priority Ceiling Protocol). Nel caso si volgia generare una sorta di dataset di tracce, è prevista la possibilità di chiamare più volte il medtodo \texttt{schedule all'interno dello stesso main.}
-    \item Rilevare eventuali deadline miss. Se al termine del prorpio periodo, un task non ha completato un tutti i chunk di cui è composto allora il sistema lo evidenzia e si arresta.
+    \item Generare la traccia di esecuzione del taskset schedulato tramite un dato algoritmo di scheduling (i.e., Rate Monotonic e Earlist Deadline First) e ed un eventuale protocollo di accesso alle risorse (i.e., Priority Ceiling Protocol). Nel caso si volgia generare una sorta di dataset di tracce, è prevista la possibilità di chiamare più volte il medtodo \texttt{schedule} all'interno dello stesso main.
+    \item Rilevare eventuali deadline miss. Se un task non ha finito di eseguire entro la propria deadline allora la simulazione si arresta; non continua perché ci interessa valutare il primo fallimento, visto che i successivi potrebbero essere in cascata del primo.
     \item Introdurre e rilevare un additional execution time in un chunk. Questo modella un tempo di computazione di un chunk maggiore (o minore) di quello che ci aspettiamo, cioè maggiore del WCET.
+    \item Introdurre un fault a livello del protocollo di accesso alle risorse (i.e., PCP) tale per cui la priorità dinamica assegnata al task che entra in critical section è quella corretta più un valore campionato da una distribuzione uniforme.
+    \item Introdurre un fault a livello di chunk tale per cui con una certa probabilità il chunk non acquisisce, e quindi non rilascia, il semaforo che gestisce la risorsa associata alla critical section in cui entra.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,4 +21,6 @@ Nei prossimi punti vediamo degli accorgimenti che sono utili per far utilizzare 
     \item Gli elementi del sistema, come chunk, task, taskset, scheduler e protocollo di accesso alle risorse, devono essere definiti all'interno del main. Una volta definito tutto si deve chiamare il metodo \texttt{schedule} sullo scheduler.
     \item Qualunque tempo si richiesto per inizializzare gli oggeti (e.g., execution time, periodo, overhrad dell'execution time del task) devono essere campionati tramite un'implementazione di \texttt{Sample}. Un tale oggetto deve essere passato al metodo statico \texttt{sample} del wrapper \texttt{SampleDuration}. Oltre alle distribuzioni introdotte da Sirio è presente anche l'implementazione \texttt{ConstantSampler}, che definisce un campionamento costante.
     \item I tempi devono essere passati al sistema e letti da esso in milli secondi. Il sistema li gestisce in nanosecondi per avere un'alta precisione.
+    \item Quando si vuole introdurre il fault relativo alla priorità dinamica settata da PCP si deve specificare il valore minimo e massimo entro cui campionare. Questi valori sono intesi come esclusi.
+    \item Quando si vuole introdurre il fault relativo all'acquisizione del semafore associato alle risorse, la soglia specificata deve essere in un intervallo 0.0 e 1.0.
 \end{itemize}

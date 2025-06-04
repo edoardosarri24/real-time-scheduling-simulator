@@ -4,7 +4,7 @@ import exeptions.AccessResourceProtocolExeption;
 import taskSet.Chunk;
 import taskSet.TaskSet;
 
-public class NoResourceProtocol extends ResourcesProtocol{
+public final class NoResourceProtocol extends ResourcesProtocol{
 
     @Override
     public void access(Chunk chunk) throws AccessResourceProtocolExeption {}

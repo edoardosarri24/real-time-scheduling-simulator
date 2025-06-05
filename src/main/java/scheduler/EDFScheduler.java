@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
 import utils.logger.MyLogger;
@@ -18,11 +17,6 @@ public final class EDFScheduler extends Scheduler {
     // CONSTRUCTOR
     public EDFScheduler(TaskSet taskSet, Duration simulationDuration) {
         super(taskSet, simulationDuration);
-        this.getTaskSet().periodAndDealineCheck();
-    }
-
-    public EDFScheduler(TaskSet taskSet, ResourcesProtocol resProtocol, Duration simulationDuration) {
-        super(taskSet, resProtocol, simulationDuration);
         this.getTaskSet().periodAndDealineCheck();
     }
 

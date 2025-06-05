@@ -1,2 +1,2 @@
-- EDF senza risorse
-- campionare da una distribuzione ogni volta.
+
+- non permettere a EDF di avere un protocollo

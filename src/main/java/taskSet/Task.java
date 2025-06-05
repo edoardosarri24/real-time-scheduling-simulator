@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.oristool.simulator.samplers.Sampler;
+
 import exeptions.AccessResourceProtocolExeption;
 import exeptions.DeadlineMissedException;
 import resource.Resource;
@@ -13,6 +15,7 @@ import scheduler.Scheduler;
 import utils.MyClock;
 import utils.Utils;
 import utils.logger.MyLogger;
+import utils.sampler.SampleDuration;
 
 public class Task {
 
@@ -29,10 +32,10 @@ public class Task {
     private List<Resource> resourcesAcquired = new LinkedList<>();
 
     // CONSTRUCTOR
-    public Task(Duration period, Duration deadline, List<Chunk> chunks) {
+    public Task(Sampler period, Sampler deadline, List<Chunk> chunks) {
         this.id = idCounter++;
-        this.period = period;
-        this.deadline = deadline;
+        this.period = SampleDuration.sample(period);
+        this.deadline = SampleDuration.sample(deadline);
         this.chunks = chunks;
         this.chunkToExecute = new LinkedList<>(chunks);
         this.initChunkParent();

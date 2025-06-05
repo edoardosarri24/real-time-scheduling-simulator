@@ -1,11 +1,13 @@
 package taskSet;
 
-import java.time.Duration;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 import utils.MyClock;
+import utils.sampler.ConstantSampler;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class TaskSetTest {
@@ -17,43 +19,43 @@ public class TaskSetTest {
 
     @Test
     public void notPurelyPeriodic() {
-        Chunk chunk = new Chunk(0, Duration.ofSeconds(1));
+        Chunk chunk = new Chunk(0, new ConstantSampler(new BigDecimal(0)));
         Task task0 = new Task(
-            Duration.ofSeconds(10),
-            Duration.ofSeconds(10),
+            new ConstantSampler(new BigDecimal(10)),
+            new ConstantSampler(new BigDecimal(10)),
             List.of(chunk));
         Task task1 = new Task(
-            Duration.ofSeconds(5),
-            Duration.ofSeconds(1),
+            new ConstantSampler(new BigDecimal(5)),
+            new ConstantSampler(new BigDecimal(1)),
             List.of(chunk));
         Task task2 = new Task(
-            Duration.ofSeconds(5),
-            Duration.ofSeconds(5),
+            new ConstantSampler(new BigDecimal(5)),
+            new ConstantSampler(new BigDecimal(5)),
             List.of(chunk));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         assertThatThrownBy(() -> taskSet.purelyPeriodicCheck())
             .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage("Il task " + task1.getId() + " non è puramente periodico: ha periodo PT5S e deadline PT1S");
+            .hasMessage("Il task " + task1.getId() + " non è puramente periodico: ha periodo PT0.005S e deadline PT0.001S");
     }
 
     @Test
     public void hyperbolicBoundTestTrue() {
         Task task0 = new Task(
-            Duration.ofSeconds(10),
-            Duration.ofSeconds(10),
+            new ConstantSampler(new BigDecimal(10)),
+            new ConstantSampler(new BigDecimal(10)),
             List.of(
-                new Chunk(0, Duration.ofSeconds(1)),
-                new Chunk(0, Duration.ofSeconds(2))));
+                new Chunk(0, new ConstantSampler(new BigDecimal(1))),
+                new Chunk(0, new ConstantSampler(new BigDecimal(2)))));
         Task task1 = new Task(
-            Duration.ofSeconds(5),
-            Duration.ofSeconds(5),
-            List.of(new Chunk(1, Duration.ofSeconds(1))));
+            new ConstantSampler(new BigDecimal(5)),
+            new ConstantSampler(new BigDecimal(5)),
+            List.of(new Chunk(1, new ConstantSampler(new BigDecimal(1)))));
         Task task2 = new Task(
-            Duration.ofSeconds(50),
-            Duration.ofSeconds(50),
+            new ConstantSampler(new BigDecimal(50)),
+            new ConstantSampler(new BigDecimal(50)),
             List.of(
-                new Chunk(2, Duration.ofSeconds(8)),
-                new Chunk(2, Duration.ofSeconds(2))));
+                new Chunk(2, new ConstantSampler(new BigDecimal(8))),
+                new Chunk(2, new ConstantSampler(new BigDecimal(2)))));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         assertThat(taskSet.hyperbolicBoundTest())
             .isTrue();
@@ -62,21 +64,21 @@ public class TaskSetTest {
     @Test
     public void hyperbolicBoundTestFalse() {
         Task task0 = new Task(
-            Duration.ofSeconds(10),
-            Duration.ofSeconds(10),
+            new ConstantSampler(new BigDecimal(10)),
+            new ConstantSampler(new BigDecimal(10)),
             List.of(
-                new Chunk(0, Duration.ofSeconds(2)),
-                new Chunk(0, Duration.ofSeconds(3))));
+                new Chunk(0, new ConstantSampler(new BigDecimal(2))),
+                new Chunk(0, new ConstantSampler(new BigDecimal(3)))));
         Task task1 = new Task(
-            Duration.ofSeconds(5),
-            Duration.ofSeconds(5),
-            List.of(new Chunk(1, Duration.ofSeconds(1))));
+            new ConstantSampler(new BigDecimal(5)),
+            new ConstantSampler(new BigDecimal(5)),
+            List.of(new Chunk(1, new ConstantSampler(new BigDecimal(1)))));
         Task task2 = new Task(
-            Duration.ofSeconds(20),
-            Duration.ofSeconds(20),
+            new ConstantSampler(new BigDecimal(20)),
+            new ConstantSampler(new BigDecimal(20)),
             List.of(
-                new Chunk(2, Duration.ofSeconds(8)),
-                new Chunk(2, Duration.ofSeconds(2))));
+                new Chunk(2, new ConstantSampler(new BigDecimal(8))),
+                new Chunk(2, new ConstantSampler(new BigDecimal(2)))));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         assertThat(taskSet.hyperbolicBoundTest())
             .isFalse();
@@ -85,25 +87,25 @@ public class TaskSetTest {
     @Test
     public void hyperbolicBoundTestWithNoPeriodicTask() {
         Task task0 = new Task(
-            Duration.ofSeconds(10),
-            Duration.ofSeconds(10),
+            new ConstantSampler(new BigDecimal(10)),
+            new ConstantSampler(new BigDecimal(10)),
             List.of(
-                new Chunk(0, Duration.ofSeconds(2)),
-                new Chunk(0, Duration.ofSeconds(3))));
+                new Chunk(0, new ConstantSampler(new BigDecimal(2))),
+                new Chunk(0, new ConstantSampler(new BigDecimal(3)))));
         Task task1 = new Task(
-            Duration.ofSeconds(5),
-            Duration.ofSeconds(4),
-            List.of(new Chunk(1, Duration.ofSeconds(1))));
+            new ConstantSampler(new BigDecimal(5)),
+            new ConstantSampler(new BigDecimal(4)),
+            List.of(new Chunk(1, new ConstantSampler(new BigDecimal(1)))));
         Task task2 = new Task(
-            Duration.ofSeconds(20),
-            Duration.ofSeconds(20),
+            new ConstantSampler(new BigDecimal(20)),
+            new ConstantSampler(new BigDecimal(20)),
             List.of(
-                new Chunk(2, Duration.ofSeconds(8)),
-                new Chunk(2, Duration.ofSeconds(2))));
+                new Chunk(2, new ConstantSampler(new BigDecimal(8))),
+                new Chunk(2, new ConstantSampler(new BigDecimal(2)))));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         assertThatThrownBy(() -> taskSet.hyperbolicBoundTest())
             .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage("Il task " + task1.getId() + " non è puramente periodico: ha periodo PT5S e deadline PT4S");
+            .hasMessage("Il task " + task1.getId() + " non è puramente periodico: ha periodo PT0.005S e deadline PT0.004S");
     }
 
 }

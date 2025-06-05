@@ -1,13 +1,9 @@
 package utils;
 
-import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.List;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.oristool.simulator.samplers.UniformSampler;
-import utils.sampler.SampleDuration;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -80,22 +76,6 @@ public class UtilsTest {
             Duration.ofMillis(4)
         );
         List<Duration> output = Utils.generatePeriodUpToMax(input, Duration.ofMillis(4));
-        assertThat(output).containsExactly(
-            Duration.ofMillis(4)
-        );
-    }
-
-
-
-
-    @Test
-    @Ignore
-    public void generatePeriodsUpToLCM4() {
-        List<Duration> input = List.of(
-            SampleDuration.sample(new UniformSampler(new BigDecimal(1), new BigDecimal(2))),
-            SampleDuration.sample(new UniformSampler(new BigDecimal(1), new BigDecimal(2)))
-        );
-        List<Duration> output = Utils.generatePeriodUpToMax(input, Duration.ofMillis(1));
         assertThat(output).containsExactly(
             Duration.ofMillis(4)
         );

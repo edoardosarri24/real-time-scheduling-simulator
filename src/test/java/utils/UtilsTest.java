@@ -3,15 +3,10 @@ package utils;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.List;
-import java.util.Set;
-
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.oristool.simulator.samplers.UniformSampler;
-
-import taskSet.Chunk;
-import taskSet.Task;
 import utils.sampler.SampleDuration;
 
 import static org.assertj.core.api.Assertions.*;
@@ -31,13 +26,13 @@ public class UtilsTest {
     }
 
     @Test
-    public void generatePeriodsUpToLCM1() {
+    public void generatePeriodUpToMax1() {
         List<Duration> input = List.of(
             Duration.ofMillis(5),
             Duration.ofMillis(10),
             Duration.ofMillis(3)
         );
-        List<Duration> output = Utils.generatePeriodUpToLCM(input);
+        List<Duration> output = Utils.generatePeriodUpToMax(input, Duration.ofMillis(30));
         assertThat(output).containsExactly(
             Duration.ofMillis(3),
             Duration.ofMillis(5),
@@ -57,12 +52,12 @@ public class UtilsTest {
     }
 
     @Test
-    public void generatePeriodsUpToLCM2() {
+    public void generatePeriodUpToMax2() {
         List<Duration> input = List.of(
             Duration.ofMillis(750),
             Duration.ofMillis(75)
         );
-        List<Duration> output = Utils.generatePeriodUpToLCM(input);
+        List<Duration> output = Utils.generatePeriodUpToMax(input, Duration.ofMillis(750));
         assertThat(output).containsExactly(
             Duration.ofMillis(75),
             Duration.ofMillis(150),
@@ -78,17 +73,20 @@ public class UtilsTest {
     }
 
     @Test
-    public void generatePeriodsUpToLCM3() {
+    public void generatePeriodUpToMax3() {
         List<Duration> input = List.of(
             Duration.ofMillis(4),
             Duration.ofMillis(4),
             Duration.ofMillis(4)
         );
-        List<Duration> output = Utils.generatePeriodUpToLCM(input);
+        List<Duration> output = Utils.generatePeriodUpToMax(input, Duration.ofMillis(4));
         assertThat(output).containsExactly(
             Duration.ofMillis(4)
         );
     }
+
+
+
 
     @Test
     @Ignore
@@ -97,26 +95,9 @@ public class UtilsTest {
             SampleDuration.sample(new UniformSampler(new BigDecimal(1), new BigDecimal(2))),
             SampleDuration.sample(new UniformSampler(new BigDecimal(1), new BigDecimal(2)))
         );
-        List<Duration> output = Utils.generatePeriodUpToLCM(input);
+        List<Duration> output = Utils.generatePeriodUpToMax(input, Duration.ofMillis(1));
         assertThat(output).containsExactly(
             Duration.ofMillis(4)
-        );
-    }
-
-    @Test
-    public void generateDeadlineUpToLCM() {
-        Chunk chunk = new Chunk(0, Duration.ofMillis(10));
-        Set<Task> input = Set.of(
-            new Task(Duration.ofMillis(10), Duration.ofMillis(8), List.of(chunk)),
-            new Task(Duration.ofMillis(15), Duration.ofMillis(5), List.of(chunk))
-        );
-        List<Duration> output = Utils.generateDeadlineUpToLCM(input);
-        assertThat(output).containsExactly(
-            Duration.ofMillis(5),
-            Duration.ofMillis(8),
-            Duration.ofMillis(18),
-            Duration.ofMillis(20),
-            Duration.ofMillis(28)
         );
     }
 

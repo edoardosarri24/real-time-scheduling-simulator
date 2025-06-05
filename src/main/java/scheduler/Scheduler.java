@@ -24,18 +24,20 @@ public abstract class Scheduler {
     private TreeSet<Task> readyTasks;
     private List<Task> blockedTask = new LinkedList<>();
     private Task lastTaskExecuted;
+    private final Duration simulationDuration;
 
     // CONSTRUCTOR
-    public Scheduler(TaskSet taskSet) {
-        this(taskSet, new NoResourceProtocol());
+    public Scheduler(TaskSet taskSet, Duration simulationDuration) {
+        this(taskSet, new NoResourceProtocol(), simulationDuration);
     }
 
-    public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
+    public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol, Duration simulationDuration) {
         this.taskSet = taskSet;
         this.resProtocol = resProtocol;
         this.assignPriority();
         this.resProtocol.initStructures(this.taskSet);
         this.resProtocol.setScheduler(this);
+        this.simulationDuration = simulationDuration;
     }
 
     // GETTER AND SETTER
@@ -92,7 +94,7 @@ public abstract class Scheduler {
         List<Duration> periods = this.taskSet.getTasks().stream()
             .map(Task::getPeriod)
             .collect(Collectors.toList());
-        List<Duration> events = Utils.generatePeriodUpToLCM(periods);
+        List<Duration> events = Utils.generatePeriodUpToMax(periods, this.simulationDuration);
         return events;
     }
 

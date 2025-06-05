@@ -44,7 +44,7 @@ public class PriorityCeilingProtocolTest {
             List.of(chunk3, chunk4));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         PriorityCeilingProtocol protocol = new PriorityCeilingProtocol();
-        new RMScheduler(taskSet, protocol);
+        new RMScheduler(taskSet, protocol, Duration.ZERO);
         Map<Resource, Integer> ceiling = (Map<Resource, Integer>) ReflectionUtils.getField(protocol, "ceiling");
         assertThat(ceiling.keySet())
             .containsExactlyInAnyOrder(res0, res1, res2);

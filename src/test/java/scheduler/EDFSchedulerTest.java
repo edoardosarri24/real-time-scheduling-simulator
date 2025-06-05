@@ -58,7 +58,7 @@ public class EDFSchedulerTest {
         assertThat(task2.getNominalPriority())
             .isEqualTo(task2.getDinamicPriority())
             .isZero();
-        new EDFScheduler(new TaskSet(Set.of(task0, task1, task2)));
+        new EDFScheduler(new TaskSet(Set.of(task0, task1, task2)), Duration.ofSeconds(30));
         assertThat(task1.getNominalPriority())
             .isEqualTo(task1.getNominalPriority())
             .isEqualTo(1);
@@ -86,7 +86,7 @@ public class EDFSchedulerTest {
             Duration.ofSeconds(11),
             List.of(this.chunk));
         TaskSet taskset = new TaskSet(Set.of(task1, task2, task3));
-        Scheduler scheduler = new EDFScheduler(taskset);
+        Scheduler scheduler = new EDFScheduler(taskset, Duration.ofSeconds(30));
         TreeSet<Task> readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
         readyTasks.addAll(List.of(task1, task3));
         ReflectionUtils.setField(scheduler, "readyTasks", readyTasks);
@@ -122,7 +122,7 @@ public class EDFSchedulerTest {
         TaskSet taskset = new TaskSet(Set.of(task1, task2, task3));
         assertThat(taskset.utilizationFactor())
             .isLessThan(1);
-        Scheduler scheduler = new EDFScheduler(taskset);
+        Scheduler scheduler = new EDFScheduler(taskset, Duration.ofMillis(24));
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
     }
@@ -152,7 +152,7 @@ public class EDFSchedulerTest {
         TaskSet taskset = new TaskSet(Set.of(task1, task2, task3));
         assertThat(taskset.utilizationFactor())
             .isGreaterThan(1);
-        Scheduler scheduler = new EDFScheduler(taskset);
+        Scheduler scheduler = new EDFScheduler(taskset, Duration.ofMillis(120));
         assertThatThrownBy(() -> scheduler.schedule())
             .isInstanceOf(DeadlineMissedException.class)
             .hasMessage("Il task " + task3.getId() + " ha superato la deadline");
@@ -184,7 +184,7 @@ public class EDFSchedulerTest {
                 new Chunk(2, SampleDuration.sample(new ConstantSampler(new BigDecimal(2))), List.of(res2))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
         ResourcesProtocol protocol = new PriorityCeilingProtocol();
-        Scheduler scheduler = new EDFScheduler(taskSet, protocol);
+        Scheduler scheduler = new EDFScheduler(taskSet, protocol, Duration.ofMillis(30));
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
     }

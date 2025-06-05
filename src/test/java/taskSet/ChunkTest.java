@@ -72,7 +72,7 @@ public class ChunkTest {
     public void executeWOverhead() {
         Chunk chunk = new Chunk(0, Duration.ofMillis(10), Duration.ofMillis(2));
         Task task = new Task(Duration.ofMillis(20), Duration.ofMillis(20), List.of(chunk));
-        RMScheduler scheduler = new RMScheduler(new TaskSet(Set.of(task)));
+        RMScheduler scheduler = new RMScheduler(new TaskSet(Set.of(task)), Duration.ofMillis(20));
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
     }

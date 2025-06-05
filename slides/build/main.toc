@@ -1,0 +1,8 @@
+\beamer@subsectionintoc {0}{1}{\href {https://neural-additive-models.github.io}{NeurIPS, 2021}}{1}{0}{0}
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\beamer@sectionintoc {1}{XAI}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Explainable Artficial Intelligence}{2}{0}{1}
+\beamer@sectionintoc {2}{GAM}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Generalized Additive Models}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{\href {https://arxiv.org/abs/2011.02863}{Paper}}{5}{0}{2}

@@ -1,5 +1,6 @@
 package scheduler;
 
+import java.time.Duration;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,13 +13,13 @@ import utils.logger.MyLogger;
 public final class RMScheduler extends Scheduler {
 
     // CONSTRUCTOR
-    public RMScheduler(TaskSet taskSet) {
-        super(taskSet);
+    public RMScheduler(TaskSet taskSet, Duration simulationDuration) {
+        super(taskSet, simulationDuration);
         this.getTaskSet().purelyPeriodicCheck();
     }
 
-    public RMScheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
-        super(taskSet, resProtocol);
+    public RMScheduler(TaskSet taskSet, ResourcesProtocol resProtocol, Duration simulationDuration) {
+        super(taskSet, resProtocol, simulationDuration);
         this.getTaskSet().purelyPeriodicCheck();
     }
 

@@ -1,0 +1,29 @@
+\section{GAM}
+
+\subsection{Generalized Additive Models}
+
+\begin{frame}{GAMs}
+    \begin{columns}
+        \begin{column}{.45\textwidth}
+            \begin{block}{Modelli lineari}
+                $f(x)=\sum_{i=1}^D\beta_ix_i+\beta_0$
+            \end{block}
+            \begin{block}{Definizione}
+                $\sigma(y)=\sum_{i=1}^Df_i(x_i)+\beta$
+                \begin{itemize}
+                    \item $f_i$ è detta shape function.
+                    \item $\sigma$ è detta link function.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{.45\textwidth}
+            \begin{block}{Output}
+                L'output è ottenuto in modo additivo.
+                \begin{itemize}
+                    \item Se la link function è l'indentità allora abbiamo una regressione.
+                    \item Se la link function è una sigmoide allora abbiamo una classificazione.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}

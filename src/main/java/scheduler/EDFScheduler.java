@@ -1,5 +1,6 @@
 package scheduler;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -15,13 +16,13 @@ import utils.logger.MyLogger;
 public final class EDFScheduler extends Scheduler {
 
     // CONSTRUCTOR
-    public EDFScheduler(TaskSet taskSet) {
-        super(taskSet);
+    public EDFScheduler(TaskSet taskSet, Duration simulationDuration) {
+        super(taskSet, simulationDuration);
         this.getTaskSet().periodAndDealineCheck();
     }
 
-    public EDFScheduler(TaskSet taskSet, ResourcesProtocol resProtocol) {
-        super(taskSet, resProtocol);
+    public EDFScheduler(TaskSet taskSet, ResourcesProtocol resProtocol, Duration simulationDuration) {
+        super(taskSet, resProtocol, simulationDuration);
         this.getTaskSet().periodAndDealineCheck();
     }
 

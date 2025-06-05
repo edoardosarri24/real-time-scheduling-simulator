@@ -4,13 +4,11 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
-
-import com.google.common.math.LongMath;
-
-import taskSet.Task;
 
 public class Utils {
 
@@ -29,93 +27,39 @@ public class Utils {
     }
 
     /**
-     * Generates a sorted list of unique {@link Duration} objects representing all positive multiples
-     * of each duration in the input list, up to and including the least common multiple (LCM) of their
-     * nanosecond values.
+     * Generates a sorted list of unique {@link Duration} objects representing all multiples
+     * of the given periods up to the specified simulation duration.
      *
-     * @param periods the list of {@link Duration} objects to process; must not be null or empty
-     * @return a sorted list of unique {@link Duration} objects representing all multiples up to the LCM
-     * @throws RuntimeException if the input list is null or empty
+     * <p>For each period in the input list, this method computes all its multiples (starting from the period itself)
+     * that do not exceed the simulation duration. The resulting durations are collected, deduplicated, and sorted
+     * in natural order.</p>
+     *
+     * @param periods the list of periods as {@link Duration} objects; must not be null or empty
+     * @param simulationDuration the maximum duration up to which multiples are generated; must not be null
+     * @return a sorted {@link List} of unique {@link Duration} objects representing all multiples of the input periods up to the simulation duration
+     * @throws IllegalArgumentException if the periods list is null or empty
      */
-    public static List<Duration> generatePeriodUpToLCM(List<Duration> periods) {
+    public static List<Duration> generatePeriodUpToMax(List<Duration> periods, Duration simulationDuration) {
         if (periods == null || periods.isEmpty())
-            throw new RuntimeException("empty list");
+            throw new IllegalArgumentException("La lista dei periodi è vuota o nulla.");
+
         List<Long> nanosList = periods.stream()
             .map(Duration::toNanos)
             .sorted()
             .collect(Collectors.toList());
-        long lcm = LCMOfList(nanosList);
-        List<Duration> result = new ArrayList<>();
+
+        long maxNanos = simulationDuration.toNanos();
+        Set<Duration> resultSet = new TreeSet<>(Comparator.naturalOrder());
+
         for (long baseNanos : nanosList) {
             long multiple = baseNanos;
-            while (multiple <= lcm) {
-                result.add(Duration.ofNanos(multiple));
+            while (multiple <= maxNanos) {
+                resultSet.add(Duration.ofNanos(multiple));
                 multiple += baseNanos;
             }
         }
-        return result.stream()
-            .distinct()
-            .sorted()
-            .collect(Collectors.toList());
-    }
 
-    /**
-     * Generates a sorted list of deadlines of the form i * period + deadline for each task,
-     * up to the least common multiple (LCM) of all task periods (in milliseconds).
-     *
-     * @param tasks the list of {@link Task} to process; must not be null or empty
-     * @return a sorted list of unique {@link Duration} objects representing all generated deadlines
-     * @throws RuntimeException if the input list is null or empty
-     */
-    public static List<Duration> generateDeadlineUpToLCM(Set<Task> tasks) {
-        if (tasks == null || tasks.isEmpty())
-            throw new RuntimeException("empty task list");
-        List<Long> periods = tasks.stream()
-            .map(task -> task.getPeriod().toNanos())
-            .collect(Collectors.toList());
-        long lcm = LCMOfList(periods);
-        List<Duration> result = new ArrayList<>();
-        for (Task task : tasks) {
-            Duration period = task.getPeriod();
-            Duration deadline = task.getDeadline();
-            for (long i=0; i*period.toNanos()+deadline.toNanos() <= lcm; i++) {
-                Duration event = period.multipliedBy(i).plus(deadline);
-                result.add(event);
-            }
-        }
-        return result.stream()
-            .distinct()
-            .sorted()
-            .collect(Collectors.toList());
-    }
-
-    // HELPER
-    /**
-     * Computes the Least Common Multiple (LCM) of two long integers.
-     *
-     * @param a the first number
-     * @param b the second number
-     * @return the least common multiple of a and b
-     */
-    private static Long lcm(long a, long b) {
-        return (a / LongMath.gcd(a, b)) * b;
-    }
-
-    /**
-     * Computes the Least Common Multiple (LCM) of a list of long values.
-     *
-     * @param values list of positive long integers
-     * @return the LCM of all values
-     * @throws RuntimeException if the list is null or empty
-     */
-    private static long LCMOfList(List<Long> values) {
-        if (values == null || values.isEmpty())
-            throw new RuntimeException("Cannot compute LCM of empty list");
-        long lcm = values.getFirst();
-        for (int i = 1; i < values.size(); i++) {
-            lcm = lcm(lcm, values.get(i));
-        }
-        return lcm;
+        return new ArrayList<>(resultSet);
     }
 
 }

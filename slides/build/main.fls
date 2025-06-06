@@ -391,6 +391,18 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmss.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmss.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmss.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmss10.tfm
+INPUT build/main.aux
+INPUT build/main.aux
+INPUT build/main.aux
+INPUT build/src/1-introduzione.aux
+INPUT build/src/1-introduzione.aux
+INPUT build/src/1-introduzione.aux
+INPUT build/src/2-analisi.aux
+INPUT build/src/2-analisi.aux
+INPUT build/src/2-analisi.aux
+INPUT build/src/footpage.aux
+INPUT build/src/footpage.aux
+INPUT build/src/footpage.aux
 OUTPUT build/main.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -400,6 +412,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.st
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT build/main.out
+INPUT build/main.out
+INPUT build/main.out
+INPUT build/main.out
+INPUT build/main.out
+INPUT build/main.out
 OUTPUT build/main.out
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
@@ -426,20 +444,25 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmss12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmssbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmtt10.tfm
+INPUT ./images/0-varie/logo UniFi.pdf
+INPUT ./images/0-varie/logo UniFi.pdf
+INPUT ./images/0-varie/logo UniFi.pdf
+INPUT ./images/0-varie/logo UniFi.pdf
+INPUT ./images/0-varie/logo UniFi.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc
 INPUT ./src/1-introduzione.tex
 INPUT ./src/1-introduzione.tex
 OUTPUT build/src/1-introduzione.aux
 INPUT ./src/1-introduzione.tex
 INPUT ./src/1-introduzione.tex
 INPUT src/1-introduzione.tex
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
@@ -471,14 +494,25 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmsso10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmsso8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmsso8.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT ./src/2-GAM.tex
-INPUT ./src/2-GAM.tex
-OUTPUT build/src/2-GAM.aux
-INPUT ./src/2-GAM.tex
-INPUT ./src/2-GAM.tex
-INPUT src/2-GAM.tex
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./src/2-analisi.tex
+INPUT ./src/2-analisi.tex
+OUTPUT build/src/2-analisi.aux
+INPUT ./src/2-analisi.tex
+INPUT ./src/2-analisi.tex
+INPUT src/2-analisi.tex
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
 INPUT ./src/footpage.tex
 INPUT ./src/footpage.tex
 OUTPUT build/src/footpage.aux
@@ -486,6 +520,10 @@ INPUT ./src/footpage.tex
 INPUT ./src/footpage.tex
 INPUT src/footpage.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmss17.tfm
+INPUT ./images/0-varie/logo UniFi.pdf
+INPUT ./images/0-varie/logo UniFi.pdf
+INPUT ./images/0-varie/logo UniFi.pdf
+INPUT ./images/0-varie/logo UniFi.pdf
 OUTPUT build/main.nav
 OUTPUT build/main.toc
 OUTPUT build/main.snm
@@ -493,15 +531,14 @@ INPUT build/main.aux
 INPUT build/src/1-introduzione.aux
 INPUT build/src/1-introduzione.aux
 INPUT build/src/1-introduzione.aux
-INPUT build/src/2-GAM.aux
-INPUT build/src/2-GAM.aux
-INPUT build/src/2-GAM.aux
+INPUT build/src/2-analisi.aux
+INPUT build/src/2-analisi.aux
+INPUT build/src/2-analisi.aux
 INPUT build/src/footpage.aux
 INPUT build/src/footpage.aux
 INPUT build/src/footpage.aux
 INPUT build/main.out
 INPUT build/main.out
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb
@@ -509,5 +546,3 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsso10.pfb
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsso8.pfb
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb

@@ -1,30 +1,33 @@
-\section{XAI}
-
-\subsection{Explainable Artficial Intelligence}
+\section{Introduzione}
+\subsection{\href{https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}
 
 \begin{frame}{Introduzione}
-    \begin{columns}
-        \begin{column}{.45\textwidth}
-            \begin{block}{XAI}
-                La XAI ha l'obiettivo di spiegare le decisioni prese dai modelli di AI:
-                \begin{itemize}
-                    \item Interpretabile
-                    \item Spiegabile
-                \end{itemize}
-            \end{block}
-        \end{column}
-        \begin{column}{.45\textwidth}
-            \includegraphics[width=.9\textwidth]{immages/0-varie/logo UniFi.pdf}
-        \end{column}
-    \end{columns}
-    \pause
-    \vfill
-    \begin{block}{Modelli lineari}
-        $f(x)=\sum_{i=1}^D\beta_ix_i+\beta_0$
+    \begin{block}{Obiettivo}
+        Simulare l'esecuzione di un taskset secondo un dato algortimo di scheduling e protocollo di accesso alle risorse.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Introduzione}
+    \begin{block}{Output}
+        Un file di log contenente una traccia di esecuzione, cioè una sequenza di coppie $<tempo,evento>$, dove i possibili eventi sono:
         \begin{itemize}
-            \item Interpretabile
-            \item Mondo non lineare
+            \item Rilascio di un job di un task.
+            \item Acuisizione e rilascio di una risorsa da parte di un chunk.
+            \item Completamento dell'esecuzione di un chunk o di un job di un task.
+            \item Preemption su un task.
         \end{itemize}
     \end{block}
-    \vfill
+\end{frame}
+
+\begin{frame}{Introduzione}
+    \begin{block}{Capacità}
+        \begin{itemize}
+            \item Utilizzare Rate Monotonic con e senza risorse convidese insieme a Priority Ceiling Protocol.
+            \item Utilizzare Earliest Deadline First senza risorse condivise.
+            \item Rilevare eventuali deadline miss.
+            \item Introdurre in modo stocastico e rilevare un additional execution time in un chunk.
+            \item Introdurre un fault a livello del protocollo di accesso alle risorse per cui PCP imposta male la priorità dinamica dei task.
+            \item Introdurre un fault a livello di chunk per cui esso non acquisisce (e rilascia) il semaforo della risorsa che userà.
+        \end{itemize}
+    \end{block}
 \end{frame}

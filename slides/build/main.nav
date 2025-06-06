@@ -1,27 +1,31 @@
 \headcommand {\beamer@subsectionpages {1}{0}}
-\headcommand {\beamer@subsectionentry {0}{0}{1}{1}{\href {https://neural-additive-models.github.io}{NeurIPS, 2021}}}
-\headcommand {\slideentry {0}{1}{1}{1/1}{\href {https://neural-additive-models.github.io}{NeurIPS, 2021}}{0}}
+\headcommand {\beamer@subsectionentry {0}{0}{1}{1}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}}
+\headcommand {\slideentry {0}{1}{1}{1/1}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\beamer@sectionpages {1}{1}}
 \headcommand {\beamer@subsectionpages {1}{1}}
-\headcommand {\sectionentry {1}{XAI}{2}{XAI}{0}}
+\headcommand {\sectionentry {1}{Introduzione}{2}{Introduzione}{0}}
 \headcommand {\beamer@subsectionpages {2}{1}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{2}{Explainable Artficial Intelligence}}
-\headcommand {\slideentry {1}{1}{1}{2/3}{Explainable Artficial Intelligence}{0}}
-\headcommand {\beamer@framepages {2}{3}}
-\headcommand {\beamer@sectionpages {2}{3}}
-\headcommand {\beamer@subsectionpages {2}{3}}
-\headcommand {\sectionentry {2}{GAM}{4}{GAM}{0}}
-\headcommand {\beamer@subsectionpages {4}{3}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{4}{Generalized Additive Models}}
-\headcommand {\slideentry {2}{1}{1}{4/4}{Generalized Additive Models}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{2}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}}
+\headcommand {\slideentry {1}{1}{1}{2/2}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\slideentry {1}{1}{2}{3/3}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {1}{1}{3}{4/4}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\beamer@subsectionpages {4}{4}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{5}{\href {https://arxiv.org/abs/2011.02863}{Paper}}}
-\headcommand {\slideentry {2}{2}{1}{5/5}{\href {https://arxiv.org/abs/2011.02863}{Paper}}{0}}
+\headcommand {\beamer@sectionpages {2}{4}}
+\headcommand {\beamer@subsectionpages {2}{4}}
+\headcommand {\sectionentry {2}{Analisi}{5}{Analisi}{0}}
+\headcommand {\beamer@subsectionpages {5}{4}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{5}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}}
+\headcommand {\slideentry {2}{1}{1}{5/5}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\beamer@partpages {1}{5}}
 \headcommand {\beamer@subsectionpages {5}{5}}
-\headcommand {\beamer@sectionpages {4}{5}}
-\headcommand {\beamer@documentpages {5}}
-\headcommand {\gdef \inserttotalframenumber {4}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{6}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}}
+\headcommand {\slideentry {2}{2}{1}{6/6}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@partpages {1}{6}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\beamer@sectionpages {5}{6}}
+\headcommand {\beamer@documentpages {6}}
+\headcommand {\gdef \inserttotalframenumber {6}}

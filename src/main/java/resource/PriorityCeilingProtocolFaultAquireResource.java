@@ -26,7 +26,7 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
      * <p>
      * The threshold value must be between 0.0 and 1.0 (inclusive).
      *
-     * @param threshold the threshold value, which must be in the range [0.0, 1.0]
+     * @param threshold the threshold value, which must be in the range [0.0, 1.0].
      */
     public PriorityCeilingProtocolFaultAquireResource (double threshold) {
         if (threshold<0.0 || threshold>1.0)
@@ -95,7 +95,7 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
         if (resources.isEmpty())
             return;
         Task parentTask = chunk.getParent();
-        if (this.faultChunks.contains(chunk)) {
+        if (!this.faultChunks.contains(chunk)) {
             for (Resource resource : resources) {
                 resource.getMaxDinamicPriorityBlockedtask().ifPresent(
                     t -> {
@@ -113,7 +113,7 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
             .ifPresentOrElse(
                 parentTask::setDinamicPriority,
                 () -> parentTask.setDinamicPriority(parentTask.getNominalPriority()));
-        if (this.faultChunks.contains(chunk)) {
+        if (!this.faultChunks.contains(chunk)) {
             String resourcesId = resources.stream()
                 .map(Resource::toString)
                 .map(String::valueOf)

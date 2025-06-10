@@ -29,6 +29,5 @@
 \contentsline {subsection}{\numberline {3.4.3}Sampling dei tempi}{13}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Eccezioni}{13}{subsection.3.4.4}%
 \contentsline {chapter}{\numberline {4}Dubbi}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Implementativi}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Varie}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.1}Dubbi}{15}{section.4.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

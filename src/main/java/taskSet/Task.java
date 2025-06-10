@@ -184,6 +184,13 @@ public class Task {
         return output;
     }
 
+    void reset() {
+        this.chunkToExecute = new LinkedList<>(this.chunks);
+        this.isExecuted = false;
+        this.chunkToExecute.forEach(Chunk::reset);
+        this.resourcesAcquired = new LinkedList<>();
+    }
+
     // OBJECT METHODS
     @Override
     public String toString() {

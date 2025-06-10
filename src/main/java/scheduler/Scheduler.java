@@ -34,10 +34,10 @@ public abstract class Scheduler {
     public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol, Duration simulationDuration) {
         this.taskSet = taskSet;
         this.resProtocol = resProtocol;
+        this.simulationDuration = simulationDuration;
         this.assignPriority();
         this.resProtocol.initStructures(this.taskSet);
         this.resProtocol.setScheduler(this);
-        this.simulationDuration = simulationDuration;
     }
 
     // GETTER AND SETTER
@@ -67,7 +67,7 @@ public abstract class Scheduler {
 
     // METHOD
     public final void schedule() throws DeadlineMissedException {
-        MyClock.reset();
+        this.reset();
         List<Duration> events = initStructures();
         this.releaseAllTasks();
         this.checkFeasibility();
@@ -112,7 +112,7 @@ public abstract class Scheduler {
             try {
                 executedTime = currentTask.execute(availableTime, this);
             } catch (DeadlineMissedException e) {
-                MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + currentTask.toString() + ">");
+                MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + currentTask.toString() + ">\n");
                 throw new DeadlineMissedException(e.getMessage());
             }
             if (executedTime.isPositive())
@@ -135,12 +135,20 @@ public abstract class Scheduler {
                 try {
                     task.relasePeriodTask();
                 } catch (DeadlineMissedException e) {
-                    MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">");
+                    MyLogger.log("<" + Utils.printCurrentTime() + ", deadlineMiss " + task.toString() + ">\n");
                     throw new DeadlineMissedException(e.getMessage());
                 }
                 this.addReadyTask(task);
             }
         }
+    }
+
+    private void reset() {
+        MyClock.reset();
+        this.taskSet.reset();
+        this.assignPriority();
+        this.resProtocol.initStructures(this.taskSet);
+        this.resProtocol.setScheduler(this);
     }
 
 }

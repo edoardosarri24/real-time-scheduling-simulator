@@ -23,9 +23,6 @@ public final class MyClock {
     }
 
     public void advanceTo(Duration newTime) {
-        if (newTime.compareTo(this.currentTime) < 0) {
-            throw new IllegalArgumentException("Cannot go back in time");
-        }
         this.currentTime = newTime;
     }
 

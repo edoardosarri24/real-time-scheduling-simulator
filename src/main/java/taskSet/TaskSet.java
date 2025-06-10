@@ -41,4 +41,8 @@ public class TaskSet {
             .sum();
     }
 
+    public void reset() {
+        this.tasks.forEach(Task::reset);
+    }
+
 }

@@ -8,6 +8,7 @@ Ogni traccia è definita come una sequenza di coppie $<tempo, evento>$, dove un 
 A partire da un taskset, il sistema ha le capacità di:
 \begin{itemize}
     \item Generare la traccia di esecuzione del taskset schedulato tramite un dato algoritmo di scheduling (i.e., Rate Monotonic e Earlist Deadline First) e ed un eventuale protocollo di accesso alle risorse (i.e., Priority Ceiling Protocol). Considerando la gestione dinamica delle priorità da parte di EDF, è previsto il suo utilizzo solo senza risorse condivide.
+    \item Generare un dataset di tracce relative a più simulazioni su un taskset.
     \item Specificare il tempo desiderato della simulazione.
     \item Rilevare eventuali deadline miss. Se un task non ha finito di eseguire entro la propria deadline allora la simulazione si arresta; non continua perché ci interessa valutare il primo fallimento, visto che i successivi potrebbero essere in cascata del primo.
     \item Introdurre e rilevare un additional execution time in un chunk. Questo modella un tempo di computazione di un chunk maggiore (o minore) di quello che ci aspettiamo, cioè maggiore del WCET.

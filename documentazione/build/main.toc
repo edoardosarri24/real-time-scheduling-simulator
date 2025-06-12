@@ -1,0 +1,35 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduzione}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Capacità}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Utilizzo}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Esempio 1}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Esempio 2}{6}{subsection.1.2.2}%
+\contentsline {chapter}{\numberline {2}Analisi}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Componenti}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Task}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Chunk}{7}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Taskset}{7}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Risorse}{7}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}CPU}{7}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Scheduler}{7}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Protocollo di accesso alle risorse}{8}{subsection.2.1.7}%
+\contentsline {section}{\numberline {2.2}Class diagram}{8}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Implementazione}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Scheduler}{9}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Rate Monotonic}{11}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Earlist Deadline First}{12}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Test}{12}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Resource Access Protocol}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Priority Ceiling Protocol}{13}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Fault injection}{13}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Additional execution time}{13}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Priority Ceiling Protocol}{13}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Utilità}{14}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Loggin}{14}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Clock}{14}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Sampling dei tempi}{14}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Eccezioni}{15}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Dubbi}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dubbi}{16}{section.4.1}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

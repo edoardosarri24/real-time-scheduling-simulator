@@ -1,6 +1,7 @@
 @startuml sequence diagram RM
 
 participant Client
+Scheduler -> Scheduler : reset
 Scheduler -> Scheduler : assignPriority
 Client -> Scheduler : schedule
 Scheduler -> MyClock : reset

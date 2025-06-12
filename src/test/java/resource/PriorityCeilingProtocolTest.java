@@ -33,16 +33,16 @@ public class PriorityCeilingProtocolTest {
         Chunk chunk3 = new Chunk(3, new ConstantSampler(new BigDecimal(1)));
         Chunk chunk4 = new Chunk(4, new ConstantSampler(new BigDecimal(2)), List.of(res1));
         Task task0 = new Task(
-            new ConstantSampler(new BigDecimal(5)),
-            new ConstantSampler(new BigDecimal(5)),
+            new BigDecimal(5),
+            new BigDecimal(5),
             List.of(chunk0, chunk1));
         Task task1 = new Task(
-            new ConstantSampler(new BigDecimal(8)),
-            new ConstantSampler(new BigDecimal(8)),
+            new BigDecimal(8),
+            new BigDecimal(8),
             List.of(chunk2));
         Task task2 = new Task(
-            new ConstantSampler(new BigDecimal(10)),
-            new ConstantSampler(new BigDecimal(10)),
+            new BigDecimal(10),
+            new BigDecimal(10),
             List.of(chunk3, chunk4));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         PriorityCeilingProtocol protocol = new PriorityCeilingProtocol();

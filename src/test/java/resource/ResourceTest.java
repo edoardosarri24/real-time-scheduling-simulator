@@ -18,15 +18,15 @@ public class ResourceTest {
         Resource resource = new Resource();
         Chunk chunk = new Chunk(0, new ConstantSampler(new BigDecimal(10)));
         List<Task> tasks = List.of(
-            new Task(new ConstantSampler(new BigDecimal(10)), new ConstantSampler(new BigDecimal(10)), List.of(chunk)),
-            new Task(new ConstantSampler(new BigDecimal(5)), new ConstantSampler(new BigDecimal(5)), List.of(chunk)),
-            new Task(new ConstantSampler(new BigDecimal(15)), new ConstantSampler(new BigDecimal(15)), List.of(chunk)),
-            new Task(new ConstantSampler(new BigDecimal(20)), new ConstantSampler(new BigDecimal(20)), List.of(chunk))
+            new Task(new BigDecimal(10), new BigDecimal(10), List.of(chunk)),
+            new Task(new BigDecimal(5), new BigDecimal(5), List.of(chunk)),
+            new Task(new BigDecimal(15), new BigDecimal(15), List.of(chunk)),
+            new Task(new BigDecimal(20), new BigDecimal(20), List.of(chunk))
         );
         tasks.forEach(task -> task.initPriority(5));
         List<Task> blockedTasks = (List<Task>) ReflectionUtils.getField(resource, "blockedTasks");
         blockedTasks.addAll(tasks);
-        Task task = new Task(new ConstantSampler(new BigDecimal(4)), new ConstantSampler(new BigDecimal(4)), List.of(chunk));
+        Task task = new Task(new BigDecimal(4), new BigDecimal(4), List.of(chunk));
         task.initPriority(3);
         blockedTasks.add(task);
         Optional<Task> maxTask = resource.getMaxDinamicPriorityBlockedtask();

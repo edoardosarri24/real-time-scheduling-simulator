@@ -6,6 +6,7 @@ import java.util.Set;
 import org.oristool.simulator.samplers.ExponentialSampler;
 import org.oristool.simulator.samplers.UniformSampler;
 import exeptions.DeadlineMissedException;
+import resource.PriorityCeilingProtocol;
 import resource.PriorityCeilingProtocolFaultAquireResource;
 import resource.PriorityCeilingProtocolFaultSetPriority;
 import resource.Resource;
@@ -69,14 +70,16 @@ public class Main {
         TaskSet taskSet = new TaskSet(Set.of(task1, task2));
         ResourcesProtocol protocol = new PriorityCeilingProtocol();
         RMScheduler scheduler = new RMScheduler(taskSet, protocol, Duration.ofMillis(60));
-        for (int i=0; i<10; i++)
+        for (int i=0; i<10; i++) {
             try {
                 scheduler.schedule();
             } catch (DeadlineMissedException e) {
                 continue;
             }
+        }
         */
 
+        /*
         // EDF
         Task task1 = new Task(
             new ConstantSampler(new BigDecimal(6)),
@@ -106,6 +109,7 @@ public class Main {
             } catch (DeadlineMissedException e) {
                 continue;
             }
+        */
 
         /*/
         // RM senza risorse con chunk fail

@@ -22,8 +22,8 @@ public class TaskTest {
     public void setUP() {
         this.chunk = new Chunk(0, new ConstantSampler(new BigDecimal(5)));
         this.task = new Task(
-            new ConstantSampler(new BigDecimal(10)),
-            new ConstantSampler(new BigDecimal(10)),
+            new BigDecimal(10),
+            new BigDecimal(10),
             List.of(this.chunk));
         MyClock.reset();
     }
@@ -37,8 +37,8 @@ public class TaskTest {
     @Test
     public void purelyPeriodicCheck() {
         Task task = new Task(
-            new ConstantSampler(new BigDecimal(10)),
-            new ConstantSampler(new BigDecimal(3)),
+            new BigDecimal(10),
+            new BigDecimal(3),
             List.of(this.chunk));
         assertThatThrownBy(() -> task.purelyPeriodicCheck())
             .isInstanceOf(IllegalArgumentException.class)
@@ -83,8 +83,8 @@ public class TaskTest {
         Chunk chunk0 = new Chunk(0, new ConstantSampler(new BigDecimal(5)));
         Chunk chunk1 = new Chunk(1, new ConstantSampler(new BigDecimal(5)));
         Task task = new Task(
-            new ConstantSampler(new BigDecimal(10)),
-            new ConstantSampler(new BigDecimal(10)),
+            new BigDecimal(10),
+            new BigDecimal(10),
             List.of(chunk0, chunk1));
         assertThat(chunk0.getParent())
             .isSameAs(task);
@@ -95,8 +95,8 @@ public class TaskTest {
     @Test
     public void utilizationFactor() {
         Task task = new Task(
-            new ConstantSampler(new BigDecimal(10)),
-            new ConstantSampler(new BigDecimal(10)),
+            new BigDecimal(10),
+            new BigDecimal(10),
             List.of(
                 new Chunk(0, new ConstantSampler(new BigDecimal(2))),
                 new Chunk(1, new ConstantSampler(new BigDecimal(3)))));
@@ -107,8 +107,8 @@ public class TaskTest {
     @Test
     public void periodAndDealineCheckKo() {
         Task task = new Task(
-            new ConstantSampler(new BigDecimal(10)),
-            new ConstantSampler(new BigDecimal(12)),
+            new BigDecimal(10),
+            new BigDecimal(12),
             List.of(this.chunk));
         assertThatThrownBy(() -> task.periodAndDealineCheck())
             .isInstanceOf(IllegalArgumentException.class)
@@ -119,8 +119,8 @@ public class TaskTest {
     @Test
     public void periodAndDealineCheckOk() {
         Task task = new Task(
-            new ConstantSampler(new BigDecimal(10)),
-            new ConstantSampler(new BigDecimal(8)),
+            new BigDecimal(10),
+            new BigDecimal(8),
             List.of(this.chunk));
         assertThatCode(() -> task.periodAndDealineCheck())
             .doesNotThrowAnyException();
@@ -129,8 +129,8 @@ public class TaskTest {
     @Test
     public void nextDeadline() {
         Task task = new Task(
-            new ConstantSampler(new BigDecimal(5)),
-            new ConstantSampler(new BigDecimal(3)),
+            new BigDecimal(5),
+            new BigDecimal(3),
             List.of(this.chunk));
         Duration output = task.nextDeadline();
         assertThat(output)

@@ -25,8 +25,8 @@ public class ChunkTest {
     public void setUp() {
         this.chunk = new Chunk(0, new ConstantSampler(new BigDecimal(10)));
         new Task(
-            new BigDecimal(10),
-            new BigDecimal(10),
+            10,
+            10,
             List.of(this.chunk));
         MyClock.reset();
     }
@@ -76,8 +76,8 @@ public class ChunkTest {
     public void executeWOverhead() {
         Chunk chunk = new Chunk(0, new ConstantSampler(new BigDecimal(10)), new ConstantSampler(new BigDecimal(2)));
         Task task = new Task(
-            new BigDecimal(20),
-            new BigDecimal(20),
+            20,
+            20,
             List.of(chunk));
         RMScheduler scheduler = new RMScheduler(new TaskSet(Set.of(task)), 20);
         assertThatCode(() -> scheduler.schedule())

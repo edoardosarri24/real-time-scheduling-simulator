@@ -21,16 +21,16 @@ public class TaskSetTest {
     public void notPurelyPeriodic() {
         Chunk chunk = new Chunk(0, new ConstantSampler(new BigDecimal(0)));
         Task task0 = new Task(
-            new BigDecimal(10),
-            new BigDecimal(10),
+            10,
+            10,
             List.of(chunk));
         Task task1 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(1),
+            5,
+            1,
             List.of(chunk));
         Task task2 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(5),
+            5,
+            5,
             List.of(chunk));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         assertThatThrownBy(() -> taskSet.purelyPeriodicCheck())
@@ -41,18 +41,18 @@ public class TaskSetTest {
     @Test
     public void hyperbolicBoundTestTrue() {
         Task task0 = new Task(
-            new BigDecimal(10),
-            new BigDecimal(10),
+            10,
+            10,
             List.of(
                 new Chunk(0, new ConstantSampler(new BigDecimal(1))),
                 new Chunk(0, new ConstantSampler(new BigDecimal(2)))));
         Task task1 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(5),
+            5,
+            5,
             List.of(new Chunk(1, new ConstantSampler(new BigDecimal(1)))));
         Task task2 = new Task(
-            new BigDecimal(50),
-            new BigDecimal(50),
+            50,
+            50,
             List.of(
                 new Chunk(2, new ConstantSampler(new BigDecimal(8))),
                 new Chunk(2, new ConstantSampler(new BigDecimal(2)))));
@@ -64,18 +64,18 @@ public class TaskSetTest {
     @Test
     public void hyperbolicBoundTestFalse() {
         Task task0 = new Task(
-            new BigDecimal(10),
-            new BigDecimal(10),
+            10,
+            10,
             List.of(
                 new Chunk(0, new ConstantSampler(new BigDecimal(2))),
                 new Chunk(0, new ConstantSampler(new BigDecimal(3)))));
         Task task1 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(5),
+            5,
+            5,
             List.of(new Chunk(1, new ConstantSampler(new BigDecimal(1)))));
         Task task2 = new Task(
-            new BigDecimal(20),
-            new BigDecimal(20),
+            20,
+            20,
             List.of(
                 new Chunk(2, new ConstantSampler(new BigDecimal(8))),
                 new Chunk(2, new ConstantSampler(new BigDecimal(2)))));
@@ -87,18 +87,18 @@ public class TaskSetTest {
     @Test
     public void hyperbolicBoundTestWithNoPeriodicTask() {
         Task task0 = new Task(
-            new BigDecimal(10),
-            new BigDecimal(10),
+            10,
+            10,
             List.of(
                 new Chunk(0, new ConstantSampler(new BigDecimal(2))),
                 new Chunk(0, new ConstantSampler(new BigDecimal(3)))));
         Task task1 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(4),
+            5,
+            4,
             List.of(new Chunk(1, new ConstantSampler(new BigDecimal(1)))));
         Task task2 = new Task(
-            new BigDecimal(20),
-            new BigDecimal(20),
+            20,
+            20,
             List.of(
                 new Chunk(2, new ConstantSampler(new BigDecimal(8))),
                 new Chunk(2, new ConstantSampler(new BigDecimal(2)))));

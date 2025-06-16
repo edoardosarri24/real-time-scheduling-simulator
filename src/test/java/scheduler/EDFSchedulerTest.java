@@ -29,16 +29,16 @@ public class EDFSchedulerTest {
     @Test
     public void assignPriority() {
         Task task0 = new Task(
-            new BigDecimal(10),
-            new BigDecimal(8),
+            10,
+            8,
             List.of(this.chunk));
         Task task1 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(4),
+            5,
+            4,
             List.of(this.chunk));
         Task task2 = new Task(
-            new BigDecimal(15),
-            new BigDecimal(11),
+            15,
+            11,
             List.of(this.chunk));
         assertThat(task0.getNominalPriority())
             .isEqualTo(task0.getDinamicPriority())
@@ -65,16 +65,16 @@ public class EDFSchedulerTest {
     @Test
     public void addReadyTask() {
         Task task1 = new Task(
-            new BigDecimal(10),
-            new BigDecimal(8),
+            10,
+            8,
             List.of(this.chunk));
         Task task2 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(4),
+            5,
+            4,
             List.of(this.chunk));
         Task task3 = new Task(
-            new BigDecimal(15),
-            new BigDecimal(11),
+            15,
+            11,
             List.of(this.chunk));
         TaskSet taskset = new TaskSet(Set.of(task1, task2, task3));
         Scheduler scheduler = new EDFScheduler(taskset, 30);
@@ -91,21 +91,21 @@ public class EDFSchedulerTest {
     @Test
     public void scheduleWOResourceOK() {
         Task task1 = new Task(
-            new BigDecimal(6),
-            new BigDecimal(6),
+            6,
+            6,
         List.of(
             new Chunk(1, new ConstantSampler(new BigDecimal(1))),
             new Chunk(2, new ConstantSampler(new BigDecimal(1)))
         ));
         Task task2 = new Task(
-            new BigDecimal(8),
-            new BigDecimal(7),
+            8,
+            7,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(1)))
             ));
         Task task3 = new Task(
-            new BigDecimal(12),
-            new BigDecimal(11),
+            12,
+            11,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(1))),
                 new Chunk(2, new ConstantSampler(new BigDecimal(1)))
@@ -122,21 +122,21 @@ public class EDFSchedulerTest {
     @Test
     public void scheduleWOResourceKO() {
         Task task1 = new Task(
-            new BigDecimal(4),
-            new BigDecimal(4),
+            4,
+            4,
         List.of(
             new Chunk(1, new ConstantSampler(new BigDecimal(2))),
             new Chunk(2, new ConstantSampler(new BigDecimal(1)))
         ));
         Task task2 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(5),
+            5,
+            5,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(2)))
             ));
         Task task3 = new Task(
-            new BigDecimal(6),
-            new BigDecimal(6),
+            6,
+            6,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(3)))
             ));

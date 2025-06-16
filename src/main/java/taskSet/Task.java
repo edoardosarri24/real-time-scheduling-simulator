@@ -38,10 +38,10 @@ public class Task {
      * @param deadline the deadline of the task in milliseconds
      * @param chunks   the list of Chunk objects associated with this task
      */
-    public Task(BigDecimal period, BigDecimal deadline, List<Chunk> chunks) {
+    public Task(double period, double deadline, List<Chunk> chunks) {
         this.id = idCounter++;
-        this.period = SampleDuration.sample(new ConstantSampler(period));
-        this.deadline = SampleDuration.sample(new ConstantSampler(deadline));
+        this.period = SampleDuration.sample(new ConstantSampler(new BigDecimal(period)));
+        this.deadline = SampleDuration.sample(new ConstantSampler(new BigDecimal(deadline)));
         this.chunks = chunks;
         this.chunkToExecute = new LinkedList<>(chunks);
         this.initChunkParent();

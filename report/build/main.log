@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  14 JUN 2025 23:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  16 JUN 2025 15:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -929,7 +929,7 @@ chapter 2.
 
 
 ]
-<immagini/class diagram.pdf, id=122, 816.04875pt x 590.205pt>
+<immagini/class diagram.pdf, id=124, 816.04875pt x 590.205pt>
 File: immagini/class diagram.pdf Graphic file (type pdf)
 <use immagini/class diagram.pdf>
 Package pdftex.def Info: immagini/class diagram.pdf  used on input line 37.
@@ -950,7 +950,7 @@ chapter 3.
 
 
 ]
-<immagini/sequence diagram.pdf, id=143, 608.2725pt x 572.1375pt>
+<immagini/sequence diagram.pdf, id=145, 608.2725pt x 572.1375pt>
 File: immagini/sequence diagram.pdf Graphic file (type pdf)
 <use immagini/sequence diagram.pdf>
 Package pdftex.def Info: immagini/sequence diagram.pdf  used on input line 45.
@@ -972,17 +972,17 @@ Package pdftex.def Info: immagini/sequence diagram.pdf  used on input line 45.
 
  (./capitoli/4-dataset.tex
 chapter 4.
-<immagini/taskset baseline.pdf, id=178, 1242.6425pt x 762.85pt>
+<immagini/taskset baseline.pdf, id=180, 1242.6425pt x 835.12pt>
 File: immagini/taskset baseline.pdf Graphic file (type pdf)
 <use immagini/taskset baseline.pdf>
 Package pdftex.def Info: immagini/taskset baseline.pdf  used on input line 19.
-(pdftex.def)             Requested size: 183.4495pt x 112.61833pt.
-<immagini/trace baseline.pdf, id=179, 792.9625pt x 1196.47pt>
+(pdftex.def)             Requested size: 183.4495pt x 123.28745pt.
+<immagini/trace baseline.pdf, id=181, 792.9625pt x 1196.47pt>
 File: immagini/trace baseline.pdf Graphic file (type pdf)
 <use immagini/trace baseline.pdf>
 Package pdftex.def Info: immagini/trace baseline.pdf  used on input line 28.
 (pdftex.def)             Requested size: 183.4495pt x 276.7889pt.
-)
+
 
 [15
 
@@ -991,8 +991,21 @@ Package pdftex.def Info: immagini/trace baseline.pdf  used on input line 28.
 
 
  <./immagini/taskset baseline.pdf> <./immagini/trace baseline.pdf>]
+<immagini/taskset baseline con risorse.pdf, id=200, 1517.67pt x 907.39pt>
+File: immagini/taskset baseline con risorse.pdf Graphic file (type pdf)
+<use immagini/taskset baseline con risorse.pdf>
+Package pdftex.def Info: immagini/taskset baseline con risorse.pdf  used on input line 47.
+(pdftex.def)             Requested size: 183.4495pt x 109.6713pt.
+<immagini/trace baseline con risorse.pdf, id=201, 879.285pt x 1485.55pt>
+File: immagini/trace baseline con risorse.pdf Graphic file (type pdf)
+<use immagini/trace baseline con risorse.pdf>
+Package pdftex.def Info: immagini/trace baseline con risorse.pdf  used on input line 56.
+(pdftex.def)             Requested size: 183.4495pt x 309.93462pt.
+)
 
-[16
+[16 <./immagini/taskset baseline con risorse.pdf> <./immagini/trace baseline con risorse.pdf>]
+
+[17
 
 
 
@@ -1007,18 +1020,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26710 strings out of 467886
- 487072 string characters out of 5434039
- 1464936 words of memory out of 5000000
- 54867 multiletter control sequences out of 15000+600000
+ 26730 strings out of 467886
+ 487917 string characters out of 5434039
+ 1465236 words of memory out of 5000000
+ 54885 multiletter control sequences out of 15000+600000
  654571 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,9n,107p,10997b,1895s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on build/main.pdf (16 pages, 724092 bytes).
+Output written on build/main.pdf (17 pages, 1059543 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 376 PDF objects out of 1000 (max. 8388607)
+ 314 compressed objects within 4 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 276 words of extra memory for PDF output out of 10000 (max. 10000000)
 

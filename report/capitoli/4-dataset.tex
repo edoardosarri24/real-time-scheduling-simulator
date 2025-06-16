@@ -5,9 +5,9 @@ Questa parte può essere anche utile per capire come struttrare il main ed utili
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Baseline}
-Vediamo come funziona lo scheduler RM con un taskset molto semplice. Il taskset in questione, come si può notare dal codice in Figura~\ref{fig:baseline}, è molto semplice in modo da poter osservare le differenze tra le due simulazioni. Si tratta di un task con due task puramenti periodici: il primo ha periodo e deadline relativo pari a 20ms e un chunk con un exectuion time di 10ms; il secondo ha periodo e deadline di 60ms e tre chunk con execution time rispettivamente di 5ms, 4ms e 3ms.
+Vediamo come funziona una simulazione tramite RM con un taskset molto semplice. Il taskset in questione, come si può notare dal codice in Figura~\ref{fig:baselineTaskset}, è molto semplice in modo da poter osservare le differenze tra le due simulazioni. Si tratta di un task con due task puramenti periodici: il primo ha periodo e deadline relativo pari a 20ms e un chunk con un exectuion time di 10ms; il secondo ha periodo e deadline di 60ms e tre chunk con execution time rispettivamente di 5ms, 4ms e 3ms.
 
-La traccia in Figura~\ref{fig:traceBaseline} è l'output della simulazione.
+La traccia in Figura~\ref{fig:baselineTrace} è l'output della simulazione.
 
 \begin{figure}[htbp]
     \centering
@@ -17,8 +17,8 @@ La traccia in Figura~\ref{fig:traceBaseline} è l'output della simulazione.
         \raisebox{7em}{
             \includegraphics[width=.9\textwidth]{immagini/taskset baseline.pdf}
         }
-        \caption{Taskset baseline.}
-        \label{fig:baseline}
+        \caption{Taskset baseline}
+        \label{fig:baselineTaskset}
         \vfill
     \end{subfigure}
     \hfill
@@ -26,9 +26,37 @@ La traccia in Figura~\ref{fig:traceBaseline} è l'output della simulazione.
         \vfill
         \centering
         \includegraphics[width=.9\textwidth]{immagini/trace baseline.pdf}
-        \caption{Traccia del task baseline.}
-        \label{fig:traceBaseline}
+        \caption{Traccia del task baseline}
+        \label{fig:baselineTrace}
         \vfill
     \end{subfigure}
     \caption{Baseline.}
+\end{figure}
+
+\myskip
+
+Di seguito osserviamo invece lo stesso taskset schedulato sempre con RM, ma in cui due chunk (uno per task) condividono una risorsa. In Figura~\ref{fig:baselineTasksetWRes} possiamo osserve come configurarlo, mentre in Figura~\ref{fig:baselineTraceWRes} possiamo osservare la traccia della simulazione.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \vfill
+        \centering
+        \raisebox{9em}{
+            \includegraphics[width=.9\textwidth]{immagini/taskset baseline con risorse.pdf}
+        }
+        \caption{Taskset baseline con risorsa condivisa}
+        \label{fig:baselineTasksetWRes}
+        \vfill
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \vfill
+        \centering
+        \includegraphics[width=.9\textwidth]{immagini/trace baseline con risorse.pdf}
+        \caption{Traccia del task baseline con risorsa condivisa}
+        \label{fig:baselineTraceWRes}
+        \vfill
+    \end{subfigure}
+    \caption{Baseline con risorsa condivisa}
 \end{figure}

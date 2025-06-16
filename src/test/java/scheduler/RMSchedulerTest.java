@@ -33,16 +33,16 @@ public class RMSchedulerTest {
     @Test
     public void assignPriority() {
         Task task0 = new Task(
-            new BigDecimal(10),
-            new BigDecimal(10),
+            10,
+            10,
             List.of(this.chunk));
         Task task1 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(5),
+            5,
+            5,
             List.of(this.chunk));
         Task task2 = new Task(
-            new BigDecimal(15),
-            new BigDecimal(15),
+            15,
+            15,
             List.of(this.chunk));
         assertThat(task0.getNominalPriority())
             .isEqualTo((int) ReflectionUtils.getField(task0, "dinamicPriority"))
@@ -68,17 +68,17 @@ public class RMSchedulerTest {
     @Test
     public void relasePeriodTasks() throws Exception {
         Task task0 = new Task(
-            new BigDecimal(7),
-            new BigDecimal(7),
+            7,
+            7,
             List.of(this.chunk));
         Task task1 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(5),
+            5,
+            5,
             List.of(this.chunk));
         ReflectionUtils.setField(task1, "isExecuted", true);
         Task task2 = new Task(
-            new BigDecimal(15),
-            new BigDecimal(15),
+            15,
+            15,
             List.of(this.chunk));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         RMScheduler scheduler = new RMScheduler(taskSet, 105);
@@ -96,20 +96,20 @@ public class RMSchedulerTest {
     @Test
     public void scheduleWOResourceOK() {
         Task task1 = new Task(
-            new BigDecimal(20),
-            new BigDecimal(20),
+            20,
+            20,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(4)))));
         Task task2 = new Task(
-            new BigDecimal(50),
-            new BigDecimal(50),
+            50,
+            50,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(6))),
                 new Chunk(2, new ConstantSampler(new BigDecimal(3))),
                 new Chunk(3, new ConstantSampler(new BigDecimal(3)))));
         Task task3 = new Task(
-            new BigDecimal(100),
-            new BigDecimal(100),
+            100,
+            100,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(10)))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
@@ -123,13 +123,13 @@ public class RMSchedulerTest {
     @Test
     public void scheduleWOResourceKO() {
         Task task1 = new Task(
-            new BigDecimal(10),
-            new BigDecimal(10),
+            10,
+            10,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(4)))));
         Task task2 = new Task(
-            new BigDecimal(15),
-            new BigDecimal(15),
+            15,
+            15,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(6))),
                 new Chunk(2, new ConstantSampler(new BigDecimal(4)))));
@@ -146,14 +146,14 @@ public class RMSchedulerTest {
     public void scheduleWResourceOK() {
         Resource res1 = new Resource();
         Task task1 = new Task(
-            new BigDecimal(30),
-            new BigDecimal(30),
+            30,
+            30,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(4))),
                 new Chunk(2, new ConstantSampler(new BigDecimal(2)), List.of(res1))));
         Task task2 = new Task(
-            new BigDecimal(60),
-            new BigDecimal(60),
+            60,
+            60,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(3)), List.of(res1)),
                 new Chunk(2, new ConstantSampler(new BigDecimal(6)))));
@@ -169,20 +169,20 @@ public class RMSchedulerTest {
         Resource res1 = new Resource();
         Resource res2 = new Resource();
         Task task1 = new Task(
-            new BigDecimal(20),
-            new BigDecimal(20),
+            20,
+            20,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(8)), List.of(res1, res2)),
                 new Chunk(2, new ConstantSampler(new BigDecimal(2)))));
         Task task2 = new Task(
-            new BigDecimal(30),
-            new BigDecimal(30),
+            30,
+            30,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(5)), List.of(res1)),
                 new Chunk(2, new ConstantSampler(new BigDecimal(10)))));
         Task task3 = new Task(
-            new BigDecimal(50),
-            new BigDecimal(50),
+            50,
+            50,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(5)), List.of(res2)),
                 new Chunk(2, new ConstantSampler(new BigDecimal(10)))));
@@ -197,20 +197,20 @@ public class RMSchedulerTest {
     @Test
     public void twoConsecutiveSchedules() {
         Task task1 = new Task(
-            new BigDecimal(20),
-            new BigDecimal(20),
+            20,
+            20,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(4)))));
         Task task2 = new Task(
-            new BigDecimal(50),
-            new BigDecimal(50),
+            50,
+            50,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(6))),
                 new Chunk(2, new ConstantSampler(new BigDecimal(3))),
                 new Chunk(3, new ConstantSampler(new BigDecimal(3)))));
         Task task3 = new Task(
-            new BigDecimal(100),
-            new BigDecimal(100),
+            100,
+            100,
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(10)))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));

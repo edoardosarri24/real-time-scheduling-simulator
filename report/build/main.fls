@@ -404,6 +404,16 @@ INPUT ./immagini/trace baseline.pdf
 INPUT ./immagini/trace baseline.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplri8t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplri8t.vf
 INPUT build/main.aux

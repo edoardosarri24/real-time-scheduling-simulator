@@ -24,12 +24,12 @@ public class SchedulerTest {
         MyClock.reset();
         Chunk chunk = new Chunk(1, new ConstantSampler(new BigDecimal(1)));
         Task task1 = new Task(
-        new BigDecimal(4),
-        new BigDecimal(4),
+        4,
+        4,
         List.of(chunk));
         Task task2 = new Task(
-            new BigDecimal(5),
-            new BigDecimal(5),
+            5,
+            5,
             List.of(chunk));
         EDFScheduler scheduler = new EDFScheduler(new TaskSet(Set.of(task1, task2)), 43);
         List<Duration> events = (List<Duration>) ReflectionUtils.invokeMethod(scheduler, "initStructures");

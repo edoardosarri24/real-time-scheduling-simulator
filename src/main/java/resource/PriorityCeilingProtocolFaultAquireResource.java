@@ -75,8 +75,16 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
         parentTask.setDinamicPriority(Math.min(
             parentTask.getNominalPriority(),
             MaxDinamicPriorityBlockedtask));
-        if (Math.random() < this.threshold) {
-            if (!resources.isEmpty()) {
+        if (!resources.isEmpty()) {
+            if (Math.random() > this.threshold) {
+                String resourcesId = resources.stream()
+                    .map(Resource::toString)
+                    .map(String::valueOf)
+                    .collect(Collectors.joining(", ", "[", "]"));
+                MyLogger.wrn("Il Chunk" + chunk.toString()
+                    +" non ha acquisito le risorse " + resourcesId
+                    + "prima di usarle");
+            } else {
                 this.busyResources.addAll(resources);
                 parentTask.acquireResources(resources);
                 String resourcesId = resources.stream()

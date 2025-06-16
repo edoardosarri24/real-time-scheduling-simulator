@@ -1,9 +1,7 @@
 package resource;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import java.math.BigDecimal;
-import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -46,7 +44,7 @@ public class PriorityCeilingProtocolTest {
             List.of(chunk3, chunk4));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
         PriorityCeilingProtocol protocol = new PriorityCeilingProtocol();
-        new RMScheduler(taskSet, protocol, Duration.ZERO);
+        new RMScheduler(taskSet, protocol, 0);
         Map<Resource, Integer> ceiling = (Map<Resource, Integer>) ReflectionUtils.getField(protocol, "ceiling");
         assertThat(ceiling.keySet())
             .containsExactlyInAnyOrder(res0, res1, res2);

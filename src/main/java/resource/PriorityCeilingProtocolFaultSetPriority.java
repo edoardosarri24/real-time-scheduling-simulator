@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.oristool.simulator.samplers.Sampler;
 import org.oristool.simulator.samplers.UniformSampler;
 
 import exeptions.AccessResourceProtocolExeption;
@@ -19,7 +21,7 @@ public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProt
 
     private final Map<Resource, Integer> ceiling = new HashMap<>();
     private List<Resource> busyResources = new LinkedList<>();
-    private final int delta;
+    private final Sampler delta;
 
     // CONSTRUCTOR
     /**
@@ -32,7 +34,7 @@ public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProt
      * @param max the upper bound (exclusive) for sampling the delta value
      */
     public PriorityCeilingProtocolFaultSetPriority (double min, double max) {
-        this.delta = new UniformSampler(BigDecimal.valueOf(min), BigDecimal.valueOf(max)).getSample().intValue();
+        this.delta = new UniformSampler(BigDecimal.valueOf(min), BigDecimal.valueOf(max));
     }
 
     // GETTER AND SETTER
@@ -76,8 +78,9 @@ public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProt
         int faultPriority = Math.min(
             parentTask.getNominalPriority(),
             MaxDinamicPriorityBlockedtask)
-            + this.delta;
+            + this.delta.getSample().intValue();
         parentTask.setDinamicPriority(faultPriority);
+        MyLogger.wrn("PCP ha inalzato la priorità del task in modo errato. Alla priorità corretta è stato aggiunto " + this.delta);
         if (!resources.isEmpty()) {
             this.busyResources.addAll(resources);
             parentTask.acquireResources(resources);

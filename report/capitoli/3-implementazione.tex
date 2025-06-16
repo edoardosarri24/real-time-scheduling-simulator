@@ -70,7 +70,7 @@ Vediamo come sono implementati i metodi astratti della classe \texttt{Scheduler}
 \end{itemize}
 
 \subsection{Test}
-Per quanto riguarda i test su RM sono stati eseguiti con e senza risorse condivise. In entrambi i casi oltre a garantire che non vengano sollevate eccezioni, è stato osservato il file di log generato per capire se era compliance alla politica di scheduling con e senza PCP.
+Per quanto riguarda i test su RM sono stati eseguiti con e senza risorse condivise. In entrambi i casi oltre a garantire che non si arrivi a un deadline miss quando il taskset è schedulabile e ci si arrivi invece quando il taskset non lo è, è stato osservato il file di log generato per capire se esso era compliance alla politica di scheduling con e senza PCP.
 
 Per eseguire i test su taskset non schedulabili è stato preso come SUT (System Under Test) con fattore di utilizzo maggiore di 1. In questo modo siamo sicuri che il taskset non sia schedulabile.
 

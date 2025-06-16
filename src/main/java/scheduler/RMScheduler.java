@@ -1,6 +1,5 @@
 package scheduler;
 
-import java.time.Duration;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,26 +7,24 @@ import java.util.stream.IntStream;
 import resource.ResourcesProtocol;
 import taskSet.Task;
 import taskSet.TaskSet;
-import utils.logger.MyLogger;
 
 public final class RMScheduler extends Scheduler {
 
     // CONSTRUCTOR
-    public RMScheduler(TaskSet taskSet, Duration simulationDuration) {
+    public RMScheduler(TaskSet taskSet, double simulationDuration) {
         super(taskSet, simulationDuration);
         this.getTaskSet().purelyPeriodicCheck();
     }
 
-    public RMScheduler(TaskSet taskSet, ResourcesProtocol resProtocol, Duration simulationDuration) {
+    public RMScheduler(TaskSet taskSet, ResourcesProtocol resProtocol, double simulationDuration) {
         super(taskSet, resProtocol, simulationDuration);
         this.getTaskSet().purelyPeriodicCheck();
     }
 
     // METHOD
     @Override
-    protected void checkFeasibility() {
-        if (!this.getTaskSet().hyperbolicBoundTest())
-            MyLogger.wrn("L'hyperbolic bound test non è passato: il taskset potrebbe non essere schedulabile.");
+    public boolean checkFeasibility() {
+        return this.getTaskSet().hyperbolicBoundTest();
     }
 
     @Override

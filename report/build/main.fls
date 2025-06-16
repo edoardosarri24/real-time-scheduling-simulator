@@ -1,8 +1,8 @@
-PWD /Users/edoardosarri/Documents/real-time-scheduling-simulator/documentazione
+PWD /Users/edoardosarri/Documents/real-time-scheduling-simulator/report
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/edoardosarri/Documents/real-time-scheduling-simulator/documentazione/main.tex
+INPUT /Users/edoardosarri/Documents/real-time-scheduling-simulator/report/main.tex
 OUTPUT build/main.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrreprt.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrreprt.cls
@@ -240,9 +240,9 @@ INPUT build/capitoli/2-analisi.aux
 INPUT build/capitoli/3-implementazione.aux
 INPUT build/capitoli/3-implementazione.aux
 INPUT build/capitoli/3-implementazione.aux
-INPUT build/capitoli/0-dubbi.aux
-INPUT build/capitoli/0-dubbi.aux
-INPUT build/capitoli/0-dubbi.aux
+INPUT build/capitoli/4-dataset.aux
+INPUT build/capitoli/4-dataset.aux
+INPUT build/capitoli/4-dataset.aux
 OUTPUT build/main.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
 OUTPUT build/main.pdf
@@ -362,23 +362,13 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecsx1440.tfm
-INPUT ./immagini/esempio RM con risorse.pdf
-INPUT ./immagini/esempio RM con risorse.pdf
-INPUT ./immagini/esempio RM con risorse.pdf
-INPUT ./immagini/esempio RM con risorse.pdf
-INPUT ./immagini/esempio RM con risorse.pdf
-INPUT ./immagini/esempio RM con fault.pdf
-INPUT ./immagini/esempio RM con fault.pdf
-INPUT ./immagini/esempio RM con fault.pdf
-INPUT ./immagini/esempio RM con fault.pdf
-INPUT ./immagini/esempio RM con fault.pdf
 INPUT ./capitoli/2-analisi.tex
 INPUT ./capitoli/2-analisi.tex
 OUTPUT build/capitoli/2-analisi.aux
 INPUT ./capitoli/2-analisi.tex
 INPUT ./capitoli/2-analisi.tex
 INPUT capitoli/2-analisi.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecsx1440.tfm
 INPUT ./immagini/class diagram.pdf
 INPUT ./immagini/class diagram.pdf
 INPUT ./immagini/class diagram.pdf
@@ -395,12 +385,25 @@ INPUT ./immagini/sequence diagram.pdf
 INPUT ./immagini/sequence diagram.pdf
 INPUT ./immagini/sequence diagram.pdf
 INPUT ./immagini/sequence diagram.pdf
-INPUT ./capitoli/0-dubbi.tex
-INPUT ./capitoli/0-dubbi.tex
-OUTPUT build/capitoli/0-dubbi.aux
-INPUT ./capitoli/0-dubbi.tex
-INPUT ./capitoli/0-dubbi.tex
-INPUT capitoli/0-dubbi.tex
+INPUT ./capitoli/4-dataset.tex
+INPUT ./capitoli/4-dataset.tex
+OUTPUT build/capitoli/4-dataset.aux
+INPUT ./capitoli/4-dataset.tex
+INPUT ./capitoli/4-dataset.tex
+INPUT capitoli/4-dataset.tex
+INPUT ./immagini/taskset baseline.pdf
+INPUT ./immagini/taskset baseline.pdf
+INPUT ./immagini/taskset baseline.pdf
+INPUT ./immagini/taskset baseline.pdf
+INPUT ./immagini/taskset baseline.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
+INPUT ./immagini/trace baseline.pdf
+INPUT ./immagini/trace baseline.pdf
+INPUT ./immagini/trace baseline.pdf
+INPUT ./immagini/trace baseline.pdf
+INPUT ./immagini/trace baseline.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplri8t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplri8t.vf
 INPUT build/main.aux
@@ -416,9 +419,9 @@ INPUT build/capitoli/2-analisi.aux
 INPUT build/capitoli/3-implementazione.aux
 INPUT build/capitoli/3-implementazione.aux
 INPUT build/capitoli/3-implementazione.aux
-INPUT build/capitoli/0-dubbi.aux
-INPUT build/capitoli/0-dubbi.aux
-INPUT build/capitoli/0-dubbi.aux
+INPUT build/capitoli/4-dataset.aux
+INPUT build/capitoli/4-dataset.aux
+INPUT build/capitoli/4-dataset.aux
 INPUT build/main.run.xml
 OUTPUT build/main.run.xml
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb

@@ -1,6 +1,5 @@
 package scheduler;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -10,23 +9,16 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import taskSet.Task;
 import taskSet.TaskSet;
-import utils.logger.MyLogger;
 
 public final class EDFScheduler extends Scheduler {
 
     // CONSTRUCTOR
-    public EDFScheduler(TaskSet taskSet, Duration simulationDuration) {
+    public EDFScheduler(TaskSet taskSet, double simulationDuration) {
         super(taskSet, simulationDuration);
         this.getTaskSet().periodAndDealineCheck();
     }
 
     // METHODS
-    @Override
-    protected void checkFeasibility() {
-        if (this.getTaskSet().utilizationFactor() > 1)
-            MyLogger.wrn("Il fattore di utilizzo del taskset è maggiore di 1: il taskset non è schedulabile");
-    }
-
     @Override
 	public void addReadyTask(Task task) {
         List<Task> temp = new ArrayList<>(this.getReadyTasks());
@@ -50,6 +42,11 @@ public final class EDFScheduler extends Scheduler {
                 task.initPriority(i+1);
             }
         );
+    }
+
+    @Override
+    public boolean checkFeasibility() {
+        return this.getTaskSet().utilizationFactor() <= 1;
     }
 
 }

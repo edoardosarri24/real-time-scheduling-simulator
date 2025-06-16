@@ -79,7 +79,7 @@ public class ChunkTest {
             new BigDecimal(20),
             new BigDecimal(20),
             List.of(chunk));
-        RMScheduler scheduler = new RMScheduler(new TaskSet(Set.of(task)), Duration.ofMillis(20));
+        RMScheduler scheduler = new RMScheduler(new TaskSet(Set.of(task)), 20);
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
     }

@@ -1,7 +1,6 @@
 package scheduler;
 
 import java.math.BigDecimal;
-import java.time.Duration;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -50,7 +49,7 @@ public class EDFSchedulerTest {
         assertThat(task2.getNominalPriority())
             .isEqualTo(task2.getDinamicPriority())
             .isZero();
-        new EDFScheduler(new TaskSet(Set.of(task0, task1, task2)), Duration.ofMillis(30));
+        new EDFScheduler(new TaskSet(Set.of(task0, task1, task2)), 30);
         assertThat(task1.getNominalPriority())
             .isEqualTo(task1.getNominalPriority())
             .isEqualTo(1);
@@ -78,7 +77,7 @@ public class EDFSchedulerTest {
             new BigDecimal(11),
             List.of(this.chunk));
         TaskSet taskset = new TaskSet(Set.of(task1, task2, task3));
-        Scheduler scheduler = new EDFScheduler(taskset, Duration.ofMillis(30));
+        Scheduler scheduler = new EDFScheduler(taskset, 30);
         TreeSet<Task> readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
         readyTasks.addAll(List.of(task1, task3));
         ReflectionUtils.setField(scheduler, "readyTasks", readyTasks);
@@ -114,7 +113,7 @@ public class EDFSchedulerTest {
         TaskSet taskset = new TaskSet(Set.of(task1, task2, task3));
         assertThat(taskset.utilizationFactor())
             .isLessThan(1);
-        Scheduler scheduler = new EDFScheduler(taskset, Duration.ofMillis(24));
+        Scheduler scheduler = new EDFScheduler(taskset, 24);
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
     }
@@ -144,7 +143,7 @@ public class EDFSchedulerTest {
         TaskSet taskset = new TaskSet(Set.of(task1, task2, task3));
         assertThat(taskset.utilizationFactor())
             .isGreaterThan(1);
-        Scheduler scheduler = new EDFScheduler(taskset, Duration.ofMillis(120));
+        Scheduler scheduler = new EDFScheduler(taskset, 120);
         assertThatThrownBy(() -> scheduler.schedule())
             .isInstanceOf(DeadlineMissedException.class)
             .hasMessage("Il task " + task3.getId() + " ha superato la deadline");

@@ -31,7 +31,7 @@ public class SchedulerTest {
             new BigDecimal(5),
             new BigDecimal(5),
             List.of(chunk));
-        EDFScheduler scheduler = new EDFScheduler(new TaskSet(Set.of(task1, task2)), Duration.ofMillis(43));
+        EDFScheduler scheduler = new EDFScheduler(new TaskSet(Set.of(task1, task2)), 43);
         List<Duration> events = (List<Duration>) ReflectionUtils.invokeMethod(scheduler, "initStructures");
         assertThat(events.getLast())
             .isEqualTo(Duration.ofMillis(40));

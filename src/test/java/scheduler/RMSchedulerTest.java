@@ -53,7 +53,7 @@ public class RMSchedulerTest {
         assertThat(task2.getNominalPriority())
             .isEqualTo((int) ReflectionUtils.getField(task2, "dinamicPriority"))
             .isZero();
-        new RMScheduler(new TaskSet(Set.of(task0, task1, task2)), Duration.ofMillis(30));
+        new RMScheduler(new TaskSet(Set.of(task0, task1, task2)), 30);
         assertThat(task1.getNominalPriority())
             .isEqualTo((int) ReflectionUtils.getField(task1, "dinamicPriority"))
             .isEqualTo(1);
@@ -81,7 +81,7 @@ public class RMSchedulerTest {
             new BigDecimal(15),
             List.of(this.chunk));
         TaskSet taskSet = new TaskSet(Set.of(task0, task1, task2));
-        RMScheduler scheduler = new RMScheduler(taskSet, Duration.ofMillis(105));
+        RMScheduler scheduler = new RMScheduler(taskSet, 105);
         TreeSet<Task> readyTasks = new TreeSet<>(Comparator.comparingInt(Task::getDinamicPriority));
         ReflectionUtils.setField(scheduler, "readyTasks", readyTasks);
         readyTasks.add(task0);
@@ -114,7 +114,7 @@ public class RMSchedulerTest {
                 new Chunk(1, new ConstantSampler(new BigDecimal(10)))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
         assertThat(taskSet.hyperbolicBoundTest()).isTrue();
-        RMScheduler scheduler = new RMScheduler(taskSet, Duration.ofMillis(100));
+        RMScheduler scheduler = new RMScheduler(taskSet, 100);
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
     }
@@ -136,7 +136,7 @@ public class RMSchedulerTest {
         TaskSet taskSet = new TaskSet(Set.of(task1, task2));
         assertThat(taskSet.utilizationFactor()).isGreaterThan(1);
         assertThat(taskSet.hyperbolicBoundTest()).isFalse();
-        RMScheduler scheduler = new RMScheduler(taskSet, Duration.ofMillis(30));
+        RMScheduler scheduler = new RMScheduler(taskSet, 30);
         assertThatThrownBy(() -> scheduler.schedule())
             .isInstanceOf(DeadlineMissedException.class)
             .hasMessageContaining("Il task " + task2.getId() + " ha superato la deadline");
@@ -159,7 +159,7 @@ public class RMSchedulerTest {
                 new Chunk(2, new ConstantSampler(new BigDecimal(6)))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2));
         ResourcesProtocol protocol = new PriorityCeilingProtocol();
-        RMScheduler scheduler = new RMScheduler(taskSet, protocol, Duration.ofMillis(60));
+        RMScheduler scheduler = new RMScheduler(taskSet, protocol, 60);
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
     }
@@ -188,7 +188,7 @@ public class RMSchedulerTest {
                 new Chunk(2, new ConstantSampler(new BigDecimal(10)))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
         ResourcesProtocol protocol = new PriorityCeilingProtocol();
-        RMScheduler scheduler = new RMScheduler(taskSet, protocol, Duration.ofMillis(300));
+        RMScheduler scheduler = new RMScheduler(taskSet, protocol, 300);
         assertThatThrownBy(() -> scheduler.schedule())
             .isInstanceOf(DeadlineMissedException.class)
             .hasMessageContaining("Il task " + task2.getId() + " ha superato la deadline");
@@ -214,7 +214,7 @@ public class RMSchedulerTest {
             List.of(
                 new Chunk(1, new ConstantSampler(new BigDecimal(10)))));
         TaskSet taskSet = new TaskSet(Set.of(task1, task2, task3));
-        RMScheduler scheduler = new RMScheduler(taskSet, Duration.ofMillis(100));
+        RMScheduler scheduler = new RMScheduler(taskSet, 100);
         assertThatCode(() -> scheduler.schedule())
             .doesNotThrowAnyException();
         assertThatCode(() -> scheduler.schedule())

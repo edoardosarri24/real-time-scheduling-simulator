@@ -1,5 +1,6 @@
 package scheduler;
 
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -15,6 +16,8 @@ import taskSet.TaskSet;
 import utils.MyClock;
 import utils.Utils;
 import utils.logger.MyLogger;
+import utils.sampler.ConstantSampler;
+import utils.sampler.SampleDuration;
 
 public abstract class Scheduler {
 
@@ -27,14 +30,14 @@ public abstract class Scheduler {
     private final Duration simulationDuration;
 
     // CONSTRUCTOR
-    public Scheduler(TaskSet taskSet, Duration simulationDuration) {
+    public Scheduler(TaskSet taskSet, double simulationDuration) {
         this(taskSet, new NoResourceProtocol(), simulationDuration);
     }
 
-    public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol, Duration simulationDuration) {
+    public Scheduler(TaskSet taskSet, ResourcesProtocol resProtocol, double simulationDuration) {
         this.taskSet = taskSet;
         this.resProtocol = resProtocol;
-        this.simulationDuration = simulationDuration;
+        this.simulationDuration = SampleDuration.sample(new ConstantSampler(new BigDecimal(simulationDuration)));
         this.assignPriority();
         this.resProtocol.initStructures(this.taskSet);
         this.resProtocol.setScheduler(this);
@@ -70,7 +73,6 @@ public abstract class Scheduler {
         this.reset();
         List<Duration> events = initStructures();
         this.releaseAllTasks();
-        this.checkFeasibility();
         while (!events.isEmpty()) {
             Duration nextEvent = events.removeFirst();
             Duration availableTime = nextEvent.minus(MyClock.getInstance().getCurrentTime());
@@ -81,11 +83,21 @@ public abstract class Scheduler {
         MyLogger.log("<" + Utils.printCurrentTime() + ", end>\n");
     }
 
+    public final void scheduleDataset(int trace) {
+        for (int i=0; i<trace; i++) {
+            try {
+                this.schedule();
+            } catch (DeadlineMissedException e) {
+                continue;
+            }
+        }
+    }
+
     public abstract void addReadyTask(Task task);
 
     protected abstract void assignPriority();
 
-    protected abstract void checkFeasibility();
+    public abstract boolean checkFeasibility();
 
     // HELPER
     private List<Duration> initStructures() {

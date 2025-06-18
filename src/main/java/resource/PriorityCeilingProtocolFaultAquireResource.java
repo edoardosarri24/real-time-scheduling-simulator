@@ -13,6 +13,10 @@ import taskSet.TaskSet;
 import utils.Utils;
 import utils.logger.MyLogger;
 
+/**
+ * The {@code PriorityCeilingProtocolFaultAquireResource} class implements the PCP protocol that simulates a fault in acquiring resources.
+ * With a given probability (specified by the {@code threshold} parameter), a task use a resource without acquiring it first.
+ */
 public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesProtocol {
 
     private final Map<Resource, Integer> ceiling = new HashMap<>();
@@ -22,10 +26,6 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
 
     // CONSTRUCTOR
     /**
-     * Constructs a new PriorityCeilingProtocolFaultAquireResource with the specified threshold.
-     * <p>
-     * The threshold value must be between 0.0 and 1.0 (inclusive).
-     *
      * @param threshold the threshold value, which must be in the range [0.0, 1.0].
      */
     public PriorityCeilingProtocolFaultAquireResource (double threshold) {

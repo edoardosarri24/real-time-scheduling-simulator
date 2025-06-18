@@ -2,6 +2,12 @@ package utils;
 
 import java.time.Duration;
 
+/**
+ * Represents the global clock of the system.
+ * <p>
+ * This singleton class provides methods to access and manipulate the current global time,
+ * allowing to advance the clock to a specific time or by a given duration.
+ */
 public final class MyClock {
 
     private static MyClock INSTANCE = new MyClock();

@@ -9,5 +9,5 @@ public class ConstantSampler extends UniformSampler {
     public ConstantSampler(BigDecimal value) {
         super(value, value);
     }
-    
+
 }

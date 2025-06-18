@@ -17,6 +17,13 @@ import taskSet.TaskSet;
 import utils.Utils;
 import utils.logger.MyLogger;
 
+/**
+ * Implementation of the Priority Ceiling Protocol (PCP) with Faulty Priority Setting.
+ * <p>
+ * In this implementation, when a task acquires a resource, its dynamic priority is set to the correct value (as per PCP)
+ * plus a sampled delta value. The delta is drawn from a uniform distribution between the specified {@code min} and {@code max}
+ * bounds (exclusive).
+ */
 public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProtocol {
 
     private final Map<Resource, Integer> ceiling = new HashMap<>();
@@ -25,11 +32,8 @@ public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProt
 
     // CONSTRUCTOR
     /**
-     * Constructs a PriorityCeilingProtocolFaultSetPriority instance.
-     * <p>
      * The {@code delta} value, which is added to the dynamic priority set during the progress phase,
      * will be sampled from a uniform distribution and will be strictly between {@code min} and {@code max} (exclusive).
-     *
      * @param min the lower bound (exclusive) for sampling the delta value
      * @param max the upper bound (exclusive) for sampling the delta value
      */

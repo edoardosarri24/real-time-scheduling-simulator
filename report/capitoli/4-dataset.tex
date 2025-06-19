@@ -1,4 +1,5 @@
 \chapter{Dataset}
+\label{cap:dataset}
 Per concludere analiziamo come il sistema si comporta sulla generazione di dataset. Si procederà in modo incrementale, per capire come affrontare lo scheduling di taskset più semplici e poi quelli più complessi.
 
 Questa parte può essere anche utile per capire come struttrare il main ed utilizzare il simulatore.
@@ -17,7 +18,7 @@ La traccia in Figura~\ref{fig:baselineTrace} è l'output della simulazione.
         \raisebox{7em}{
             \includegraphics[width=.9\textwidth]{immagini/taskset baseline.pdf}
         }
-        \caption{Taskset baseline}
+        \caption{Taskset della baseline}
         \label{fig:baselineTaskset}
         \vfill
     \end{subfigure}
@@ -26,7 +27,7 @@ La traccia in Figura~\ref{fig:baselineTrace} è l'output della simulazione.
         \vfill
         \centering
         \includegraphics[width=.9\textwidth]{immagini/trace baseline.pdf}
-        \caption{Traccia del task baseline}
+        \caption{Traccia della baseline}
         \label{fig:baselineTrace}
         \vfill
     \end{subfigure}
@@ -45,7 +46,7 @@ Di seguito osserviamo invece lo stesso taskset schedulato sempre con RM, ma in c
         \raisebox{9em}{
             \includegraphics[width=.9\textwidth]{immagini/taskset baseline con risorse.pdf}
         }
-        \caption{Taskset baseline con risorsa condivisa}
+        \caption{Taskset della baseline con risorsa condivisa}
         \label{fig:baselineTasksetWRes}
         \vfill
     \end{subfigure}
@@ -54,9 +55,93 @@ Di seguito osserviamo invece lo stesso taskset schedulato sempre con RM, ma in c
         \vfill
         \centering
         \includegraphics[width=.9\textwidth]{immagini/trace baseline con risorse.pdf}
-        \caption{Traccia del task baseline con risorsa condivisa}
+        \caption{Traccia della baseline con risorsa condivisa}
         \label{fig:baselineTraceWRes}
         \vfill
     \end{subfigure}
     \caption{Baseline con risorsa condivisa}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Chunk additional execution time}
+Nella Figura~\ref{fig:tasksetAdditionalET} si osserva come specificare un chunk che campiona un additional execution time da una distribuzione. Nella Figura~\ref{fig:traceAdditionalET} invece si può notare come questo comportamento sia loggato dal sistema. Per osservare questa funzionalità si usa lo stesso taskset della sezione precedente.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \vfill
+        \centering
+        \includegraphics[width=.9\textwidth]{immagini/taskset additional ET chunk.pdf}
+        \caption{Taskset con additional execution time}
+        \label{fig:tasksetAdditionalET}
+        \vfill
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \vfill
+        \centering
+        \includegraphics[width=.9\textwidth]{immagini/trace additional ET chunk.pdf}
+        \caption{Traccia con additional execution time}
+        \label{fig:traceAdditionalET}
+        \vfill
+    \end{subfigure}
+    \caption{Chunk additional execution time}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{PCP with faulty priority setting}
+Nella Figura~\ref{fig:tasksetFaultSetPriority} vediamo un esempio di simulazione in cui i chunk dei task hanno una risorsa condivisa e il protocollo di accesso alle risorse non si comporta come previsto, ma setta la priorità del task che acquisiscono la risorsa pari a quella corretta più un valore campionato da una distribuzione uniforme tra -2 e 2. Questo porta alla generazione della traccia mostrata in Figura~\ref{fig:traceFaultSetPriority}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \vfill
+        \centering
+        \includegraphics[width=.9\textwidth]{immagini/taskset fault set priority.pdf}
+        \caption{Taskset with faulty priority setting}
+        \label{fig:tasksetFaultSetPriority}
+        \vfill
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \vfill
+        \centering
+        \raisebox{1em}{
+            \includegraphics[width=.9\textwidth]{immagini/trace fault set priority.pdf}
+        }
+        \caption{Trace with faulty priority setting}
+        \label{fig:traceFaultSetPriority}
+        \vfill
+    \end{subfigure}
+    \caption{PCP with faulty priority setting}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{PCP with faulty acquiring resources}
+Facendo riferimento allo stesso taskset della sezione precedente, nella Figura~\ref{fig:tasksetFaultAcquiringResources} è mostrato come iniettare il fault relativo alla mancata acquisizione delle risorse con una data probabilità (nell'esempio il 20\%). In Figura~\ref{fig:traceFaultAcquiringResources} invece è mostrato, come sempre ftto fino a ora, la traccia generata dalla simulazione.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \vfill
+        \centering
+        \raisebox{2em}{
+            \includegraphics[width=.9\textwidth]{immagini/taskset fault acquire resource.pdf}
+        }
+        \caption{Taskset with faulty acquiring resources}
+        \label{fig:tasksetFaultAcquiringResources}
+        \vfill
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \vfill
+        \centering
+        \raisebox{1em}{
+            \includegraphics[width=.9\textwidth]{immagini/trace fault acquire resource.pdf}
+        }
+        \caption{Trace with faulty acquiring resources}
+        \label{fig:traceFaultAcquiringResources}
+        \vfill
+    \end{subfigure}
+    \caption{PCP with faulty acquiring resources}
 \end{figure}

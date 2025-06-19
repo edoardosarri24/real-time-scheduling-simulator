@@ -79,12 +79,13 @@ public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProt
             .mapToInt(Task::getNominalPriority)
             .min()
             .orElse(Integer.MAX_VALUE);
+        int deltaValue = this.delta.getSample().intValue();
         int faultPriority = Math.min(
             parentTask.getNominalPriority(),
             MaxDinamicPriorityBlockedtask)
-            + this.delta.getSample().intValue();
+            + deltaValue;
         parentTask.setDinamicPriority(faultPriority);
-        MyLogger.wrn("PCP ha inalzato la priorità del task in modo errato. Alla priorità corretta è stato aggiunto " + this.delta);
+        MyLogger.wrn("PCP ha inalzato la priorità del task in modo errato. Alla priorità corretta è stato aggiunto " + deltaValue);
         if (!resources.isEmpty()) {
             this.busyResources.addAll(resources);
             parentTask.acquireResources(resources);

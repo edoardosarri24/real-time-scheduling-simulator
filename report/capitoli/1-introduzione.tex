@@ -16,14 +16,3 @@ A partire da un taskset, il sistema ha le capacità di:
     \item Introdurre in modo stocastico e rilevare un fault a livello di chunk tale per cui con una certa probabilità il chunk non acquisisce, e quindi non rilascia, il semaforo che gestisce la risorsa associata alla critical section in cui entra.
     \item Definito uno scheduler con il relativo taskset, eseguire il controllo di feasibility adeguato per la schedulabilità del taskset. Per RM è stato impelementato l'hyperbolic bound; per EDF il controllo necessario e sufficiente sul fattore di utilizzo.
 \end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Utilizzo}
-Nei prossimi punti vediamo degli accorgimenti che sono utili per far utilizzare il sistema nel modo corretto. Per osservare degli esempi di come strutturare il codice osservare il Capitolo~\ref{cap:dataset}.
-\begin{itemize}
-    \item Gli elementi del sistema, come chunk, task, taskset, scheduler e protocollo di accesso alle risorse, devono essere definiti all'interno del main. Una volta definito tutto si deve chiamare il metodo \texttt{schedule} sullo scheduler. Nel caso si voglia generare una sorta di dataset di tracce, è prevista la possibilità di chiamare più volte il medtodo \texttt{schedule} all'interno dello stesso main. Per generare un dataset di tracce è invece necessario chiamare il metodo \texttt{scheduleDataset} passando come parametro il numero di tracce.
-    \item Un chunk campiona il suo tempo di esecuzione da una distribuzione. Tale distribuzione, passata come parametro del costruttore, è un oggetto di tipo \texttt{Sampler} definito nella libreria Sirio. Oltre alle distribuzioni introdotte da Sirio è presente anche l'implementazione \texttt{ConstantSampler}, che definisce un campionamento costante.
-    \item I tempi devono essere passati al sistema e letti da esso in milli secondi. Il sistema li gestisce in nanosecondi per avere un'alta precisione.
-    \item Quando si vuole introdurre il fault relativo alla priorità dinamica settata da PCP si deve specificare il valore minimo e massimo entro cui campionare. Questi valori sono intesi come esclusi.
-    \item Quando si vuole introdurre il fault relativo all'acquisizione del semafore associato alle risorse, la soglia specificata deve essere in un intervallo 0.0 e 1.0.
-\end{itemize}

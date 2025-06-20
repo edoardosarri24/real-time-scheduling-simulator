@@ -35,6 +35,12 @@ class PriorityCeilingProtocol <<final>> {
 class NoResourceProtocol <<final>> {
 }
 
+class PriorityCeilingProtocolFaultAquireResource <<final>> {
+}
+
+class PriorityCeilingProtocolFaultSetPriority <<final>> {
+}
+
 class Resource <<final>> {
     - blockedTasks: List<Task>
 }
@@ -69,6 +75,8 @@ Scheduler <|-- EDFScheduler
 Scheduler "*" --> "*" ResourceProtocol
 ResourceProtocol <|-- PriorityCeilingProtocol
 ResourceProtocol <|-- NoResourceProtocol
+ResourceProtocol <|-- PriorityCeilingProtocolFaultAquireResource
+ResourceProtocol <|-- PriorityCeilingProtocolFaultSetPriority
 Scheduler "*" --> "1" Taskset
 Taskset "1" *-- "1...*" Task
 Task "1" *-- "1...*" Chunk

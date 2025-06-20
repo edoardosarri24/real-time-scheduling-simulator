@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  19 JUN 2025 14:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  20 JUN 2025 21:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -146,7 +146,7 @@ Package tocbasic Info: omitting babel extension for `lot'
 Class scrreprt Info: Redefining `\numberline' on input line 7488.
 \bibindent=\dimen148
 ) (./capitoli/preambolo.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/05/18 v2.17x AMS math features
+Package: amsmath 2025/06/16 v2.17y AMS math features
 \@mathmargin=\skip66
 
 For additional information on amsmath, use the `?' option.
@@ -732,7 +732,7 @@ Package csquotes Info: Redefining alias 'default' -> 'italian'.
 LaTeX Font Info:    Trying to load font information for T1+ppl on input line 3.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
-) (build/main.aux (build/capitoli/copertina.aux) (build/capitoli/1-introduzione.aux) (build/capitoli/2-analisi.aux) (build/capitoli/3-implementazione.aux) (build/capitoli/4-dataset.aux))
+) (build/main.aux (build/capitoli/copertina.aux) (build/capitoli/1-introduzione.aux) (build/capitoli/2-utilizzo.aux) (build/capitoli/3-analisi.aux) (build/capitoli/4-implementazione.aux) (build/capitoli/5-dataset.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -916,9 +916,9 @@ File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 ])
 
 [5]
-\openout2 = `capitoli/2-analisi.aux'.
+\openout2 = `capitoli/2-utilizzo.aux'.
 
- (./capitoli/2-analisi.tex
+ (./capitoli/2-utilizzo.tex
 chapter 2.
 
 
@@ -929,123 +929,138 @@ chapter 2.
 
 
 ]
-<immagini/class diagram.pdf, id=137, 816.04875pt x 590.205pt>
-File: immagini/class diagram.pdf Graphic file (type pdf)
-<use immagini/class diagram.pdf>
-Package pdftex.def Info: immagini/class diagram.pdf  used on input line 37.
-(pdftex.def)             Requested size: 452.9679pt x 327.61267pt.
+<immagini/taskset baseline.pdf, id=136, 1242.6425pt x 835.12pt>
+File: immagini/taskset baseline.pdf Graphic file (type pdf)
+<use immagini/taskset baseline.pdf>
+Package pdftex.def Info: immagini/taskset baseline.pdf  used on input line 27.
+(pdftex.def)             Requested size: 183.4495pt x 123.28745pt.
+<immagini/trace baseline.pdf, id=137, 792.9625pt x 1196.47pt>
+File: immagini/trace baseline.pdf Graphic file (type pdf)
+<use immagini/trace baseline.pdf>
+Package pdftex.def Info: immagini/trace baseline.pdf  used on input line 36.
+(pdftex.def)             Requested size: 183.4495pt x 276.7889pt.
+<immagini/taskset baseline con risorse.pdf, id=140, 1517.67pt x 907.39pt>
+File: immagini/taskset baseline con risorse.pdf Graphic file (type pdf)
+<use immagini/taskset baseline con risorse.pdf>
+Package pdftex.def Info: immagini/taskset baseline con risorse.pdf  used on input line 55.
+(pdftex.def)             Requested size: 183.4495pt x 109.6713pt.
+<immagini/trace baseline con risorse.pdf, id=141, 879.285pt x 1485.55pt>
+File: immagini/trace baseline con risorse.pdf Graphic file (type pdf)
+<use immagini/trace baseline con risorse.pdf>
+Package pdftex.def Info: immagini/trace baseline con risorse.pdf  used on input line 64.
+(pdftex.def)             Requested size: 183.4495pt x 309.93462pt.
+<immagini/taskset additional ET chunk.pdf, id=144, 1357.07pt x 1088.065pt>
+File: immagini/taskset additional ET chunk.pdf Graphic file (type pdf)
+<use immagini/taskset additional ET chunk.pdf>
+Package pdftex.def Info: immagini/taskset additional ET chunk.pdf  used on input line 81.
+(pdftex.def)             Requested size: 183.4495pt x 147.08167pt.
+<immagini/trace additional ET chunk.pdf, id=145, 1734.48pt x 1341.01pt>
+File: immagini/trace additional ET chunk.pdf Graphic file (type pdf)
+<use immagini/trace additional ET chunk.pdf>
+Package pdftex.def Info: immagini/trace additional ET chunk.pdf  used on input line 90.
+(pdftex.def)             Requested size: 183.4495pt x 141.82307pt.
+
+
+[7 <./immagini/taskset baseline.pdf> <./immagini/trace baseline.pdf>]
+
+[8 <./immagini/taskset baseline con risorse.pdf> <./immagini/trace baseline con risorse.pdf> <./immagini/taskset additional ET chunk.pdf> <./immagini/trace additional ET chunk.pdf>]
+<immagini/taskset fault set priority.pdf, id=194, 1401.235pt x 1196.47pt>
+File: immagini/taskset fault set priority.pdf Graphic file (type pdf)
+<use immagini/taskset fault set priority.pdf>
+Package pdftex.def Info: immagini/taskset fault set priority.pdf  used on input line 107.
+(pdftex.def)             Requested size: 183.4495pt x 156.64195pt.
+<immagini/trace fault set priority.pdf, id=195, 1836.8625pt x 1304.875pt>
+File: immagini/trace fault set priority.pdf Graphic file (type pdf)
+<use immagini/trace fault set priority.pdf>
+Package pdftex.def Info: immagini/trace fault set priority.pdf  used on input line 118.
+(pdftex.def)             Requested size: 183.4495pt x 130.31595pt.
+<immagini/taskset fault acquire resource.pdf, id=198, 1415.2875pt x 1196.47pt>
+File: immagini/taskset fault acquire resource.pdf Graphic file (type pdf)
+<use immagini/taskset fault acquire resource.pdf>
+Package pdftex.def Info: immagini/taskset fault acquire resource.pdf  used on input line 137.
+(pdftex.def)             Requested size: 183.4495pt x 155.07188pt.
+<immagini/trace fault acquire resource.pdf, id=199, 1415.2875pt x 1413.28pt>
+File: immagini/trace fault acquire resource.pdf Graphic file (type pdf)
+<use immagini/trace fault acquire resource.pdf>
+Package pdftex.def Info: immagini/trace fault acquire resource.pdf  used on input line 148.
+(pdftex.def)             Requested size: 183.4495pt x 183.17216pt.
 )
 
-[7 <./immagini/class diagram.pdf>]
-\openout2 = `capitoli/3-implementazione.aux'.
+[9 <./immagini/taskset fault set priority.pdf> <./immagini/trace fault set priority.pdf>]
 
- (./capitoli/3-implementazione.tex
+[10 <./immagini/taskset fault acquire resource.pdf> <./immagini/trace fault acquire resource.pdf>]
+\openout2 = `capitoli/3-analisi.aux'.
+
+ (./capitoli/3-analisi.tex
 chapter 3.
 
 
-[8
+[11
 
 
 
 
 
 ]
-<immagini/sequence diagram.pdf, id=159, 608.2725pt x 572.1375pt>
+<immagini/class diagram.pdf, id=238, 1593.955pt x 759.83875pt>
+File: immagini/class diagram.pdf Graphic file (type pdf)
+<use immagini/class diagram.pdf>
+Package pdftex.def Info: immagini/class diagram.pdf  used on input line 37.
+(pdftex.def)             Requested size: 452.9679pt x 215.9302pt.
+)
+
+[12 <./immagini/class diagram.pdf>]
+\openout2 = `capitoli/4-implementazione.aux'.
+
+ (./capitoli/4-implementazione.tex
+chapter 4.
+
+
+[13
+
+
+
+
+
+]
+<immagini/sequence diagram.pdf, id=255, 608.2725pt x 572.1375pt>
 File: immagini/sequence diagram.pdf Graphic file (type pdf)
 <use immagini/sequence diagram.pdf>
 Package pdftex.def Info: immagini/sequence diagram.pdf  used on input line 45.
 (pdftex.def)             Requested size: 339.72592pt x 319.54799pt.
 
 
-[9]
-
-[10 <./immagini/sequence diagram.pdf>]
-
-[11]
-
-[12]
-
-[13])
-
 [14]
-\openout2 = `capitoli/4-dataset.aux'.
 
- (./capitoli/4-dataset.tex
-chapter 4.
-<immagini/taskset baseline.pdf, id=193, 1242.6425pt x 835.12pt>
-File: immagini/taskset baseline.pdf Graphic file (type pdf)
-<use immagini/taskset baseline.pdf>
-Package pdftex.def Info: immagini/taskset baseline.pdf  used on input line 20.
-(pdftex.def)             Requested size: 183.4495pt x 123.28745pt.
-<immagini/trace baseline.pdf, id=194, 792.9625pt x 1196.47pt>
-File: immagini/trace baseline.pdf Graphic file (type pdf)
-<use immagini/trace baseline.pdf>
-Package pdftex.def Info: immagini/trace baseline.pdf  used on input line 29.
-(pdftex.def)             Requested size: 183.4495pt x 276.7889pt.
+[15 <./immagini/sequence diagram.pdf>]
 
+[16]
 
-[15
+[17]
 
+[18])
 
+[19]
+\openout2 = `capitoli/5-dataset.aux'.
 
-
-
- <./immagini/taskset baseline.pdf> <./immagini/trace baseline.pdf>]
-<immagini/taskset baseline con risorse.pdf, id=213, 1517.67pt x 907.39pt>
-File: immagini/taskset baseline con risorse.pdf Graphic file (type pdf)
-<use immagini/taskset baseline con risorse.pdf>
-Package pdftex.def Info: immagini/taskset baseline con risorse.pdf  used on input line 48.
-(pdftex.def)             Requested size: 183.4495pt x 109.6713pt.
-<immagini/trace baseline con risorse.pdf, id=214, 879.285pt x 1485.55pt>
-File: immagini/trace baseline con risorse.pdf Graphic file (type pdf)
-<use immagini/trace baseline con risorse.pdf>
-Package pdftex.def Info: immagini/trace baseline con risorse.pdf  used on input line 57.
-(pdftex.def)             Requested size: 183.4495pt x 309.93462pt.
-<immagini/taskset additional ET chunk.pdf, id=217, 1357.07pt x 1088.065pt>
-File: immagini/taskset additional ET chunk.pdf Graphic file (type pdf)
-<use immagini/taskset additional ET chunk.pdf>
-Package pdftex.def Info: immagini/taskset additional ET chunk.pdf  used on input line 74.
-(pdftex.def)             Requested size: 183.4495pt x 147.08167pt.
-<immagini/trace additional ET chunk.pdf, id=218, 1734.48pt x 1341.01pt>
-File: immagini/trace additional ET chunk.pdf Graphic file (type pdf)
-<use immagini/trace additional ET chunk.pdf>
-Package pdftex.def Info: immagini/trace additional ET chunk.pdf  used on input line 83.
-(pdftex.def)             Requested size: 183.4495pt x 141.82307pt.
-
-
-[16 <./immagini/taskset baseline con risorse.pdf> <./immagini/trace baseline con risorse.pdf>]
-<immagini/taskset fault set priority.pdf, id=237, 1401.235pt x 1196.47pt>
-File: immagini/taskset fault set priority.pdf Graphic file (type pdf)
-<use immagini/taskset fault set priority.pdf>
-Package pdftex.def Info: immagini/taskset fault set priority.pdf  used on input line 100.
-(pdftex.def)             Requested size: 183.4495pt x 156.64195pt.
-<immagini/trace fault set priority.pdf, id=238, 1836.8625pt x 1304.875pt>
-File: immagini/trace fault set priority.pdf Graphic file (type pdf)
-<use immagini/trace fault set priority.pdf>
-Package pdftex.def Info: immagini/trace fault set priority.pdf  used on input line 111.
-(pdftex.def)             Requested size: 183.4495pt x 130.31595pt.
-<immagini/taskset fault acquire resource.pdf, id=241, 1415.2875pt x 1196.47pt>
-File: immagini/taskset fault acquire resource.pdf Graphic file (type pdf)
-<use immagini/taskset fault acquire resource.pdf>
-Package pdftex.def Info: immagini/taskset fault acquire resource.pdf  used on input line 130.
-(pdftex.def)             Requested size: 183.4495pt x 155.07188pt.
-<immagini/trace fault acquire resource.pdf, id=242, 1415.2875pt x 1413.28pt>
-File: immagini/trace fault acquire resource.pdf Graphic file (type pdf)
-<use immagini/trace fault acquire resource.pdf>
-Package pdftex.def Info: immagini/trace fault acquire resource.pdf  used on input line 141.
-(pdftex.def)             Requested size: 183.4495pt x 183.17216pt.
+ (./capitoli/5-dataset.tex
+chapter 5.
 )
 
-[17 <./immagini/taskset additional ET chunk.pdf> <./immagini/trace additional ET chunk.pdf> <./immagini/taskset fault set priority.pdf> <./immagini/trace fault set priority.pdf>]
-
-[18 <./immagini/taskset fault acquire resource.pdf> <./immagini/trace fault acquire resource.pdf>]
-
-[19
+[20
 
 
 
 
-] (build/main.aux (build/capitoli/copertina.aux) (build/capitoli/1-introduzione.aux) (build/capitoli/2-analisi.aux) (build/capitoli/3-implementazione.aux) (build/capitoli/4-dataset.aux))
+
+]
+
+[21
+
+
+
+
+] (build/main.aux (build/capitoli/copertina.aux) (build/capitoli/1-introduzione.aux) (build/capitoli/2-utilizzo.aux) (build/capitoli/3-analisi.aux) (build/capitoli/4-implementazione.aux) (build/capitoli/5-dataset.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-05-26>
@@ -1055,18 +1070,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26796 strings out of 467886
- 490514 string characters out of 5434039
- 1467109 words of memory out of 5000000
- 54943 multiletter control sequences out of 15000+600000
+ 26822 strings out of 467886
+ 491371 string characters out of 5434039
+ 1469627 words of memory out of 5000000
+ 54960 multiletter control sequences out of 15000+600000
  654571 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,9n,107p,10997b,1895s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on build/main.pdf (19 pages, 2168762 bytes).
+Output written on build/main.pdf (21 pages, 2201617 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 374 compressed objects within 4 object streams
- 66 named destinations out of 1000 (max. 500000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 68 named destinations out of 1000 (max. 500000)
  330 words of extra memory for PDF output out of 10000 (max. 10000000)
 

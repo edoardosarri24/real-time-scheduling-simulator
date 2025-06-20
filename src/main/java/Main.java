@@ -18,7 +18,6 @@ import taskSet.TaskSet;
 import utils.sampler.ConstantSampler;
 
 public class Main {
-
     public static void main(String[] args) throws DeadlineMissedException {
         Resource resource = new Resource();
         Task task1 = new Task(

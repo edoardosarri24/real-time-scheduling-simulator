@@ -234,15 +234,18 @@ INPUT build/capitoli/copertina.aux
 INPUT build/capitoli/1-introduzione.aux
 INPUT build/capitoli/1-introduzione.aux
 INPUT build/capitoli/1-introduzione.aux
-INPUT build/capitoli/2-analisi.aux
-INPUT build/capitoli/2-analisi.aux
-INPUT build/capitoli/2-analisi.aux
-INPUT build/capitoli/3-implementazione.aux
-INPUT build/capitoli/3-implementazione.aux
-INPUT build/capitoli/3-implementazione.aux
-INPUT build/capitoli/4-dataset.aux
-INPUT build/capitoli/4-dataset.aux
-INPUT build/capitoli/4-dataset.aux
+INPUT build/capitoli/2-utilizzo.aux
+INPUT build/capitoli/2-utilizzo.aux
+INPUT build/capitoli/2-utilizzo.aux
+INPUT build/capitoli/3-analisi.aux
+INPUT build/capitoli/3-analisi.aux
+INPUT build/capitoli/3-analisi.aux
+INPUT build/capitoli/4-implementazione.aux
+INPUT build/capitoli/4-implementazione.aux
+INPUT build/capitoli/4-implementazione.aux
+INPUT build/capitoli/5-dataset.aux
+INPUT build/capitoli/5-dataset.aux
+INPUT build/capitoli/5-dataset.aux
 OUTPUT build/main.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
 OUTPUT build/main.pdf
@@ -361,36 +364,13 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT ./capitoli/2-utilizzo.tex
+INPUT ./capitoli/2-utilizzo.tex
+OUTPUT build/capitoli/2-utilizzo.aux
+INPUT ./capitoli/2-utilizzo.tex
+INPUT ./capitoli/2-utilizzo.tex
+INPUT capitoli/2-utilizzo.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
-INPUT ./capitoli/2-analisi.tex
-INPUT ./capitoli/2-analisi.tex
-OUTPUT build/capitoli/2-analisi.aux
-INPUT ./capitoli/2-analisi.tex
-INPUT ./capitoli/2-analisi.tex
-INPUT capitoli/2-analisi.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecsx1440.tfm
-INPUT ./immagini/class diagram.pdf
-INPUT ./immagini/class diagram.pdf
-INPUT ./immagini/class diagram.pdf
-INPUT ./immagini/class diagram.pdf
-INPUT ./immagini/class diagram.pdf
-INPUT ./capitoli/3-implementazione.tex
-INPUT ./capitoli/3-implementazione.tex
-OUTPUT build/capitoli/3-implementazione.aux
-INPUT ./capitoli/3-implementazione.tex
-INPUT ./capitoli/3-implementazione.tex
-INPUT capitoli/3-implementazione.tex
-INPUT ./immagini/sequence diagram.pdf
-INPUT ./immagini/sequence diagram.pdf
-INPUT ./immagini/sequence diagram.pdf
-INPUT ./immagini/sequence diagram.pdf
-INPUT ./immagini/sequence diagram.pdf
-INPUT ./capitoli/4-dataset.tex
-INPUT ./capitoli/4-dataset.tex
-OUTPUT build/capitoli/4-dataset.aux
-INPUT ./capitoli/4-dataset.tex
-INPUT ./capitoli/4-dataset.tex
-INPUT capitoli/4-dataset.tex
 INPUT ./immagini/taskset baseline.pdf
 INPUT ./immagini/taskset baseline.pdf
 INPUT ./immagini/taskset baseline.pdf
@@ -402,28 +382,28 @@ INPUT ./immagini/trace baseline.pdf
 INPUT ./immagini/trace baseline.pdf
 INPUT ./immagini/trace baseline.pdf
 INPUT ./immagini/trace baseline.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/taskset baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/trace baseline con risorse.pdf
+INPUT ./immagini/taskset additional ET chunk.pdf
+INPUT ./immagini/taskset additional ET chunk.pdf
+INPUT ./immagini/taskset additional ET chunk.pdf
+INPUT ./immagini/taskset additional ET chunk.pdf
+INPUT ./immagini/taskset additional ET chunk.pdf
+INPUT ./immagini/trace additional ET chunk.pdf
+INPUT ./immagini/trace additional ET chunk.pdf
+INPUT ./immagini/trace additional ET chunk.pdf
+INPUT ./immagini/trace additional ET chunk.pdf
+INPUT ./immagini/trace additional ET chunk.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
-INPUT ./immagini/taskset baseline con risorse.pdf
-INPUT ./immagini/taskset baseline con risorse.pdf
-INPUT ./immagini/taskset baseline con risorse.pdf
-INPUT ./immagini/taskset baseline con risorse.pdf
-INPUT ./immagini/taskset baseline con risorse.pdf
-INPUT ./immagini/trace baseline con risorse.pdf
-INPUT ./immagini/trace baseline con risorse.pdf
-INPUT ./immagini/trace baseline con risorse.pdf
-INPUT ./immagini/trace baseline con risorse.pdf
-INPUT ./immagini/trace baseline con risorse.pdf
-INPUT ./immagini/taskset additional ET chunk.pdf
-INPUT ./immagini/taskset additional ET chunk.pdf
-INPUT ./immagini/taskset additional ET chunk.pdf
-INPUT ./immagini/taskset additional ET chunk.pdf
-INPUT ./immagini/taskset additional ET chunk.pdf
-INPUT ./immagini/trace additional ET chunk.pdf
-INPUT ./immagini/trace additional ET chunk.pdf
-INPUT ./immagini/trace additional ET chunk.pdf
-INPUT ./immagini/trace additional ET chunk.pdf
-INPUT ./immagini/trace additional ET chunk.pdf
 INPUT ./immagini/taskset fault set priority.pdf
 INPUT ./immagini/taskset fault set priority.pdf
 INPUT ./immagini/taskset fault set priority.pdf
@@ -444,6 +424,35 @@ INPUT ./immagini/trace fault acquire resource.pdf
 INPUT ./immagini/trace fault acquire resource.pdf
 INPUT ./immagini/trace fault acquire resource.pdf
 INPUT ./immagini/trace fault acquire resource.pdf
+INPUT ./capitoli/3-analisi.tex
+INPUT ./capitoli/3-analisi.tex
+OUTPUT build/capitoli/3-analisi.aux
+INPUT ./capitoli/3-analisi.tex
+INPUT ./capitoli/3-analisi.tex
+INPUT capitoli/3-analisi.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecsx1440.tfm
+INPUT ./immagini/class diagram.pdf
+INPUT ./immagini/class diagram.pdf
+INPUT ./immagini/class diagram.pdf
+INPUT ./immagini/class diagram.pdf
+INPUT ./immagini/class diagram.pdf
+INPUT ./capitoli/4-implementazione.tex
+INPUT ./capitoli/4-implementazione.tex
+OUTPUT build/capitoli/4-implementazione.aux
+INPUT ./capitoli/4-implementazione.tex
+INPUT ./capitoli/4-implementazione.tex
+INPUT capitoli/4-implementazione.tex
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./immagini/sequence diagram.pdf
+INPUT ./capitoli/5-dataset.tex
+INPUT ./capitoli/5-dataset.tex
+OUTPUT build/capitoli/5-dataset.aux
+INPUT ./capitoli/5-dataset.tex
+INPUT ./capitoli/5-dataset.tex
+INPUT capitoli/5-dataset.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/palatino/pplri8t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/palatino/pplri8t.vf
 INPUT build/main.aux
@@ -453,15 +462,18 @@ INPUT build/capitoli/copertina.aux
 INPUT build/capitoli/1-introduzione.aux
 INPUT build/capitoli/1-introduzione.aux
 INPUT build/capitoli/1-introduzione.aux
-INPUT build/capitoli/2-analisi.aux
-INPUT build/capitoli/2-analisi.aux
-INPUT build/capitoli/2-analisi.aux
-INPUT build/capitoli/3-implementazione.aux
-INPUT build/capitoli/3-implementazione.aux
-INPUT build/capitoli/3-implementazione.aux
-INPUT build/capitoli/4-dataset.aux
-INPUT build/capitoli/4-dataset.aux
-INPUT build/capitoli/4-dataset.aux
+INPUT build/capitoli/2-utilizzo.aux
+INPUT build/capitoli/2-utilizzo.aux
+INPUT build/capitoli/2-utilizzo.aux
+INPUT build/capitoli/3-analisi.aux
+INPUT build/capitoli/3-analisi.aux
+INPUT build/capitoli/3-analisi.aux
+INPUT build/capitoli/4-implementazione.aux
+INPUT build/capitoli/4-implementazione.aux
+INPUT build/capitoli/4-implementazione.aux
+INPUT build/capitoli/5-dataset.aux
+INPUT build/capitoli/5-dataset.aux
+INPUT build/capitoli/5-dataset.aux
 INPUT build/main.run.xml
 OUTPUT build/main.run.xml
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb

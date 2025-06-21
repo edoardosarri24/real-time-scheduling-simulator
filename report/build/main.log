@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  21 JUN 2025 14:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  21 JUN 2025 17:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1004,11 +1004,11 @@ chapter 3.
 
 
 ]
-<immagini/class diagram.pdf, id=250, 1593.955pt x 759.83875pt>
+<immagini/class diagram.pdf, id=250, 1414.28375pt x 759.83875pt>
 File: immagini/class diagram.pdf Graphic file (type pdf)
 <use immagini/class diagram.pdf>
 Package pdftex.def Info: immagini/class diagram.pdf  used on input line 37.
-(pdftex.def)             Requested size: 452.9679pt x 215.9302pt.
+(pdftex.def)             Requested size: 452.9679pt x 243.36206pt.
 )
 
 [13 <./immagini/class diagram.pdf>]
@@ -1093,7 +1093,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,9n,107p,10997b,2204s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on build/main.pdf (23 pages, 2882628 bytes).
+Output written on build/main.pdf (23 pages, 2885509 bytes).
 PDF statistics:
  504 PDF objects out of 1000 (max. 8388607)
  413 compressed objects within 5 object streams

@@ -1,16 +1,12 @@
 package resource;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.oristool.simulator.samplers.Sampler;
 import org.oristool.simulator.samplers.UniformSampler;
 
-import exeptions.AccessResourceProtocolExeption;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
@@ -24,10 +20,8 @@ import utils.logger.MyLogger;
  * plus a sampled delta value. The delta is drawn from a uniform distribution between the specified {@code min} and {@code max}
  * bounds (exclusive).
  */
-public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProtocol {
+public final class PriorityCeilingProtocolFaultSetPriority extends PCP {
 
-    private Map<Resource, Integer> ceiling = new HashMap<>();
-    private List<Resource> busyResources = new LinkedList<>();
     private final Sampler delta;
 
     // CONSTRUCTOR
@@ -41,35 +35,7 @@ public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProt
         this.delta = new UniformSampler(BigDecimal.valueOf(min), BigDecimal.valueOf(max));
     }
 
-    // GETTER AND SETTER
-    public int getCeilingValue(Resource resource) {
-        return this.ceiling.get(resource);
-    }
-
     // METHOD
-    @Override
-    public void access(Chunk chunk) throws AccessResourceProtocolExeption {
-        if (!chunk.hasResources())
-            return;
-        Task parentTask = chunk.getParent();
-        int maxCeiling = this.busyResources.stream()
-            .filter(res -> !parentTask.hasAquiredThatResource(res))
-            .mapToInt(res -> this.ceiling.get(res))
-            .min()
-            .orElse(Integer.MIN_VALUE);
-        if (parentTask.getNominalPriority() <= maxCeiling) {
-            chunk.getResources().forEach(res -> res.addBlockedTask(parentTask));
-            getScheduler().blockTask(parentTask);
-            parentTask.addChunkToExecute(chunk);
-            String resourcesId = chunk.getResources().stream()
-                .map(Resource::toString)
-                .map(String::valueOf)
-                .collect(Collectors.joining(", ", "[", "]"));
-            MyLogger.log("<" + Utils.printCurrentTime() + ", " + chunk.toString() + "blockedOn " + resourcesId + ">");
-            throw new AccessResourceProtocolExeption();
-        }
-    }
-
     @Override
     public void progress(Chunk chunk) {
         Task parentTask = chunk.getParent();
@@ -87,7 +53,7 @@ public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProt
         parentTask.setDinamicPriority(faultPriority);
         MyLogger.wrn("PCP ha inalzato la priorità del task in modo errato. Alla priorità corretta è stato aggiunto " + deltaValue);
         if (!resources.isEmpty()) {
-            this.busyResources.addAll(resources);
+            this.addAllBusyResources(resources);
             parentTask.acquireResources(resources);
             String resourcesId = resources.stream()
                 .map(Resource::toString)
@@ -128,12 +94,11 @@ public final class PriorityCeilingProtocolFaultSetPriority extends ResourcesProt
 
     @Override
     public void initStructures(TaskSet taskSet) {
-        this.ceiling = new HashMap<>();
-        this.busyResources = new LinkedList<>();
+        this.resetStructures();
         for (Task task : taskSet.getTasks())
             for (Chunk chunk : task.getChunks())
                 for (Resource resource : chunk.getResources())
-                    this.ceiling.merge(resource, task.getNominalPriority(), Math::min);
+                    this.mergeCeiling(resource, task.getNominalPriority());
     }
 
 }

@@ -1,12 +1,9 @@
 package resource;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
-import exeptions.AccessResourceProtocolExeption;
 import taskSet.Chunk;
 import taskSet.Task;
 import taskSet.TaskSet;
@@ -17,10 +14,8 @@ import utils.logger.MyLogger;
  * The {@code PriorityCeilingProtocolFaultAquireResource} class implements the PCP protocol that simulates a fault in acquiring resources.
  * With a given probability (specified by the {@code threshold} parameter), a task use a resource without acquiring it first.
  */
-public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesProtocol {
+public final class PriorityCeilingProtocolFaultAquireResource extends PCP {
 
-    private Map<Resource, Integer> ceiling = new HashMap<>();
-    private List<Resource> busyResources = new LinkedList<>();
     private final double threshold;
     private List<Chunk> faultChunks = new LinkedList<>();
 
@@ -34,35 +29,7 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
         this.threshold = threshold;
     }
 
-    // GETTER AND SETTER
-    public int getCeilingValue(Resource resource) {
-        return this.ceiling.get(resource);
-    }
-
     // METHOD
-    @Override
-    public void access(Chunk chunk) throws AccessResourceProtocolExeption {
-        if (!chunk.hasResources())
-            return;
-        Task parentTask = chunk.getParent();
-        int maxCeiling = this.busyResources.stream()
-            .filter(res -> !parentTask.hasAquiredThatResource(res))
-            .mapToInt(res -> this.ceiling.get(res))
-            .min()
-            .orElse(Integer.MIN_VALUE);
-        if (parentTask.getNominalPriority() <= maxCeiling) {
-            chunk.getResources().forEach(res -> res.addBlockedTask(parentTask));
-            getScheduler().blockTask(parentTask);
-            parentTask.addChunkToExecute(chunk);
-            String resourcesId = chunk.getResources().stream()
-                .map(Resource::toString)
-                .map(String::valueOf)
-                .collect(Collectors.joining(", ", "[", "]"));
-            MyLogger.log("<" + Utils.printCurrentTime() + ", " + chunk.toString() + "blockedOn " + resourcesId + ">");
-            throw new AccessResourceProtocolExeption();
-        }
-    }
-
     @Override
     public void progress(Chunk chunk) {
         Task parentTask = chunk.getParent();
@@ -85,7 +52,7 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
                     +" non ha acquisito le risorse " + resourcesId
                     + " prima di usarle");
             } else {
-                this.busyResources.addAll(resources);
+                this.addAllBusyResources(resources);
                 parentTask.acquireResources(resources);
                 String resourcesId = resources.stream()
                     .map(Resource::toString)
@@ -133,13 +100,12 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
 
     @Override
     public void initStructures(TaskSet taskSet) {
-        this.ceiling = new HashMap<>();
-        this.busyResources = new LinkedList<>();
+        this.resetStructures();
         this.faultChunks = new LinkedList<>();
         for (Task task : taskSet.getTasks())
             for (Chunk chunk : task.getChunks())
                 for (Resource resource : chunk.getResources())
-                    this.ceiling.merge(resource, task.getNominalPriority(), Math::min);
+                    this.mergeCeiling(resource, task.getNominalPriority());
     }
 
 }

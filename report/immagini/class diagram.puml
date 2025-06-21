@@ -29,6 +29,11 @@ abstract class ResourceProtocol {
     + release: void
 }
 
+abstract class PCP {
+    - ceiling: Map<Resource, Integer>
+    - busyResources: List<Resource>
+}
+
 class PriorityCeilingProtocol <<final>> {
 }
 
@@ -73,10 +78,11 @@ class Chunk <<final>> {
 Scheduler <|-- RMScheduler
 Scheduler <|-- EDFScheduler
 Scheduler "*" --> "*" ResourceProtocol
-ResourceProtocol <|-- PriorityCeilingProtocol
+ResourceProtocol <|-- PCP
 ResourceProtocol <|-- NoResourceProtocol
-ResourceProtocol <|-- PriorityCeilingProtocolFaultAquireResource
-ResourceProtocol <|-- PriorityCeilingProtocolFaultSetPriority
+PCP <|-- PriorityCeilingProtocol
+PCP <|-- PriorityCeilingProtocolFaultAquireResource
+PCP <|-- PriorityCeilingProtocolFaultSetPriority
 Scheduler "*" --> "1" Taskset
 Taskset "1" *-- "1...*" Task
 Task "1" *-- "1...*" Chunk

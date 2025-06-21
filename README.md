@@ -1,7 +1,7 @@
 # Real-Time Scheduling Simulator
 This project is a Java-based simulator for real-time task scheduling, managed with Maven.
 
-It allows the generation of execution traces starting from a defined taskset, optionally using shared resources managed through mutual exclusion protocols. Each execution trace is a sequence of pairs $<time, event>$, where an event can be: release of a job from a task; acquisition or release of a semaphore by a task’s job; completion of a chunk; job completion; preemption of a task. Events and faults can be modeled stochastically, and scheduling feasibility can be checked through known analytical tests. Detailed documentation is available in the [`report`](report.pdf) file.
+It allows the generation of execution traces starting from a defined taskset, optionally using shared resources managed through mutual exclusion protocols. Each execution trace is a sequence of pairs $<time, event>$, where an event can be: release of a job from a task; acquisition or release of a semaphore by a task’s job; completion of a chunk; job completion; preemption of a task. Events and faults can be modeled stochastically, and scheduling feasibility can be checked through known analytical tests. Detailed documentation is available in the [`report`](report.pdf) file. A short presentation is in [`slides`](slides.pdf)file.
 
 To use the simulator, define the taskset, resources, chunks, scheduling algorithm, and protocol (if needed) in the main.java file. The datails are in the chapter 2 of the [`report`](report.pdf) file.
 

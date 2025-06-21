@@ -1,16 +1,16 @@
 \chapter{Analisi}
-In questo capitolo analiziamo la struttura del progetto, partendo dai suoi componenti e definendo la loro relazione.
+In questo capitolo analizziamo la struttura del progetto, partendo dai suoi componenti e definendo la loro relazione.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Componenti}
 
 \subsection{Task}
-Un task è definito da: un un insieme di Chunk; una deadline; una priorità nominale e dinamica; un pattern di rilascio.
+Un task è definito da: un insieme di Chunk; una deadline; una priorità nominale e dinamica; un pattern di rilascio.
 
-Non ci interessa definire un activation time perché vogliamo considerare il caso pessimo: l'activation time sarà uguale per tutti i task e coinciderà con l'istante inziale.
+Non ci interessa definire un activation time perché vogliamo considerare il caso pessimo: l'activation time sarà uguale per tutti i task e coinciderà con l'istante iniziale.
 
 \subsection{Chunk}
-Un chunk, cioè una computazione atomica del task. È definito da: una distribuzione del tempo di esecuzione previsto e un tempo di esecuzione effettivo; un'eventuale richiesta di risorse da usare in mutua esclusione (da acquisire prima dell'esecuzione e rilascaire subito dopo).
+Un chunk, cioè una computazione atomica del task. È definito da: una distribuzione del tempo di esecuzione previsto e un tempo di esecuzione effettivo; un'eventuale richiesta di risorse da usare in mutua esclusione (da acquisire prima dell'esecuzione e rilasciare subito dopo).
 
 \subsection{Taskset}
 È un insieme di task. È l'oggetto principale gestito dallo scheduler.
@@ -22,7 +22,7 @@ Sono le risorse da utilizzare in mutua esclusione. Ogni risorsa è gestita da un
 È l'unità di elaborazione. Supponiamo essere unica.
 
 \subsection{Scheduler}
-È il componente che assegna un task al processore. Sono stati implementati Rate Monotonic (RM) e Earlist Deadline First (EDF).
+È il componente che assegna un task al processore. Sono stati implementati Rate Monotonic (RM) e Earliest Deadline First (EDF).
 
 \subsection{Protocollo di accesso alle risorse}
 È il meccanismo che garantisce la mutua esclusione di una risorsa. È stato implementato Priority Ceiling Protocol (PCP).

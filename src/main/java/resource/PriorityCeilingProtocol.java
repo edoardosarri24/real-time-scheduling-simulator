@@ -15,7 +15,7 @@ import utils.logger.MyLogger;
 
 public final class PriorityCeilingProtocol extends ResourcesProtocol {
 
-    private final Map<Resource, Integer> ceiling = new HashMap<>();
+    private Map<Resource, Integer> ceiling = new HashMap<>();
     private List<Resource> busyResources = new LinkedList<>();
 
     // GETTER AND SETTER
@@ -101,6 +101,8 @@ public final class PriorityCeilingProtocol extends ResourcesProtocol {
 
     @Override
     public void initStructures(TaskSet taskSet) {
+        this.ceiling = new HashMap<>();
+        this.busyResources = new LinkedList<>();
         for (Task task : taskSet.getTasks())
             for (Chunk chunk : task.getChunks())
                 for (Resource resource : chunk.getResources())

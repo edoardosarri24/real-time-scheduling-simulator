@@ -1,0 +1,2395 @@
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <6.537, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006536689S, ma il suo expected execution time era PT0.004S
+[INFO] <6.537, execute Chunk1.2>
+[INFO] <10.284, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003747307S, ma il suo expected execution time era PT0.004S
+[INFO] <10.284, execute Chunk1.3>
+[INFO] <13.334, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003049628S, ma il suo expected execution time era PT0.004S
+[INFO] <13.334, complete Task1>
+[INFO] <13.334, execute Chunk2.1>
+[INFO] <17.018, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003684117S, ma il suo expected execution time era PT0.004S
+[INFO] <17.018, execute Chunk2.2>
+[INFO] <21.249, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004230958S, ma il suo expected execution time era PT0.005S
+[INFO] <21.249, complete Task2>
+[INFO] <21.249, execute Chunk5.1>
+[INFO] <25.627, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004378129S, ma il suo expected execution time era PT0.005S
+[INFO] <25.627, execute Chunk5.2>
+[INFO] <31.022, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005395075S, ma il suo expected execution time era PT0.005S
+[INFO] <31.022, execute Chunk5.3>
+[INFO] <36.975, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005952725S, ma il suo expected execution time era PT0.005S
+[INFO] <36.975, complete Task5>
+[INFO] <36.975, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <46.833, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006832823S, ma il suo expected execution time era PT0.004S
+[INFO] <46.833, execute Chunk1.2>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.2>
+[INFO] <50.225, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00339203S, ma il suo expected execution time era PT0.004S
+[INFO] <50.225, execute Chunk1.3>
+[INFO] <54.830, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004605406S, ma il suo expected execution time era PT0.004S
+[INFO] <54.830, complete Task1>
+[INFO] <54.830, execute Chunk3.1>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk3.1>
+[INFO] <60.116, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008311349S, ma il suo expected execution time era PT0.007S
+[INFO] <60.116, complete Task3>
+[INFO] <60.116, execute Chunk2.1>
+[INFO] <64.389, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004272632S, ma il suo expected execution time era PT0.004S
+[INFO] <64.389, execute Chunk2.2>
+[INFO] <69.024, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004635602S, ma il suo expected execution time era PT0.005S
+[INFO] <69.024, complete Task2>
+[INFO] <69.024, execute Chunk4.1>
+[INFO] <75.192, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006167451S, ma il suo expected execution time era PT0.006S
+[INFO] <75.192, execute Chunk4.2>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk4.2>
+[INFO] <81.489, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006296713S, ma il suo expected execution time era PT0.006S
+[INFO] <81.489, complete Task4>
+[INFO] <81.489, execute Chunk5.1>
+[INFO] <86.791, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005301935S, ma il suo expected execution time era PT0.005S
+[INFO] <86.791, execute Chunk5.2>
+[INFO] <91.292, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004501869S, ma il suo expected execution time era PT0.005S
+[INFO] <91.292, execute Chunk5.3>
+[INFO] <95.356, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004063792S, ma il suo expected execution time era PT0.005S
+[INFO] <95.356, complete Task5>
+[INFO] <95.356, execute Chunk1.1>
+[INFO] <99.314, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00395781S, ma il suo expected execution time era PT0.004S
+[INFO] <99.314, execute Chunk1.2>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.2>
+[INFO] <103.526, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004211818S, ma il suo expected execution time era PT0.004S
+[INFO] <103.526, execute Chunk1.3>
+[INFO] <108.446, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004919666S, ma il suo expected execution time era PT0.004S
+[INFO] <108.446, complete Task1>
+[INFO] <108.446, execute Chunk2.1>
+[INFO] <111.875, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003429398S, ma il suo expected execution time era PT0.004S
+[INFO] <111.875, execute Chunk2.2>
+[INFO] <116.476, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004601456S, ma il suo expected execution time era PT0.005S
+[INFO] <116.476, complete Task2>
+[INFO] <116.476, execute Chunk3.1>
+[INFO] <120.000, release Task1>
+[INFO] <120.000, release Task5>
+[INFO] <120.000, preempt Task3>
+[INFO] <120.000, execute Chunk1.1>
+[INFO] <123.552, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003551739S, ma il suo expected execution time era PT0.004S
+[INFO] <123.552, execute Chunk1.2>
+[INFO] <126.939, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003386842S, ma il suo expected execution time era PT0.004S
+[INFO] <126.939, execute Chunk1.3>
+[INFO] <130.867, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003928585S, ma il suo expected execution time era PT0.004S
+[INFO] <130.867, complete Task1>
+[INFO] <130.867, execute Chunk3.1>
+[INFO] <134.733, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007389468S, ma il suo expected execution time era PT0.007S
+[INFO] <134.733, complete Task3>
+[INFO] <134.733, execute Chunk5.1>
+[INFO] <138.760, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004026549S, ma il suo expected execution time era PT0.005S
+[INFO] <138.760, execute Chunk5.2>
+[INFO] <145.272, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006512714S, ma il suo expected execution time era PT0.005S
+[INFO] <145.272, execute Chunk5.3>
+[INFO] <150.000, release Task2>
+[INFO] <150.000, execute Chunk5.3>
+[INFO] <150.254, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004982114S, ma il suo expected execution time era PT0.005S
+[INFO] <150.254, complete Task5>
+[INFO] <150.254, execute Chunk2.1>
+[INFO] <154.365, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004110277S, ma il suo expected execution time era PT0.004S
+[INFO] <154.365, execute Chunk2.2>
+[INFO] <159.770, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005405608S, ma il suo expected execution time era PT0.005S
+[INFO] <159.770, complete Task2>
+[INFO] <159.770, execute Chunk4.1>
+[INFO] <160.000, release Task1>
+[INFO] <160.000, release Task3>
+[INFO] <160.000, preempt Task4>
+[INFO] <160.000, execute Chunk1.1>
+[INFO] <166.828, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006827551S, ma il suo expected execution time era PT0.004S
+[INFO] <166.828, execute Chunk1.2>
+[INFO] <171.827, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004999729S, ma il suo expected execution time era PT0.004S
+[INFO] <171.827, execute Chunk1.3>
+[INFO] <176.248, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004421177S, ma il suo expected execution time era PT0.004S
+[INFO] <176.248, complete Task1>
+[INFO] <176.248, execute Chunk4.1>
+[INFO] <180.000, release Task5>
+[INFO] <180.000, execute Chunk4.1>
+[INFO] <184.715, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008695866S, ma il suo expected execution time era PT0.006S
+[INFO] <184.715, execute Chunk4.2>
+[INFO] <191.589, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006874523S, ma il suo expected execution time era PT0.006S
+[INFO] <191.589, complete Task4>
+[INFO] <191.589, execute Chunk5.1>
+[INFO] <195.889, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004300059S, ma il suo expected execution time era PT0.005S
+[INFO] <195.889, execute Chunk5.2>
+[INFO] <200.000, release Task1>
+[INFO] <200.000, release Task4>
+[INFO] <200.000, release Task2>
+[INFO] <200.000, execute Chunk5.2>
+[INFO] <200.797, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004907933S, ma il suo expected execution time era PT0.005S
+[INFO] <200.797, execute Chunk5.3>
+[INFO] <206.441, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005643748S, ma il suo expected execution time era PT0.005S
+[INFO] <206.441, complete Task5>
+[INFO] <206.441, execute Chunk1.1>
+[INFO] <213.212, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006770776S, ma il suo expected execution time era PT0.004S
+[INFO] <213.212, execute Chunk1.2>
+[INFO] <217.425, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004213405S, ma il suo expected execution time era PT0.004S
+[INFO] <217.425, execute Chunk1.3>
+[INFO] <221.885, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004459833S, ma il suo expected execution time era PT0.004S
+[INFO] <221.885, complete Task1>
+[INFO] <221.885, execute Chunk3.1>
+[INFO] <230.602, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008716889S, ma il suo expected execution time era PT0.007S
+[INFO] <230.602, complete Task3>
+[INFO] <230.602, execute Chunk2.1>
+[INFO] <234.942, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004339949S, ma il suo expected execution time era PT0.004S
+[INFO] <234.942, execute Chunk2.2>
+[INFO] <239.895, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004953749S, ma il suo expected execution time era PT0.005S
+[INFO] <239.895, complete Task2>
+[INFO] <239.895, execute Chunk4.1>
+[INFO] <240.000, release Task1>
+[INFO] <240.000, release Task5>
+[INFO] <240.000, release Task3>
+[INFO] <240.000, preempt Task4>
+[INFO] <240.000, execute Chunk1.1>
+[INFO] <246.594, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006594447S, ma il suo expected execution time era PT0.004S
+[INFO] <246.594, execute Chunk1.2>
+[INFO] <250.000, release Task2>
+[INFO] <250.000, execute Chunk1.2>
+[INFO] <250.078, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003483354S, ma il suo expected execution time era PT0.004S
+[INFO] <250.078, execute Chunk1.3>
+[INFO] <254.832, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004754637S, ma il suo expected execution time era PT0.004S
+[INFO] <254.832, complete Task1>
+[INFO] <254.832, execute Chunk5.1>
+[INFO] <260.192, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005359124S, ma il suo expected execution time era PT0.005S
+[INFO] <260.192, execute Chunk5.2>
+[INFO] <267.175, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006982997S, ma il suo expected execution time era PT0.005S
+[INFO] <267.175, execute Chunk5.3>
+[INFO] <272.449, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005274086S, ma il suo expected execution time era PT0.005S
+[INFO] <272.449, complete Task5>
+[INFO] <272.449, execute Chunk2.1>
+[INFO] <276.939, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004490513S, ma il suo expected execution time era PT0.004S
+[INFO] <276.939, execute Chunk2.2>
+[INFO] <280.000, release Task1>
+[INFO] <280.000, execute Chunk2.2>
+[INFO] <281.262, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004322592S, ma il suo expected execution time era PT0.005S
+[INFO] <281.262, complete Task2>
+[INFO] <281.262, execute Chunk4.1>
+[INFO] <287.333, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006175841S, ma il suo expected execution time era PT0.006S
+[INFO] <287.333, execute Chunk4.2>
+[INFO] <295.530, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00819714S, ma il suo expected execution time era PT0.006S
+[INFO] <295.530, complete Task4>
+[INFO] <295.530, execute Chunk1.1>
+[INFO] <300.000, release Task5>
+[INFO] <300.000, release Task4>
+[INFO] <300.000, release Task2>
+[INFO] <300.000, execute Chunk1.1>
+[INFO] <301.462, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00593209S, ma il suo expected execution time era PT0.004S
+[INFO] <301.462, execute Chunk1.2>
+[INFO] <306.181, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004718232S, ma il suo expected execution time era PT0.004S
+[INFO] <306.181, execute Chunk1.3>
+[INFO] <310.006, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003825285S, ma il suo expected execution time era PT0.004S
+[INFO] <310.006, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <4.510, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.0045096S, ma il suo expected execution time era PT0.004S
+[INFO] <4.510, execute Chunk1.2>
+[INFO] <9.215, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004705112S, ma il suo expected execution time era PT0.004S
+[INFO] <9.215, execute Chunk1.3>
+[INFO] <12.513, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003298178S, ma il suo expected execution time era PT0.004S
+[INFO] <12.513, complete Task1>
+[INFO] <12.513, execute Chunk2.1>
+[INFO] <16.131, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003618274S, ma il suo expected execution time era PT0.004S
+[INFO] <16.131, execute Chunk2.2>
+[INFO] <20.713, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004582018S, ma il suo expected execution time era PT0.005S
+[INFO] <20.713, complete Task2>
+[INFO] <20.713, execute Chunk5.1>
+[INFO] <26.466, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005752388S, ma il suo expected execution time era PT0.005S
+[INFO] <26.466, execute Chunk5.2>
+[INFO] <32.122, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005656304S, ma il suo expected execution time era PT0.005S
+[INFO] <32.122, execute Chunk5.3>
+[INFO] <37.258, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005135862S, ma il suo expected execution time era PT0.005S
+[INFO] <37.258, complete Task5>
+[INFO] <37.258, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <46.790, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006789539S, ma il suo expected execution time era PT0.004S
+[INFO] <46.790, execute Chunk1.2>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.2>
+[INFO] <51.580, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004790751S, ma il suo expected execution time era PT0.004S
+[INFO] <51.580, execute Chunk1.3>
+[INFO] <54.694, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003114195S, ma il suo expected execution time era PT0.004S
+[INFO] <54.694, complete Task1>
+[INFO] <54.694, execute Chunk3.1>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk3.1>
+[INFO] <60.666, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008713314S, ma il suo expected execution time era PT0.007S
+[INFO] <60.666, complete Task3>
+[INFO] <60.666, execute Chunk2.1>
+[INFO] <63.725, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003059847S, ma il suo expected execution time era PT0.004S
+[INFO] <63.725, execute Chunk2.2>
+[INFO] <69.714, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005988637S, ma il suo expected execution time era PT0.005S
+[INFO] <69.714, complete Task2>
+[INFO] <69.714, execute Chunk4.1>
+[INFO] <77.334, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.0076197S, ma il suo expected execution time era PT0.006S
+[INFO] <77.334, execute Chunk4.2>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk4.2>
+[INFO] <85.998, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.008664277S, ma il suo expected execution time era PT0.006S
+[INFO] <85.998, complete Task4>
+[INFO] <85.998, execute Chunk5.1>
+[INFO] <90.553, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004554978S, ma il suo expected execution time era PT0.005S
+[INFO] <90.553, execute Chunk5.2>
+[INFO] <96.470, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005916836S, ma il suo expected execution time era PT0.005S
+[INFO] <96.470, execute Chunk5.3>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, preempt Task5>
+[INFO] <100.000, execute Chunk1.1>
+[INFO] <104.791, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004791326S, ma il suo expected execution time era PT0.004S
+[INFO] <104.791, execute Chunk1.2>
+[INFO] <108.430, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003638648S, ma il suo expected execution time era PT0.004S
+[INFO] <108.430, execute Chunk1.3>
+[INFO] <113.120, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004690281S, ma il suo expected execution time era PT0.004S
+[INFO] <113.120, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, preempt Task5>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <5.067, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005066933S, ma il suo expected execution time era PT0.004S
+[INFO] <5.067, execute Chunk1.2>
+[INFO] <9.888, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004821482S, ma il suo expected execution time era PT0.004S
+[INFO] <9.888, execute Chunk1.3>
+[INFO] <14.617, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004728302S, ma il suo expected execution time era PT0.004S
+[INFO] <14.617, complete Task1>
+[INFO] <14.617, execute Chunk2.1>
+[INFO] <18.769, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004152774S, ma il suo expected execution time era PT0.004S
+[INFO] <18.769, execute Chunk2.2>
+[INFO] <23.944, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00517443S, ma il suo expected execution time era PT0.005S
+[INFO] <23.944, complete Task2>
+[INFO] <23.944, execute Chunk5.1>
+[INFO] <29.260, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005315806S, ma il suo expected execution time era PT0.005S
+[INFO] <29.260, execute Chunk5.2>
+[INFO] <35.355, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006095763S, ma il suo expected execution time era PT0.005S
+[INFO] <35.355, execute Chunk5.3>
+[INFO] <39.711, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004355582S, ma il suo expected execution time era PT0.005S
+[INFO] <39.711, complete Task5>
+[INFO] <39.711, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <43.860, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003859922S, ma il suo expected execution time era PT0.004S
+[INFO] <43.860, execute Chunk1.2>
+[INFO] <48.593, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004732618S, ma il suo expected execution time era PT0.004S
+[INFO] <48.593, execute Chunk1.3>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.3>
+[INFO] <52.138, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003545266S, ma il suo expected execution time era PT0.004S
+[INFO] <52.138, complete Task1>
+[INFO] <52.138, execute Chunk3.1>
+[INFO] <57.894, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006044848S, ma il suo expected execution time era PT0.007S
+[INFO] <57.894, complete Task3>
+[INFO] <57.894, execute Chunk2.1>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk2.1>
+[INFO] <61.554, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003659825S, ma il suo expected execution time era PT0.004S
+[INFO] <61.554, execute Chunk2.2>
+[INFO] <65.820, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004266414S, ma il suo expected execution time era PT0.005S
+[INFO] <65.820, complete Task2>
+[INFO] <65.820, execute Chunk4.1>
+[INFO] <71.309, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005488782S, ma il suo expected execution time era PT0.006S
+[INFO] <71.309, execute Chunk4.2>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk4.2>
+[INFO] <80.227, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00891848S, ma il suo expected execution time era PT0.006S
+[INFO] <80.227, complete Task4>
+[INFO] <80.227, execute Chunk5.1>
+[INFO] <84.482, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004254881S, ma il suo expected execution time era PT0.005S
+[INFO] <84.482, execute Chunk5.2>
+[INFO] <90.126, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005643411S, ma il suo expected execution time era PT0.005S
+[INFO] <90.126, execute Chunk5.3>
+[INFO] <94.888, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00476199S, ma il suo expected execution time era PT0.005S
+[INFO] <94.888, complete Task5>
+[INFO] <94.888, execute Chunk1.1>
+[INFO] <98.591, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003703071S, ma il suo expected execution time era PT0.004S
+[INFO] <98.591, execute Chunk1.2>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.2>
+[INFO] <101.735, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003143996S, ma il suo expected execution time era PT0.004S
+[INFO] <101.735, execute Chunk1.3>
+[INFO] <105.859, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004124832S, ma il suo expected execution time era PT0.004S
+[INFO] <105.859, complete Task1>
+[INFO] <105.859, execute Chunk2.1>
+[INFO] <110.687, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004828066S, ma il suo expected execution time era PT0.004S
+[INFO] <110.687, execute Chunk2.2>
+[INFO] <115.074, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004386652S, ma il suo expected execution time era PT0.005S
+[INFO] <115.074, complete Task2>
+[INFO] <115.074, execute Chunk3.1>
+[INFO] <120.000, release Task1>
+[INFO] <120.000, release Task5>
+[INFO] <120.000, preempt Task3>
+[INFO] <120.000, execute Chunk1.1>
+[INFO] <125.062, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005061838S, ma il suo expected execution time era PT0.004S
+[INFO] <125.062, execute Chunk1.2>
+[INFO] <129.828, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004766093S, ma il suo expected execution time era PT0.004S
+[INFO] <129.828, execute Chunk1.3>
+[INFO] <134.038, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004210105S, ma il suo expected execution time era PT0.004S
+[INFO] <134.038, complete Task1>
+[INFO] <134.038, execute Chunk3.1>
+[INFO] <135.578, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00646569S, ma il suo expected execution time era PT0.007S
+[INFO] <135.578, complete Task3>
+[INFO] <135.578, execute Chunk5.1>
+[INFO] <140.588, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005010232S, ma il suo expected execution time era PT0.005S
+[INFO] <140.588, execute Chunk5.2>
+[INFO] <146.632, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006043874S, ma il suo expected execution time era PT0.005S
+[INFO] <146.632, execute Chunk5.3>
+[INFO] <150.000, release Task2>
+[INFO] <150.000, execute Chunk5.3>
+[INFO] <151.376, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004743692S, ma il suo expected execution time era PT0.005S
+[INFO] <151.376, complete Task5>
+[INFO] <151.376, execute Chunk2.1>
+[INFO] <154.873, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003497266S, ma il suo expected execution time era PT0.004S
+[INFO] <154.873, execute Chunk2.2>
+[INFO] <159.970, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005097S, ma il suo expected execution time era PT0.005S
+[INFO] <159.970, complete Task2>
+[INFO] <159.970, execute Chunk4.1>
+[INFO] <160.000, release Task1>
+[INFO] <160.000, release Task3>
+[INFO] <160.000, preempt Task4>
+[INFO] <160.000, execute Chunk1.1>
+[INFO] <165.208, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005208455S, ma il suo expected execution time era PT0.004S
+[INFO] <165.208, execute Chunk1.2>
+[INFO] <169.086, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003877068S, ma il suo expected execution time era PT0.004S
+[INFO] <169.086, execute Chunk1.3>
+[INFO] <172.254, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003168151S, ma il suo expected execution time era PT0.004S
+[INFO] <172.254, complete Task1>
+[INFO] <172.254, execute Chunk4.1>
+[INFO] <178.214, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005990476S, ma il suo expected execution time era PT0.006S
+[INFO] <178.214, execute Chunk4.2>
+[INFO] <180.000, release Task5>
+[INFO] <180.000, execute Chunk4.2>
+[INFO] <184.101, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005886523S, ma il suo expected execution time era PT0.006S
+[INFO] <184.101, complete Task4>
+[INFO] <184.101, execute Chunk5.1>
+[INFO] <188.321, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004220752S, ma il suo expected execution time era PT0.005S
+[INFO] <188.321, execute Chunk5.2>
+[INFO] <192.951, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004629945S, ma il suo expected execution time era PT0.005S
+[INFO] <192.951, execute Chunk5.3>
+[INFO] <198.246, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005294792S, ma il suo expected execution time era PT0.005S
+[INFO] <198.246, complete Task5>
+[INFO] <198.246, execute Chunk3.1>
+[INFO] <200.000, release Task1>
+[INFO] <200.000, release Task4>
+[INFO] <200.000, release Task2>
+[INFO] <200.000, preempt Task3>
+[INFO] <200.000, execute Chunk1.1>
+[INFO] <203.291, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003291496S, ma il suo expected execution time era PT0.004S
+[INFO] <203.291, execute Chunk1.2>
+[INFO] <207.701, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004409688S, ma il suo expected execution time era PT0.004S
+[INFO] <207.701, execute Chunk1.3>
+[INFO] <210.779, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003077376S, ma il suo expected execution time era PT0.004S
+[INFO] <210.779, complete Task1>
+[INFO] <210.779, execute Chunk3.1>
+[INFO] <216.257, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00723248S, ma il suo expected execution time era PT0.007S
+[INFO] <216.257, complete Task3>
+[INFO] <216.257, execute Chunk2.1>
+[INFO] <220.113, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003855668S, ma il suo expected execution time era PT0.004S
+[INFO] <220.113, execute Chunk2.2>
+[INFO] <224.138, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004025134S, ma il suo expected execution time era PT0.005S
+[INFO] <224.138, complete Task2>
+[INFO] <224.138, execute Chunk4.1>
+[INFO] <232.132, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007993957S, ma il suo expected execution time era PT0.006S
+[INFO] <232.132, execute Chunk4.2>
+[INFO] <240.000, release Task1>
+[INFO] <240.000, release Task5>
+[INFO] <240.000, release Task3>
+[INFO] <240.000, preempt Task4>
+[INFO] <240.000, execute Chunk1.1>
+[INFO] <245.973, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00597274S, ma il suo expected execution time era PT0.004S
+[INFO] <245.973, execute Chunk1.2>
+[INFO] <249.020, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003046951S, ma il suo expected execution time era PT0.004S
+[INFO] <249.020, execute Chunk1.3>
+[INFO] <250.000, release Task2>
+[INFO] <250.000, execute Chunk1.3>
+[INFO] <252.464, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003444586S, ma il suo expected execution time era PT0.004S
+[INFO] <252.464, complete Task1>
+[INFO] <252.464, execute Chunk5.1>
+[INFO] <257.503, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005039157S, ma il suo expected execution time era PT0.005S
+[INFO] <257.503, execute Chunk5.2>
+[INFO] <264.373, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006870063S, ma il suo expected execution time era PT0.005S
+[INFO] <264.373, execute Chunk5.3>
+[INFO] <269.741, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005367306S, ma il suo expected execution time era PT0.005S
+[INFO] <269.741, complete Task5>
+[INFO] <269.741, execute Chunk2.1>
+[INFO] <273.110, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003368734S, ma il suo expected execution time era PT0.004S
+[INFO] <273.110, execute Chunk2.2>
+[INFO] <278.138, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005028558S, ma il suo expected execution time era PT0.005S
+[INFO] <278.138, complete Task2>
+[INFO] <278.138, execute Chunk4.2>
+[INFO] <278.191, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007921222S, ma il suo expected execution time era PT0.006S
+[INFO] <278.191, complete Task4>
+[INFO] <278.191, execute Chunk3.1>
+[INFO] <280.000, release Task1>
+[INFO] <280.000, preempt Task3>
+[INFO] <280.000, execute Chunk1.1>
+[INFO] <285.169, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005169004S, ma il suo expected execution time era PT0.004S
+[INFO] <285.169, execute Chunk1.2>
+[INFO] <289.690, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004520565S, ma il suo expected execution time era PT0.004S
+[INFO] <289.690, execute Chunk1.3>
+[INFO] <294.086, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004396357S, ma il suo expected execution time era PT0.004S
+[INFO] <294.086, complete Task1>
+[INFO] <294.086, execute Chunk3.1>
+[INFO] <300.000, release Task5>
+[INFO] <300.000, release Task4>
+[INFO] <300.000, release Task2>
+[INFO] <300.000, execute Chunk3.1>
+[INFO] <300.590, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008313035S, ma il suo expected execution time era PT0.007S
+[INFO] <300.590, complete Task3>
+[INFO] <300.590, execute Chunk2.1>
+[INFO] <304.807, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004217248S, ma il suo expected execution time era PT0.004S
+[INFO] <304.807, execute Chunk2.2>
+[INFO] <310.683, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005875119S, ma il suo expected execution time era PT0.005S
+[INFO] <310.683, complete Task2>
+[INFO] <310.683, execute Chunk5.1>
+[INFO] <316.214, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005531676S, ma il suo expected execution time era PT0.005S
+[INFO] <316.214, execute Chunk5.2>
+[INFO] <320.000, release Task1>
+[INFO] <320.000, release Task3>
+[INFO] <320.000, execute Chunk5.2>
+[INFO] <320.422, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004207972S, ma il suo expected execution time era PT0.005S
+[INFO] <320.422, execute Chunk5.3>
+[INFO] <325.785, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005363199S, ma il suo expected execution time era PT0.005S
+[INFO] <325.785, complete Task5>
+[INFO] <325.785, execute Chunk1.1>
+[INFO] <330.477, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004691818S, ma il suo expected execution time era PT0.004S
+[INFO] <330.477, execute Chunk1.2>
+[INFO] <334.993, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004516294S, ma il suo expected execution time era PT0.004S
+[INFO] <334.993, execute Chunk1.3>
+[INFO] <338.511, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003517402S, ma il suo expected execution time era PT0.004S
+[INFO] <338.511, complete Task1>
+[INFO] <338.511, execute Chunk4.1>
+[INFO] <345.706, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007194761S, ma il suo expected execution time era PT0.006S
+[INFO] <345.706, execute Chunk4.2>
+[INFO] <350.000, release Task2>
+[INFO] <350.000, preempt Task4>
+[INFO] <350.000, execute Chunk2.1>
+[INFO] <353.209, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003209113S, ma il suo expected execution time era PT0.004S
+[INFO] <353.209, execute Chunk2.2>
+[INFO] <359.026, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005817157S, ma il suo expected execution time era PT0.005S
+[INFO] <359.026, complete Task2>
+[INFO] <359.026, execute Chunk3.1>
+[INFO] <360.000, release Task1>
+[INFO] <360.000, release Task5>
+[INFO] <360.000, preempt Task3>
+[INFO] <360.000, execute Chunk1.1>
+[INFO] <366.652, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006652019S, ma il suo expected execution time era PT0.004S
+[INFO] <366.652, execute Chunk1.2>
+[INFO] <370.149, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003497054S, ma il suo expected execution time era PT0.004S
+[INFO] <370.149, execute Chunk1.3>
+[INFO] <373.179, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003030288S, ma il suo expected execution time era PT0.004S
+[INFO] <373.179, complete Task1>
+[INFO] <373.179, execute Chunk4.2>
+[INFO] <377.696, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00881061S, ma il suo expected execution time era PT0.006S
+[INFO] <377.696, complete Task4>
+[INFO] <377.696, execute Chunk3.1>
+[INFO] <384.678, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007955643S, ma il suo expected execution time era PT0.007S
+[INFO] <384.678, complete Task3>
+[INFO] <384.678, execute Chunk5.1>
+[INFO] <388.768, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004090818S, ma il suo expected execution time era PT0.005S
+[INFO] <388.768, execute Chunk5.2>
+[INFO] <393.718, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004950134S, ma il suo expected execution time era PT0.005S
+[INFO] <393.718, execute Chunk5.3>
+[INFO] <398.841, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00512236S, ma il suo expected execution time era PT0.005S
+[INFO] <398.841, complete Task5>
+[INFO] <400.000, release Task1>
+[INFO] <400.000, release Task4>
+[INFO] <400.000, release Task3>
+[INFO] <400.000, release Task2>
+[INFO] <400.000, execute Chunk1.1>
+[INFO] <403.643, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003643484S, ma il suo expected execution time era PT0.004S
+[INFO] <403.643, execute Chunk1.2>
+[INFO] <407.999, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004355944S, ma il suo expected execution time era PT0.004S
+[INFO] <407.999, execute Chunk1.3>
+[INFO] <411.247, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003247838S, ma il suo expected execution time era PT0.004S
+[INFO] <411.247, complete Task1>
+[INFO] <411.247, execute Chunk2.1>
+[INFO] <415.940, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004692266S, ma il suo expected execution time era PT0.004S
+[INFO] <415.940, execute Chunk2.2>
+[INFO] <420.000, release Task5>
+[INFO] <420.000, execute Chunk2.2>
+[INFO] <421.452, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005512833S, ma il suo expected execution time era PT0.005S
+[INFO] <421.452, complete Task2>
+[INFO] <421.452, execute Chunk5.1>
+[INFO] <425.468, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004015558S, ma il suo expected execution time era PT0.005S
+[INFO] <425.468, execute Chunk5.2>
+[INFO] <429.915, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004446624S, ma il suo expected execution time era PT0.005S
+[INFO] <429.915, execute Chunk5.3>
+[INFO] <434.457, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00454282S, ma il suo expected execution time era PT0.005S
+[INFO] <434.457, complete Task5>
+[INFO] <434.457, execute Chunk3.1>
+[INFO] <440.000, release Task1>
+[INFO] <440.000, preempt Task3>
+[INFO] <440.000, execute Chunk1.1>
+[INFO] <446.536, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006536261S, ma il suo expected execution time era PT0.004S
+[INFO] <446.536, execute Chunk1.2>
+[INFO] <450.000, release Task2>
+[INFO] <450.000, execute Chunk1.2>
+[INFO] <450.265, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003728576S, ma il suo expected execution time era PT0.004S
+[INFO] <450.265, execute Chunk1.3>
+[INFO] <454.578, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004312849S, ma il suo expected execution time era PT0.004S
+[INFO] <454.578, complete Task1>
+[INFO] <454.578, execute Chunk3.1>
+[INFO] <455.465, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006429726S, ma il suo expected execution time era PT0.007S
+[INFO] <455.465, complete Task3>
+[INFO] <455.465, execute Chunk2.1>
+[INFO] <459.271, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003806509S, ma il suo expected execution time era PT0.004S
+[INFO] <459.271, execute Chunk2.2>
+[INFO] <464.833, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00556133S, ma il suo expected execution time era PT0.005S
+[INFO] <464.833, complete Task2>
+[INFO] <464.833, execute Chunk4.1>
+[INFO] <473.680, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008847531S, ma il suo expected execution time era PT0.006S
+[INFO] <473.680, execute Chunk4.2>
+[INFO] <479.224, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005543502S, ma il suo expected execution time era PT0.006S
+[INFO] <479.224, complete Task4>
+[INFO] <480.000, release Task1>
+[INFO] <480.000, release Task5>
+[INFO] <480.000, release Task3>
+[INFO] <480.000, execute Chunk1.1>
+[INFO] <485.141, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005141349S, ma il suo expected execution time era PT0.004S
+[INFO] <485.141, execute Chunk1.2>
+[INFO] <489.288, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004146975S, ma il suo expected execution time era PT0.004S
+[INFO] <489.288, execute Chunk1.3>
+[INFO] <492.727, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003438737S, ma il suo expected execution time era PT0.004S
+[INFO] <492.727, complete Task1>
+[INFO] <492.727, execute Chunk5.1>
+[INFO] <496.960, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004232816S, ma il suo expected execution time era PT0.005S
+[INFO] <496.960, execute Chunk5.2>
+[INFO] <500.000, release Task4>
+[INFO] <500.000, release Task2>
+[INFO] <500.000, end>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, preempt Task5>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <3.740, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003739669S, ma il suo expected execution time era PT0.004S
+[INFO] <3.740, execute Chunk1.2>
+[INFO] <6.795, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003055414S, ma il suo expected execution time era PT0.004S
+[INFO] <6.795, execute Chunk1.3>
+[INFO] <10.524, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00372936S, ma il suo expected execution time era PT0.004S
+[INFO] <10.524, complete Task1>
+[INFO] <10.524, execute Chunk2.1>
+[INFO] <15.167, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004642414S, ma il suo expected execution time era PT0.004S
+[INFO] <15.167, execute Chunk2.2>
+[INFO] <19.800, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00463317S, ma il suo expected execution time era PT0.005S
+[INFO] <19.800, complete Task2>
+[INFO] <19.800, execute Chunk5.1>
+[INFO] <24.036, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004235881S, ma il suo expected execution time era PT0.005S
+[INFO] <24.036, execute Chunk5.2>
+[INFO] <30.010, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005973924S, ma il suo expected execution time era PT0.005S
+[INFO] <30.010, execute Chunk5.3>
+[INFO] <34.143, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004133606S, ma il suo expected execution time era PT0.005S
+[INFO] <34.143, complete Task5>
+[INFO] <34.143, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <45.394, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.0053943S, ma il suo expected execution time era PT0.004S
+[INFO] <45.394, execute Chunk1.2>
+[INFO] <48.465, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003070593S, ma il suo expected execution time era PT0.004S
+[INFO] <48.465, execute Chunk1.3>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.3>
+[INFO] <52.733, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004268357S, ma il suo expected execution time era PT0.004S
+[INFO] <52.733, complete Task1>
+[INFO] <52.733, execute Chunk3.1>
+[INFO] <53.391, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00651473S, ma il suo expected execution time era PT0.007S
+[INFO] <53.391, complete Task3>
+[INFO] <53.391, execute Chunk2.1>
+[INFO] <58.237, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004845554S, ma il suo expected execution time era PT0.004S
+[INFO] <58.237, execute Chunk2.2>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk2.2>
+[INFO] <63.611, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005374357S, ma il suo expected execution time era PT0.005S
+[INFO] <63.611, complete Task2>
+[INFO] <63.611, execute Chunk4.1>
+[INFO] <72.234, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008623077S, ma il suo expected execution time era PT0.006S
+[INFO] <72.234, execute Chunk4.2>
+[INFO] <79.751, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007516819S, ma il suo expected execution time era PT0.006S
+[INFO] <79.751, complete Task4>
+[INFO] <79.751, execute Chunk5.1>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk5.1>
+[INFO] <85.203, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005452159S, ma il suo expected execution time era PT0.005S
+[INFO] <85.203, execute Chunk5.2>
+[INFO] <91.109, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00590531S, ma il suo expected execution time era PT0.005S
+[INFO] <91.109, execute Chunk5.3>
+[INFO] <96.725, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005616696S, ma il suo expected execution time era PT0.005S
+[INFO] <96.725, complete Task5>
+[INFO] <96.725, execute Chunk1.1>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.1>
+[INFO] <102.311, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005585265S, ma il suo expected execution time era PT0.004S
+[INFO] <102.311, execute Chunk1.2>
+[INFO] <107.002, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004691695S, ma il suo expected execution time era PT0.004S
+[INFO] <107.002, execute Chunk1.3>
+[INFO] <111.883, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004880566S, ma il suo expected execution time era PT0.004S
+[INFO] <111.883, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <5.612, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005612236S, ma il suo expected execution time era PT0.004S
+[INFO] <5.612, execute Chunk1.2>
+[INFO] <10.604, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004991431S, ma il suo expected execution time era PT0.004S
+[INFO] <10.604, execute Chunk1.3>
+[INFO] <14.648, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004044513S, ma il suo expected execution time era PT0.004S
+[INFO] <14.648, complete Task1>
+[INFO] <14.648, execute Chunk2.1>
+[INFO] <18.219, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003570969S, ma il suo expected execution time era PT0.004S
+[INFO] <18.219, execute Chunk2.2>
+[INFO] <23.403, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005183641S, ma il suo expected execution time era PT0.005S
+[INFO] <23.403, complete Task2>
+[INFO] <23.403, execute Chunk5.1>
+[INFO] <28.656, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.0052528S, ma il suo expected execution time era PT0.005S
+[INFO] <28.656, execute Chunk5.2>
+[INFO] <34.115, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005459677S, ma il suo expected execution time era PT0.005S
+[INFO] <34.115, execute Chunk5.3>
+[INFO] <39.097, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004981268S, ma il suo expected execution time era PT0.005S
+[INFO] <39.097, complete Task5>
+[INFO] <39.097, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <43.228, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003228228S, ma il suo expected execution time era PT0.004S
+[INFO] <43.228, execute Chunk1.2>
+[INFO] <46.958, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003730002S, ma il suo expected execution time era PT0.004S
+[INFO] <46.958, execute Chunk1.3>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.3>
+[INFO] <51.155, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004196833S, ma il suo expected execution time era PT0.004S
+[INFO] <51.155, complete Task1>
+[INFO] <51.155, execute Chunk3.1>
+[INFO] <57.527, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007275774S, ma il suo expected execution time era PT0.007S
+[INFO] <57.527, complete Task3>
+[INFO] <57.527, execute Chunk2.1>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk2.1>
+[INFO] <61.606, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004078626S, ma il suo expected execution time era PT0.004S
+[INFO] <61.606, execute Chunk2.2>
+[INFO] <66.974, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005367542S, ma il suo expected execution time era PT0.005S
+[INFO] <66.974, complete Task2>
+[INFO] <66.974, execute Chunk4.1>
+[INFO] <75.405, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008431637S, ma il suo expected execution time era PT0.006S
+[INFO] <75.405, execute Chunk4.2>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk4.2>
+[INFO] <81.741, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006335823S, ma il suo expected execution time era PT0.006S
+[INFO] <81.741, complete Task4>
+[INFO] <81.741, execute Chunk5.1>
+[INFO] <86.408, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004666823S, ma il suo expected execution time era PT0.005S
+[INFO] <86.408, execute Chunk5.2>
+[INFO] <92.761, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006352722S, ma il suo expected execution time era PT0.005S
+[INFO] <92.761, execute Chunk5.3>
+[INFO] <98.300, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005539231S, ma il suo expected execution time era PT0.005S
+[INFO] <98.300, complete Task5>
+[INFO] <98.300, execute Chunk1.1>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.1>
+[INFO] <102.497, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004197265S, ma il suo expected execution time era PT0.004S
+[INFO] <102.497, execute Chunk1.2>
+[INFO] <105.810, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003313218S, ma il suo expected execution time era PT0.004S
+[INFO] <105.810, execute Chunk1.3>
+[INFO] <110.447, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004637007S, ma il suo expected execution time era PT0.004S
+[INFO] <110.447, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <4.168, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004167603S, ma il suo expected execution time era PT0.004S
+[INFO] <4.168, execute Chunk1.2>
+[INFO] <7.263, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00309569S, ma il suo expected execution time era PT0.004S
+[INFO] <7.263, execute Chunk1.3>
+[INFO] <11.571, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004307459S, ma il suo expected execution time era PT0.004S
+[INFO] <11.571, complete Task1>
+[INFO] <11.571, execute Chunk2.1>
+[INFO] <15.671, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004100059S, ma il suo expected execution time era PT0.004S
+[INFO] <15.671, execute Chunk2.2>
+[INFO] <20.577, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004905752S, ma il suo expected execution time era PT0.005S
+[INFO] <20.577, complete Task2>
+[INFO] <20.577, execute Chunk5.1>
+[INFO] <26.348, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005771128S, ma il suo expected execution time era PT0.005S
+[INFO] <26.348, execute Chunk5.2>
+[INFO] <30.601, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004253077S, ma il suo expected execution time era PT0.005S
+[INFO] <30.601, execute Chunk5.3>
+[INFO] <35.246, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004645087S, ma il suo expected execution time era PT0.005S
+[INFO] <35.246, complete Task5>
+[INFO] <35.246, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <46.945, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006944804S, ma il suo expected execution time era PT0.004S
+[INFO] <46.945, execute Chunk1.2>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.2>
+[INFO] <50.336, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003391466S, ma il suo expected execution time era PT0.004S
+[INFO] <50.336, execute Chunk1.3>
+[INFO] <53.501, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003164851S, ma il suo expected execution time era PT0.004S
+[INFO] <53.501, complete Task1>
+[INFO] <53.501, execute Chunk3.1>
+[INFO] <55.175, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006428266S, ma il suo expected execution time era PT0.007S
+[INFO] <55.175, complete Task3>
+[INFO] <55.175, execute Chunk2.1>
+[INFO] <58.990, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003815235S, ma il suo expected execution time era PT0.004S
+[INFO] <58.990, execute Chunk2.2>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk2.2>
+[INFO] <64.281, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005290111S, ma il suo expected execution time era PT0.005S
+[INFO] <64.281, complete Task2>
+[INFO] <64.281, execute Chunk4.1>
+[INFO] <70.402, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006121503S, ma il suo expected execution time era PT0.006S
+[INFO] <70.402, execute Chunk4.2>
+[INFO] <77.975, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007573082S, ma il suo expected execution time era PT0.006S
+[INFO] <77.975, complete Task4>
+[INFO] <77.975, execute Chunk5.1>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk5.1>
+[INFO] <83.593, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005617839S, ma il suo expected execution time era PT0.005S
+[INFO] <83.593, execute Chunk5.2>
+[INFO] <88.664, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005071152S, ma il suo expected execution time era PT0.005S
+[INFO] <88.664, execute Chunk5.3>
+[INFO] <93.054, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004389607S, ma il suo expected execution time era PT0.005S
+[INFO] <93.054, complete Task5>
+[INFO] <93.054, execute Chunk1.1>
+[INFO] <98.171, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005117058S, ma il suo expected execution time era PT0.004S
+[INFO] <98.171, execute Chunk1.2>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.2>
+[INFO] <101.602, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003430757S, ma il suo expected execution time era PT0.004S
+[INFO] <101.602, execute Chunk1.3>
+[INFO] <105.066, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003464282S, ma il suo expected execution time era PT0.004S
+[INFO] <105.066, complete Task1>
+[INFO] <105.066, execute Chunk2.1>
+[INFO] <109.048, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003982424S, ma il suo expected execution time era PT0.004S
+[INFO] <109.048, execute Chunk2.2>
+[INFO] <113.417, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004368542S, ma il suo expected execution time era PT0.005S
+[INFO] <113.417, complete Task2>
+[INFO] <113.417, execute Chunk3.1>
+[INFO] <119.542, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006124706S, ma il suo expected execution time era PT0.007S
+[INFO] <119.542, complete Task3>
+[INFO] <119.542, execute Chunk4.1>
+[INFO] <120.000, release Task1>
+[INFO] <120.000, release Task5>
+[INFO] <120.000, preempt Task4>
+[INFO] <120.000, execute Chunk1.1>
+[INFO] <123.980, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003979941S, ma il suo expected execution time era PT0.004S
+[INFO] <123.980, execute Chunk1.2>
+[INFO] <128.045, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004065197S, ma il suo expected execution time era PT0.004S
+[INFO] <128.045, execute Chunk1.3>
+[INFO] <131.472, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003427259S, ma il suo expected execution time era PT0.004S
+[INFO] <131.472, complete Task1>
+[INFO] <131.472, execute Chunk5.1>
+[INFO] <135.702, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004229612S, ma il suo expected execution time era PT0.005S
+[INFO] <135.702, execute Chunk5.2>
+[INFO] <141.578, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005875514S, ma il suo expected execution time era PT0.005S
+[INFO] <141.578, execute Chunk5.3>
+[INFO] <147.175, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005597161S, ma il suo expected execution time era PT0.005S
+[INFO] <147.175, complete Task5>
+[INFO] <147.175, execute Chunk4.1>
+[INFO] <150.000, release Task2>
+[INFO] <150.000, preempt Task4>
+[INFO] <150.000, execute Chunk2.1>
+[INFO] <154.420, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004419777S, ma il suo expected execution time era PT0.004S
+[INFO] <154.420, execute Chunk2.2>
+[INFO] <159.996, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00557668S, ma il suo expected execution time era PT0.005S
+[INFO] <159.996, complete Task2>
+[INFO] <159.996, execute Chunk4.1>
+[INFO] <160.000, release Task1>
+[INFO] <160.000, release Task3>
+[INFO] <160.000, preempt Task4>
+[INFO] <160.000, execute Chunk1.1>
+[INFO] <165.976, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005976404S, ma il suo expected execution time era PT0.004S
+[INFO] <165.976, execute Chunk1.2>
+[INFO] <170.346, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004369598S, ma il suo expected execution time era PT0.004S
+[INFO] <170.346, execute Chunk1.3>
+[INFO] <174.351, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004004696S, ma il suo expected execution time era PT0.004S
+[INFO] <174.351, complete Task1>
+[INFO] <174.351, execute Chunk4.1>
+[INFO] <178.572, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007508153S, ma il suo expected execution time era PT0.006S
+[INFO] <178.572, execute Chunk4.2>
+[INFO] <180.000, release Task5>
+[INFO] <180.000, execute Chunk4.2>
+[INFO] <186.101, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007529681S, ma il suo expected execution time era PT0.006S
+[INFO] <186.101, complete Task4>
+[INFO] <186.101, execute Chunk5.1>
+[INFO] <190.393, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004291864S, ma il suo expected execution time era PT0.005S
+[INFO] <190.393, execute Chunk5.2>
+[INFO] <194.493, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004099504S, ma il suo expected execution time era PT0.005S
+[INFO] <194.493, execute Chunk5.3>
+[INFO] <199.284, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004791292S, ma il suo expected execution time era PT0.005S
+[INFO] <199.284, complete Task5>
+[INFO] <199.284, execute Chunk3.1>
+[INFO] <200.000, release Task1>
+[INFO] <200.000, release Task4>
+[INFO] <200.000, release Task2>
+[INFO] <200.000, preempt Task3>
+[INFO] <200.000, execute Chunk1.1>
+[INFO] <205.369, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005369101S, ma il suo expected execution time era PT0.004S
+[INFO] <205.369, execute Chunk1.2>
+[INFO] <210.352, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004982726S, ma il suo expected execution time era PT0.004S
+[INFO] <210.352, execute Chunk1.3>
+[INFO] <213.843, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003491649S, ma il suo expected execution time era PT0.004S
+[INFO] <213.843, complete Task1>
+[INFO] <213.843, execute Chunk3.1>
+[INFO] <222.048, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008920947S, ma il suo expected execution time era PT0.007S
+[INFO] <222.048, complete Task3>
+[INFO] <222.048, execute Chunk2.1>
+[INFO] <225.276, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003227949S, ma il suo expected execution time era PT0.004S
+[INFO] <225.276, execute Chunk2.2>
+[INFO] <229.486, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00420955S, ma il suo expected execution time era PT0.005S
+[INFO] <229.486, complete Task2>
+[INFO] <229.486, execute Chunk4.1>
+[INFO] <234.589, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005102939S, ma il suo expected execution time era PT0.006S
+[INFO] <234.589, execute Chunk4.2>
+[INFO] <240.000, release Task1>
+[INFO] <240.000, release Task5>
+[INFO] <240.000, release Task3>
+[INFO] <240.000, preempt Task4>
+[INFO] <240.000, execute Chunk1.1>
+[INFO] <244.610, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004609861S, ma il suo expected execution time era PT0.004S
+[INFO] <244.610, execute Chunk1.2>
+[INFO] <248.818, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004207687S, ma il suo expected execution time era PT0.004S
+[INFO] <248.818, execute Chunk1.3>
+[INFO] <250.000, release Task2>
+[INFO] <250.000, execute Chunk1.3>
+[INFO] <253.352, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004534762S, ma il suo expected execution time era PT0.004S
+[INFO] <253.352, complete Task1>
+[INFO] <253.352, execute Chunk5.1>
+[INFO] <258.645, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005292963S, ma il suo expected execution time era PT0.005S
+[INFO] <258.645, execute Chunk5.2>
+[INFO] <265.249, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006603602S, ma il suo expected execution time era PT0.005S
+[INFO] <265.249, execute Chunk5.3>
+[INFO] <270.197, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004947858S, ma il suo expected execution time era PT0.005S
+[INFO] <270.197, complete Task5>
+[INFO] <270.197, execute Chunk2.1>
+[INFO] <275.094, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004897683S, ma il suo expected execution time era PT0.004S
+[INFO] <275.094, execute Chunk2.2>
+[INFO] <280.000, release Task1>
+[INFO] <280.000, execute Chunk2.2>
+[INFO] <280.256, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005161499S, ma il suo expected execution time era PT0.005S
+[INFO] <280.256, complete Task2>
+[INFO] <280.256, execute Chunk4.2>
+[INFO] <282.201, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007356097S, ma il suo expected execution time era PT0.006S
+[INFO] <282.201, complete Task4>
+[INFO] <282.201, execute Chunk1.1>
+[INFO] <286.740, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.0045397S, ma il suo expected execution time era PT0.004S
+[INFO] <286.740, execute Chunk1.2>
+[INFO] <290.548, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003807935S, ma il suo expected execution time era PT0.004S
+[INFO] <290.548, execute Chunk1.3>
+[INFO] <295.286, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00473734S, ma il suo expected execution time era PT0.004S
+[INFO] <295.286, complete Task1>
+[INFO] <295.286, execute Chunk3.1>
+[INFO] <300.000, release Task5>
+[INFO] <300.000, release Task4>
+[INFO] <300.000, release Task2>
+[INFO] <300.000, execute Chunk3.1>
+[INFO] <304.044, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008758384S, ma il suo expected execution time era PT0.007S
+[INFO] <304.044, complete Task3>
+[INFO] <304.044, execute Chunk2.1>
+[INFO] <307.523, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003478664S, ma il suo expected execution time era PT0.004S
+[INFO] <307.523, execute Chunk2.2>
+[INFO] <312.179, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004656276S, ma il suo expected execution time era PT0.005S
+[INFO] <312.179, complete Task2>
+[INFO] <312.179, execute Chunk5.1>
+[INFO] <316.395, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004215954S, ma il suo expected execution time era PT0.005S
+[INFO] <316.395, execute Chunk5.2>
+[INFO] <320.000, release Task1>
+[INFO] <320.000, release Task3>
+[INFO] <320.000, execute Chunk5.2>
+[INFO] <321.329, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004934225S, ma il suo expected execution time era PT0.005S
+[INFO] <321.329, execute Chunk5.3>
+[INFO] <327.280, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005950428S, ma il suo expected execution time era PT0.005S
+[INFO] <327.280, complete Task5>
+[INFO] <327.280, execute Chunk1.1>
+[INFO] <331.098, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003818008S, ma il suo expected execution time era PT0.004S
+[INFO] <331.098, execute Chunk1.2>
+[INFO] <335.879, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004780914S, ma il suo expected execution time era PT0.004S
+[INFO] <335.879, execute Chunk1.3>
+[INFO] <339.972, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.0040939S, ma il suo expected execution time era PT0.004S
+[INFO] <339.972, complete Task1>
+[INFO] <339.972, execute Chunk4.1>
+[INFO] <346.891, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006918931S, ma il suo expected execution time era PT0.006S
+[INFO] <346.891, execute Chunk4.2>
+[INFO] <350.000, release Task2>
+[INFO] <350.000, preempt Task4>
+[INFO] <350.000, execute Chunk2.1>
+[INFO] <353.815, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003814528S, ma il suo expected execution time era PT0.004S
+[INFO] <353.815, execute Chunk2.2>
+[INFO] <359.351, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005536182S, ma il suo expected execution time era PT0.005S
+[INFO] <359.351, complete Task2>
+[INFO] <359.351, execute Chunk3.1>
+[INFO] <360.000, release Task1>
+[INFO] <360.000, release Task5>
+[INFO] <360.000, preempt Task3>
+[INFO] <360.000, execute Chunk1.1>
+[INFO] <366.343, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006342998S, ma il suo expected execution time era PT0.004S
+[INFO] <366.343, execute Chunk1.2>
+[INFO] <369.743, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003399846S, ma il suo expected execution time era PT0.004S
+[INFO] <369.743, execute Chunk1.3>
+[INFO] <373.787, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004043674S, ma il suo expected execution time era PT0.004S
+[INFO] <373.787, complete Task1>
+[INFO] <373.787, execute Chunk4.2>
+[INFO] <379.493, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.008815006S, ma il suo expected execution time era PT0.006S
+[INFO] <379.493, complete Task4>
+[INFO] <379.493, execute Chunk3.1>
+[INFO] <386.175, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007331541S, ma il suo expected execution time era PT0.007S
+[INFO] <386.175, complete Task3>
+[INFO] <386.175, execute Chunk5.1>
+[INFO] <390.323, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004148103S, ma il suo expected execution time era PT0.005S
+[INFO] <390.323, execute Chunk5.2>
+[INFO] <395.671, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005347598S, ma il suo expected execution time era PT0.005S
+[INFO] <395.671, execute Chunk5.3>
+[INFO] <399.761, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004090089S, ma il suo expected execution time era PT0.005S
+[INFO] <399.761, complete Task5>
+[INFO] <400.000, release Task1>
+[INFO] <400.000, release Task4>
+[INFO] <400.000, release Task3>
+[INFO] <400.000, release Task2>
+[INFO] <400.000, execute Chunk1.1>
+[INFO] <405.496, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005496376S, ma il suo expected execution time era PT0.004S
+[INFO] <405.496, execute Chunk1.2>
+[INFO] <410.278, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00478202S, ma il suo expected execution time era PT0.004S
+[INFO] <410.278, execute Chunk1.3>
+[INFO] <415.068, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004789412S, ma il suo expected execution time era PT0.004S
+[INFO] <415.068, complete Task1>
+[INFO] <415.068, execute Chunk2.1>
+[INFO] <418.854, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003785804S, ma il suo expected execution time era PT0.004S
+[INFO] <418.854, execute Chunk2.2>
+[INFO] <420.000, release Task5>
+[INFO] <420.000, execute Chunk2.2>
+[INFO] <423.060, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004206257S, ma il suo expected execution time era PT0.005S
+[INFO] <423.060, complete Task2>
+[INFO] <423.060, execute Chunk5.1>
+[INFO] <429.021, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005960768S, ma il suo expected execution time era PT0.005S
+[INFO] <429.021, execute Chunk5.2>
+[INFO] <433.852, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004831078S, ma il suo expected execution time era PT0.005S
+[INFO] <433.852, execute Chunk5.3>
+[INFO] <439.489, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005636938S, ma il suo expected execution time era PT0.005S
+[INFO] <439.489, complete Task5>
+[INFO] <439.489, execute Chunk3.1>
+[INFO] <440.000, release Task1>
+[INFO] <440.000, preempt Task3>
+[INFO] <440.000, execute Chunk1.1>
+[INFO] <443.425, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003425264S, ma il suo expected execution time era PT0.004S
+[INFO] <443.425, execute Chunk1.2>
+[INFO] <447.166, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00374105S, ma il suo expected execution time era PT0.004S
+[INFO] <447.166, execute Chunk1.3>
+[INFO] <450.000, release Task2>
+[INFO] <450.000, execute Chunk1.3>
+[INFO] <451.430, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004263449S, ma il suo expected execution time era PT0.004S
+[INFO] <451.430, complete Task1>
+[INFO] <451.430, execute Chunk3.1>
+[INFO] <457.092, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006173523S, ma il suo expected execution time era PT0.007S
+[INFO] <457.092, complete Task3>
+[INFO] <457.092, execute Chunk2.1>
+[INFO] <460.828, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003735968S, ma il suo expected execution time era PT0.004S
+[INFO] <460.828, execute Chunk2.2>
+[INFO] <465.318, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004490169S, ma il suo expected execution time era PT0.005S
+[INFO] <465.318, complete Task2>
+[INFO] <465.318, execute Chunk4.1>
+[INFO] <473.035, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007716574S, ma il suo expected execution time era PT0.006S
+[INFO] <473.035, execute Chunk4.2>
+[INFO] <480.000, release Task1>
+[INFO] <480.000, release Task5>
+[INFO] <480.000, release Task3>
+[INFO] <480.000, execute Chunk4.2>
+[INFO] <480.945, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007910542S, ma il suo expected execution time era PT0.006S
+[INFO] <480.945, complete Task4>
+[INFO] <480.945, execute Chunk1.1>
+[INFO] <485.994, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005048527S, ma il suo expected execution time era PT0.004S
+[INFO] <485.994, execute Chunk1.2>
+[INFO] <489.947, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003953272S, ma il suo expected execution time era PT0.004S
+[INFO] <489.947, execute Chunk1.3>
+[INFO] <493.733, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003785566S, ma il suo expected execution time era PT0.004S
+[INFO] <493.733, complete Task1>
+[INFO] <493.733, execute Chunk5.1>
+[INFO] <498.998, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005265658S, ma il suo expected execution time era PT0.005S
+[INFO] <498.998, execute Chunk5.2>
+[INFO] <500.000, release Task4>
+[INFO] <500.000, release Task2>
+[INFO] <500.000, end>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, preempt Task5>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <5.342, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005342263S, ma il suo expected execution time era PT0.004S
+[INFO] <5.342, execute Chunk1.2>
+[INFO] <9.826, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004483303S, ma il suo expected execution time era PT0.004S
+[INFO] <9.826, execute Chunk1.3>
+[INFO] <14.763, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004937702S, ma il suo expected execution time era PT0.004S
+[INFO] <14.763, complete Task1>
+[INFO] <14.763, execute Chunk2.1>
+[INFO] <19.215, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004451689S, ma il suo expected execution time era PT0.004S
+[INFO] <19.215, execute Chunk2.2>
+[INFO] <25.147, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005931985S, ma il suo expected execution time era PT0.005S
+[INFO] <25.147, complete Task2>
+[INFO] <25.147, execute Chunk5.1>
+[INFO] <29.880, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004733167S, ma il suo expected execution time era PT0.005S
+[INFO] <29.880, execute Chunk5.2>
+[INFO] <34.103, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004223193S, ma il suo expected execution time era PT0.005S
+[INFO] <34.103, execute Chunk5.3>
+[INFO] <39.108, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00500427S, ma il suo expected execution time era PT0.005S
+[INFO] <39.108, complete Task5>
+[INFO] <39.108, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <43.086, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003086407S, ma il suo expected execution time era PT0.004S
+[INFO] <43.086, execute Chunk1.2>
+[INFO] <47.828, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004741349S, ma il suo expected execution time era PT0.004S
+[INFO] <47.828, execute Chunk1.3>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.3>
+[INFO] <51.720, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003892262S, ma il suo expected execution time era PT0.004S
+[INFO] <51.720, complete Task1>
+[INFO] <51.720, execute Chunk3.1>
+[INFO] <57.131, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006303328S, ma il suo expected execution time era PT0.007S
+[INFO] <57.131, complete Task3>
+[INFO] <57.131, execute Chunk2.1>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk2.1>
+[INFO] <61.186, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004055343S, ma il suo expected execution time era PT0.004S
+[INFO] <61.186, execute Chunk2.2>
+[INFO] <65.721, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004534436S, ma il suo expected execution time era PT0.005S
+[INFO] <65.721, complete Task2>
+[INFO] <65.721, execute Chunk4.1>
+[INFO] <74.226, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008505581S, ma il suo expected execution time era PT0.006S
+[INFO] <74.226, execute Chunk4.2>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk4.2>
+[INFO] <81.418, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007191877S, ma il suo expected execution time era PT0.006S
+[INFO] <81.418, complete Task4>
+[INFO] <81.418, execute Chunk5.1>
+[INFO] <86.048, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004629406S, ma il suo expected execution time era PT0.005S
+[INFO] <86.048, execute Chunk5.2>
+[INFO] <91.251, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005203688S, ma il suo expected execution time era PT0.005S
+[INFO] <91.251, execute Chunk5.3>
+[INFO] <97.163, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005911591S, ma il suo expected execution time era PT0.005S
+[INFO] <97.163, complete Task5>
+[INFO] <97.163, execute Chunk1.1>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.1>
+[INFO] <100.701, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003538434S, ma il suo expected execution time era PT0.004S
+[INFO] <100.701, execute Chunk1.2>
+[INFO] <105.662, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004960738S, ma il suo expected execution time era PT0.004S
+[INFO] <105.662, execute Chunk1.3>
+[INFO] <110.126, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004463897S, ma il suo expected execution time era PT0.004S
+[INFO] <110.126, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <3.383, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003383238S, ma il suo expected execution time era PT0.004S
+[INFO] <3.383, execute Chunk1.2>
+[INFO] <8.365, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00498169S, ma il suo expected execution time era PT0.004S
+[INFO] <8.365, execute Chunk1.3>
+[INFO] <12.919, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004553612S, ma il suo expected execution time era PT0.004S
+[INFO] <12.919, complete Task1>
+[INFO] <12.919, execute Chunk2.1>
+[INFO] <16.136, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003216989S, ma il suo expected execution time era PT0.004S
+[INFO] <16.136, execute Chunk2.2>
+[INFO] <20.735, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004599332S, ma il suo expected execution time era PT0.005S
+[INFO] <20.735, complete Task2>
+[INFO] <20.735, execute Chunk5.1>
+[INFO] <25.374, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004638836S, ma il suo expected execution time era PT0.005S
+[INFO] <25.374, execute Chunk5.2>
+[INFO] <29.857, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004483356S, ma il suo expected execution time era PT0.005S
+[INFO] <29.857, execute Chunk5.3>
+[INFO] <35.694, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005837104S, ma il suo expected execution time era PT0.005S
+[INFO] <35.694, complete Task5>
+[INFO] <35.694, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <44.590, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004590253S, ma il suo expected execution time era PT0.004S
+[INFO] <44.590, execute Chunk1.2>
+[INFO] <48.972, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00438195S, ma il suo expected execution time era PT0.004S
+[INFO] <48.972, execute Chunk1.3>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.3>
+[INFO] <52.958, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003985647S, ma il suo expected execution time era PT0.004S
+[INFO] <52.958, complete Task1>
+[INFO] <52.958, execute Chunk3.1>
+[INFO] <55.950, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007297987S, ma il suo expected execution time era PT0.007S
+[INFO] <55.950, complete Task3>
+[INFO] <55.950, execute Chunk2.1>
+[INFO] <59.301, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00335109S, ma il suo expected execution time era PT0.004S
+[INFO] <59.301, execute Chunk2.2>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk2.2>
+[INFO] <64.212, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004910956S, ma il suo expected execution time era PT0.005S
+[INFO] <64.212, complete Task2>
+[INFO] <64.212, execute Chunk4.1>
+[INFO] <71.180, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006967574S, ma il suo expected execution time era PT0.006S
+[INFO] <71.180, execute Chunk4.2>
+[INFO] <78.837, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007657048S, ma il suo expected execution time era PT0.006S
+[INFO] <78.837, complete Task4>
+[INFO] <78.837, execute Chunk5.1>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk5.1>
+[INFO] <82.859, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004022555S, ma il suo expected execution time era PT0.005S
+[INFO] <82.859, execute Chunk5.2>
+[INFO] <89.542, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006682881S, ma il suo expected execution time era PT0.005S
+[INFO] <89.542, execute Chunk5.3>
+[INFO] <94.711, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005169334S, ma il suo expected execution time era PT0.005S
+[INFO] <94.711, complete Task5>
+[INFO] <94.711, execute Chunk1.1>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.1>
+[INFO] <100.751, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00603975S, ma il suo expected execution time era PT0.004S
+[INFO] <100.751, execute Chunk1.2>
+[INFO] <105.142, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004391298S, ma il suo expected execution time era PT0.004S
+[INFO] <105.142, execute Chunk1.3>
+[INFO] <109.056, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003913659S, ma il suo expected execution time era PT0.004S
+[INFO] <109.056, complete Task1>
+[INFO] <109.056, execute Chunk2.1>
+[INFO] <113.918, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004862136S, ma il suo expected execution time era PT0.004S
+[INFO] <113.918, execute Chunk2.2>
+[INFO] <119.377, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005458958S, ma il suo expected execution time era PT0.005S
+[INFO] <119.377, complete Task2>
+[INFO] <119.377, execute Chunk3.1>
+[INFO] <120.000, release Task1>
+[INFO] <120.000, release Task5>
+[INFO] <120.000, preempt Task3>
+[INFO] <120.000, execute Chunk1.1>
+[INFO] <123.245, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003245023S, ma il suo expected execution time era PT0.004S
+[INFO] <123.245, execute Chunk1.2>
+[INFO] <127.147, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003901837S, ma il suo expected execution time era PT0.004S
+[INFO] <127.147, execute Chunk1.3>
+[INFO] <131.448, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004301243S, ma il suo expected execution time era PT0.004S
+[INFO] <131.448, complete Task1>
+[INFO] <131.448, execute Chunk3.1>
+[INFO] <138.717, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007891767S, ma il suo expected execution time era PT0.007S
+[INFO] <138.717, complete Task3>
+[INFO] <138.717, execute Chunk5.1>
+[INFO] <142.745, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004027876S, ma il suo expected execution time era PT0.005S
+[INFO] <142.745, execute Chunk5.2>
+[INFO] <147.831, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005086442S, ma il suo expected execution time era PT0.005S
+[INFO] <147.831, execute Chunk5.3>
+[INFO] <150.000, release Task2>
+[INFO] <150.000, execute Chunk5.3>
+[INFO] <152.462, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004631032S, ma il suo expected execution time era PT0.005S
+[INFO] <152.462, complete Task5>
+[INFO] <152.462, execute Chunk2.1>
+[INFO] <155.628, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00316521S, ma il suo expected execution time era PT0.004S
+[INFO] <155.628, execute Chunk2.2>
+[INFO] <160.000, release Task1>
+[INFO] <160.000, release Task3>
+[INFO] <160.000, execute Chunk2.2>
+[INFO] <160.018, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004389965S, ma il suo expected execution time era PT0.005S
+[INFO] <160.018, complete Task2>
+[INFO] <160.018, execute Chunk1.1>
+[INFO] <164.063, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004044983S, ma il suo expected execution time era PT0.004S
+[INFO] <164.063, execute Chunk1.2>
+[INFO] <167.430, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003367865S, ma il suo expected execution time era PT0.004S
+[INFO] <167.430, execute Chunk1.3>
+[INFO] <170.761, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003330261S, ma il suo expected execution time era PT0.004S
+[INFO] <170.761, complete Task1>
+[INFO] <170.761, execute Chunk4.1>
+[INFO] <178.571, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007810123S, ma il suo expected execution time era PT0.006S
+[INFO] <178.571, execute Chunk4.2>
+[INFO] <180.000, release Task5>
+[INFO] <180.000, execute Chunk4.2>
+[INFO] <185.552, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006980821S, ma il suo expected execution time era PT0.006S
+[INFO] <185.552, complete Task4>
+[INFO] <185.552, execute Chunk5.1>
+[INFO] <191.286, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005734198S, ma il suo expected execution time era PT0.005S
+[INFO] <191.286, execute Chunk5.2>
+[INFO] <197.254, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005968216S, ma il suo expected execution time era PT0.005S
+[INFO] <197.254, execute Chunk5.3>
+[INFO] <200.000, release Task1>
+[INFO] <200.000, release Task4>
+[INFO] <200.000, release Task2>
+[INFO] <200.000, execute Chunk5.3>
+[INFO] <201.764, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004509576S, ma il suo expected execution time era PT0.005S
+[INFO] <201.764, complete Task5>
+[INFO] <201.764, execute Chunk1.1>
+[INFO] <205.654, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00389076S, ma il suo expected execution time era PT0.004S
+[INFO] <205.654, execute Chunk1.2>
+[INFO] <208.754, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003099962S, ma il suo expected execution time era PT0.004S
+[INFO] <208.754, execute Chunk1.3>
+[INFO] <212.921, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004166358S, ma il suo expected execution time era PT0.004S
+[INFO] <212.921, complete Task1>
+[INFO] <212.921, execute Chunk3.1>
+[INFO] <220.920, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007999244S, ma il suo expected execution time era PT0.007S
+[INFO] <220.920, complete Task3>
+[INFO] <220.920, execute Chunk2.1>
+[INFO] <225.302, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004382424S, ma il suo expected execution time era PT0.004S
+[INFO] <225.302, execute Chunk2.2>
+[INFO] <229.718, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00441583S, ma il suo expected execution time era PT0.005S
+[INFO] <229.718, complete Task2>
+[INFO] <229.718, execute Chunk4.1>
+[INFO] <236.313, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006594945S, ma il suo expected execution time era PT0.006S
+[INFO] <236.313, execute Chunk4.2>
+[INFO] <240.000, release Task1>
+[INFO] <240.000, release Task5>
+[INFO] <240.000, release Task3>
+[INFO] <240.000, preempt Task4>
+[INFO] <240.000, execute Chunk1.1>
+[INFO] <246.276, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006275601S, ma il suo expected execution time era PT0.004S
+[INFO] <246.276, execute Chunk1.2>
+[INFO] <250.000, release Task2>
+[INFO] <250.000, execute Chunk1.2>
+[INFO] <251.148, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004872624S, ma il suo expected execution time era PT0.004S
+[INFO] <251.148, execute Chunk1.3>
+[INFO] <255.177, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004028959S, ma il suo expected execution time era PT0.004S
+[INFO] <255.177, complete Task1>
+[INFO] <255.177, execute Chunk5.1>
+[INFO] <259.774, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004596512S, ma il suo expected execution time era PT0.005S
+[INFO] <259.774, execute Chunk5.2>
+[INFO] <266.623, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006849527S, ma il suo expected execution time era PT0.005S
+[INFO] <266.623, execute Chunk5.3>
+[INFO] <271.820, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005197241S, ma il suo expected execution time era PT0.005S
+[INFO] <271.820, complete Task5>
+[INFO] <271.820, execute Chunk2.1>
+[INFO] <276.214, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004393295S, ma il suo expected execution time era PT0.004S
+[INFO] <276.214, execute Chunk2.2>
+[INFO] <280.000, release Task1>
+[INFO] <280.000, execute Chunk2.2>
+[INFO] <280.428, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004214509S, ma il suo expected execution time era PT0.005S
+[INFO] <280.428, complete Task2>
+[INFO] <280.428, execute Chunk4.2>
+[INFO] <285.260, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.008518305S, ma il suo expected execution time era PT0.006S
+[INFO] <285.260, complete Task4>
+[INFO] <285.260, execute Chunk1.1>
+[INFO] <289.035, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003775474S, ma il suo expected execution time era PT0.004S
+[INFO] <289.035, execute Chunk1.2>
+[INFO] <292.074, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003038491S, ma il suo expected execution time era PT0.004S
+[INFO] <292.074, execute Chunk1.3>
+[INFO] <296.190, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004116705S, ma il suo expected execution time era PT0.004S
+[INFO] <296.190, complete Task1>
+[INFO] <296.190, execute Chunk3.1>
+[INFO] <300.000, release Task5>
+[INFO] <300.000, release Task4>
+[INFO] <300.000, release Task2>
+[INFO] <300.000, execute Chunk3.1>
+[INFO] <304.023, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007832191S, ma il suo expected execution time era PT0.007S
+[INFO] <304.023, complete Task3>
+[INFO] <304.023, execute Chunk2.1>
+[INFO] <308.036, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004013509S, ma il suo expected execution time era PT0.004S
+[INFO] <308.036, execute Chunk2.2>
+[INFO] <313.083, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00504675S, ma il suo expected execution time era PT0.005S
+[INFO] <313.083, complete Task2>
+[INFO] <313.083, execute Chunk5.1>
+[INFO] <318.844, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005761201S, ma il suo expected execution time era PT0.005S
+[INFO] <318.844, execute Chunk5.2>
+[INFO] <320.000, release Task1>
+[INFO] <320.000, release Task3>
+[INFO] <320.000, execute Chunk5.2>
+[INFO] <323.603, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004758416S, ma il suo expected execution time era PT0.005S
+[INFO] <323.603, execute Chunk5.3>
+[INFO] <329.122, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005519363S, ma il suo expected execution time era PT0.005S
+[INFO] <329.122, complete Task5>
+[INFO] <329.122, execute Chunk1.1>
+[INFO] <333.275, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004153447S, ma il suo expected execution time era PT0.004S
+[INFO] <333.275, execute Chunk1.2>
+[INFO] <336.549, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003273899S, ma il suo expected execution time era PT0.004S
+[INFO] <336.549, execute Chunk1.3>
+[INFO] <339.859, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003309534S, ma il suo expected execution time era PT0.004S
+[INFO] <339.859, complete Task1>
+[INFO] <339.859, execute Chunk4.1>
+[INFO] <346.606, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006746996S, ma il suo expected execution time era PT0.006S
+[INFO] <346.606, execute Chunk4.2>
+[INFO] <350.000, release Task2>
+[INFO] <350.000, preempt Task4>
+[INFO] <350.000, execute Chunk2.1>
+[INFO] <353.833, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003833398S, ma il suo expected execution time era PT0.004S
+[INFO] <353.833, execute Chunk2.2>
+[INFO] <357.838, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004004775S, ma il suo expected execution time era PT0.005S
+[INFO] <357.838, complete Task2>
+[INFO] <357.838, execute Chunk3.1>
+[INFO] <360.000, release Task1>
+[INFO] <360.000, release Task5>
+[INFO] <360.000, preempt Task3>
+[INFO] <360.000, execute Chunk1.1>
+[INFO] <365.369, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005368701S, ma il suo expected execution time era PT0.004S
+[INFO] <365.369, execute Chunk1.2>
+[INFO] <369.983, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004613846S, ma il suo expected execution time era PT0.004S
+[INFO] <369.983, execute Chunk1.3>
+[INFO] <373.686, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00370301S, ma il suo expected execution time era PT0.004S
+[INFO] <373.686, complete Task1>
+[INFO] <373.686, execute Chunk4.2>
+[INFO] <377.857, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007565208S, ma il suo expected execution time era PT0.006S
+[INFO] <377.857, complete Task4>
+[INFO] <377.857, execute Chunk3.1>
+[INFO] <384.175, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008480722S, ma il suo expected execution time era PT0.007S
+[INFO] <384.175, complete Task3>
+[INFO] <384.175, execute Chunk5.1>
+[INFO] <388.496, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004320232S, ma il suo expected execution time era PT0.005S
+[INFO] <388.496, execute Chunk5.2>
+[INFO] <392.976, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004480489S, ma il suo expected execution time era PT0.005S
+[INFO] <392.976, execute Chunk5.3>
+[INFO] <398.961, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005984827S, ma il suo expected execution time era PT0.005S
+[INFO] <398.961, complete Task5>
+[INFO] <400.000, release Task1>
+[INFO] <400.000, release Task4>
+[INFO] <400.000, release Task3>
+[INFO] <400.000, release Task2>
+[INFO] <400.000, execute Chunk1.1>
+[INFO] <405.675, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005675346S, ma il suo expected execution time era PT0.004S
+[INFO] <405.675, execute Chunk1.2>
+[INFO] <409.686, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004010586S, ma il suo expected execution time era PT0.004S
+[INFO] <409.686, execute Chunk1.3>
+[INFO] <413.437, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003750681S, ma il suo expected execution time era PT0.004S
+[INFO] <413.437, complete Task1>
+[INFO] <413.437, execute Chunk2.1>
+[INFO] <417.495, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00405806S, ma il suo expected execution time era PT0.004S
+[INFO] <417.495, execute Chunk2.2>
+[INFO] <420.000, release Task5>
+[INFO] <420.000, execute Chunk2.2>
+[INFO] <422.396, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004901387S, ma il suo expected execution time era PT0.005S
+[INFO] <422.396, complete Task2>
+[INFO] <422.396, execute Chunk5.1>
+[INFO] <428.252, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005855719S, ma il suo expected execution time era PT0.005S
+[INFO] <428.252, execute Chunk5.2>
+[INFO] <432.506, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00425422S, ma il suo expected execution time era PT0.005S
+[INFO] <432.506, execute Chunk5.3>
+[INFO] <437.522, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005015675S, ma il suo expected execution time era PT0.005S
+[INFO] <437.522, complete Task5>
+[INFO] <437.522, execute Chunk3.1>
+[INFO] <440.000, release Task1>
+[INFO] <440.000, preempt Task3>
+[INFO] <440.000, execute Chunk1.1>
+[INFO] <445.765, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005765362S, ma il suo expected execution time era PT0.004S
+[INFO] <445.765, execute Chunk1.2>
+[INFO] <449.254, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003488902S, ma il suo expected execution time era PT0.004S
+[INFO] <449.254, execute Chunk1.3>
+[INFO] <450.000, release Task2>
+[INFO] <450.000, execute Chunk1.3>
+[INFO] <452.832, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00357764S, ma il suo expected execution time era PT0.004S
+[INFO] <452.832, complete Task1>
+[INFO] <452.832, execute Chunk3.1>
+[INFO] <459.278, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008924244S, ma il suo expected execution time era PT0.007S
+[INFO] <459.278, complete Task3>
+[INFO] <459.278, execute Chunk2.1>
+[INFO] <462.638, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003360545S, ma il suo expected execution time era PT0.004S
+[INFO] <462.638, execute Chunk2.2>
+[INFO] <467.876, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005237363S, ma il suo expected execution time era PT0.005S
+[INFO] <467.876, complete Task2>
+[INFO] <467.876, execute Chunk4.1>
+[INFO] <474.192, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006316607S, ma il suo expected execution time era PT0.006S
+[INFO] <474.192, execute Chunk4.2>
+[INFO] <480.000, release Task1>
+[INFO] <480.000, release Task5>
+[INFO] <480.000, release Task3>
+[INFO] <480.000, execute Chunk4.2>
+[INFO] <482.382, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.008189589S, ma il suo expected execution time era PT0.006S
+[INFO] <482.382, complete Task4>
+[INFO] <482.382, execute Chunk1.1>
+[INFO] <488.709, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006327413S, ma il suo expected execution time era PT0.004S
+[INFO] <488.709, execute Chunk1.2>
+[INFO] <491.819, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003109982S, ma il suo expected execution time era PT0.004S
+[INFO] <491.819, execute Chunk1.3>
+[INFO] <496.256, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004437175S, ma il suo expected execution time era PT0.004S
+[INFO] <496.256, complete Task1>
+[INFO] <496.256, execute Chunk5.1>
+[INFO] <500.000, release Task4>
+[INFO] <500.000, release Task2>
+[INFO] <500.000, end>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, preempt Task5>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <3.363, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003363079S, ma il suo expected execution time era PT0.004S
+[INFO] <3.363, execute Chunk1.2>
+[INFO] <8.314, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00495138S, ma il suo expected execution time era PT0.004S
+[INFO] <8.314, execute Chunk1.3>
+[INFO] <13.068, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004753923S, ma il suo expected execution time era PT0.004S
+[INFO] <13.068, complete Task1>
+[INFO] <13.068, execute Chunk2.1>
+[INFO] <18.051, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.0049823S, ma il suo expected execution time era PT0.004S
+[INFO] <18.051, execute Chunk2.2>
+[INFO] <23.052, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005001649S, ma il suo expected execution time era PT0.005S
+[INFO] <23.052, complete Task2>
+[INFO] <23.052, execute Chunk5.1>
+[INFO] <27.772, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004719774S, ma il suo expected execution time era PT0.005S
+[INFO] <27.772, execute Chunk5.2>
+[INFO] <34.578, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006805417S, ma il suo expected execution time era PT0.005S
+[INFO] <34.578, execute Chunk5.3>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, execute Chunk5.3>
+[INFO] <40.436, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005858613S, ma il suo expected execution time era PT0.005S
+[INFO] <40.436, complete Task5>
+[INFO] <40.436, execute Chunk1.1>
+[INFO] <45.007, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004570758S, ma il suo expected execution time era PT0.004S
+[INFO] <45.007, execute Chunk1.2>
+[INFO] <48.385, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00337851S, ma il suo expected execution time era PT0.004S
+[INFO] <48.385, execute Chunk1.3>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.3>
+[INFO] <51.683, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003297834S, ma il suo expected execution time era PT0.004S
+[INFO] <51.683, complete Task1>
+[INFO] <51.683, execute Chunk3.1>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk3.1>
+[INFO] <60.302, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008618376S, ma il suo expected execution time era PT0.007S
+[INFO] <60.302, complete Task3>
+[INFO] <60.302, execute Chunk2.1>
+[INFO] <64.423, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004121478S, ma il suo expected execution time era PT0.004S
+[INFO] <64.423, execute Chunk2.2>
+[INFO] <69.608, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005184827S, ma il suo expected execution time era PT0.005S
+[INFO] <69.608, complete Task2>
+[INFO] <69.608, execute Chunk4.1>
+[INFO] <76.701, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007093286S, ma il suo expected execution time era PT0.006S
+[INFO] <76.701, execute Chunk4.2>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk4.2>
+[INFO] <83.270, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006568847S, ma il suo expected execution time era PT0.006S
+[INFO] <83.270, complete Task4>
+[INFO] <83.270, execute Chunk5.1>
+[INFO] <87.679, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004408656S, ma il suo expected execution time era PT0.005S
+[INFO] <87.679, execute Chunk5.2>
+[INFO] <93.893, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006213977S, ma il suo expected execution time era PT0.005S
+[INFO] <93.893, execute Chunk5.3>
+[INFO] <99.230, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005336972S, ma il suo expected execution time era PT0.005S
+[INFO] <99.230, complete Task5>
+[INFO] <99.230, execute Chunk1.1>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.1>
+[INFO] <104.390, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00516037S, ma il suo expected execution time era PT0.004S
+[INFO] <104.390, execute Chunk1.2>
+[INFO] <108.660, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004270402S, ma il suo expected execution time era PT0.004S
+[INFO] <108.660, execute Chunk1.3>
+[INFO] <113.317, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004656323S, ma il suo expected execution time era PT0.004S
+[INFO] <113.317, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <4.962, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004962135S, ma il suo expected execution time era PT0.004S
+[INFO] <4.962, execute Chunk1.2>
+[INFO] <8.401, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003438984S, ma il suo expected execution time era PT0.004S
+[INFO] <8.401, execute Chunk1.3>
+[INFO] <12.201, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003800008S, ma il suo expected execution time era PT0.004S
+[INFO] <12.201, complete Task1>
+[INFO] <12.201, execute Chunk2.1>
+[INFO] <16.611, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004409647S, ma il suo expected execution time era PT0.004S
+[INFO] <16.611, execute Chunk2.2>
+[INFO] <21.649, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005038257S, ma il suo expected execution time era PT0.005S
+[INFO] <21.649, complete Task2>
+[INFO] <21.649, execute Chunk5.1>
+[INFO] <25.649, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004000424S, ma il suo expected execution time era PT0.005S
+[INFO] <25.649, execute Chunk5.2>
+[INFO] <29.942, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00429274S, ma il suo expected execution time era PT0.005S
+[INFO] <29.942, execute Chunk5.3>
+[INFO] <34.131, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004188572S, ma il suo expected execution time era PT0.005S
+[INFO] <34.131, complete Task5>
+[INFO] <34.131, execute Chunk3.1>
+[INFO] <40.000, release Task1>
+[INFO] <40.000, preempt Task3>
+[INFO] <40.000, execute Chunk1.1>
+[INFO] <46.580, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006580187S, ma il suo expected execution time era PT0.004S
+[INFO] <46.580, execute Chunk1.2>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk1.2>
+[INFO] <50.832, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004251594S, ma il suo expected execution time era PT0.004S
+[INFO] <50.832, execute Chunk1.3>
+[INFO] <54.490, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003658027S, ma il suo expected execution time era PT0.004S
+[INFO] <54.490, complete Task1>
+[INFO] <54.490, execute Chunk3.1>
+[INFO] <56.399, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007777999S, ma il suo expected execution time era PT0.007S
+[INFO] <56.399, complete Task3>
+[INFO] <56.399, execute Chunk2.1>
+[INFO] <60.000, release Task5>
+[INFO] <60.000, execute Chunk2.1>
+[INFO] <60.501, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004102324S, ma il suo expected execution time era PT0.004S
+[INFO] <60.501, execute Chunk2.2>
+[INFO] <65.621, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005120075S, ma il suo expected execution time era PT0.005S
+[INFO] <65.621, complete Task2>
+[INFO] <65.621, execute Chunk4.1>
+[INFO] <72.716, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00709458S, ma il suo expected execution time era PT0.006S
+[INFO] <72.716, execute Chunk4.2>
+[INFO] <80.000, release Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk4.2>
+[INFO] <80.195, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.007479675S, ma il suo expected execution time era PT0.006S
+[INFO] <80.195, complete Task4>
+[INFO] <80.195, execute Chunk5.1>
+[INFO] <84.637, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004442225S, ma il suo expected execution time era PT0.005S
+[INFO] <84.637, execute Chunk5.2>
+[INFO] <89.852, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005214478S, ma il suo expected execution time era PT0.005S
+[INFO] <89.852, execute Chunk5.3>
+[INFO] <94.192, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004340301S, ma il suo expected execution time era PT0.005S
+[INFO] <94.192, complete Task5>
+[INFO] <94.192, execute Chunk1.1>
+[INFO] <97.830, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003638138S, ma il suo expected execution time era PT0.004S
+[INFO] <97.830, execute Chunk1.2>
+[INFO] <100.000, release Task4>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk1.2>
+[INFO] <100.834, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003003304S, ma il suo expected execution time era PT0.004S
+[INFO] <100.834, execute Chunk1.3>
+[INFO] <105.253, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004419554S, ma il suo expected execution time era PT0.004S
+[INFO] <105.253, complete Task1>
+[INFO] <105.253, execute Chunk2.1>
+[INFO] <109.023, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003769386S, ma il suo expected execution time era PT0.004S
+[INFO] <109.023, execute Chunk2.2>
+[INFO] <113.722, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.0046992S, ma il suo expected execution time era PT0.005S
+[INFO] <113.722, complete Task2>
+[INFO] <113.722, execute Chunk3.1>
+[INFO] <120.000, release Task1>
+[INFO] <120.000, release Task5>
+[INFO] <120.000, preempt Task3>
+[INFO] <120.000, execute Chunk1.1>
+[INFO] <123.459, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003458509S, ma il suo expected execution time era PT0.004S
+[INFO] <123.459, execute Chunk1.2>
+[INFO] <127.520, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004061513S, ma il suo expected execution time era PT0.004S
+[INFO] <127.520, execute Chunk1.3>
+[INFO] <132.337, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00481696S, ma il suo expected execution time era PT0.004S
+[INFO] <132.337, complete Task1>
+[INFO] <132.337, execute Chunk3.1>
+[INFO] <133.011, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00695206S, ma il suo expected execution time era PT0.007S
+[INFO] <133.011, complete Task3>
+[INFO] <133.011, execute Chunk5.1>
+[INFO] <137.995, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004984559S, ma il suo expected execution time era PT0.005S
+[INFO] <137.995, execute Chunk5.2>
+[INFO] <144.513, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006517197S, ma il suo expected execution time era PT0.005S
+[INFO] <144.513, execute Chunk5.3>
+[INFO] <150.000, release Task2>
+[INFO] <150.000, execute Chunk5.3>
+[INFO] <150.096, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005583693S, ma il suo expected execution time era PT0.005S
+[INFO] <150.096, complete Task5>
+[INFO] <150.096, execute Chunk2.1>
+[INFO] <154.047, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.003950702S, ma il suo expected execution time era PT0.004S
+[INFO] <154.047, execute Chunk2.2>
+[INFO] <159.698, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005651237S, ma il suo expected execution time era PT0.005S
+[INFO] <159.698, complete Task2>
+[INFO] <159.698, execute Chunk4.1>
+[INFO] <160.000, release Task1>
+[INFO] <160.000, release Task3>
+[INFO] <160.000, preempt Task4>
+[INFO] <160.000, execute Chunk1.1>
+[INFO] <164.052, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004051663S, ma il suo expected execution time era PT0.004S
+[INFO] <164.052, execute Chunk1.2>
+[INFO] <167.407, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003355583S, ma il suo expected execution time era PT0.004S
+[INFO] <167.407, execute Chunk1.3>
+[INFO] <171.111, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003703837S, ma il suo expected execution time era PT0.004S
+[INFO] <171.111, complete Task1>
+[INFO] <171.111, execute Chunk4.1>
+[INFO] <179.742, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008932647S, ma il suo expected execution time era PT0.006S
+[INFO] <179.742, execute Chunk4.2>
+[INFO] <180.000, release Task5>
+[INFO] <180.000, execute Chunk4.2>
+[INFO] <185.008, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005266372S, ma il suo expected execution time era PT0.006S
+[INFO] <185.008, complete Task4>
+[INFO] <185.008, execute Chunk5.1>
+[INFO] <190.793, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005784386S, ma il suo expected execution time era PT0.005S
+[INFO] <190.793, execute Chunk5.2>
+[INFO] <197.027, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006234196S, ma il suo expected execution time era PT0.005S
+[INFO] <197.027, execute Chunk5.3>
+[INFO] <200.000, release Task1>
+[INFO] <200.000, release Task4>
+[INFO] <200.000, release Task2>
+[INFO] <200.000, execute Chunk5.3>
+[INFO] <202.425, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005397641S, ma il suo expected execution time era PT0.005S
+[INFO] <202.425, complete Task5>
+[INFO] <202.425, execute Chunk1.1>
+[INFO] <208.342, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005916999S, ma il suo expected execution time era PT0.004S
+[INFO] <208.342, execute Chunk1.2>
+[INFO] <211.517, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003175818S, ma il suo expected execution time era PT0.004S
+[INFO] <211.517, execute Chunk1.3>
+[INFO] <215.809, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004291208S, ma il suo expected execution time era PT0.004S
+[INFO] <215.809, complete Task1>
+[INFO] <215.809, execute Chunk3.1>
+[INFO] <223.719, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007910395S, ma il suo expected execution time era PT0.007S
+[INFO] <223.719, complete Task3>
+[INFO] <223.719, execute Chunk2.1>
+[INFO] <228.262, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004542906S, ma il suo expected execution time era PT0.004S
+[INFO] <228.262, execute Chunk2.2>
+[INFO] <233.602, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005339862S, ma il suo expected execution time era PT0.005S
+[INFO] <233.602, complete Task2>
+[INFO] <233.602, execute Chunk4.1>
+[INFO] <238.722, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005119966S, ma il suo expected execution time era PT0.006S
+[INFO] <238.722, execute Chunk4.2>
+[INFO] <240.000, release Task1>
+[INFO] <240.000, release Task5>
+[INFO] <240.000, release Task3>
+[INFO] <240.000, preempt Task4>
+[INFO] <240.000, execute Chunk1.1>
+[INFO] <246.810, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006809735S, ma il suo expected execution time era PT0.004S
+[INFO] <246.810, execute Chunk1.2>
+[INFO] <250.000, release Task2>
+[INFO] <250.000, execute Chunk1.2>
+[INFO] <251.772, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004962491S, ma il suo expected execution time era PT0.004S
+[INFO] <251.772, execute Chunk1.3>
+[INFO] <255.749, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003976275S, ma il suo expected execution time era PT0.004S
+[INFO] <255.749, complete Task1>
+[INFO] <255.749, execute Chunk5.1>
+[INFO] <260.283, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004534727S, ma il suo expected execution time era PT0.005S
+[INFO] <260.283, execute Chunk5.2>
+[INFO] <264.524, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004240998S, ma il suo expected execution time era PT0.005S
+[INFO] <264.524, execute Chunk5.3>
+[INFO] <270.366, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.005841708S, ma il suo expected execution time era PT0.005S
+[INFO] <270.366, complete Task5>
+[INFO] <270.366, execute Chunk2.1>
+[INFO] <274.587, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004221301S, ma il suo expected execution time era PT0.004S
+[INFO] <274.587, execute Chunk2.2>
+[INFO] <278.686, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004099093S, ma il suo expected execution time era PT0.005S
+[INFO] <278.686, complete Task2>
+[INFO] <278.686, execute Chunk4.2>
+[INFO] <280.000, release Task1>
+[INFO] <280.000, execute Chunk4.2>
+[INFO] <282.690, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005282S, ma il suo expected execution time era PT0.006S
+[INFO] <282.690, complete Task4>
+[INFO] <282.690, execute Chunk1.1>
+[INFO] <288.923, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006233145S, ma il suo expected execution time era PT0.004S
+[INFO] <288.923, execute Chunk1.2>
+[INFO] <292.936, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004012488S, ma il suo expected execution time era PT0.004S
+[INFO] <292.936, execute Chunk1.3>
+[INFO] <295.992, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00305633S, ma il suo expected execution time era PT0.004S
+[INFO] <295.992, complete Task1>
+[INFO] <295.992, execute Chunk3.1>
+[INFO] <300.000, release Task5>
+[INFO] <300.000, release Task4>
+[INFO] <300.000, release Task2>
+[INFO] <300.000, execute Chunk3.1>
+[INFO] <304.853, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008861024S, ma il suo expected execution time era PT0.007S
+[INFO] <304.853, complete Task3>
+[INFO] <304.853, execute Chunk2.1>
+[INFO] <309.558, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004705051S, ma il suo expected execution time era PT0.004S
+[INFO] <309.558, execute Chunk2.2>
+[INFO] <314.085, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004526425S, ma il suo expected execution time era PT0.005S
+[INFO] <314.085, complete Task2>
+[INFO] <314.085, execute Chunk5.1>
+[INFO] <318.829, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004744058S, ma il suo expected execution time era PT0.005S
+[INFO] <318.829, execute Chunk5.2>
+[INFO] <320.000, release Task1>
+[INFO] <320.000, release Task3>
+[INFO] <320.000, execute Chunk5.2>
+[INFO] <325.026, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006197447S, ma il suo expected execution time era PT0.005S
+[INFO] <325.026, execute Chunk5.3>
+[INFO] <329.958, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.00493174S, ma il suo expected execution time era PT0.005S
+[INFO] <329.958, complete Task5>
+[INFO] <329.958, execute Chunk1.1>
+[INFO] <334.088, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00413001S, ma il suo expected execution time era PT0.004S
+[INFO] <334.088, execute Chunk1.2>
+[INFO] <338.210, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00412216S, ma il suo expected execution time era PT0.004S
+[INFO] <338.210, execute Chunk1.3>
+[INFO] <341.741, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003530906S, ma il suo expected execution time era PT0.004S
+[INFO] <341.741, complete Task1>
+[INFO] <341.741, execute Chunk4.1>
+[INFO] <348.508, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006766948S, ma il suo expected execution time era PT0.006S
+[INFO] <348.508, execute Chunk4.2>
+[INFO] <350.000, release Task2>
+[INFO] <350.000, preempt Task4>
+[INFO] <350.000, execute Chunk2.1>
+[INFO] <354.451, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004451205S, ma il suo expected execution time era PT0.004S
+[INFO] <354.451, execute Chunk2.2>
+[INFO] <359.209, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004757884S, ma il suo expected execution time era PT0.005S
+[INFO] <359.209, complete Task2>
+[INFO] <359.209, execute Chunk3.1>
+[INFO] <360.000, release Task1>
+[INFO] <360.000, release Task5>
+[INFO] <360.000, preempt Task3>
+[INFO] <360.000, execute Chunk1.1>
+[INFO] <365.513, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005513445S, ma il suo expected execution time era PT0.004S
+[INFO] <365.513, execute Chunk1.2>
+[INFO] <369.029, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003515777S, ma il suo expected execution time era PT0.004S
+[INFO] <369.029, execute Chunk1.3>
+[INFO] <373.997, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004968008S, ma il suo expected execution time era PT0.004S
+[INFO] <373.997, complete Task1>
+[INFO] <373.997, execute Chunk4.2>
+[INFO] <379.363, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006857695S, ma il suo expected execution time era PT0.006S
+[INFO] <379.363, complete Task4>
+[INFO] <379.363, execute Chunk3.1>
+[INFO] <385.596, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.007024392S, ma il suo expected execution time era PT0.007S
+[INFO] <385.596, complete Task3>
+[INFO] <385.596, execute Chunk5.1>
+[INFO] <390.277, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00468051S, ma il suo expected execution time era PT0.005S
+[INFO] <390.277, execute Chunk5.2>
+[INFO] <395.361, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005084511S, ma il suo expected execution time era PT0.005S
+[INFO] <395.361, execute Chunk5.3>
+[INFO] <399.593, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004231306S, ma il suo expected execution time era PT0.005S
+[INFO] <399.593, complete Task5>
+[INFO] <400.000, release Task1>
+[INFO] <400.000, release Task4>
+[INFO] <400.000, release Task3>
+[INFO] <400.000, release Task2>
+[INFO] <400.000, execute Chunk1.1>
+[INFO] <406.329, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006329497S, ma il suo expected execution time era PT0.004S
+[INFO] <406.329, execute Chunk1.2>
+[INFO] <411.087, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004757518S, ma il suo expected execution time era PT0.004S
+[INFO] <411.087, execute Chunk1.3>
+[INFO] <414.748, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003660693S, ma il suo expected execution time era PT0.004S
+[INFO] <414.748, complete Task1>
+[INFO] <414.748, execute Chunk2.1>
+[INFO] <417.762, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00301423S, ma il suo expected execution time era PT0.004S
+[INFO] <417.762, execute Chunk2.2>
+[INFO] <420.000, release Task5>
+[INFO] <420.000, execute Chunk2.2>
+[INFO] <423.552, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005790068S, ma il suo expected execution time era PT0.005S
+[INFO] <423.552, complete Task2>
+[INFO] <423.552, execute Chunk5.1>
+[INFO] <428.583, finish Chunk5.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.005031341S, ma il suo expected execution time era PT0.005S
+[INFO] <428.583, execute Chunk5.2>
+[INFO] <433.773, finish Chunk5.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.005189882S, ma il suo expected execution time era PT0.005S
+[INFO] <433.773, execute Chunk5.3>
+[INFO] <438.266, finish Chunk5.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004492271S, ma il suo expected execution time era PT0.005S
+[INFO] <438.266, complete Task5>
+[INFO] <438.266, execute Chunk3.1>
+[INFO] <440.000, release Task1>
+[INFO] <440.000, preempt Task3>
+[INFO] <440.000, execute Chunk1.1>
+[INFO] <445.922, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00592208S, ma il suo expected execution time era PT0.004S
+[INFO] <445.922, execute Chunk1.2>
+[INFO] <449.491, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.003568464S, ma il suo expected execution time era PT0.004S
+[INFO] <449.491, execute Chunk1.3>
+[INFO] <450.000, release Task2>
+[INFO] <450.000, execute Chunk1.3>
+[INFO] <453.521, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.004030106S, ma il suo expected execution time era PT0.004S
+[INFO] <453.521, complete Task1>
+[INFO] <453.521, execute Chunk3.1>
+[INFO] <460.354, finish Chunk3.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.008567995S, ma il suo expected execution time era PT0.007S
+[INFO] <460.354, complete Task3>
+[INFO] <460.354, execute Chunk2.1>
+[INFO] <465.299, finish Chunk2.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.004944624S, ma il suo expected execution time era PT0.004S
+[INFO] <465.299, execute Chunk2.2>
+[INFO] <470.872, finish Chunk2.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.00557336S, ma il suo expected execution time era PT0.005S
+[INFO] <470.872, complete Task2>
+[INFO] <470.872, execute Chunk4.1>
+[INFO] <477.640, finish Chunk4.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.006767821S, ma il suo expected execution time era PT0.006S
+[INFO] <477.640, execute Chunk4.2>
+[INFO] <480.000, release Task1>
+[INFO] <480.000, release Task5>
+[INFO] <480.000, release Task3>
+[INFO] <480.000, execute Chunk4.2>
+[INFO] <484.615, finish Chunk4.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.006975373S, ma il suo expected execution time era PT0.006S
+[INFO] <484.615, complete Task4>
+[INFO] <484.615, execute Chunk1.1>
+[INFO] <489.157, finish Chunk1.1>
+[WARNING] Il chunk 1 ha eseguito per PT0.00454164S, ma il suo expected execution time era PT0.004S
+[INFO] <489.157, execute Chunk1.2>
+[INFO] <493.658, finish Chunk1.2>
+[WARNING] Il chunk 2 ha eseguito per PT0.004500968S, ma il suo expected execution time era PT0.004S
+[INFO] <493.658, execute Chunk1.3>
+[INFO] <497.215, finish Chunk1.3>
+[WARNING] Il chunk 3 ha eseguito per PT0.003556769S, ma il suo expected execution time era PT0.004S
+[INFO] <497.215, complete Task1>
+[INFO] <497.215, execute Chunk5.1>
+[INFO] <500.000, release Task4>
+[INFO] <500.000, release Task2>
+[INFO] <500.000, end>
+

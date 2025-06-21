@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  20 JUN 2025 21:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  21 JUN 2025 14:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -879,10 +879,6 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 4.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 4.
-)
-\tf@toc=\write4
-\openout4 = `main.toc'.
-
 
 
 [2
@@ -890,13 +886,19 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 
 
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (build/main.lof)
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+
+
+[3] (build/main.lof)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
 
 
-[3
+[4
 
 
 ]
@@ -909,153 +911,166 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 10
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
 
-[4
+[5
 
 
 
 ])
 
-[5]
+[6]
 \openout2 = `capitoli/2-utilizzo.aux'.
 
  (./capitoli/2-utilizzo.tex
 chapter 2.
 
 
-[6
+[7
 
 
 
 
 
 ]
-<immagini/taskset baseline.pdf, id=136, 1242.6425pt x 835.12pt>
+<immagini/taskset baseline.pdf, id=149, 1242.6425pt x 835.12pt>
 File: immagini/taskset baseline.pdf Graphic file (type pdf)
 <use immagini/taskset baseline.pdf>
 Package pdftex.def Info: immagini/taskset baseline.pdf  used on input line 27.
 (pdftex.def)             Requested size: 183.4495pt x 123.28745pt.
-<immagini/trace baseline.pdf, id=137, 792.9625pt x 1196.47pt>
+<immagini/trace baseline.pdf, id=150, 792.9625pt x 1196.47pt>
 File: immagini/trace baseline.pdf Graphic file (type pdf)
 <use immagini/trace baseline.pdf>
 Package pdftex.def Info: immagini/trace baseline.pdf  used on input line 36.
 (pdftex.def)             Requested size: 183.4495pt x 276.7889pt.
-<immagini/taskset baseline con risorse.pdf, id=140, 1517.67pt x 907.39pt>
+<immagini/taskset baseline con risorse.pdf, id=153, 1517.67pt x 907.39pt>
 File: immagini/taskset baseline con risorse.pdf Graphic file (type pdf)
 <use immagini/taskset baseline con risorse.pdf>
 Package pdftex.def Info: immagini/taskset baseline con risorse.pdf  used on input line 55.
 (pdftex.def)             Requested size: 183.4495pt x 109.6713pt.
-<immagini/trace baseline con risorse.pdf, id=141, 879.285pt x 1485.55pt>
+<immagini/trace baseline con risorse.pdf, id=154, 879.285pt x 1485.55pt>
 File: immagini/trace baseline con risorse.pdf Graphic file (type pdf)
 <use immagini/trace baseline con risorse.pdf>
 Package pdftex.def Info: immagini/trace baseline con risorse.pdf  used on input line 64.
 (pdftex.def)             Requested size: 183.4495pt x 309.93462pt.
-<immagini/taskset additional ET chunk.pdf, id=144, 1357.07pt x 1088.065pt>
+<immagini/taskset additional ET chunk.pdf, id=157, 1357.07pt x 1088.065pt>
 File: immagini/taskset additional ET chunk.pdf Graphic file (type pdf)
 <use immagini/taskset additional ET chunk.pdf>
 Package pdftex.def Info: immagini/taskset additional ET chunk.pdf  used on input line 81.
 (pdftex.def)             Requested size: 183.4495pt x 147.08167pt.
-<immagini/trace additional ET chunk.pdf, id=145, 1734.48pt x 1341.01pt>
+<immagini/trace additional ET chunk.pdf, id=158, 1734.48pt x 1341.01pt>
 File: immagini/trace additional ET chunk.pdf Graphic file (type pdf)
 <use immagini/trace additional ET chunk.pdf>
 Package pdftex.def Info: immagini/trace additional ET chunk.pdf  used on input line 90.
 (pdftex.def)             Requested size: 183.4495pt x 141.82307pt.
 
 
-[7 <./immagini/taskset baseline.pdf> <./immagini/trace baseline.pdf>]
+[8 <./immagini/taskset baseline.pdf> <./immagini/trace baseline.pdf>]
 
-[8 <./immagini/taskset baseline con risorse.pdf> <./immagini/trace baseline con risorse.pdf> <./immagini/taskset additional ET chunk.pdf> <./immagini/trace additional ET chunk.pdf>]
-<immagini/taskset fault set priority.pdf, id=194, 1401.235pt x 1196.47pt>
+[9 <./immagini/taskset baseline con risorse.pdf> <./immagini/trace baseline con risorse.pdf> <./immagini/taskset additional ET chunk.pdf> <./immagini/trace additional ET chunk.pdf>]
+<immagini/taskset fault set priority.pdf, id=206, 1401.235pt x 1196.47pt>
 File: immagini/taskset fault set priority.pdf Graphic file (type pdf)
 <use immagini/taskset fault set priority.pdf>
 Package pdftex.def Info: immagini/taskset fault set priority.pdf  used on input line 107.
 (pdftex.def)             Requested size: 183.4495pt x 156.64195pt.
-<immagini/trace fault set priority.pdf, id=195, 1836.8625pt x 1304.875pt>
+<immagini/trace fault set priority.pdf, id=207, 1836.8625pt x 1304.875pt>
 File: immagini/trace fault set priority.pdf Graphic file (type pdf)
 <use immagini/trace fault set priority.pdf>
 Package pdftex.def Info: immagini/trace fault set priority.pdf  used on input line 118.
 (pdftex.def)             Requested size: 183.4495pt x 130.31595pt.
-<immagini/taskset fault acquire resource.pdf, id=198, 1415.2875pt x 1196.47pt>
+<immagini/taskset fault acquire resource.pdf, id=210, 1415.2875pt x 1196.47pt>
 File: immagini/taskset fault acquire resource.pdf Graphic file (type pdf)
 <use immagini/taskset fault acquire resource.pdf>
 Package pdftex.def Info: immagini/taskset fault acquire resource.pdf  used on input line 137.
 (pdftex.def)             Requested size: 183.4495pt x 155.07188pt.
-<immagini/trace fault acquire resource.pdf, id=199, 1415.2875pt x 1413.28pt>
+<immagini/trace fault acquire resource.pdf, id=211, 1415.2875pt x 1413.28pt>
 File: immagini/trace fault acquire resource.pdf Graphic file (type pdf)
 <use immagini/trace fault acquire resource.pdf>
 Package pdftex.def Info: immagini/trace fault acquire resource.pdf  used on input line 148.
 (pdftex.def)             Requested size: 183.4495pt x 183.17216pt.
 )
 
-[9 <./immagini/taskset fault set priority.pdf> <./immagini/trace fault set priority.pdf>]
+[10 <./immagini/taskset fault set priority.pdf> <./immagini/trace fault set priority.pdf>]
 
-[10 <./immagini/taskset fault acquire resource.pdf> <./immagini/trace fault acquire resource.pdf>]
+[11 <./immagini/taskset fault acquire resource.pdf> <./immagini/trace fault acquire resource.pdf>]
 \openout2 = `capitoli/3-analisi.aux'.
 
  (./capitoli/3-analisi.tex
 chapter 3.
 
 
-[11
+[12
 
 
 
 
 
 ]
-<immagini/class diagram.pdf, id=238, 1593.955pt x 759.83875pt>
+<immagini/class diagram.pdf, id=250, 1593.955pt x 759.83875pt>
 File: immagini/class diagram.pdf Graphic file (type pdf)
 <use immagini/class diagram.pdf>
 Package pdftex.def Info: immagini/class diagram.pdf  used on input line 37.
 (pdftex.def)             Requested size: 452.9679pt x 215.9302pt.
 )
 
-[12 <./immagini/class diagram.pdf>]
+[13 <./immagini/class diagram.pdf>]
 \openout2 = `capitoli/4-implementazione.aux'.
 
  (./capitoli/4-implementazione.tex
 chapter 4.
 
 
-[13
+[14
 
 
 
 
 
 ]
-<immagini/sequence diagram.pdf, id=255, 608.2725pt x 572.1375pt>
+<immagini/sequence diagram.pdf, id=267, 608.2725pt x 572.1375pt>
 File: immagini/sequence diagram.pdf Graphic file (type pdf)
 <use immagini/sequence diagram.pdf>
 Package pdftex.def Info: immagini/sequence diagram.pdf  used on input line 45.
 (pdftex.def)             Requested size: 339.72592pt x 319.54799pt.
 
 
-[14]
+[15]
 
-[15 <./immagini/sequence diagram.pdf>]
-
-[16]
+[16 <./immagini/sequence diagram.pdf>]
 
 [17]
 
-[18])
+[18]
 
-[19]
+[19])
+
+[20]
 \openout2 = `capitoli/5-dataset.aux'.
 
  (./capitoli/5-dataset.tex
 chapter 5.
-)
+<immagini/datasetEDF.pdf, id=302, 1373.13pt x 2714.14pt>
+File: immagini/datasetEDF.pdf Graphic file (type pdf)
+<use immagini/datasetEDF.pdf>
+Package pdftex.def Info: immagini/datasetEDF.pdf  used on input line 9.
+(pdftex.def)             Requested size: 181.18439pt x 358.11021pt.
 
-[20
-
-
-
-
-
-]
 
 [21
+
+
+
+
+
+ <./immagini/datasetEDF.pdf>]
+<immagini/datasetRM.pdf, id=315, 1415.2875pt x 2569.6pt>
+File: immagini/datasetRM.pdf Graphic file (type pdf)
+<use immagini/datasetRM.pdf>
+Package pdftex.def Info: immagini/datasetRM.pdf  used on input line 22.
+(pdftex.def)             Requested size: 226.48395pt x 411.18361pt.
+)
+
+[22 <./immagini/datasetRM.pdf>]
+
+[23
 
 
 
@@ -1070,18 +1085,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26822 strings out of 467886
- 491371 string characters out of 5434039
- 1469627 words of memory out of 5000000
- 54960 multiletter control sequences out of 15000+600000
+ 26847 strings out of 467886
+ 491962 string characters out of 5434039
+ 1469821 words of memory out of 5000000
+ 54979 multiletter control sequences out of 15000+600000
  654571 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,9n,107p,10997b,1895s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,9n,107p,10997b,2204s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on build/main.pdf (21 pages, 2201617 bytes).
+Output written on build/main.pdf (23 pages, 2882628 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
- 378 compressed objects within 4 object streams
- 68 named destinations out of 1000 (max. 500000)
- 330 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 504 PDF objects out of 1000 (max. 8388607)
+ 413 compressed objects within 5 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 356 words of extra memory for PDF output out of 10000 (max. 10000000)
 

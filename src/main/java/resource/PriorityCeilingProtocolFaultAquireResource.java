@@ -19,7 +19,7 @@ import utils.logger.MyLogger;
  */
 public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesProtocol {
 
-    private final Map<Resource, Integer> ceiling = new HashMap<>();
+    private Map<Resource, Integer> ceiling = new HashMap<>();
     private List<Resource> busyResources = new LinkedList<>();
     private final double threshold;
     private List<Chunk> faultChunks = new LinkedList<>();
@@ -83,7 +83,7 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
                     .collect(Collectors.joining(", ", "[", "]"));
                 MyLogger.wrn("Il Chunk" + chunk.toString()
                     +" non ha acquisito le risorse " + resourcesId
-                    + "prima di usarle");
+                    + " prima di usarle");
             } else {
                 this.busyResources.addAll(resources);
                 parentTask.acquireResources(resources);
@@ -133,6 +133,9 @@ public final class PriorityCeilingProtocolFaultAquireResource extends ResourcesP
 
     @Override
     public void initStructures(TaskSet taskSet) {
+        this.ceiling = new HashMap<>();
+        this.busyResources = new LinkedList<>();
+        this.faultChunks = new LinkedList<>();
         for (Task task : taskSet.getTasks())
             for (Chunk chunk : task.getChunks())
                 for (Resource resource : chunk.getResources())

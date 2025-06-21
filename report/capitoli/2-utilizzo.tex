@@ -1,19 +1,19 @@
 \chapter{Utilizzo}
 Nei prossimi punti vediamo degli accorgimenti che sono utili per far utilizzare il sistema nel modo corretto. Per osservare degli esempi di come strutturare il codice osservare le sezioni di questo capitolo.
 \begin{itemize}
-    \item Gli elementi del sistema, come chunk, task, taskset, scheduler e protocollo di accesso alle risorse, devono essere definiti all'interno del main. Una volta definito tutto si deve chiamare il metodo \texttt{schedule} sullo scheduler. Nel caso si voglia generare una sorta di dataset di tracce, è prevista la possibilità di chiamare più volte il medtodo \texttt{schedule} all'interno dello stesso main. Per generare un dataset di tracce è invece necessario chiamare il metodo \texttt{scheduleDataset} passando come parametro il numero di tracce.
+    \item Gli elementi del sistema, come chunk, task, taskset, scheduler e protocollo di accesso alle risorse, devono essere definiti all'interno del main. Una volta definito tutto si deve chiamare il metodo \texttt{schedule} sullo scheduler. Nel caso si voglia generare una sorta di dataset di tracce, è prevista la possibilità di chiamare più volte il metodo \texttt{schedule} all'interno dello stesso main. Per generare un dataset di tracce è invece necessario chiamare il metodo \texttt{scheduleDataset} passando come parametro il numero di tracce.
     \item Un chunk campiona il suo tempo di esecuzione da una distribuzione. Tale distribuzione, passata come parametro del costruttore, è un oggetto di tipo \texttt{Sampler} definito nella libreria Sirio. Oltre alle distribuzioni introdotte da Sirio è presente anche l'implementazione \texttt{ConstantSampler}, che definisce un campionamento costante.
-    \item I tempi devono essere passati al sistema e letti da esso in milli secondi. Il sistema li gestisce in nanosecondi per avere un'alta precisione.
+    \item I tempi devono essere passati al sistema e letti da esso in millisecondi. Il sistema li gestisce in nanosecondi per avere un'alta precisione.
     \item Quando si vuole introdurre il fault relativo alla priorità dinamica settata da PCP si deve specificare il valore minimo e massimo entro cui campionare. Questi valori sono intesi come esclusi.
-    \item Quando si vuole introdurre il fault relativo all'acquisizione del semafore associato alle risorse, la soglia specificata deve essere in un intervallo 0.0 e 1.0.
+    \item Quando si vuole introdurre il fault relativo all'acquisizione del semaforo associato alle risorse, la soglia specificata deve essere in un intervallo tra 0.0 e 1.0.
 \end{itemize}
-Per concludere analiziamo come il sistema si comporta sulla generazione di dataset. Si procederà in modo incrementale, per capire come affrontare lo scheduling di taskset più semplici e poi quelli più complessi.
+Per concludere analizziamo come il sistema si comporta sulla generazione di dataset. Si procederà in modo incrementale, per capire come affrontare lo scheduling di taskset più semplici e poi quelli più complessi.
 
-Questa parte può essere anche utile per capire come struttrare il main ed utilizzare il simulatore.
+Questa parte può essere anche utile per capire come strutturare il main ed utilizzare il simulatore.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Baseline}
-Vediamo come funziona una simulazione tramite RM con un taskset molto semplice. Il taskset in questione, come si può notare dal codice in Figura~\ref{fig:baselineTaskset}, è molto semplice in modo da poter osservare le differenze tra le due simulazioni. Si tratta di un task con due task puramenti periodici: il primo ha periodo e deadline relativo pari a 20ms e un chunk con un exectuion time di 10ms; il secondo ha periodo e deadline di 60ms e tre chunk con execution time rispettivamente di 5ms, 4ms e 3ms.
+Vediamo come funziona una simulazione tramite RM con un taskset molto semplice. Il taskset in questione, come si può notare dal codice in Figura~\ref{fig:baselineTaskset}, è molto semplice in modo da poter osservare le differenze tra le due simulazioni. Si tratta di un taskset con due task puramente periodici: il primo ha periodo e deadline relativo pari a 20ms e un chunk con un execution time di 10ms; il secondo ha periodo e deadline di 60ms e tre chunk con execution time rispettivamente di 5ms, 4ms e 3ms.
 
 La traccia in Figura~\ref{fig:baselineTrace} è l'output della simulazione.
 
@@ -43,7 +43,7 @@ La traccia in Figura~\ref{fig:baselineTrace} è l'output della simulazione.
 
 \myskip
 
-Di seguito osserviamo invece lo stesso taskset schedulato sempre con RM, ma in cui due chunk (uno per task) condividono una risorsa. In Figura~\ref{fig:baselineTasksetWRes} possiamo osserve come configurarlo, mentre in Figura~\ref{fig:baselineTraceWRes} possiamo osservare la traccia della simulazione.
+Di seguito osserviamo invece lo stesso taskset schedulato sempre con RM, ma in cui due chunk (uno per task) condividono una risorsa. In Figura~\ref{fig:baselineTasksetWRes} possiamo osservare come configurarlo, mentre in Figura~\ref{fig:baselineTraceWRes} possiamo osservare la traccia della simulazione.
 
 \begin{figure}[htbp]
     \centering
@@ -97,7 +97,7 @@ Nella Figura~\ref{fig:tasksetAdditionalET} si osserva come specificare un chunk 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{PCP with faulty priority setting}
-Nella Figura~\ref{fig:tasksetFaultSetPriority} vediamo un esempio di simulazione in cui i chunk dei task hanno una risorsa condivisa e il protocollo di accesso alle risorse non si comporta come previsto, ma setta la priorità del task che acquisiscono la risorsa pari a quella corretta più un valore campionato da una distribuzione uniforme tra -2 e 2. Questo porta alla generazione della traccia mostrata in Figura~\ref{fig:traceFaultSetPriority}.
+Nella Figura~\ref{fig:tasksetFaultSetPriority} vediamo un esempio di simulazione in cui i chunk dei task hanno una risorsa condivisa e il protocollo di accesso alle risorse non si comporta come previsto, ma setta la priorità del task che acquisisce la risorsa pari a quella corretta più un valore campionato da una distribuzione uniforme tra -2 e 2. Questo porta alla generazione della traccia mostrata in Figura~\ref{fig:traceFaultSetPriority}.
 
 \begin{figure}[htbp]
     \centering
@@ -125,7 +125,7 @@ Nella Figura~\ref{fig:tasksetFaultSetPriority} vediamo un esempio di simulazione
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{PCP with faulty acquiring resources}
-Facendo riferimento allo stesso taskset della sezione precedente, nella Figura~\ref{fig:tasksetFaultAcquiringResources} è mostrato come iniettare il fault relativo alla mancata acquisizione delle risorse con una data probabilità (nell'esempio il 20\%). In Figura~\ref{fig:traceFaultAcquiringResources} invece è mostrato, come sempre ftto fino a ora, la traccia generata dalla simulazione.
+Facendo riferimento allo stesso taskset della sezione precedente, nella Figura~\ref{fig:tasksetFaultAcquiringResources} è mostrato come iniettare il fault relativo alla mancata acquisizione delle risorse con una data probabilità (nell'esempio il 20\%). In Figura~\ref{fig:traceFaultAcquiringResources} invece è mostrato, come sempre fatto fino a ora, la traccia generata dalla simulazione.
 
 \begin{figure}[htbp]
     \centering

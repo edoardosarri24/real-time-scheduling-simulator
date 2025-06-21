@@ -1,0 +1,822 @@
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[INFO] <2.000, Chunk1.2 lock [Res1]>
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.111, finish Chunk1.2>
+[INFO] <3.111, execute Chunk1.3>
+[INFO] <4.110, finish Chunk1.3>
+[INFO] <4.110, complete Task1>
+[INFO] <4.110, execute Chunk2.1>
+[INFO] <7.243, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <7.243, execute Chunk2.2>
+[INFO] <10.311, finish Chunk2.2>
+[INFO] <10.311, Chunk2.2 unlock [Res2]>
+[INFO] <10.311, execute Chunk2.3>
+[INFO] <13.444, finish Chunk2.3>
+[INFO] <13.444, complete Task2>
+[INFO] <13.444, execute Chunk3.1>
+[INFO] <18.307, finish Chunk3.1>
+[INFO] <18.307, execute Chunk3.2>
+[INFO] <22.467, finish Chunk3.2>
+[INFO] <22.467, complete Task3>
+[INFO] <22.467, execute Chunk4.1>
+[INFO] <27.668, finish Chunk4.1>
+[INFO] <27.668, Chunk4.2 lock [Res2]>
+[INFO] <27.668, execute Chunk4.2>
+[INFO] <29.838, finish Chunk4.2>
+[INFO] <29.838, complete Task4>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <29.838, execute Chunk5.2>
+[INFO] <33.377, finish Chunk5.2>
+[INFO] <33.377, Chunk5.2 unlock [Res1]>
+[INFO] <33.377, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[INFO] <37.000, Chunk1.2blockedOn [Res1]>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.280, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <53.280, execute Chunk2.2>
+[INFO] <56.755, finish Chunk2.2>
+[INFO] <56.755, Chunk2.2 unlock [Res2]>
+[INFO] <56.755, execute Chunk2.3>
+[INFO] <60.181, finish Chunk2.3>
+[INFO] <60.181, complete Task2>
+[INFO] <70.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task2>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.305, finish Chunk1.2>
+[INFO] <3.305, Chunk1.2 unlock [Res1]>
+[INFO] <3.305, execute Chunk1.3>
+[INFO] <3.991, finish Chunk1.3>
+[INFO] <3.991, complete Task1>
+[INFO] <3.991, complete Task1>
+[INFO] <3.991, execute Chunk2.1>
+[INFO] <7.948, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <7.948, execute Chunk2.2>
+[INFO] <11.023, finish Chunk2.2>
+[INFO] <11.023, Chunk2.2 unlock [Res2]>
+[INFO] <11.023, execute Chunk2.3>
+[INFO] <14.133, finish Chunk2.3>
+[INFO] <14.133, complete Task2>
+[INFO] <14.133, execute Chunk3.1>
+[INFO] <18.647, finish Chunk3.1>
+[INFO] <18.647, execute Chunk3.2>
+[INFO] <23.050, finish Chunk3.2>
+[INFO] <23.050, complete Task3>
+[INFO] <23.050, execute Chunk4.1>
+[INFO] <28.467, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <28.467, execute Chunk4.2>
+[INFO] <30.900, finish Chunk4.2>
+[INFO] <30.900, Chunk4.2 unlock [Res2]>
+[INFO] <30.900, complete Task4>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <30.900, execute Chunk5.2>
+[INFO] <34.833, finish Chunk5.2>
+[INFO] <34.833, Chunk5.2 unlock [Res1]>
+[INFO] <34.833, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <37.000, execute Chunk1.2>
+[INFO] <38.279, finish Chunk1.2>
+[INFO] <38.279, Chunk1.2 unlock [Res1]>
+[INFO] <38.279, execute Chunk1.3>
+[INFO] <39.210, finish Chunk1.3>
+[INFO] <39.210, complete Task1>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.447, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <53.447, execute Chunk2.2>
+[INFO] <56.714, finish Chunk2.2>
+[INFO] <56.714, Chunk2.2 unlock [Res2]>
+[INFO] <56.714, execute Chunk2.3>
+[INFO] <60.083, finish Chunk2.3>
+[INFO] <60.083, complete Task2>
+[INFO] <70.000, release Task1>
+[INFO] <70.000, execute Chunk1.1>
+[INFO] <72.000, finish Chunk1.1>
+[INFO] <72.000, Chunk1.2 lock [Res1]>
+[INFO] <72.000, execute Chunk1.2>
+[INFO] <73.362, finish Chunk1.2>
+[INFO] <73.362, execute Chunk1.3>
+[INFO] <74.238, finish Chunk1.3>
+[INFO] <74.238, complete Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk3.1>
+[INFO] <84.138, finish Chunk3.1>
+[INFO] <84.138, execute Chunk3.2>
+[INFO] <88.430, finish Chunk3.2>
+[INFO] <88.430, complete Task3>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk2.1>
+[INFO] <103.536, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <103.536, execute Chunk2.2>
+[INFO] <105.000, release Task1>
+[INFO] <105.000, preempt Task2>
+[INFO] <105.000, execute Chunk1.1>
+[INFO] <107.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <107.000, execute Chunk1.2>
+[INFO] <108.464, finish Chunk1.2>
+[INFO] <108.464, execute Chunk1.3>
+[INFO] <109.201, finish Chunk1.3>
+[INFO] <109.201, complete Task1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <109.201, execute Chunk2.2>
+[INFO] <110.000, release Task4>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <110.000, execute Chunk2.2>
+[INFO] <110.984, finish Chunk2.2>
+[INFO] <110.984, Chunk2.2 unlock [Res2]>
+[INFO] <110.984, execute Chunk2.3>
+[INFO] <114.147, finish Chunk2.3>
+[INFO] <114.147, complete Task2>
+[INFO] <114.147, execute Chunk4.1>
+[INFO] <119.490, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <119.490, execute Chunk4.2>
+[INFO] <122.351, finish Chunk4.2>
+[INFO] <122.351, Chunk4.2 unlock [Res2]>
+[INFO] <122.351, complete Task4>
+[INFO] <140.000, release Task1>
+[INFO] <140.000, execute Chunk1.1>
+[INFO] <142.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <142.000, execute Chunk1.2>
+[INFO] <143.131, finish Chunk1.2>
+[INFO] <143.131, execute Chunk1.3>
+[INFO] <144.108, finish Chunk1.3>
+[INFO] <144.108, complete Task1>
+[INFO] <150.000, release Task2>
+[INFO] <150.000, execute Chunk2.1>
+[INFO] <153.657, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <153.657, execute Chunk2.2>
+[INFO] <156.683, finish Chunk2.2>
+[INFO] <156.683, Chunk2.2 unlock [Res2]>
+[INFO] <156.683, execute Chunk2.3>
+[INFO] <160.000, release Task5>
+[INFO] <160.000, release Task3>
+[INFO] <160.000, execute Chunk2.3>
+[INFO] <160.127, finish Chunk2.3>
+[INFO] <160.127, complete Task2>
+[INFO] <160.127, execute Chunk3.1>
+[INFO] <164.274, finish Chunk3.1>
+[INFO] <164.274, execute Chunk3.2>
+[INFO] <168.357, finish Chunk3.2>
+[INFO] <168.357, complete Task3>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <168.357, execute Chunk5.2>
+[INFO] <172.070, finish Chunk5.2>
+[INFO] <172.070, Chunk5.2 unlock [Res1]>
+[INFO] <172.070, complete Task5>
+[INFO] <175.000, release Task1>
+[INFO] <175.000, execute Chunk1.1>
+[INFO] <177.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <177.000, execute Chunk1.2>
+[INFO] <178.028, finish Chunk1.2>
+[INFO] <178.028, execute Chunk1.3>
+[INFO] <178.550, finish Chunk1.3>
+[INFO] <178.550, complete Task1>
+[INFO] <200.000, release Task2>
+[INFO] <200.000, execute Chunk2.1>
+[INFO] <203.269, finish Chunk2.1>
+[INFO] <203.269, Chunk2.2 lock [Res2]>
+[INFO] <203.269, execute Chunk2.2>
+[INFO] <206.740, finish Chunk2.2>
+[INFO] <206.740, execute Chunk2.3>
+[INFO] <209.781, finish Chunk2.3>
+[INFO] <209.781, complete Task2>
+[INFO] <210.000, release Task1>
+[INFO] <210.000, execute Chunk1.1>
+[INFO] <212.000, finish Chunk1.1>
+[INFO] <212.000, Chunk1.2blockedOn [Res1]>
+[INFO] <220.000, release Task4>
+[INFO] <220.000, execute Chunk4.1>
+[INFO] <225.419, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <225.419, execute Chunk4.2>
+[INFO] <227.881, finish Chunk4.2>
+[INFO] <227.881, Chunk4.2 unlock [Res2]>
+[INFO] <227.881, complete Task4>
+[INFO] <240.000, release Task3>
+[INFO] <240.000, execute Chunk3.1>
+[INFO] <244.328, finish Chunk3.1>
+[INFO] <244.328, execute Chunk3.2>
+[INFO] <245.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task3>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.033, finish Chunk1.2>
+[INFO] <3.033, Chunk1.2 unlock [Res1]>
+[INFO] <3.033, execute Chunk1.3>
+[INFO] <3.561, finish Chunk1.3>
+[INFO] <3.561, complete Task1>
+[INFO] <3.561, complete Task1>
+[INFO] <3.561, execute Chunk2.1>
+[INFO] <6.601, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <6.601, execute Chunk2.2>
+[INFO] <9.826, finish Chunk2.2>
+[INFO] <9.826, Chunk2.2 unlock [Res2]>
+[INFO] <9.826, execute Chunk2.3>
+[INFO] <13.313, finish Chunk2.3>
+[INFO] <13.313, complete Task2>
+[INFO] <13.313, execute Chunk3.1>
+[INFO] <18.248, finish Chunk3.1>
+[INFO] <18.248, execute Chunk3.2>
+[INFO] <22.297, finish Chunk3.2>
+[INFO] <22.297, complete Task3>
+[INFO] <22.297, execute Chunk4.1>
+[INFO] <27.330, finish Chunk4.1>
+[INFO] <27.330, Chunk4.2 lock [Res2]>
+[INFO] <27.330, execute Chunk4.2>
+[INFO] <29.637, finish Chunk4.2>
+[INFO] <29.637, complete Task4>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <29.637, execute Chunk5.2>
+[INFO] <33.261, finish Chunk5.2>
+[INFO] <33.261, Chunk5.2 unlock [Res1]>
+[INFO] <33.261, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[INFO] <37.000, Chunk1.2blockedOn [Res1]>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.392, finish Chunk2.1>
+[INFO] <53.392, Chunk2.2blockedOn [Res2]>
+[INFO] <70.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task5>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.409, finish Chunk1.2>
+[INFO] <3.409, Chunk1.2 unlock [Res1]>
+[INFO] <3.409, execute Chunk1.3>
+[INFO] <4.187, finish Chunk1.3>
+[INFO] <4.187, complete Task1>
+[INFO] <4.187, complete Task1>
+[INFO] <4.187, execute Chunk2.1>
+[INFO] <7.942, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <7.942, execute Chunk2.2>
+[INFO] <11.425, finish Chunk2.2>
+[INFO] <11.425, Chunk2.2 unlock [Res2]>
+[INFO] <11.425, execute Chunk2.3>
+[INFO] <14.602, finish Chunk2.3>
+[INFO] <14.602, complete Task2>
+[INFO] <14.602, complete Task2>
+[INFO] <14.602, execute Chunk3.1>
+[INFO] <19.113, finish Chunk3.1>
+[INFO] <19.113, execute Chunk3.2>
+[INFO] <23.498, finish Chunk3.2>
+[INFO] <23.498, complete Task3>
+[INFO] <23.498, execute Chunk4.1>
+[INFO] <28.967, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <28.967, execute Chunk4.2>
+[INFO] <31.485, finish Chunk4.2>
+[INFO] <31.485, Chunk4.2 unlock [Res2]>
+[INFO] <31.485, complete Task4>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <31.485, execute Chunk5.2>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, preempt Task5>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <37.000, execute Chunk1.2>
+[INFO] <38.207, finish Chunk1.2>
+[INFO] <38.207, Chunk1.2 unlock [Res1]>
+[INFO] <38.207, execute Chunk1.3>
+[INFO] <38.898, finish Chunk1.3>
+[INFO] <38.898, complete Task1>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <38.898, execute Chunk5.2>
+[INFO] <39.360, finish Chunk5.2>
+[INFO] <39.360, Chunk5.2 unlock [Res1]>
+[INFO] <39.360, complete Task5>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.195, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <53.195, execute Chunk2.2>
+[INFO] <56.530, finish Chunk2.2>
+[INFO] <56.530, Chunk2.2 unlock [Res2]>
+[INFO] <56.530, execute Chunk2.3>
+[INFO] <59.569, finish Chunk2.3>
+[INFO] <59.569, complete Task2>
+[INFO] <70.000, release Task1>
+[INFO] <70.000, execute Chunk1.1>
+[INFO] <72.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <72.000, execute Chunk1.2>
+[INFO] <73.239, finish Chunk1.2>
+[INFO] <73.239, Chunk1.2 unlock [Res1]>
+[INFO] <73.239, execute Chunk1.3>
+[INFO] <73.877, finish Chunk1.3>
+[INFO] <73.877, complete Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk3.1>
+[INFO] <84.664, finish Chunk3.1>
+[INFO] <84.664, execute Chunk3.2>
+[INFO] <89.088, finish Chunk3.2>
+[INFO] <89.088, complete Task3>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk2.1>
+[INFO] <103.409, finish Chunk2.1>
+[INFO] <103.409, Chunk2.2 lock [Res2]>
+[INFO] <103.409, execute Chunk2.2>
+[INFO] <105.000, release Task1>
+[INFO] <105.000, preempt Task2>
+[INFO] <105.000, execute Chunk1.1>
+[INFO] <107.000, finish Chunk1.1>
+[INFO] <107.000, Chunk1.2blockedOn [Res1]>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <107.000, execute Chunk2.2>
+[INFO] <108.592, finish Chunk2.2>
+[INFO] <108.592, execute Chunk2.3>
+[INFO] <110.000, release Task4>
+[INFO] <110.000, execute Chunk2.3>
+[INFO] <110.079, finish Chunk2.3>
+[INFO] <110.079, complete Task2>
+[INFO] <110.079, execute Chunk4.1>
+[INFO] <115.122, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <115.122, execute Chunk4.2>
+[INFO] <117.911, finish Chunk4.2>
+[INFO] <117.911, Chunk4.2 unlock [Res2]>
+[INFO] <117.911, complete Task4>
+[INFO] <140.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task4>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.294, finish Chunk1.2>
+[INFO] <3.294, Chunk1.2 unlock [Res1]>
+[INFO] <3.294, execute Chunk1.3>
+[INFO] <3.888, finish Chunk1.3>
+[INFO] <3.888, complete Task1>
+[INFO] <3.888, complete Task1>
+[INFO] <3.888, execute Chunk2.1>
+[INFO] <7.776, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <7.776, execute Chunk2.2>
+[INFO] <10.872, finish Chunk2.2>
+[INFO] <10.872, Chunk2.2 unlock [Res2]>
+[INFO] <10.872, execute Chunk2.3>
+[INFO] <14.041, finish Chunk2.3>
+[INFO] <14.041, complete Task2>
+[INFO] <14.041, execute Chunk3.1>
+[INFO] <18.728, finish Chunk3.1>
+[INFO] <18.728, execute Chunk3.2>
+[INFO] <23.090, finish Chunk3.2>
+[INFO] <23.090, complete Task3>
+[INFO] <23.090, execute Chunk4.1>
+[INFO] <28.550, finish Chunk4.1>
+[INFO] <28.550, Chunk4.2 lock [Res2]>
+[INFO] <28.550, execute Chunk4.2>
+[INFO] <30.610, finish Chunk4.2>
+[INFO] <30.610, complete Task4>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <30.610, execute Chunk5.2>
+[INFO] <34.116, finish Chunk5.2>
+[INFO] <34.116, Chunk5.2 unlock [Res1]>
+[INFO] <34.116, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[INFO] <37.000, Chunk1.2blockedOn [Res1]>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.016, finish Chunk2.1>
+[INFO] <53.016, Chunk2.2blockedOn [Res2]>
+[INFO] <70.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task5>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.215, finish Chunk1.2>
+[INFO] <3.215, Chunk1.2 unlock [Res1]>
+[INFO] <3.215, execute Chunk1.3>
+[INFO] <4.103, finish Chunk1.3>
+[INFO] <4.103, complete Task1>
+[INFO] <4.103, complete Task1>
+[INFO] <4.103, execute Chunk2.1>
+[INFO] <7.693, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <7.693, execute Chunk2.2>
+[INFO] <11.027, finish Chunk2.2>
+[INFO] <11.027, Chunk2.2 unlock [Res2]>
+[INFO] <11.027, execute Chunk2.3>
+[INFO] <14.291, finish Chunk2.3>
+[INFO] <14.291, complete Task2>
+[INFO] <14.291, complete Task2>
+[INFO] <14.291, execute Chunk3.1>
+[INFO] <18.388, finish Chunk3.1>
+[INFO] <18.388, execute Chunk3.2>
+[INFO] <22.830, finish Chunk3.2>
+[INFO] <22.830, complete Task3>
+[INFO] <22.830, execute Chunk4.1>
+[INFO] <28.109, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <28.109, execute Chunk4.2>
+[INFO] <30.644, finish Chunk4.2>
+[INFO] <30.644, Chunk4.2 unlock [Res2]>
+[INFO] <30.644, complete Task4>
+[INFO] <30.644, Chunk5.2 lock [Res1]>
+[INFO] <30.644, execute Chunk5.2>
+[INFO] <34.551, finish Chunk5.2>
+[INFO] <34.551, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[INFO] <37.000, Chunk1.2blockedOn [Res1]>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.258, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <53.258, execute Chunk2.2>
+[INFO] <56.739, finish Chunk2.2>
+[INFO] <56.739, Chunk2.2 unlock [Res2]>
+[INFO] <56.739, execute Chunk2.3>
+[INFO] <60.176, finish Chunk2.3>
+[INFO] <60.176, complete Task2>
+[INFO] <70.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task2>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.148, finish Chunk1.2>
+[INFO] <3.148, Chunk1.2 unlock [Res1]>
+[INFO] <3.148, execute Chunk1.3>
+[INFO] <3.683, finish Chunk1.3>
+[INFO] <3.683, complete Task1>
+[INFO] <3.683, complete Task1>
+[INFO] <3.683, execute Chunk2.1>
+[INFO] <7.547, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <7.547, execute Chunk2.2>
+[INFO] <10.713, finish Chunk2.2>
+[INFO] <10.713, Chunk2.2 unlock [Res2]>
+[INFO] <10.713, execute Chunk2.3>
+[INFO] <13.967, finish Chunk2.3>
+[INFO] <13.967, complete Task2>
+[INFO] <13.967, execute Chunk3.1>
+[INFO] <18.168, finish Chunk3.1>
+[INFO] <18.168, execute Chunk3.2>
+[INFO] <22.186, finish Chunk3.2>
+[INFO] <22.186, complete Task3>
+[INFO] <22.186, execute Chunk4.1>
+[INFO] <27.401, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <27.401, execute Chunk4.2>
+[INFO] <29.623, finish Chunk4.2>
+[INFO] <29.623, Chunk4.2 unlock [Res2]>
+[INFO] <29.623, complete Task4>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <29.623, execute Chunk5.2>
+[INFO] <33.181, finish Chunk5.2>
+[INFO] <33.181, Chunk5.2 unlock [Res1]>
+[INFO] <33.181, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <37.000, execute Chunk1.2>
+[INFO] <38.129, finish Chunk1.2>
+[INFO] <38.129, Chunk1.2 unlock [Res1]>
+[INFO] <38.129, execute Chunk1.3>
+[INFO] <38.983, finish Chunk1.3>
+[INFO] <38.983, complete Task1>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.844, finish Chunk2.1>
+[INFO] <53.844, Chunk2.2 lock [Res2]>
+[INFO] <53.844, execute Chunk2.2>
+[INFO] <56.987, finish Chunk2.2>
+[INFO] <56.987, execute Chunk2.3>
+[INFO] <60.481, finish Chunk2.3>
+[INFO] <60.481, complete Task2>
+[INFO] <70.000, release Task1>
+[INFO] <70.000, execute Chunk1.1>
+[INFO] <72.000, finish Chunk1.1>
+[INFO] <72.000, Chunk1.2blockedOn [Res1]>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk3.1>
+[INFO] <84.356, finish Chunk3.1>
+[INFO] <84.356, execute Chunk3.2>
+[INFO] <88.529, finish Chunk3.2>
+[INFO] <88.529, complete Task3>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk2.1>
+[INFO] <103.141, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <103.141, execute Chunk2.2>
+[INFO] <105.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task2>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.053, finish Chunk1.2>
+[INFO] <3.053, Chunk1.2 unlock [Res1]>
+[INFO] <3.053, execute Chunk1.3>
+[INFO] <3.652, finish Chunk1.3>
+[INFO] <3.652, complete Task1>
+[INFO] <3.652, complete Task1>
+[INFO] <3.652, execute Chunk2.1>
+[INFO] <7.062, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <7.062, execute Chunk2.2>
+[INFO] <10.449, finish Chunk2.2>
+[INFO] <10.449, Chunk2.2 unlock [Res2]>
+[INFO] <10.449, execute Chunk2.3>
+[INFO] <13.668, finish Chunk2.3>
+[INFO] <13.668, complete Task2>
+[INFO] <13.668, execute Chunk3.1>
+[INFO] <17.999, finish Chunk3.1>
+[INFO] <17.999, execute Chunk3.2>
+[INFO] <22.214, finish Chunk3.2>
+[INFO] <22.214, complete Task3>
+[INFO] <22.214, execute Chunk4.1>
+[INFO] <27.504, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <27.504, execute Chunk4.2>
+[INFO] <29.768, finish Chunk4.2>
+[INFO] <29.768, Chunk4.2 unlock [Res2]>
+[INFO] <29.768, complete Task4>
+[INFO] <29.768, Chunk5.2 lock [Res1]>
+[INFO] <29.768, execute Chunk5.2>
+[INFO] <33.747, finish Chunk5.2>
+[INFO] <33.747, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[INFO] <37.000, Chunk1.2blockedOn [Res1]>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.293, finish Chunk2.1>
+[INFO] <53.293, Chunk2.2 lock [Res2]>
+[INFO] <53.293, execute Chunk2.2>
+[INFO] <56.792, finish Chunk2.2>
+[INFO] <56.792, execute Chunk2.3>
+[INFO] <59.919, finish Chunk2.3>
+[INFO] <59.919, complete Task2>
+[INFO] <70.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task2>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.307, finish Chunk1.2>
+[INFO] <3.307, Chunk1.2 unlock [Res1]>
+[INFO] <3.307, execute Chunk1.3>
+[INFO] <4.110, finish Chunk1.3>
+[INFO] <4.110, complete Task1>
+[INFO] <4.110, complete Task1>
+[INFO] <4.110, execute Chunk2.1>
+[INFO] <7.879, finish Chunk2.1>
+[INFO] <7.879, Chunk2.2 lock [Res2]>
+[INFO] <7.879, execute Chunk2.2>
+[INFO] <11.234, finish Chunk2.2>
+[INFO] <11.234, execute Chunk2.3>
+[INFO] <14.553, finish Chunk2.3>
+[INFO] <14.553, complete Task2>
+[INFO] <14.553, execute Chunk3.1>
+[INFO] <19.218, finish Chunk3.1>
+[INFO] <19.218, execute Chunk3.2>
+[INFO] <23.398, finish Chunk3.2>
+[INFO] <23.398, complete Task3>
+[INFO] <23.398, execute Chunk4.1>
+[INFO] <28.763, finish Chunk4.1>
+[INFO] <28.763, Chunk4.2 lock [Res2]>
+[INFO] <28.763, execute Chunk4.2>
+[INFO] <30.995, finish Chunk4.2>
+[INFO] <30.995, complete Task4>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <30.995, execute Chunk5.2>
+[INFO] <34.599, finish Chunk5.2>
+[INFO] <34.599, Chunk5.2 unlock [Res1]>
+[INFO] <34.599, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[INFO] <37.000, Chunk1.2blockedOn [Res1]>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.735, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <53.735, execute Chunk2.2>
+[INFO] <57.219, finish Chunk2.2>
+[INFO] <57.219, execute Chunk2.3>
+[INFO] <60.345, finish Chunk2.3>
+[INFO] <60.345, complete Task2>
+[INFO] <70.000, deadlineMiss Task1>
+
+[INFO] <0.000, release Task1>
+[INFO] <0.000, release Task2>
+[INFO] <0.000, release Task3>
+[INFO] <0.000, release Task4>
+[INFO] <0.000, release Task5>
+[INFO] <0.000, preempt Task2>
+[INFO] <0.000, execute Chunk1.1>
+[INFO] <2.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <2.000, execute Chunk1.2>
+[INFO] <3.000, finish Chunk1.2>
+[INFO] <3.000, Chunk1.2 unlock [Res1]>
+[INFO] <3.000, execute Chunk1.3>
+[INFO] <3.651, finish Chunk1.3>
+[INFO] <3.651, complete Task1>
+[INFO] <3.651, complete Task1>
+[INFO] <3.651, execute Chunk2.1>
+[INFO] <7.019, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <7.019, execute Chunk2.2>
+[INFO] <10.225, finish Chunk2.2>
+[INFO] <10.225, Chunk2.2 unlock [Res2]>
+[INFO] <10.225, execute Chunk2.3>
+[INFO] <13.307, finish Chunk2.3>
+[INFO] <13.307, complete Task2>
+[INFO] <13.307, execute Chunk3.1>
+[INFO] <17.768, finish Chunk3.1>
+[INFO] <17.768, execute Chunk3.2>
+[INFO] <21.917, finish Chunk3.2>
+[INFO] <21.917, complete Task3>
+[INFO] <21.917, execute Chunk4.1>
+[INFO] <27.386, finish Chunk4.1>
+[WARNING] Il ChunkChunk4.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <27.386, execute Chunk4.2>
+[INFO] <29.602, finish Chunk4.2>
+[INFO] <29.602, Chunk4.2 unlock [Res2]>
+[INFO] <29.602, complete Task4>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <29.602, execute Chunk5.2>
+[INFO] <33.139, finish Chunk5.2>
+[INFO] <33.139, Chunk5.2 unlock [Res1]>
+[INFO] <33.139, complete Task5>
+[INFO] <35.000, release Task1>
+[INFO] <35.000, execute Chunk1.1>
+[INFO] <37.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <37.000, execute Chunk1.2>
+[INFO] <38.354, finish Chunk1.2>
+[INFO] <38.354, Chunk1.2 unlock [Res1]>
+[INFO] <38.354, execute Chunk1.3>
+[INFO] <38.917, finish Chunk1.3>
+[INFO] <38.917, complete Task1>
+[INFO] <50.000, release Task2>
+[INFO] <50.000, execute Chunk2.1>
+[INFO] <53.041, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <53.041, execute Chunk2.2>
+[INFO] <56.411, finish Chunk2.2>
+[INFO] <56.411, Chunk2.2 unlock [Res2]>
+[INFO] <56.411, execute Chunk2.3>
+[INFO] <59.514, finish Chunk2.3>
+[INFO] <59.514, complete Task2>
+[INFO] <70.000, release Task1>
+[INFO] <70.000, execute Chunk1.1>
+[INFO] <72.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <72.000, execute Chunk1.2>
+[INFO] <73.365, finish Chunk1.2>
+[INFO] <73.365, Chunk1.2 unlock [Res1]>
+[INFO] <73.365, execute Chunk1.3>
+[INFO] <74.044, finish Chunk1.3>
+[INFO] <74.044, complete Task1>
+[INFO] <80.000, release Task3>
+[INFO] <80.000, execute Chunk3.1>
+[INFO] <84.138, finish Chunk3.1>
+[INFO] <84.138, execute Chunk3.2>
+[INFO] <88.222, finish Chunk3.2>
+[INFO] <88.222, complete Task3>
+[INFO] <100.000, release Task2>
+[INFO] <100.000, execute Chunk2.1>
+[INFO] <103.857, finish Chunk2.1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <103.857, execute Chunk2.2>
+[INFO] <105.000, release Task1>
+[INFO] <105.000, preempt Task2>
+[INFO] <105.000, execute Chunk1.1>
+[INFO] <107.000, finish Chunk1.1>
+[WARNING] Il ChunkChunk1.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <107.000, execute Chunk1.2>
+[INFO] <108.028, finish Chunk1.2>
+[INFO] <108.028, Chunk1.2 unlock [Res1]>
+[INFO] <108.028, execute Chunk1.3>
+[INFO] <108.733, finish Chunk1.3>
+[INFO] <108.733, complete Task1>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <108.733, execute Chunk2.2>
+[INFO] <110.000, release Task4>
+[WARNING] Il ChunkChunk2.2 non ha acquisito le risorse [Res2] prima di usarle
+[INFO] <110.000, execute Chunk2.2>
+[INFO] <110.603, finish Chunk2.2>
+[INFO] <110.603, Chunk2.2 unlock [Res2]>
+[INFO] <110.603, execute Chunk2.3>
+[INFO] <113.652, finish Chunk2.3>
+[INFO] <113.652, complete Task2>
+[INFO] <113.652, execute Chunk4.1>
+[INFO] <119.018, finish Chunk4.1>
+[INFO] <119.018, Chunk4.2 lock [Res2]>
+[INFO] <119.018, execute Chunk4.2>
+[INFO] <121.955, finish Chunk4.2>
+[INFO] <121.955, complete Task4>
+[INFO] <140.000, release Task1>
+[INFO] <140.000, execute Chunk1.1>
+[INFO] <142.000, finish Chunk1.1>
+[INFO] <142.000, Chunk1.2blockedOn [Res1]>
+[INFO] <150.000, release Task2>
+[INFO] <150.000, execute Chunk2.1>
+[INFO] <153.993, finish Chunk2.1>
+[INFO] <153.993, Chunk2.2blockedOn [Res2]>
+[INFO] <160.000, release Task5>
+[INFO] <160.000, release Task3>
+[INFO] <160.000, execute Chunk3.1>
+[INFO] <164.835, finish Chunk3.1>
+[INFO] <164.835, execute Chunk3.2>
+[INFO] <169.261, finish Chunk3.2>
+[INFO] <169.261, complete Task3>
+[WARNING] Il ChunkChunk5.2 non ha acquisito le risorse [Res1] prima di usarle
+[INFO] <169.261, execute Chunk5.2>
+[INFO] <173.033, finish Chunk5.2>
+[INFO] <173.033, Chunk5.2 unlock [Res1]>
+[INFO] <173.033, complete Task5>
+[INFO] <173.033, Chunk1.2blockedOn [Res1]>
+[INFO] <175.000, deadlineMiss Task1>
+

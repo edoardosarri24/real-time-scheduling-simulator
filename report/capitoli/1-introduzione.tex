@@ -7,12 +7,12 @@ Ogni traccia è definita come una sequenza di coppie $<tempo, evento>$, dove un 
 \section{Capacità}
 A partire da un taskset, il sistema ha le capacità di:
 \begin{itemize}
-    \item Generare la traccia di esecuzione del taskset schedulato tramite un dato algoritmo di scheduling (i.e., Rate Monotonic e Earlist Deadline First) e ed un eventuale protocollo di accesso alle risorse (i.e., Priority Ceiling Protocol). Considerando la gestione dinamica delle priorità da parte di EDF, è previsto il suo utilizzo solo senza risorse condivide.
+    \item Generare la traccia di esecuzione del taskset schedulato tramite un dato algoritmo di scheduling (i.e., Rate Monotonic e Earliest Deadline First) e un eventuale protocollo di accesso alle risorse (i.e., Priority Ceiling Protocol). Considerando la gestione dinamica delle priorità da parte di EDF, è previsto il suo utilizzo solo senza risorse condivise.
     \item Generare un dataset di tracce relative a più simulazioni su un taskset.
     \item Specificare il tempo desiderato della simulazione.
     \item Rilevare eventuali deadline miss. Se un task non ha finito di eseguire entro la propria deadline allora la simulazione si arresta; non continua perché ci interessa valutare il primo fallimento, visto che i successivi potrebbero essere in cascata del primo.
     \item Campionare da una distribuzione e rilevare un additional execution time in un chunk. Questo modella un tempo di computazione di un chunk maggiore (o minore) di quello che ci aspettiamo, cioè maggiore del WCET.
     \item Introdurre in modo stocastico e rilevare un fault a livello del protocollo di accesso alle risorse (i.e., PCP) tale per cui la priorità dinamica assegnata al task che entra in critical section è quella corretta più un valore campionato da una distribuzione uniforme.
     \item Introdurre in modo stocastico e rilevare un fault a livello di chunk tale per cui con una certa probabilità il chunk non acquisisce, e quindi non rilascia, il semaforo che gestisce la risorsa associata alla critical section in cui entra.
-    \item Definito uno scheduler con il relativo taskset, eseguire il controllo di feasibility adeguato per la schedulabilità del taskset. Per RM è stato impelementato l'hyperbolic bound; per EDF il controllo necessario e sufficiente sul fattore di utilizzo.
+    \item Definito uno scheduler con il relativo taskset, eseguire il controllo di feasibility adeguato per la schedulabilità del taskset. Per RM è stato implementato l'hyperbolic bound; per EDF il controllo necessario e sufficiente sul fattore di utilizzo.
 \end{itemize}

@@ -3,6 +3,10 @@
 \babel@toc {italian}{}\relax 
 \beamer@sectionintoc {1}{Introduzione}{2}{0}{1}
 \beamer@subsectionintoc {1}{1}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{2}{0}{1}
-\beamer@sectionintoc {2}{Analisi}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{6}{0}{2}
+\beamer@sectionintoc {2}{Analisi}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{7}{0}{2}
+\beamer@sectionintoc {3}{Implementazione}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{8}{0}{3}
+\beamer@sectionintoc {4}{Dataset}{11}{0}{4}
+\beamer@subsectionintoc {4}{1}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{11}{0}{4}
+\beamer@subsectionintoc {4}{2}{\href {https://github.com/edoardosarri24/real-time-scheduling-simulator.git}{GitHub}}{13}{0}{4}

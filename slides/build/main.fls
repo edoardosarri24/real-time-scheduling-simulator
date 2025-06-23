@@ -168,9 +168,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/atveryend/atveryend.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
@@ -400,6 +397,12 @@ INPUT build/src/1-introduzione.aux
 INPUT build/src/2-analisi.aux
 INPUT build/src/2-analisi.aux
 INPUT build/src/2-analisi.aux
+INPUT build/src/3-implementazione.aux
+INPUT build/src/3-implementazione.aux
+INPUT build/src/3-implementazione.aux
+INPUT build/src/4-dataset.aux
+INPUT build/src/4-dataset.aux
+INPUT build/src/4-dataset.aux
 INPUT build/src/footpage.aux
 INPUT build/src/footpage.aux
 INPUT build/src/footpage.aux
@@ -503,12 +506,76 @@ INPUT ./images/0-varie/sfondo chiaro.pdf
 INPUT ./images/0-varie/sfondo chiaro.pdf
 INPUT ./images/0-varie/sfondo chiaro.pdf
 INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmtt.fd
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmtt10.tfm
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc
 INPUT ./src/2-analisi.tex
 INPUT ./src/2-analisi.tex
 OUTPUT build/src/2-analisi.aux
 INPUT ./src/2-analisi.tex
 INPUT ./src/2-analisi.tex
 INPUT src/2-analisi.tex
+INPUT ./images/2-analisi/class diagram.pdf
+INPUT ./images/2-analisi/class diagram.pdf
+INPUT ./images/2-analisi/class diagram.pdf
+INPUT ./images/2-analisi/class diagram.pdf
+INPUT ./images/2-analisi/class diagram.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./src/3-implementazione.tex
+INPUT ./src/3-implementazione.tex
+OUTPUT build/src/3-implementazione.aux
+INPUT ./src/3-implementazione.tex
+INPUT ./src/3-implementazione.tex
+INPUT src/3-implementazione.tex
+INPUT ./images/3-implementazione/sequence diagram.pdf
+INPUT ./images/3-implementazione/sequence diagram.pdf
+INPUT ./images/3-implementazione/sequence diagram.pdf
+INPUT ./images/3-implementazione/sequence diagram.pdf
+INPUT ./images/3-implementazione/sequence diagram.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./src/4-dataset.tex
+OUTPUT build/src/4-dataset.aux
+INPUT ./src/4-dataset.tex
+INPUT ./src/4-dataset.tex
+INPUT src/4-dataset.tex
+INPUT ./images/4-dataset/datasetEDF.pdf
+INPUT ./images/4-dataset/datasetEDF.pdf
+INPUT ./images/4-dataset/datasetEDF.pdf
+INPUT ./images/4-dataset/datasetEDF.pdf
+INPUT ./images/4-dataset/datasetEDF.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/0-varie/sfondo chiaro.pdf
+INPUT ./images/4-dataset/datasetRM.pdf
+INPUT ./images/4-dataset/datasetRM.pdf
+INPUT ./images/4-dataset/datasetRM.pdf
+INPUT ./images/4-dataset/datasetRM.pdf
+INPUT ./images/4-dataset/datasetRM.pdf
 INPUT ./images/0-varie/sfondo chiaro.pdf
 INPUT ./images/0-varie/sfondo chiaro.pdf
 INPUT ./images/0-varie/sfondo chiaro.pdf
@@ -534,6 +601,12 @@ INPUT build/src/1-introduzione.aux
 INPUT build/src/2-analisi.aux
 INPUT build/src/2-analisi.aux
 INPUT build/src/2-analisi.aux
+INPUT build/src/3-implementazione.aux
+INPUT build/src/3-implementazione.aux
+INPUT build/src/3-implementazione.aux
+INPUT build/src/4-dataset.aux
+INPUT build/src/4-dataset.aux
+INPUT build/src/4-dataset.aux
 INPUT build/src/footpage.aux
 INPUT build/src/footpage.aux
 INPUT build/src/footpage.aux
@@ -546,3 +619,4 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsso10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb

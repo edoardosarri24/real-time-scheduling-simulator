@@ -3,18 +3,20 @@
 
 \begin{frame}{Introduzione}
     \begin{block}{Obiettivo}
-        Simulare l'esecuzione di un taskset secondo un dato algortimo di scheduling e protocollo di accesso alle risorse.
+        Simulare l'esecuzione di un taskset secondo un dato algortimo di scheduling e un protocollo di accesso alle risorse.
     \end{block}
 \end{frame}
 
 \begin{frame}{Introduzione}
     \begin{block}{Output}
-        Un file di log contenente una traccia di esecuzione, cioè una sequenza di coppie $<tempo,evento>$, dove i possibili eventi sono:
+        Un file di log contenente la traccia di esecuzione, cioè una sequenza di coppie $<tempo,evento>$, dove i possibili eventi sono:
         \begin{itemize}
-            \item Rilascio di un job di un task.
+            \item Rilascio di un task.
             \item Acuisizione e rilascio di una risorsa da parte di un chunk.
             \item Completamento dell'esecuzione di un chunk o di un job di un task.
             \item Preemption su un task.
+            \item Deadline miss di un job di un task.
+            \item Fault di un chunk.
         \end{itemize}
     \end{block}
 \end{frame}
@@ -22,12 +24,32 @@
 \begin{frame}{Introduzione}
     \begin{block}{Capacità}
         \begin{itemize}
-            \item Utilizzare Rate Monotonic con e senza risorse convidese insieme a Priority Ceiling Protocol.
-            \item Utilizzare Earliest Deadline First senza risorse condivise.
+            \item Generare una traccia di esecuzione.
+            \item Genenare un dataset di tracce di esecuzione.
+            \item Simulare Rate Monotonic con e senza risorse convidese insieme a Priority Ceiling Protocol.
+            \item Simulare Earliest Deadline First senza risorse condivise.
             \item Rilevare eventuali deadline miss.
+            \item Controllare la feasibility di un taskset dato il relativo algortimo di scheduling.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Introduzione}
+    \begin{block}{Capacità (fault injection)}
+        \begin{itemize}
             \item Introdurre in modo stocastico e rilevare un additional execution time in un chunk.
             \item Introdurre un fault a livello del protocollo di accesso alle risorse per cui PCP imposta male la priorità dinamica dei task.
             \item Introdurre un fault a livello di chunk per cui esso non acquisisce (e rilascia) il semaforo della risorsa che userà.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Introduzione}
+    \begin{block}{Utilizzo}
+        \begin{itemize}
+            \item All'interno del main devono essere definiti i componenti necessari: \texttt{Resource}, \texttt{Chunk}, \texttt{Task}, \texttt{TaskSet}, \texttt{Scheduler} e \texttt{ResourceProtocol}.
+            \item Per avviare una simulazione chiamare il metodo \texttt{schedule} o \texttt{scheduleDataset} di uno \texttt{Scheduler}.
+            \item I tempi devono essere passati e letti dal sistema in millisecondi. Il sistema li elabora in nanosecondi per una maggiore precisione.
         \end{itemize}
     \end{block}
 \end{frame}

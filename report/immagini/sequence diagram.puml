@@ -6,7 +6,6 @@ Scheduler -> Scheduler : assignPriority
 Client -> Scheduler : schedule
 Scheduler -> MyClock : reset
 Scheduler -> Scheduler : initStructures
-Scheduler -> TaskSet : checkFeasibility
 Scheduler -> Task : execute
 Task -> ResourcesProtocol : access
 Task -> ResourcesProtocol : progress

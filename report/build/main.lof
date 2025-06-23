@@ -6,12 +6,12 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Baseline con risorsa condivisa}}{9}{figure.caption.4}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Chunk additional execution time}}{9}{figure.caption.5}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces PCP with faulty priority setting}}{10}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces PCP with faulty acquiring resources}}{11}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces PCP with faulty acquiring resources}}{10}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Class diagram}}{13}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Class diagram}}{12}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sequence Diagram scheduling}}{16}{figure.caption.9}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sequence Diagram scheduling}}{15}{figure.caption.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Taskset schedulato con EDF}}{21}{figure.caption.10}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Taskset schedulato con RM con risorse condivise sotto PCP}}{22}{figure.caption.11}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Taskset schedulato con EDF}}{20}{figure.caption.10}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Taskset schedulato con RM con risorse condivise sotto PCP}}{21}{figure.caption.11}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -1,11 +1,14 @@
-@startuml sequence diagram RM
+@startuml sequence diagram
 
 participant Client
-Scheduler -> Scheduler : reset
 Scheduler -> Scheduler : assignPriority
 Client -> Scheduler : schedule
+Scheduler -> Scheduler : reset
 Scheduler -> MyClock : reset
 Scheduler -> Scheduler : initStructures
+Scheduler -> Scheduler : realeaseAllTasks
+
+loop there is event
 Scheduler -> Task : execute
 Task -> ResourcesProtocol : access
 Task -> ResourcesProtocol : progress
@@ -13,7 +16,8 @@ Task -> Chunk : execute
 Task -> ResourcesProtocol : release
 Scheduler -> MyClock : advanceTo
 Scheduler -> Task : relasePeriodTasks
-Task -> Chunk : reset
+end
+
 Scheduler --> Client : trace.log
 
 @enduml

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.11)  23 JUN 2025 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.29)  29 JUN 2025 21:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **/Users/edoardosarri/Documents/real-time-scheduling-simulator/report/main.tex
 (/Users/edoardosarri/Documents/real-time-scheduling-simulator/report/main.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-05-26>
+L3 programming layer <2025-06-09>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrreprt.cls
 Document Class: scrreprt 2025/06/04 v3.45 KOMA-Script document class (report)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -587,13 +587,13 @@ File: biblatex.cfg
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
  (/usr/local/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-05-26 L3 programming layer (loader) 
+Package: expl3 2025-06-09 L3 programming layer (loader) 
  (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count443
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2025-05-26 L3 programming layer (loader) 
+(biblatex)             2025-06-09 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -1016,11 +1016,11 @@ chapter 4.
 
 
 ]
-<immagini/sequence diagram.pdf, id=263, 529.98pt x 542.025pt>
+<immagini/sequence diagram.pdf, id=263, 555.14401pt x 568.9285pt>
 File: immagini/sequence diagram.pdf Graphic file (type pdf)
 <use immagini/sequence diagram.pdf>
 Package pdftex.def Info: immagini/sequence diagram.pdf  used on input line 45.
-(pdftex.def)             Requested size: 294.42636pt x 301.1169pt.
+(pdftex.def)             Requested size: 294.42636pt x 301.73901pt.
 
 
 [14]
@@ -1038,7 +1038,7 @@ Package pdftex.def Info: immagini/sequence diagram.pdf  used on input line 45.
 
  (./capitoli/5-dataset.tex
 chapter 5.
-<immagini/datasetEDF.pdf, id=296, 1373.13pt x 2714.14pt>
+<immagini/datasetEDF.pdf, id=305, 1373.13pt x 2714.14pt>
 File: immagini/datasetEDF.pdf Graphic file (type pdf)
 <use immagini/datasetEDF.pdf>
 Package pdftex.def Info: immagini/datasetEDF.pdf  used on input line 9.
@@ -1052,7 +1052,7 @@ Package pdftex.def Info: immagini/datasetEDF.pdf  used on input line 9.
 
 
  <./immagini/datasetEDF.pdf>]
-<immagini/datasetRM.pdf, id=309, 1415.2875pt x 2569.6pt>
+<immagini/datasetRM.pdf, id=318, 1415.2875pt x 2569.6pt>
 File: immagini/datasetRM.pdf Graphic file (type pdf)
 <use immagini/datasetRM.pdf>
 Package pdftex.def Info: immagini/datasetRM.pdf  used on input line 22.
@@ -1069,25 +1069,25 @@ Package pdftex.def Info: immagini/datasetRM.pdf  used on input line 22.
 ] (build/main.aux (build/capitoli/copertina.aux) (build/capitoli/1-introduzione.aux) (build/capitoli/2-utilizzo.aux) (build/capitoli/3-analisi.aux) (build/capitoli/4-implementazione.aux) (build/capitoli/5-dataset.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-05-26>
+L3 programming layer <2025-06-09>
  ***********
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26794 strings out of 467886
- 490455 string characters out of 5434039
+ 26793 strings out of 467888
+ 490431 string characters out of 5434061
  1469239 words of memory out of 5000000
- 54933 multiletter control sequences out of 15000+600000
+ 54930 multiletter control sequences out of 15000+600000
  654571 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,9n,107p,10997b,2204s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on build/main.pdf (22 pages, 2765726 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on build/main.pdf (22 pages, 2769332 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
- 409 compressed objects within 5 object streams
+ 509 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
  73 named destinations out of 1000 (max. 500000)
  356 words of extra memory for PDF output out of 10000 (max. 10000000)
 

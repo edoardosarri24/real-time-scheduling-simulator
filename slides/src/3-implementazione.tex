@@ -6,7 +6,6 @@
         \begin{column}{.4\textwidth}
             \begin{block}{Scheduler}
                 \begin{itemize}
-                    \item Gestione deterministica del tempo.
                     \item Classe base che definisce la logica dello scheduling: \textit{Template Method}.
                     \item Classi concrete che implementano \texttt{assignPriority} e \texttt{addReadyTask}.
                 \end{itemize}
@@ -24,7 +23,7 @@
         \begin{itemize}
             \item Necessario \texttt{NoResourceProtocol} quando non si hanno risorse condivise.
             \item Implementa i metodi di accesso, progresso e rilascio.
-            \item PCP usa due strutture dati: \texttt{ceiling} e \texttt{besyResource}.
+            \item PCP usa due strutture dati: \texttt{ceiling} e \texttt{busyResource}.
         \end{itemize}
     \end{block}
 \end{frame}
